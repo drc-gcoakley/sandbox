@@ -1,0 +1,8 @@
+
+[ ! -x $NPM_GCACHE/yarn ] && npm install -g yarn
+
+yarn add @angular/common @angular/core @angular/platform-browser @angular/router rxjs \
+	@types/angular @types/react @types/lodash $@
+
+yarn add --dev @types/jasmine @types/karma tslint-angular $@
+

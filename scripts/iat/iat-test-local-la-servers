@@ -1,0 +1,13 @@
+#!/bin/sh
+
+for host in 127.0.0.2 $(hostname -s); do 
+  for port in 80 8080; do 
+    url=http://${host}:${port}/la/
+
+        curl_fmt='curl: %{url_effective}        => Status: %{http_code}, Size: %{size_download}, time:[til xfer: %{time_starttransfer}, total: %{time_total}]
+'
+        curl -sSLw "$curl_fmt" $url
+#	wget $url
+  done
+done
+

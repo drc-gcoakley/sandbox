@@ -1,0 +1,2 @@
+npm uninstall --force $@
+npm install --no-save $@

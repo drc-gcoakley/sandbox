@@ -1,0 +1,1 @@
+on-hosts $(sqa-servers) -exec sudo "grep 'RestClient.*millis\| ERROR \|Exception\|^\sat ' /var/log/la_iat/iat.log | grep -v ' passage thinks it owns \|deprecated ItemSearchCommand' | grep -1 'ERROR \|Exception\|^\sat '"
