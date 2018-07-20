@@ -1,0 +1,1 @@
+ping-la-sqa | grep '^Server:\|^  "build\.date\|BUILD_NUMBER'

@@ -1,0 +1,3 @@
+cp codenarc/codenarc.css target/test-reports
+cd target/test-reports
+java -jar c:/dev/runtime/saxon9he.jar CodeNarc-Report.xml ../../codenarc/CheckStyle-like-report.xslt > CodeNarc-Sum-Report.html

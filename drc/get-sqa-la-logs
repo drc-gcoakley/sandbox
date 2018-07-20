@@ -1,0 +1,6 @@
+#!/bin/sh
+
+today=$(date +'%Y-%d-%m')
+sshi ${USER}@dcriatt006 "~/scripts/tar-iat-la-logs"
+scp -C ${USER}@dcriatt006:~/iat/triage/logs_${today}.tgz .
+

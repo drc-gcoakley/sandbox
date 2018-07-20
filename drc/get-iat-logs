@@ -1,0 +1,30 @@
+#!/bin/sh
+
+. ~/scripts/drc/set-iat-ssh-vars
+
+# Retrieve two days of logs.
+DAYS_PAST=${1:-2}
+if [ -n "$1" ]; then
+    echo "Retrieving logs for the past $DAYS_PAST days."
+fi
+
+for host in $SERVERS; do
+
+    LOCAL_DIR=/c/dev/wksp/temp/${CLIENT}_${ENV}_logs
+    LOCAL_LOG_DIR=${LOCAL_DIR}/$host/
+    REMOTE_DIR=/var/log/${CLIENT}_iat/
+
+    mkdir -p $LOCAL_LOG_DIR
+#    rm -f $LOCAL_LOG_DIR/*
+
+    REMOTE_FILES=$(ssh -qi ~/.ssh/drc_id_rsa $USER@$host "find ${REMOTE_DIR} -maxdepth 1 -type f -mtime -$DAYS_PAST | grep -v 'access_log\|verbose_gc' | tr '\n' ' '")
+
+    ssh -Cqi ~/.ssh/drc_id_rsa $USER@$host "sudo chmod ugo+r ${REMOTE_FILES}"
+
+    for file in $REMOTE_FILES; do
+        scp -Cpi ~/.ssh/drc_id_rsa $USER@$host:$file $LOCAL_LOG_DIR 2>&1 | tail -n +12
+    done
+
+    echo "Logs are in ${LOCAL_LOG_DIR}/."
+done
+

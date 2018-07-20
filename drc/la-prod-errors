@@ -1,0 +1,4 @@
+log=/c/temp/logs/iat-la-errors-$(date +'%Y-%m-%d').log
+prod-exec sudo "gunzip /var/log/la_iat/iat.log*.gz ; sudo grep 'RestClient.*millis\| ERROR \|Exception\|^\tat ' /var/log/la_iat/iat.log* | grep -v ' passage thinks it owns \|deprecated ItemSearchCommand' | grep -1 'ERROR \|Exception\|\tat '" 2>&1 > $log
+echo "Created log: $log"
+less $log
