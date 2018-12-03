@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SimpleFilter LastSave="2018-11-27T15:12:47.9286195-06:00" ExtensionVersion="2.6.2.0">
+<SimpleFilter LastSave="2018-12-03T10:09:19.3369483-06:00" ExtensionVersion="2.6.2.0">
   <Settings FiltersEnabled="true">
-    <slHosts>hipchat.com;</slHosts>
+    <slHosts>likeabosh.hipchat.com; roaming.officeapps.live.com; drc365-my.sharepoint.com; api.vstsusers.visualstudio.com; outlook.office.com; config.edge.skype.com; client-office365-tas.msedge.netautodiscover-s.outlook.com; autodiscover.datarecognitioncorp.com;</slHosts>
     <iFilterActions>1</iFilterActions>
     <iResponseType>0</iResponseType>
     <bHideSvcHost>false</bHideSvcHost>
@@ -12,7 +12,7 @@
     <bRequestURLFilter>false</bRequestURLFilter>
     <sRequestURLFilter />
     <bHideIfURLContains>true</bHideIfURLContains>
-    <sHideIfURLContains>.css .js .png .gif .jpg .svg .woff</sHideIfURLContains>
+    <sHideIfURLContains>.png .gif .jpg .svg .woff .ttf google.com/gen_204</sHideIfURLContains>
     <bHideRedirects>false</bHideRedirects>
     <bHideSuccess>false</bHideSuccess>
     <bHideNon2xx>false</bHideNon2xx>
