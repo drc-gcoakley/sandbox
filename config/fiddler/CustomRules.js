@@ -1,4 +1,4 @@
-import System;
+﻿import System;
 import System.Windows.Forms;
 import Fiddler;
 
@@ -160,7 +160,7 @@ class Handlers
 	static var httpToSREs = [];
 
 	static function httpToSLogIf(oSession: Session, message: String) {
-		if (oSession.uriContains('services?')) {
+		if (false) {
 			FiddlerObject.log(message);
 		}
 	}
@@ -173,7 +173,6 @@ class Handlers
 			
 			if (oSession.HTTPMethodIs("CONNECT") && ! url.EndsWith(':443')) {
 				var newUrl = url.replace(regex, 'https://' + site);
-				newUrl = newUrl.replace('http://' + site, 'https://' + site);
 				
 				if (newUrl.length != url.length) {
 					FiddlerObject.log('httpToS: Changing "http:" to "https:" of ' 
@@ -305,12 +304,21 @@ class Handlers
 	}
 
 	static function isRewritableRequest(oSession: Session) {
+		var hasContent = function(value) { 
+			return oSession.oResponse.headers.ExistsAndContains('Content-Type', value);
+		};		
 		var rewritable = (oSession.HTTPMethodIs("GET") || oSession.HTTPMethodIs("POST")) && 
-			! oSession.oResponse.headers.ExistsAndContains('Content-Type', 'image/') &&
-			! oSession.oResponse.headers.ExistsAndContains('Content-Type', 'application/x-') && 
-			! oSession.uriContains('.woff');
+			(	!oSession.oResponse.headers.Exists('Content-Type') || /* It's often missing. */
+				hasContent('html') || /* html, xhtml */
+				hasContent('text/css') || 
+				hasContent('application/json') || 
+				hasContent('script') || /* javascript, ecmascript, typescript */
+				hasContent('xml') /* multiple prefixes */
+			) &&
+			! oSession.uriContains('.woff'); /* For when the content-type is not set. */
+
 		httpToSLogIf(oSession, 
-			'httpToS: rewritable request: ' + oSession.fullUrl);
+			'httpToS: ' + (rewritable ? '' : 'NOT ') + 'rewritable request: ' + oSession.fullUrl);
 		return rewritable;
 	}
 
@@ -324,6 +332,8 @@ class Handlers
 				return true;
 			}
 		}
+		
+		httpToSLogIf(oSession, 'httpToS: non-matching URL: ' + oSession.fullUrl);
 		return false;
 	}
 			
@@ -342,12 +352,11 @@ class Handlers
 					newResponse = response = oSession.GetResponseBodyAsString();
 				}
 				newResponse = newResponse.replace(regex, 'https://' + site);
-				newResponse = newResponse.replace('http://' + site, 'https://' + site);
 			
 				if (newResponse.length != response.length) {
 					responseChanged = true;
-					FiddlerObject.log('httpToS: Changing "' + 
-						site + '" in response of ' + oSession.fullUrl);
+					FiddlerObject.log('httpToS: Changing http://' + 
+						site + ' to HTTPS in response of ' + oSession.fullUrl);
 				} else {
 					httpToSLogIf(oSession, 
 						'httpToS: Skipping. ' + regex + 
@@ -357,8 +366,6 @@ class Handlers
 						newResponse.Substring(0,255) : ''));
 				}
 			}
-		} else {
-			httpToSLogIf(oSession, 'httpToS: request does NOT match: ' + oSession.fullUrl);
 		}
 		if (responseChanged) {
 			oSession.utilSetResponseBody(newResponse);
@@ -587,3 +594,4 @@ class Handlers
 		}
 	}
 }
+
