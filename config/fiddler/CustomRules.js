@@ -148,41 +148,119 @@ class Handlers
 		UI.actUpdateInspector(true,true);
 	}
 
+	/** Glen's code to change HTTP protocol links to HTTPS to prevent browsers from not 
+		loading 'mixed [http and https] content' by loading everything useing HTTPS. 
+	**/
+	static class HttpToHttps {
 		
-	// Glen's httpToS*()
-	// Values of the properties in httpToSSites are initialized below in Main().
-	static var httpToSSites = [
-		'all-ecaresponsebuilderui-sqa.drcedirect.com',
-		'all-ecaregistrationservice-sqa.drcedirect.com', 
-		'all-ecascoringsimulationservice-sqa.drcedirect.com',
-		'web-td.drcedirect.com',
-		];
-	static var httpToSREs = [];
+		// Changes all links to the following sites to use HTTPS instead of HTTP. 
+		static var httpToSSites = [
+			'all-ecaresponsebuilderui-sqa.drcedirect.com',
+			'all-ecaregistrationservice-sqa.drcedirect.com', 
+			'all-ecascoringsimulationservice-sqa.drcedirect.com',
+			'web-td.drcedirect.com',
+			];
+		// Values of this are initialized in Main() by its call to HttpToHttps.init().
+		static var httpToSREs = [];
 
-	static function httpToSLogIf(oSession: Session, message: String) {
-		if (false) {
-			FiddlerObject.log(message);
-		}
-	}
-
-	static function httpToSURLs(oSession: Session) {
-		for (var i = 0; i < httpToSSites.length; ++i) {
-			var site = httpToSSites[i];
-			var regex = httpToSREs[i];
-			var url = oSession.fullUrl;
 			
-			if (oSession.HTTPMethodIs("CONNECT") && ! url.EndsWith(':443')) {
-				var newUrl = url.replace(regex, 'https://' + site);
+		static function init() {
+			// Create and cache the RegExp objects for each of the sites. 
+			for (var i = 0; i < httpToSSites.length; ++i) {
+				httpToSREs[i] = new RegExp('http://' + httpToSSites[i], 'ig');
+			}
+		}	
+		
+		// Used to log debugging details.
+		static function debug(oSession: Session, message: String) {
+			if (false) {
+				FiddlerObject.log('HttpToHttps: ' + message);
+			}
+		}
+
+		// This should not be needed if parsing of the content is all done correctly.
+		static function changeURLs(oSession: Session) {
+			for (var i = 0; i < httpToSSites.length; ++i) {
+				var site = httpToSSites[i];
+				var regex = httpToSREs[i];
+				var url = oSession.fullUrl;
+			
+				if (oSession.HTTPMethodIs("CONNECT") && ! url.EndsWith(':443')) {
+					var newUrl = url.replace(regex, 'https://' + site);
 				
-				if (newUrl.length != url.length) {
-					FiddlerObject.log('httpToS: Changing "http:" to "https:" of ' 
-						+ oSession.fullUrl);
+					if (newUrl.length != url.length) {
+						FiddlerObject.log('HttpToHttps: Changing "http:" to "https:" of ' 
+							+ oSession.fullUrl);
+					}
+					oSession.fullUrl = newUrl;
 				}
-				oSession.fullUrl = newUrl;
+			}
+		}
+		
+		static function isRewritableRequest(oSession: Session) {
+			var hasContent = function(value) { 
+					return oSession.oResponse.headers.ExistsAndContains('Content-Type', value);
+				};		
+			var rewritable = (oSession.HTTPMethodIs("GET") || oSession.HTTPMethodIs("POST")) && 
+				(	!oSession.oResponse.headers.Exists('Content-Type') || /* It's often missing. */
+				hasContent('html') || /* html, xhtml */
+				hasContent('text/css') || 
+				hasContent('application/json') || 
+				hasContent('script') || /* javascript, ecmascript, typescript */
+				hasContent('xml') /* multiple prefixes */
+				) &&
+				! oSession.uriContains('.woff'); /* For when the content-type is not set. */
+
+			debug(oSession, (rewritable ? '' : 'NOT ') + 'rewritable request: ' + oSession.fullUrl);
+			return rewritable;
+		}
+
+		static function isRewritableURL(oSession: Session) {
+			for (var i = 0; i < httpToSSites.length; ++i) {
+				var site = httpToSSites[i];
+				
+				if (oSession.uriContains(site)) {
+					debug(oSession, 'matching URL: ' + oSession.fullUrl);
+					return true;
+				}
+			}
+			debug(oSession, 'non-matching URL: ' + oSession.fullUrl);
+			return false;
+		}
+			
+		static function changeResponse(oSession: Session) {
+			var responseChanged = false;
+			var response = null, newResponse = null;
+
+			if (isRewritableRequest(oSession) && isRewritableURL(oSession)) {
+			
+				for (var i = 0; i < httpToSSites.length; ++i) {
+					var site = httpToSSites[i];
+					var regex = httpToSREs[i];
+				
+					if (! response) {
+						oSession.utilDecodeResponse();
+						newResponse = response = oSession.GetResponseBodyAsString();
+					}
+					newResponse = newResponse.replace(regex, 'https://' + site);
+			
+					if (newResponse.length != response.length) {
+						responseChanged = true;
+						FiddlerObject.log('HttpToHttps: Changing http://' + 
+							site + ' to HTTPS in response of ' + oSession.fullUrl);
+					} else {
+						debug(oSession, 
+							'Skipping. ' + regex + 
+							' was NOT found in response of ' + oSession.fullUrl);
+					}
+				}
+			}
+			if (responseChanged) {
+				oSession.utilSetResponseBody(newResponse);
 			}
 		}
 	}
-	
+			
 		
 	static function OnBeforeRequest(oSession: Session) {
 		// Sample Rule: Color ASPX requests in RED
@@ -258,7 +336,7 @@ class Handlers
 			oSession["ui-color"] = "brown";
 		}
 			
-		httpToSURLs(oSession);
+		HttpToHttps.changeURLs(oSession);
 	}
 
 		
@@ -307,82 +385,13 @@ class Handlers
 		}
 	}
 
-	static function isRewritableRequest(oSession: Session) {
-		var hasContent = function(value) { 
-			return oSession.oResponse.headers.ExistsAndContains('Content-Type', value);
-		};		
-		var rewritable = (oSession.HTTPMethodIs("GET") || oSession.HTTPMethodIs("POST")) && 
-			(	!oSession.oResponse.headers.Exists('Content-Type') || /* It's often missing. */
-				hasContent('html') || /* html, xhtml */
-				hasContent('text/css') || 
-				hasContent('application/json') || 
-				hasContent('script') || /* javascript, ecmascript, typescript */
-				hasContent('xml') /* multiple prefixes */
-			) &&
-			! oSession.uriContains('.woff'); /* For when the content-type is not set. */
-
-		httpToSLogIf(oSession, 
-			'httpToS: ' + (rewritable ? '' : 'NOT ') + 'rewritable request: ' + oSession.fullUrl);
-		return rewritable;
-	}
-
-	static function isRewritableURL(oSession: Session) {
-		for (var i = 0; i < httpToSSites.length; ++i) {
-			var site = httpToSSites[i];
-			var regex = httpToSREs[i];
-				
-			if (oSession.uriContains(site)) {
-				httpToSLogIf(oSession, 'httpToS: matching URL: ' + oSession.fullUrl);
-				return true;
-			}
-		}
-		
-		httpToSLogIf(oSession, 'httpToS: non-matching URL: ' + oSession.fullUrl);
-		return false;
-	}
-			
-	static function httpToSInResponse(oSession: Session) {
-		var responseChanged = false;
-		var response = null, newResponse = null;
-
-		if (isRewritableRequest(oSession) && isRewritableURL(oSession)) {
-			
-			for (var i = 0; i < httpToSSites.length; ++i) {
-				var site = httpToSSites[i];
-				var regex = httpToSREs[i];
-				
-				if (! response) {
-					oSession.utilDecodeResponse();
-					newResponse = response = oSession.GetResponseBodyAsString();
-				}
-				newResponse = newResponse.replace(regex, 'https://' + site);
-			
-				if (newResponse.length != response.length) {
-					responseChanged = true;
-					FiddlerObject.log('httpToS: Changing http://' + 
-						site + ' to HTTPS in response of ' + oSession.fullUrl);
-				} else {
-					httpToSLogIf(oSession, 
-						'httpToS: Skipping. ' + regex + 
-						' was NOT found in response of ' + oSession.fullUrl + 
-						(oSession.PathAndQuery.EndsWith('app-r.js') ? 
-						'\n=================================' + 
-						newResponse.Substring(0,255) : ''));
-				}
-			}
-		}
-		if (responseChanged) {
-			oSession.utilSetResponseBody(newResponse);
-		}
-	}
 	
-		
 	static function OnBeforeResponse(oSession: Session) {
 		if (m_Hide304s && oSession.responseCode == 304) {
 			oSession["ui-hide"] = "true";
 		}
 
-		httpToSInResponse(oSession);
+		HttpToHttps.changeResponse(oSession);
 	}
 
 			
@@ -440,13 +449,6 @@ class Handlers
     */
 
 			
-	static function httpToSInit() {
-		for (var i = 0; i < httpToSSites.length; ++i) {
-			httpToSREs[i] = new RegExp('http://' + httpToSSites[i], 'ig');
-		}
-	}
-		
-		
 	// The Main() function runs everytime your FiddlerScript compiles
 	static function Main() {
 		var today: Date = new Date();
@@ -458,7 +460,7 @@ class Handlers
 		// Uncomment to add a global hotkey (Win+G) that invokes the ExecAction method below...
 		// UI.RegisterCustomHotkey(HotkeyModifiers.Windows, Keys.G, "screenshot"); 
 
-		httpToSInit();
+		HttpToHttps.init();
 	}
 
 	// These static variables are used for simple breakpointing & other QuickExec rules 
@@ -598,6 +600,4 @@ class Handlers
 		}
 	}
 }
-
-
 
