@@ -1,0 +1,2 @@
+# /Applications/Google Chrome.app/Contents/MacOS/Google Chrome 
+open -n -a Google\ Chrome --args --user-data-dir=/tmp/Chrome_dev_session --disable-web-security $@

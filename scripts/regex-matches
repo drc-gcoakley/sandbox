@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# Tests a string, parameter #1, against a PERL regular expression, parameter #2.
+# Will return a standard shell exit code value to indicate if it matches, 0, or not, 1. 
+
+quiet=no
+if [ "$1" = "-q" ]; then
+   quiet=yes
+   shift
+fi
+ 
+text="$1"
+if [ -z "$2" ]; then
+  echo "Usage $(basename $0): <target text> <regex>"
+  exit -1
+fi
+
+regex="$2"
+if [ "$regex" != "$(echo $regex | tr -d /)" ]; then
+  regex=$(echo "$2" | sed -e 's;/;\\/;g')
+fi
+
+if [ "$quiet" = "yes" ]; then
+   perl -e "use v5.10; if ('${text}' =~ /${regex}/) {exit(0)} else {exit(1)}"
+else
+   perl -e "use v5.10; if ('${text}' =~ /${regex}/) {say 'matches'; exit(0)} else {say 'does not match'; exit(1)}"
+fi
+exit $?
+

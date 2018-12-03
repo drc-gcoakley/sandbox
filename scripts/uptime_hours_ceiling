@@ -1,0 +1,2 @@
+RAW_TIME=$(uptime | cut -d: -f1)
+echo $(( $JUST_HOURS / 24 + 1))

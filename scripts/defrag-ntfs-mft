@@ -1,0 +1,10 @@
+#!/bin/sh
+
+for f in \$Mft \$LogFile \$Volume \$AttrDef \$Bitmap \$Boot \$BadClus \$Secure \$UpCase \$Extend
+do
+    echo Processing $f
+    /c/dev/bin/sysinternals/contig $f
+done
+
+
+

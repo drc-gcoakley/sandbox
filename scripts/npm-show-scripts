@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ -n "$1" ]; then 
+  PKG_JSON=./package.json
+  PKG_JSON=$(echo $1 | sed -e 's|^/c/|c:/|g')
+  node -e "var json = require(\"${PKG_JSON}\"); console.log(json.scripts);"
+
+else
+  echo 'Executing: npm run'
+  npm run 
+fi
+

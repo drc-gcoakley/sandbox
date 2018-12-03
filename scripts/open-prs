@@ -1,0 +1,1 @@
+ruby ~/dev/github_api/open-prs-v4.rb $@

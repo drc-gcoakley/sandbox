@@ -1,0 +1,14 @@
+#!/bin/sh
+# Create a new branch.  Branches are cheap and easy, so this is a good way to try something out.
+
+LOCAL_BRANCH=$1
+REMOTE_BRANCH=$2
+shift 2
+
+if [ -z "$REMOTE_BRANCH" ]; then
+  echo "Usage: <new-local-branch> <remote-branch>"
+
+else
+  git branch $LOCAL_BRANCH $REMOTE_BRANCH $@
+fi
+

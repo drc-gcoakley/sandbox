@@ -1,0 +1,11 @@
+#!/bin/sh
+
+cd ~/dev/workspaces/3p_tools/pom-explorer
+
+# This first sudo command allows the password to be entered with the sudo command in the foreground.  
+# Then the second sudo commands does not request a password while it is in the background.
+sudo echo 'This locked out my TEN account. To continue enter the password for sudo at the prompt.'
+sudo java -Dmaven.wagon.http.preemptiveAuthentication=true -jar pom-explorer/target/pom-explorer.jar
+while [ -z "$(ps -aef | grep pom-explorer.jar)" ]; do sleep 1; done
+open http://localhost:90
+

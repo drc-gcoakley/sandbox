@@ -1,0 +1,1 @@
+/bin/ls -d */.git | sed -e 's;/.git;;g'

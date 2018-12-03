@@ -1,0 +1,4 @@
+mvn dependency:purge-local-repository \
+	-DreResolve=false -DsnapshotsOnly=true -Dverbose=true \
+	-Dincludes=com.thomsonreuters.grc.accelus: \
+	$@

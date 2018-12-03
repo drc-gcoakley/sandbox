@@ -1,0 +1,2 @@
+docker ps -a | awk '{print $1}' | grep ^[0-9a-z] | xargs docker rm
+# ? docker images -q | xargs docker rm

@@ -1,0 +1,47 @@
+#!/bin/sh
+
+GITHUB_USER='Glen-Coakley'
+UPSTREAM_NAME=Accelus
+MODULE_NAME=${1}
+
+if [ -n "${MODULE_NAME}" ]; then
+    
+    FORK_NAME=$GITHUB_USER
+    if [ -n "$2" ]; then 
+        FORK_NAME="$2"
+        UPSTREAM_NAME="$2"
+    fi
+    
+    GITHUB_HOST=github.complinet.com
+    HTTPS_HOST=https://$GITHUB_HOST
+    GIT_HOST=git@$GITHUB_HOST:$GITHUB_USER
+    GIT_MODULE=${MODULE_NAME}.git
+
+    git clone ${GIT_HOST}/${FORK_NAME}/${GIT_MODULE}
+    if [ ! -d "${MODULE_NAME}" ]; then
+        git clone ${HTTPS_HOST}/${FORK_NAME}/${GIT_MODULE}
+    fi
+
+    if [ ! -d "${MODULE_NAME}" ]; then
+        echo '===================================================='
+        echo "Checking out the ** $UPSTREAM_NAME ** main repository."
+        echo '===================================================='
+        git clone ${HTTPS_HOST}/$UPSTREAM_NAME/${GIT_MODULE}
+    fi
+
+    if [ -d "${MODULE_NAME}" ]; then
+        cd ${MODULE_NAME}
+        git remote add upstream ${HTTPS_HOST}/${UPSTREAM_NAME}/${GIT_MODULE}
+        git remote set-url --push upstream ''
+        git remote -v
+        #git branch --set-upstream-to=origin/integration integration 
+    else
+        echo 'Have you forked that respository?'
+    fi
+else
+    SELF=`basename $0`
+    echo "$SELF: <accelus-module-name> [fork or upstream name]"
+    echo "    alternatively"
+    echo "$SELF: <module-name> [parent path name]"
+fi
+

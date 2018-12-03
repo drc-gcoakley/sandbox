@@ -1,0 +1,4 @@
+#mvn org.apache.maven.plugins:maven-dependency-plugin:2.10:purge-local-repository \
+mvn dependency:purge-local-repository \
+	-DreResolve=false -DsnapshotsOnly=true -Dverbose=true \
+	-Dincludes=$@

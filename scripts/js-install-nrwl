@@ -1,0 +1,3 @@
+npm-inst-ngts @angular-devkit/core @angular-devkit/schematics @ngrx/schematics @nrwl/schematics \
+	@ngrx/effects @ngrx/router-store @ngrx/store @nrwl/nx ngrx-store-freeze $@
+

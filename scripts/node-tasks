@@ -1,0 +1,7 @@
+#!/bin/sh
+
+PKG_JSON=./package.json
+if [ -n "$1" ]; then 
+  PKG_JSON=$(echo $1 | sed -e 's|^/c/|c:/|g')
+fi
+node -e "var json = require(\"${PKG_JSON}\"); console.log(json.scripts);"

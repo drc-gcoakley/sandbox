@@ -1,0 +1,1 @@
+cat $@ | R -q -e 'x <- read.csv("stdin", header = F); summary(x); sd(x[ , 1])'

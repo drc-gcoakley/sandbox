@@ -1,0 +1,11 @@
+#!/bin/sh
+
+for d in `find . -type d -maxdepth 2 -print`; do 
+   cd $d; 
+   if [ -r pom.xml ]; then 
+      echo $d; 
+      mvn install; 
+      RC=$?; 
+   fi; 
+   cd $dwa/maven-platform; 
+done

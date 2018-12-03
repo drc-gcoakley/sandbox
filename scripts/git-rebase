@@ -1,0 +1,11 @@
+# http://notes.envato.com/developers/rebasing-merge-commits-in-git/
+
+# Retrieve all updates for all branches from the parent, remote repository.
+git fetch origin
+
+git stash --include-untracked
+
+#git rebase -p origin/master
+git rebase --preserve-merges HEAD^
+
+git stash pop

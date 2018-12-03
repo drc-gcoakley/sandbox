@@ -1,0 +1,5 @@
+ping -r 9 -n 2 $@
+tracert $@
+route print
+ipconfig /all
+

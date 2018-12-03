@@ -1,0 +1,13 @@
+#!/bin/sh
+
+cwd=`pwd`
+for d in `git-subdirs`; do
+   cd $cwd/$d
+   echo "In: $cwd/$d  Executing: $@"
+   $@
+
+   if [ $? -gt 0 ]; then
+      break;
+   fi
+done
+

@@ -1,0 +1,2 @@
+# Show all branches, highlighting the active one (for the current working tree).
+git branch --all $@

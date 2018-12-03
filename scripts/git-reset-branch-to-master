@@ -1,0 +1,13 @@
+# Set the name of the parent branch for the current workspace. 
+# This should not normally be needed.
+
+git config $@ branch.master.remote origin
+git config $@ branch.master.merge refs/heads/master
+
+# If you want this to be the default across all of your projects, including those you might work
+# on in the future, then add it as a global config setting:
+
+#git config --global branch.master.remote origin
+#git config --global branch.master.merge refs/heads/master
+
+echo "You may instead want to run: git checkout master"

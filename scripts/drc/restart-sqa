@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ssh -i /c/home/gcoakley/.ssh/drc_id_rsa -l gcoakley -c 'sudo systemctl restart la_iat'

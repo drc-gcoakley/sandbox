@@ -1,0 +1,2 @@
+# Show the current branch's commit ancestry graph.
+git show-branch $@

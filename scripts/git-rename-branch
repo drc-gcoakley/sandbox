@@ -1,0 +1,19 @@
+#!/bin/sh
+
+OLD_BRANCH=$1
+NEW_BRANCH=$2
+
+if [ -z "$NEW_BRANCH" ]; then 
+   echo "Usage: $0 <old branch name> <new branch name>"
+   echo "       Renames a git branch from 'old' to 'new'."
+else
+   # Rename branch locally
+   git branch -m $OLD_BRANCH $NEW_BRANCH
+
+   # Delete the old branch from 'origin'.
+   git push origin :$OLD_BRANCH
+
+   # Push the new branch name to 'origin'.
+   git push --set-upstream origin $NEW_BRANCH 
+fi
+
