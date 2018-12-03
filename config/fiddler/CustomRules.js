@@ -1,4 +1,4 @@
-﻿import System;
+import System;
 import System.Windows.Forms;
 import Fiddler;
 
@@ -173,7 +173,7 @@ class Handlers
 			
 			if (oSession.HTTPMethodIs("CONNECT") && ! url.EndsWith(':443')) {
 				var newUrl = url.replace(regex, 'https://' + site);
-				//newUrl = newUrl.replace('http://' + site, 'https://' + site);
+				newUrl = newUrl.replace('http://' + site, 'https://' + site);
 				
 				if (newUrl.length != url.length) {
 					FiddlerObject.log('httpToS: Changing "http:" to "https:" of ' 
@@ -305,18 +305,10 @@ class Handlers
 	}
 
 	static function isRewritableRequest(oSession: Session) {
-		var hasText = function(value) { 
-			return oSession.oResponse.headers.ExistsAndContains('Content-Type', value);
-		};		
-		var rewritable = (oSession.HTTPMethodIs("GET") || oSession.HTTPMethodIs("POST"))
-		rewritable &= hasText('html') || /* html, xhtml */
-			hasText('text/css') || 
-			hasText('application/json') || 
-			hasText('script') || /* javascript, ecmascript, typescript */
-			hasText('xml') /* multiple prefixes */
-			;
-		rewritable &= ! oSession.uriContains('.woff'); /* For when the content-type is not set. */
-
+		var rewritable = (oSession.HTTPMethodIs("GET") || oSession.HTTPMethodIs("POST")) && 
+			! oSession.oResponse.headers.ExistsAndContains('Content-Type', 'image/') &&
+			! oSession.oResponse.headers.ExistsAndContains('Content-Type', 'application/x-') && 
+			! oSession.uriContains('.woff');
 		httpToSLogIf(oSession, 
 			'httpToS: rewritable request: ' + oSession.fullUrl);
 		return rewritable;
@@ -350,7 +342,7 @@ class Handlers
 					newResponse = response = oSession.GetResponseBodyAsString();
 				}
 				newResponse = newResponse.replace(regex, 'https://' + site);
-				//newResponse = newResponse.replace('http://' + site, 'https://' + site);
+				newResponse = newResponse.replace('http://' + site, 'https://' + site);
 			
 				if (newResponse.length != response.length) {
 					responseChanged = true;
@@ -595,4 +587,3 @@ class Handlers
 		}
 	}
 }
-
