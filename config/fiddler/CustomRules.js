@@ -254,6 +254,10 @@ class Handlers
 			oSession["ui-backcolor"] = "Lavender";
 		}
 		
+		if(oSession.oRequest.headers.ExistsAndContains("Content-Type", "application/json")) {
+			oSession["ui-color"] = "brown";
+		}
+			
 		httpToSURLs(oSession);
 	}
 
@@ -594,4 +598,6 @@ class Handlers
 		}
 	}
 }
+
+
 
