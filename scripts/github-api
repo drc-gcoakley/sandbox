@@ -3,5 +3,5 @@
 # DO NOT COMMIT THIS WITH THE AUTH TOKEN. If you do github will notice and revoke the token.
 
 # Add -i if you need to see the headers.
-curl -H 'Authorization: token efd219198d11797692783040cc5b9b5171befb24' -H 'User-Agent: curl' https://api.github.com/$@
+curl -H "Authorization: token $(cat ~/scripts/github-api-OAuth-token.txt)" -H 'User-Agent: curl' https://api.github.com/$@
 
