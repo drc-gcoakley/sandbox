@@ -1,0 +1,16 @@
+#!/bin/bash
+
+PATH=~gcoakley/scripts:${PATH}
+
+COUNT=1
+SED_ARGS_FIND=''
+SED_ARGS_REPL=''
+
+for f in $@; do
+  SED_ARGS_FIND="${SED_ARGS_FIND}\(\"${f}\":\"[^\"]*\"\)"
+  SED_ARGS_REPL="${SED_ARGS_REPL}\\${COUNT}"
+  COUNT=[[ $COUNT + 1 ]]
+done
+
+echo_do sed -e "'s/.*${SED_ARGS_FIND}.*/${SED_ARGS_REPL}/g'"
+
