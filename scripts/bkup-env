@@ -1,14 +1,22 @@
 #!/bin/sh
 
-cd /c/dev/wksp/my_git_server/drc-gcoakley/sandbox
+cd /c/dev/config/intellij
+rm -rf idea.*/config/plugins/ruby
+rm -rf idea.*/config/system/{caches,index}
+
+cd /c/dev/wksp/my_git_server/glencoakley06/shell-env 
 cp -rupv /c/dev/config/ .
 cp -rupv /c/dev/cmd/ .
 cp -rupv $HOME/scripts/ .
 
-rm -rf config/intellij/idea.*/plugins/ruby/*
-rm -rf config/intellij/idea.*/plugins/system/{caches,index}/*
-
-git add config cmd scripts 2> /dev/null
+git add config cmd scripts 2> /dev/null | grep -v '^ create mode '
+echo "In glencoakley06."
 git commit -m "Snapshot of env on $(date)."
 git push
 
+
+cp -rup config cmd scripts /c/dev/wksp/my_git_server/drc-gcoakley/sandbox
+git add config cmd scripts 2> /dev/null
+echo "In drc-gcoakley."
+git commit -m "Snapshot of env on $(date)." | grep -v '^ create mode '
+git push
