@@ -1,0 +1,14 @@
+#!/bin/sh
+
+cd /c/dev/wksp/my_git_server/drc-gcoakley/sandbox
+cp -rupv /c/dev/config/ .
+cp -rupv /c/dev/cmd/ .
+cp -rupv $HOME/scripts/ .
+
+rm -rf config/intellij/idea.*/plugins/ruby/*
+rm -rf config/intellij/idea.*/plugins/system/{caches,index}/*
+
+git add config cmd scripts 2> /dev/null
+git commit -m "Snapshot of env on $(date)."
+git push
+

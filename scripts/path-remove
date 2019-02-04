@@ -1,0 +1,9 @@
+#!/bin/bash
+
+NEW_PATH="$PATH"
+for excl in "$@"; do
+  NEW_PATH=$(echo "$NEW_PATH" | sed -e "s|\([^:]*\)${excl}\([^:]*\)|:|ig")
+done
+NEW_PATH=$(echo "$NEW_PATH" | sed -e 's|::*|:|g')
+
+echo "$NEW_PATH"

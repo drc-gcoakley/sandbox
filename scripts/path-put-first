@@ -1,0 +1,25 @@
+#!/bin/bash
+
+echo THIS DOES NOT WORK YET.
+
+TO_ADD=$@
+NEW_PATH=''
+IFS=:
+for pe in "$PATH"; do 
+  match=0
+  for arg in $@; do 
+    if [[ "$arg" =~ "$pe" ]]; then 
+	  match=1
+	  break
+    fi
+  done
+  if [ "$match" != "1" ]; then 
+	if [ -z $NEW_PATH ]; then
+	  NEW_PATH="$pe"
+	else
+      NEW_PATH="$NEW_PATH:$pe"
+	fi
+  fi
+done
+echo "$TO_ADD:$NEW_PATH"
+

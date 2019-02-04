@@ -1,0 +1,70 @@
+PUT https://ideasweb-sqa.drcedirect.com/sqa.ideas/webservices/REST/1.0/iat.svc/items/LA/1014340
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNTQ4MjY1MzUzLCJleHAiOjE1NDgyNjcxNTMsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.0qWHUdvwCQ2Ec4kqEXkknbjiO8IYOIwaXgHufUNFXePPz3_jj_qgOKqM42cjacRryhnQPt-ZYg1uMo18S5Q2ZBlG4RDeP9vOrILJNYnkXxqZyhHl_iu4fr3j52iT1E96rvyQIBXXUaykKxHW4gtyiB63a5Osmg85DvVACqq5TlNOCrtklh0acVwQYQ5h1Lc-JdmDF3ucXBeDWrMIvc0LaZw0aO5q5VB65x69g1TU3tvJz2Xuhmi07vfRJGFmnv0S5p1-_VlG55w9DPqgYPwgoHx2suhPNR1gwVxffQR00w213VWXXKO7w1XwhRjoh1bSYjyZOvg8RVDjEQMWrqmqkw
+
+{
+    "iatStatus": "Pending",
+    "irlStatus": "Completed",
+    "itClientCode": "LA",
+    "itClientItemName": "",
+    "itClientXml": null,
+    "itContArea": "MATH",
+    "itCreateByUserId": "3884bb21-2dfb-47af-a82a-1c1024c80dfc",
+    "itCreateDate": "2018-11-20T12:25:48.403",
+    "itDepth": "",
+    "itDescription": "",
+    "itDifLevel": "L",
+    "itExtendedXml": "<PublishForm><rendering><stempercent \/><distractorrowspacing \/><distractorcolumnspacing \/><\/rendering><\/PublishForm>",
+    "itFocus": "",
+    "itGrade": "5",
+    "itItemID": 1014204,
+    "itItemImageXml": "<PublishForm><item workingmediatype=\"Online\" elemid=\"100\"> <prompt> <p>Represent x &gt; 2 on the number line below. <\/p> <\/prompt> <mediaspecificattributes nextelementid=\"103\" \/> <scoregroup id=\"scoregroup1\" elemid=\"101\"> <responsepage> <responsegroup id=\"responsegroup1\" elemid=\"102\"> <lineinput id=\"lineinput1\" elemid=\"103\" maxplotnumber=\"1\" xshowminorticks=\"true\" xshowmajorticks=\"true\" minortickpixels=\"70\" minortomajortickratio=\"1\" showorigin=\"false\" xscale=\"5\" xminrange=\"-10\" xmaxrange=\"10\" maxnumberlines=\"2\"> <lineinputoptions eraser=\"true\" undoredo=\"true\" closedpoint=\"true\" openpoint=\"true\" linesegment=\"true\" leftlineext=\"true\" rightlineext=\"true\" graphline=\"false\" /> <\/lineinput> <\/responsegroup> <\/responsepage> <\/scoregroup><\/item><\/PublishForm>",
+    "itKey": "",
+    "itLastUpdatedByUserId": "3884bb21-2dfb-47af-a82a-1c1024c80dfc",
+    "itPoints": "3",
+    "itProjectCode": "ELA842",
+    "itScoreLevel": "FullAuto",
+    "itSource": "",
+    "itSourceItemId": "",
+    "itStatus": "External",
+    "itType": "LGR",
+    "itUpdateDate": "2018-11-20T13:01:36.947",
+    "itVerMajor": "4",
+    "itVerMinor": "11",
+    "itVerVital": "3",
+    "layout": "VERTICAL",
+    "mostRecentObjectTimestamp": "2018-11-20T13:01:37.780",
+    "orientation": "VERTICAL",
+    "passage": "00000000-0000-0000-0000-000000000000",
+    "passageId": "0",
+    "passageSourceId": "",
+    "passageTitle": "",
+    "publishAdminId": "",
+    "publishDetails": "",
+    "publishStatus": "",
+    "standards": [
+        {
+            "set": "GLE",
+            "standard": "0.0.0.0.0"
+        }
+    ],
+    "configurations": null,
+    "graphics": null,
+    "history": null,
+    "notes": null,
+    "scoringSetup": {
+        "scoreLevel": "FullAuto",
+        "scoringStatus": "P"
+    }
+}
+
+###
+# Different environment URIs:
+#   GET https://ideasweb-sqa.drcedirect.com/sqa.ideas/webservices/REST/1.0/iat.svc
+#   GET https://ideasweb.drcedirect.com/ideas/webservices/REST/1.0/iat.svc
+#
+# Using Edirect:
+#   SQA: http://ideasdevapp01/test.ideas/webservices/REST/1.0/iat.svc
+#   Prod: http://dcwidap014/ideas/webservices/REST/1.0/iat.svc

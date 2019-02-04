@@ -1,0 +1,12 @@
+#!/bin/bash
+
+COUNTS='0'
+IFS=:
+for pe in $PATH; do 
+	cnt=$(/bin/ls -A1 "$pe" | wc -l)
+	COUNTS="$COUNTS + $cnt"
+	printf "%5d files in $pe/\n" $cnt
+done
+
+SUM=$(eval expr $COUNTS) # Use eval to remove the quoting of COUNTS.
+echo "Path executable hash entry count: $SUM."

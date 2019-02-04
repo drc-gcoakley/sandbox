@@ -1,0 +1,9 @@
+GET http://dcciatp-05ac12746b7d14c96/la/iatUtility/ping
+
+<> 2018-10-02T081442.200.json
+
+###
+# Note uses TLS/SSL
+GET https://la.drcedirect.com/la/iatUtility/ping
+# Note not TLS/SSL
+GET http://dcciatp-???/la/iatUtility/ping

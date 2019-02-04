@@ -1,0 +1,41 @@
+<application>
+  <component name="FindSettings">
+    <option name="customScope" value="Project Files" />
+    <option name="defaultScopeName" value="Project Files" />
+    <option name="localRegularExpressions" value="true" />
+    <option name="skipResultsWithOneUsage" value="true" />
+    <option name="SKIP_RESULTS_WHEN_ONE_USAGE" value="true" />
+    <option name="LOCAL_REGULAR_EXPRESSIONS" value="true" />
+    <option name="SEARCH_SCOPE" value="Project Files" />
+    <mask>*drag*drop*.js</mask>
+    <mask>*drag*drop*</mask>
+    <mask>*drag*drop*, look*.css</mask>
+    <mask>*drop*</mask>
+    <mask>*.css</mask>
+    <mask>*resources*.groovy</mask>
+    <mask>*.groovy</mask>
+    <mask>*TagLib*</mask>
+    <mask>iteration*.js</mask>
+    <mask>*number*,look*.css</mask>
+    <mask>*graph*, *number*, look*.css</mask>
+    <mask>*itemSeri*</mask>
+    <mask>*Spec.groovy</mask>
+    <mask>*hotspot*</mask>
+    <mask>*numberline*</mask>
+    <mask>RenderTagLib*</mask>
+    <mask>renderNumberLine*js</mask>
+    <mask>GraphUtil*, *number*</mask>
+    <mask>itemedit*.js</mask>
+    <mask>Item*</mask>
+    <mask>itemEdit*</mask>
+    <mask>*menu*</mask>
+    <mask>*..gsp</mask>
+    <mask>itemEdit*.js</mask>
+    <mask>*.js*</mask>
+    <mask>iteration*</mask>
+    <mask>allI*</mask>
+    <mask>*.js</mask>
+    <mask>*coord*</mask>
+    <mask>*.gsp</mask>
+  </component>
+</application>

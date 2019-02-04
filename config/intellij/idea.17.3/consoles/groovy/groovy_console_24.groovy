@@ -1,0 +1,1 @@
+println "P2345"[0].toLowerCase() == "p"

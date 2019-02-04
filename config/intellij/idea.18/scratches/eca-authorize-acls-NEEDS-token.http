@@ -1,0 +1,14 @@
+GET https://api-gateway-sqa.drcedirect.com/eca-security-service/all-sqa-v0/v0/authorize/eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNTMyNzI0NDQxLCJleHAiOjE1MzI3MjYyNDEsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.x8vJPqhyCirR7iKP3L-rV5dEDCF5vFEHE6oQBelFA2tJBsiDqOIFEbk3xcE8R9uWptJ_DMKXsHyzgf4j23tULVCZ_wWSS1sHUYol-k6ZjeoVYUr21v9IOnCss4zrjZBUeVDY3vC6UPAvKCWXf42dwqn1iyqHsmK1T8JwKMm82sP2862YMjmT-EvCRO4TzFIuPwIoVoPbsF_cMFWP5aoCqxPL6wWXkKC3jGqMIe5WBc3LeX6AepECw4bnSUsVe94uSrxaKJjmBFnBedstZzVglq0e2k3T2iyVcFtW_auLbtKvPoSdFKlv5o0B7Im6_l5OrFpGsFluK47vyKwG5FpHAg/acls
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-07-27T034800.200.json
+
+###
+Replace the TOKEN only in the URI (after '/authenticate/') with the ECA token value.
+Don't accidentally delete the trailing '/acls'.
+
+DEV		https://api-gateway-dev.drcedirect.com/eca-security-service/all-development-v0/
+SQA		https://api-gateway-sqa.drcedirect.com/eca-security-service/all-sqa-v0/
+PROD	https://api-gateway.drcedirect.com/eca-security-service/all-production-v0/

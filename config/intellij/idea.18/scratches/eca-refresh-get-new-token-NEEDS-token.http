@@ -1,0 +1,14 @@
+POST https://api-gateway.drcedirect.com/eca-security-service/all-production-v0/v0/refresh
+Accept: */*
+Content-Type: application/json
+
+{"token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNTM0MjczMjU4LCJleHAiOjE1MzQyNzUwNTgsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiJEQTU2QUEwQi03NTdFLTQ5MjUtOTU4NC0wOTVDQ0Y3MjA4REQifQ.XRIw8wf6xyD75NyxCrFvKoXWGVQoWaAlRk5uRU1bx6oOuptnKBYS8bVMvNlizZDLTJ770pZsyujlG-lAUV1i9ttu8m4TTRVXcCZoKRKBuT9wUAPgDBw74zkKV-_sMuX5MNBnrX8JJCQREghaeIT9ZcxU7YONPYOoBV-kOwcshRmoV019gEAGRrlMxU8TKqJhSE4PBuJm31Q4MKiSAPbNAJkcIJLurMGeFzFryWxuLHxhqJdlqZiOkK6-f9Hbko7xOgVXLafiWS3-vuCLu6_UhSZcaMtCUrPs6sj_NB0ORDy4n-78H9FjabK072eHJZOrNAI8WLHRXmxumEifaBYKcQ"}
+
+<> 2018-08-14T021341.200.json
+
+###
+Replace everything in the URI after 'token=' AND the value for 'token' in the POST data with the ECA token value.
+
+DEV		POST https://api-gateway-dev.drcedirect.com/eca-security-service/all-development-v0/
+SQA		POST https://api-gateway-sqa.drcedirect.com/eca-security-service/all-sqa-v0/
+PROD	POST https://api-gateway.drcedirect.com/eca-security-service/all-production-v0/

@@ -1,0 +1,82 @@
+POST https://ideasweb-sqa.drcedirect.com/sqa.ideas/webservices/REST/1.0/iat.svc/items/la
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+    "iatStatus": "Pending",
+    "irlStatus": "Completed",
+    "itClientCode": "LA",
+    "itClientItemName": "",
+    "itClientXml": "<PublishForm>\u000d\u000a  <clientdata>\u000d\u000a    <iat>\u000d\u000a      <source>MANUAL<\/source>\u000d\u000a      <approvedBy \/>\u000d\u000a      <dateApproved \/>\u000d\u000a      <uiDataMap>\u000d\u000a        <uiDataValue name=\"dragLocations\">177.273|323,415.636|323,654|323<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"colLabelsHeight\">61<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"maxDrops\">15<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"maxRows\">10<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"dragStringsWithBreaks\">answer1,this one&lt;br\/&gt;is 2 lines tall,hello<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"resuableDraggers\">false<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"dragIds\">1,2,3<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"colWidth\">235<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"maxLineHeight\">30<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"colLabelsWithBreaks\">col1,col2&lt;br\/&gt;is 3 lines&lt;br\/&gt;tall,col3<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"rowLabelPercentage\">20<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"rowCount\">3<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"rowLineHeightAdjusted\">2<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"colLabels\">col1,col2\u000d\u000ais 3 lines\u000d\u000atall,col3<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"rowLabelsWithBreaks\">row 1,row 2 is&lt;br\/&gt;2 lines tall,row 3&lt;br\/&gt;also 2 lines<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"dragStrings\">answer1,this one\u000d\u000ais 2 lines tall,hello<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"maxCols\">7<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"dropRegionIds\" \/>\u000d\u000a        <uiDataValue name=\"rowHeight\">76<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"dropRegionEntryCount\">1<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"dropRegionLocations\">177.27272033691406|60.9091796875,415.63633728027344|60.9091796875,653.9999847412109|60.9091796875,177.27272033691406|140.181884765625,415.63633728027344|140.181884765625,653.9999847412109|140.181884765625,177.27272033691406|219.45458984375,415.63633728027344|219.45458984375,653.9999847412109|219.45458984375<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"rowLineHeight\">4<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"colCount\">3<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"responseAreaHeight\">378<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"pointCutoffs\">0,3<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"rowLabelWidth\">176<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"dropRegionCorrectAnswers\">,,,1,,,,2,3<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"dropRegionMinWidth\">0<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"rowLabels\">row 1,row 2 is\u000d\u000a2 lines tall,row 3\u000d\u000aalso 2 lines<\/uiDataValue>\u000d\u000a      <\/uiDataMap>\u000d\u000a    <\/iat>\u000d\u000a  <\/clientdata>\u000d\u000a<\/PublishForm>",
+    "itContArea": "MATH",
+    "itCreateByUserId": "81517887-240c-4841-8361-0381a5f4d52c",
+    "itCreateDate": "2018-11-09T09:21:33.667",
+    "itDepth": "1",
+    "itDescription": "",
+    "itDifLevel": "L",
+    "itExtendedXml": "<PublishForm><rendering><stempercent \/><distractorrowspacing>20<\/distractorrowspacing><distractorcolumnspacing>26<\/distractorcolumnspacing><\/rendering><\/PublishForm>",
+    "itFocus": "",
+    "itGrade": "5",
+    "itItemImageXml": "<PublishForm><item>     <prompt>    <div class=\"iat-prompt-class\">Rob DND Item<\/div>  <\/prompt>  <mediaspecificattributes \/><scoregroup id=\"scoregroup1\" elemid=\"101\">    <responsepage>      <responsegroup id=\"responsegroup1\" elemid=\"102\">        <div>          <draganddropinput id=\"draganddropinput1\" borderstyle=\"box\" height=\"378\" width=\"960\" elemid=\"103\">            <dragentity id=\"dragentity1\" x=\"177\" y=\"329\" reusable=\"false\" elemid=\"104\">              <p>answer1<\/p>            <\/dragentity>            <dragentity id=\"dragentity2\" x=\"416\" y=\"329\" reusable=\"false\" elemid=\"105\">              <p>this one<break \/>is 2 lines tall<\/p>            <\/dragentity>            <dragentity id=\"dragentity3\" x=\"654\" y=\"329\" reusable=\"false\" elemid=\"106\">              <p>hello<\/p>            <\/dragentity>            <dragentity id=\"hiddendragger\" x=\"-1000\" y=\"-1000\" elemid=\"107\">              <div style=\"width:235px; height:2px;\" \/>            <\/dragentity>            <readonlyarea x=\"0\" y=\"0\">              <div style=\"width:176px; height:61px; margin:0; padding:0; float:left; display:flex; align-items:center; justify-content:center;\" \/>              <div style=\"width:237px; height:61px; margin:0; padding:0; float:left; display:flex; align-items:center; justify-content:center;\">                <span style=\"font-weight:bold; display:inline-block; text-align:center\">col1<\/span>              <\/div>              <div style=\"width:237px; height:61px; margin:0; padding:0; float:left; display:flex; align-items:center; justify-content:center;\">                <span style=\"font-weight:bold; display:inline-block; text-align:center\">col2<break \/>is 3 lines<break \/>tall<\/span>              <\/div>              <div style=\"width:237px; height:61px; margin:0; padding:0; float:left; display:flex; align-items:center; justify-content:center;\">                <span style=\"font-weight:bold; display:inline-block; text-align:center\">col3<\/span>              <\/div><break \/>              <div style=\"width:176px; height:78px; margin:0; padding:0; float:left; display:flex; align-items:center; justify-content:center;\">                <span style=\"font-weight:bold; display:inline-block; text-align:center\">row 1<\/span>              <\/div>              <div style=\"width:237px; height:78px; margin:0; padding:0; float:left; display:flex; align-items:center; justify-content:center;\" \/>              <div style=\"width:237px; height:78px; margin:0; padding:0; float:left; display:flex; align-items:center; justify-content:center;\" \/>              <div style=\"width:237px; height:78px; margin:0; padding:0; float:left; display:flex; align-items:center; justify-content:center;\" \/><break \/>              <div style=\"width:176px; height:78px; margin:0; padding:0; float:left; display:flex; align-items:center; justify-content:center;\">                <span style=\"font-weight:bold; display:inline-block; text-align:center\">row 2 is<break \/>2 lines tall<\/span>              <\/div>              <div style=\"width:237px; height:78px; margin:0; padding:0; float:left; display:flex; align-items:center; justify-content:center;\" \/>              <div style=\"width:237px; height:78px; margin:0; padding:0; float:left; display:flex; align-items:center; justify-content:center;\" \/>              <div style=\"width:237px; height:78px; margin:0; padding:0; float:left; display:flex; align-items:center; justify-content:center;\" \/><break \/>              <div style=\"width:176px; height:78px; margin:0; padding:0; float:left; display:flex; align-items:center; justify-content:center;\">                <span style=\"font-weight:bold; display:inline-block; text-align:center\">row 3<break \/>also 2 lines<\/span>              <\/div>              <div style=\"width:237px; height:78px; margin:0; padding:0; float:left; display:flex; align-items:center; justify-content:center;\" \/>              <div style=\"width:237px; height:78px; margin:0; padding:0; float:left; display:flex; align-items:center; justify-content:center;\" \/>              <div style=\"width:237px; height:78px; margin:0; padding:0; float:left; display:flex; align-items:center; justify-content:center;\" \/><break \/>            <\/readonlyarea>            <dropregion id=\"dropregion1\" x=\"177\" y=\"61\" rows=\"2\" columns=\"1\" maxentities=\"1\" borderstyle=\"box\" elemid=\"108\" \/>            <dropregion id=\"dropregion2\" x=\"416\" y=\"61\" rows=\"2\" columns=\"1\" maxentities=\"1\" borderstyle=\"box\" elemid=\"109\" \/>            <dropregion id=\"dropregion3\" x=\"654\" y=\"61\" rows=\"2\" columns=\"1\" maxentities=\"1\" borderstyle=\"box\" elemid=\"110\" \/>            <dropregion id=\"dropregion4\" x=\"177\" y=\"140\" rows=\"2\" columns=\"1\" maxentities=\"1\" borderstyle=\"box\" elemid=\"111\" \/>            <dropregion id=\"dropregion5\" x=\"416\" y=\"140\" rows=\"2\" columns=\"1\" maxentities=\"1\" borderstyle=\"box\" elemid=\"112\" \/>            <dropregion id=\"dropregion6\" x=\"654\" y=\"140\" rows=\"2\" columns=\"1\" maxentities=\"1\" borderstyle=\"box\" elemid=\"113\" \/>            <dropregion id=\"dropregion7\" x=\"177\" y=\"219\" rows=\"2\" columns=\"1\" maxentities=\"1\" borderstyle=\"box\" elemid=\"114\" \/>            <dropregion id=\"dropregion8\" x=\"416\" y=\"219\" rows=\"2\" columns=\"1\" maxentities=\"1\" borderstyle=\"box\" elemid=\"115\" \/>            <dropregion id=\"dropregion9\" x=\"654\" y=\"219\" rows=\"2\" columns=\"1\" maxentities=\"1\" borderstyle=\"box\" elemid=\"116\" \/>          <\/draganddropinput>        <\/div>      <\/responsegroup>    <\/responsepage>  <\/scoregroup><\/item><\/PublishForm>",
+    "itKey": "",
+    "itLastUpdatedByUserId": "81517887-240c-4841-8361-0381a5f4d52c",
+    "itPoints": "1",
+    "itProjectCode": "ELA842",
+    "itScoreLevel": "FullAuto",
+    "itSource": "IAT",
+    "itSourceItemId": "",
+    "itStatus": "External",
+    "itType": "DD",
+    "itUpdateDate": "2018-11-12T09:32:01.047",
+    "itVerMajor": "1",
+    "itVerMinor": "18",
+    "itVerVital": "8",
+    "layout": "VERTICAL",
+    "mostRecentObjectTimestamp": "2018-11-12T09:32:01.743",
+    "orientation": "VERTICAL",
+    "passage": "00000000-0000-0000-0000-000000000000",
+    "passageId": "0",
+    "passageSourceId": "",
+    "passageTitle": "",
+    "publishAdminId": "",
+    "publishDetails": "",
+    "publishStatus": "",
+    "standards": [
+        {
+            "set": "GLE",
+            "standard": "0.0.0.0.0"
+        }
+    ],
+    "configurations": [
+        {
+            "settingName": "Rulers",
+            "settingValue": "none"
+        },
+        {
+            "settingName": "Protractors",
+            "settingValue": "none"
+        },
+        {
+            "settingName": "Calculators",
+            "settingValue": "none"
+        }
+    ],
+    "graphics": null,
+    "history": null,
+    "notes": null,
+    "scoringSetup": {
+        "scoreLevel": "FullAuto",
+        "scoringStatus": ""
+    }
+}
+
+###
+Different environment URIs:
+GET https://ideasweb-sqa.drcedirect.com/sqa.ideas/webservices/REST/1.0/iat.svc
+GET https://ideasweb-sqa.drcedirect.com/sqa.ideas/webservices/REST/1.0/iat.svc
+GET https://ideasweb.drcedirect.com/ideas/webservices/REST/1.0/iat.svc
+
+Using Edirect:
+SQA: http://ideasdevapp01/test.ideas/webservices/REST/1.0/iat.svc
+Prod: http://dcwidap014/ideas/webservices/REST/1.0/iat.svc

@@ -1,0 +1,12 @@
+GET https://api-gateway-sqa.drcedirect.com/eca-security-service/all-sqa-v0/v0/authenticate/eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IklBVEVhZ2xlVXNlckBnbWFpbC5jb20iLCJpYXQiOjE1Mzg0MTI5NjUsImV4cCI6MTUzODQxNDc2NSwiaXNzIjoiZWNhLWRyYyIsInN1YiI6IkJDOUU4RTRGLUMyRDMtNDU1RS04MDNDLTlGQjY5RDc3QTZBQiJ9.MeE14Ijgn-H9NZg5oduFQi3n3L0GtRcjqdZvpVFLWHzPC_48MQ4q147sDCIf-5XeIaYSTm_GiSsDCKRtdORNT-rFMA-K4-af5tfZQDpIhetylYPDRAEUEpOOHowPNG4vap7M8Maf2qKXM7KantKCj5T-B3nn25bSw36z99eMeWvq5PPBICqbCU0J6XylRe22VOb8PaO48rfr43wQjcjBGSIgSb3u_5s9AhLypoZvrMYeZ2U-IdMcNgj5Ij3xAHdSGCUfgdvRWpbVV1zvxZf6hkCK6cNu5DlPe9jimed_4vQcIKaNY-ta6YRhy5y6FAXIOcihLlPNe_A6hYDE5iuu4A
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-01T115728.200.json
+<> 2018-07-27T030951.200.json
+<> 2018-07-11T011941.200.json
+<> 2018-07-11T085502.200.json
+<> 2018-07-11T085342.200.json
+
+###

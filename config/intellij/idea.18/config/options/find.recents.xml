@@ -1,0 +1,47 @@
+<application>
+  <component name="FindRecents">
+    <findStrings>
+      <find>status</find>
+      <find>@Secured(['ROLE_USER'])</find>
+      <find>ehcache</find>
+      <find>referen</find>
+      <find>ivy</find>
+      <find>grails-compat</find>
+      <find>GrailsAwareInjectionOperation</find>
+      <find>tooldict</find>
+      <find>toolset</find>
+      <find>m</find>
+      <find>protractortype</find>
+      <find>pagesize</find>
+      <find>toolsetDict</find>
+      <find>protractorindicator</find>
+      <find>altid</find>
+      <find>by</find>
+      <find>DEVELOPMENTq</find>
+      <find>case ToolType.</find>
+      <find>``</find>
+      <find>com.datarecognitioncorp.iat.type.</find>
+      <find>ETEST</find>
+      <find>LA</find>
+      <find>NE</find>
+      <find>program</find>
+      <find>development</find>
+      <find>DEVELOPMENT</find>
+      <find>inlist</find>
+      <find>TOOL_DESCRIPTIONS_TO_ETESTING_TAGS</find>
+      <find>tool</find>
+      <find>tools</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+      <replace>DecisionLog.logDecisionInfo(logger,</replace>
+      <replace>DecisionLog.logDecisionDebug(logger,</replace>
+      <replace>&quot;</replace>
+      <replace>1</replace>
+      <replace>case Tool.</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>C:\git\iat\iatapp\grails-app\views\error</dir>
+    </dirStrings>
+  </component>
+</application>
