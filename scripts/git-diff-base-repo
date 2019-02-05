@@ -1,0 +1,3 @@
+# Find changes on the parent branch since your branch was created.  Diff the base of the 
+# Workspace with the latest version of its parent(remote) branch.
+git diff $@ ORIG_HEAD HEAD^

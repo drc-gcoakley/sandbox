@@ -1,0 +1,3 @@
+#!/bin/sh
+
+/usr/bin/git $(echo $@ | sed -e 's;/cygdrive/c/home/gcoakley/.r10k/git/;;g')

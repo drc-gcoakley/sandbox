@@ -1,0 +1,5 @@
+# https://developer.github.com/v3/repos
+
+# Add -i if you need to see the headers.
+curl -H 'Authorization: token 863f6a27fc912b5937a1a3524198581a2ce84554' -H 'User-Agent: curl' https://api.github.com/$@
+

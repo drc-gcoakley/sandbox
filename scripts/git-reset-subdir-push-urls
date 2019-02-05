@@ -1,0 +1,17 @@
+#!/bin/sh
+
+cwd=`pwd`
+for d in `git-subdirs`; do 
+    echo "Resetting $d"
+    cd $cwd/$d
+
+    url="`git config --local --get remote.upstream.url`"
+    if [ -z "$url" ]; then
+    	url=https://github.complinet.com/Accelus/${d}.git
+    fi
+    git remote remove upstream
+    git remote add upstream "$url"
+    #git remote add upstream 
+    git remote set-url --push upstream ''
+done
+

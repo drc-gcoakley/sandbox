@@ -1,0 +1,10 @@
+#!/bin/sh
+
+rm -rf target/*classes
+
+workDir=$(grep -E 'work.dir' ~/.grails/settings.groovy)
+if [ -n "$workDir" ]; then 
+    rm -rf $workDir
+fi
+
+grails -offline clean-all

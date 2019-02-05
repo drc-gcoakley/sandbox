@@ -1,0 +1,11 @@
+GET https://api-gateway-dev.drcedirect.com/eca-security-service/all-development-v0/v0/group
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNTMxMTY5NDA0LCJleHAiOjE1MzExNzEyMDQsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.cX5CHaxrYSi_rUkxIAwo_cdf5GktNS3z58teV3S0gtkxru9n2eTy7E23tNFj6VJwTo_xiQXWijMFXaHqyMc8Go9HVQif3cGydYDAf3aHM2cAG-odyfQv8MI8Ys4qXVJ_WTRJpj790XTTuBRivJEplbsiZMQzc6W3ZEh1c4zD24sv1b1KAEvTpdTmrRdWhaVXX6V31j8-hIF87Cf-_mSDmseg3L1IVjOHTNpN0B8ZEXd7_v2ib_J83l-uwcoG0KwwqRGNzQynwnXeZ_jj0t51mm2dNYpIpDP-eUOAbFYz-1KnmeMcN1t3EQ1Vo7X7bzy82A5Y8IFFxXFP9QCdYzfJVA
+
+<> 2018-07-11T012849.200.json
+<> 2018-07-11T085448.200.json
+<> 2018-07-11T085342.200.json
+
+###

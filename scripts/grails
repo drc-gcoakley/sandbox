@@ -1,0 +1,2 @@
+#!/bin/sh
+/c/dev/bin/grails-2.4.5/bin/grails -Dhttps.protocols=TLSv1.2 $@

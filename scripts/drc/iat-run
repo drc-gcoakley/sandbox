@@ -1,0 +1,2 @@
+time grails --offline --reloading --plain-output --stacktrace  run-app -echoOut $@
+

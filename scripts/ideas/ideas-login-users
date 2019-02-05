@@ -1,0 +1,1 @@
+grep 'Error logging into Ideas. User will be logged out.' | sed -e 's/.*Response: //' | sort | uniq -c

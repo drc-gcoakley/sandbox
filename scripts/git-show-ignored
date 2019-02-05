@@ -1,0 +1,5 @@
+git status --ignored
+# or 
+#   git ls-files --others -i --exclude-standard
+# or 
+#   git ls-files --others -i --exclude-from=.git/info/exclud

@@ -1,0 +1,19 @@
+#!/bin/sh
+
+NPM="/C/Progra~1/nodejs/npm"
+
+function reset_registry() {
+  $NPM config set registry https://registry.npmjs.com
+}
+
+trap "reset_registry" 0 1 2 3 9 15
+
+cd /c/dev/runtime/npm_caching/npm_lazy/
+
+$NPM config set registry http://127.0.0.1:2222
+npm_lazy --config npm_lazy.config.js > npm_lazy.log 2>&1 &
+
+du -sh cache
+sleep 4
+tail -2 npm_lazy.log
+

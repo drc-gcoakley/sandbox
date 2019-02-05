@@ -1,0 +1,1 @@
+find . -name node_modules -prune -o \( -type d -name .idea \) -o \( -type f -name \*.iml -o -name \*.ipr -o -name \*.iws \)

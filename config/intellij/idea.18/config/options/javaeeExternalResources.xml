@@ -1,0 +1,7 @@
+<application>
+  <component name="ExternalResourceManagerImpl">
+    <resource url="http://ideas" location="C:/dev/doc/ideas.dtd" />
+    <resource url="http://ideasdevapp01/dev.ideas/xmleditor/xmetal/dtd/ideas.dtd" location="C:/dev/doc/ideas.dtd" />
+    <resource url="http://mathml" location="C:/dev/doc/mathml2.dtd" />
+  </component>
+</application>

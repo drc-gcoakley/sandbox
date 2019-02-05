@@ -1,0 +1,7 @@
+cat | while read id; do 
+    echo Retrieving $id
+    curl -LS http://ideasprod/ideas/webservices/REST/1.0/iat.svc/items/LA/$id | simple-json-formatter >item_$id.json
+done
+
+grep '"\(iatStatus\|itStatus\|publishStatus\|itType\)":' *.json
+

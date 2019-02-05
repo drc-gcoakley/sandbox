@@ -1,0 +1,4 @@
+# Show a summary of the commits and file changes on the parent branch that are not in the local 
+# repository.
+git fetch
+git log --stat HEAD..FETCH_HEAD

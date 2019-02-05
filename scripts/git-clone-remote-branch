@@ -1,0 +1,21 @@
+#!/bin/sh
+# Create a new branch and check it out.  
+#   Branches are cheap and easy, so this is a good way to try something out.
+
+LOCAL_BRANCH=$1
+DIRECTORY=$LOCAL_BRANCH
+shift
+
+if [ -z "$LOCAL_BRANCH" ]; then
+  echo "Usage: <new-local-branch>"
+
+else
+  REPO=`git config --get remote.origin.url`
+
+  if [ -n "$REPO" ]; then
+    # The --single-branch option is introduced in Git 1.7.10.
+    git clone --single-branch ${REPO}.git -b $LOCAL_BRANCH $DIRECTORY
+  else
+    echo "Cannot determine the remote repository."
+  fi
+fi

@@ -1,0 +1,3 @@
+# After a merge conflict occurs this will mark the workspaces files as having been manually 
+# merged--the conflicts have been resolved in the file.
+git update-index $@

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+ITEM_ID=$1
+
+if [ -n "$ITEM_ID" ]; then
+  # * is a timestamp in the form: YYYY_MM_DD_HHMMSS.
+  mkdir -p /c/tmp/master_item_pool
+  cp -p /cygdrive/p/Items/i${ITEM_ID}_*.json /c/tmp/master_item_pool/
+  ls -lt /c/tmp/master_item_pool/
+  /c/dev/bin/misc/Crypty &
+else
+  echo "Usage: <item_id>"
+fi
+

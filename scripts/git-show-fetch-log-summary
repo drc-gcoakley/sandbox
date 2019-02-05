@@ -1,0 +1,3 @@
+# Show a summary of the commits on the parent branch that are not in the local repository.
+git fetch
+git log --summary HEAD..FETCH_HEAD

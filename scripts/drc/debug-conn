@@ -1,0 +1,12 @@
+#!/bin/sh
+
+PATH=~gcoakley/scripts:$PATH
+clear
+
+echo_div_do "sudo netstat -pan | grep :80"
+echo_div_do "sudo nmap --iflist"
+echo_div_do "sudo nmap -P0 localhost | grep 80"
+echo_div_do "sudo nmap -P0 dccdvtd-091789fffeba36611 | grep 80"
+
+echo_div_do "sudo cat /etc/sysconfig/iptables"
+

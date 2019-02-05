@@ -1,0 +1,15 @@
+#!/bin/sh
+
+SERVERS=''
+while [ "$1" != "-exec" ]; do
+   SERVERS="$SERVERS $1"
+   shift
+done
+
+for host in $SERVERS
+do
+   echo "On host: $host"
+   # Could use $USER or $(id -un) but the case of the name is incorrect.
+   ssh -qi ~/.ssh/drc_id_rsa $USER@${host} $@
+done
+

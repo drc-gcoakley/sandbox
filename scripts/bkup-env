@@ -1,0 +1,29 @@
+#!/bin/sh
+
+cd /c/dev/config/intellij
+rm -rf idea.*/config/plugins/ruby
+rm -rf idea.*/config/system/{caches,index}
+
+cd /c/dev/wksp/my_git_server/glencoakley06/shell-env 
+cp -rup /c/dev/config/ .
+cp -rup /c/dev/cmd/ .
+cp -rup $HOME/scripts/ .
+
+rm -rf idea.*/config/plugins/ruby
+rm -rf idea.*/config/system/{caches,index}
+
+
+git add config cmd scripts 2> /dev/null | grep -v '^ create mode '
+echo "In glencoakley06."
+git commit -m "Snapshot of env on $(date)."
+git push
+
+cp -rup config cmd scripts /c/dev/wksp/my_git_server/drc-gcoakley/sandbox
+
+cd /c/dev/wksp/my_git_server/drc-gcoakley/sandbox
+rm -rf idea.*/config/plugins/ruby
+rm -rf idea.*/config/system/{caches,index}
+git add config cmd scripts 2> /dev/null
+echo "In drc-gcoakley."
+git commit -m "Snapshot of env on $(date)." | grep -v '^ create mode '
+git push

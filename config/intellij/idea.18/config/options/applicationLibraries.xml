@@ -1,0 +1,147 @@
+<application>
+  <component name="libraryTable">
+    <library name="grails-2.4">
+      <CLASSES>
+        <root url="file://C:/dev/runtime/intellij_lib/grails-2.4.5" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="http://docs.grails.org/2.4.5/guide/" />
+        <root url="jar://C:/dev/_downloads/grails-docs-2.4.5.zip!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="file://C:/dev/runtime/intellij_lib/grails-2.4.5" />
+        <root url="jar://C:/dev/_downloads/grails-docs-2.4.5.zip!/" />
+      </SOURCES>
+      <jarDirectory url="file://C:/dev/runtime/intellij_lib/grails-2.4.5" recursive="false" />
+      <jarDirectory url="file://C:/dev/runtime/intellij_lib/grails-2.4.5" recursive="false" type="SOURCES" />
+    </library>
+    <library name="groovy-2.3.3">
+      <CLASSES>
+        <root url="jar://C:/dev/bin/groovy-sdk-2.3.3/embeddable/groovy-all-2.3.3.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/doc/html/api" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/benchmark/bench" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/buildSrc/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/src/examples" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/src/main" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/src/tck/src" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/src/test" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/src/test-resources" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-ant/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-ant/src/test-resources" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-ant/src/test/groovy" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-bsf/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-bsf/src/spec/test" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-bsf/src/test/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-console/src/main/groovy" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-groovydoc/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-groovydoc/src/test/groovy" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-jmx/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-jmx/src/test/groovy" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-jmx/src/test/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-json/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-jsr223/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-jsr223/src/spec/test" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-jsr223/src/test/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-nio/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-servlet/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-servlet/src/test/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-sql/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-swing/src/main/groovy" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-swing/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-swing/src/test/groovy" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-templates/src/main/groovy" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-templates/src/test/groovy" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-templates/src/test/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-test/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-test/src/test/groovy" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-testng/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-xml/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.3/src/subprojects/groovy-xml/src/test/groovy" />
+      </SOURCES>
+    </library>
+    <library name="groovy-sdk-2.3.11">
+      <CLASSES>
+        <root url="jar://C:/dev/bin/groovy-sdk-2.3.11/embeddable/groovy-all-2.3.11.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/doc/html/api" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/benchmark/bench" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/buildSrc/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/src/examples" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/src/main" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/src/spec/test" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/src/tck/src" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/src/test" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/src/test-resources" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-ant/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-ant/src/test-resources" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-ant/src/test/groovy" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-bsf/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-bsf/src/spec/test" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-bsf/src/test/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-console/src/main/groovy" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-groovydoc/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-groovydoc/src/test/groovy" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-jmx/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-jmx/src/test/groovy" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-jmx/src/test/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-json/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-jsr223/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-jsr223/src/spec/test" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-jsr223/src/test/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-nio/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-servlet/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-servlet/src/test/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-sql/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-swing/src/main/groovy" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-swing/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-swing/src/test/groovy" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-templates/src/main/groovy" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-templates/src/test/groovy" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-templates/src/test/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-test/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-test/src/test/groovy" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-testng/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-xml/src/main/java" />
+        <root url="file://C:/dev/bin/groovy-sdk-2.3.11/src/subprojects/groovy-xml/src/test/groovy" />
+      </SOURCES>
+    </library>
+    <library name="intellij_lib">
+      <CLASSES>
+        <root url="file://C:/dev/runtime/intellij_lib" />
+        <root url="file://C:/dev/runtime/intellij_lib/grails-2.4.5" />
+        <root url="file://C:/dev/runtime/intellij_lib/spring-4.3.7" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="file://C:/dev/runtime/intellij_lib/grails-2.4.5" />
+      </SOURCES>
+      <jarDirectory url="file://C:/dev/runtime/intellij_lib" recursive="false" />
+      <jarDirectory url="file://C:/dev/runtime/intellij_lib/grails-2.4.5" recursive="false" />
+      <jarDirectory url="file://C:/dev/runtime/intellij_lib/spring-4.3.7" recursive="false" />
+      <jarDirectory url="file://C:/dev/runtime/intellij_lib/grails-2.4.5" recursive="false" type="SOURCES" />
+    </library>
+    <library name="spring-4.3">
+      <CLASSES>
+        <root url="file://C:/dev/runtime/intellij_lib/spring-4.3.7" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+      <jarDirectory url="file://C:/dev/runtime/intellij_lib/spring-4.3.7" recursive="false" />
+    </library>
+    <library name="tomcat-7">
+      <CLASSES>
+        <root url="file://C:/dev/bin/apache-tomcat-7.0.75/lib" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+      <jarDirectory url="file://C:/dev/bin/apache-tomcat-7.0.75/lib" recursive="false" />
+    </library>
+  </component>
+</application>

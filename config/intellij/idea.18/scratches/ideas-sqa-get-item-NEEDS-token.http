@@ -1,0 +1,19 @@
+GET https://ideasweb-sqa.drcedirect.com/sqa.ideas/webservices/REST/1.0/iat.svc/items/LA/570781
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNTQ2ODg0MzU2LCJleHAiOjE1NDY4ODYxNTYsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.gU0UVvZ33Lq5ikWow5gZMk05IhbKh4Dcp0GfYp1LNZul6c4w48ePn1umPLV1FFf3cmH_khmCLvLB9mVbIf3_CIfprhoVds5Y8LfhOxING8K3mCjcqWLyKQmpAtKtr_4M3-92FXqE4j7cDlx8rA5VD3x8Wagtrx_jEQUZzdVOZzAS3LCLvp2IXge90eLOdaygDP7HL5u4BmxUvqDk0DOi3dUn2X7Eb4cVymGp9Q1mZQr819I3tdZcBfUWYR8fQCzqjSOLV-CPx2U8NloVgg512pKR5qbtYYgoCmzahMTrOctEfSJN4nop98wgpqDcORXYzzzv7ZTdoAqO2NJuF_mxxA
+
+<> 2018-10-08T085109.200.json
+<> 2018-10-08T085021.403.json
+<> 2018-10-08T020219.200.json
+<> 2018-10-07T084114.200.json
+
+###
+# Different environment URIs:
+#   GET https://ideasweb-sqa.drcedirect.com/sqa.ideas/webservices/REST/1.0/iat.svc
+#   GET https://ideasweb.drcedirect.com/ideas/webservices/REST/1.0/iat.svc
+#
+# Using Edirect:
+#   SQA: http://ideasdevapp01/test.ideas/webservices/REST/1.0/iat.svc
+#   Prod: http://dcwidap014/ideas/webservices/REST/1.0/iat.svc

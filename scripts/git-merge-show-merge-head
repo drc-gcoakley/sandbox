@@ -1,0 +1,2 @@
+# When a merge conflict occurs this will show the workspace MERGE_HEAD version of the file.
+git show :3:$@

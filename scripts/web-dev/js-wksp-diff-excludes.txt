@@ -1,0 +1,7 @@
+.git
+node_modules
+apps
+libs
+package-lock.json
+yarn.lock
+

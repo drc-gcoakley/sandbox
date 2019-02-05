@@ -1,0 +1,11 @@
+#!/bin/sh
+
+FILESPEC=$1
+#git log --all --name-only --pretty=format: | sort -u | grep $FILESPEC
+
+git fetch --tags
+for branch in `git for-each-ref --format="%(refname)" refs/remotes/origin`; do
+  found=$(git ls-tree -r --name-only $branch | grep $FILESPEC)
+  if [ -n "$found" ]; then echo $branch : $found; fi
+done
+

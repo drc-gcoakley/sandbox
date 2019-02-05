@@ -1,0 +1,2 @@
+# Show the ID of where the current branch diverged from its anscestor.
+git show-branch --merge-base $@

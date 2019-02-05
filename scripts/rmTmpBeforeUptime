@@ -1,0 +1,17 @@
+#!/bin/bash
+
+export PATH=/c/dev/bin/cygwin64/bin:$PATH
+
+# Time since system startup (rounded up) in number-of-days needed for 'find' time-based arguments.
+#startTime=$(/c/dev/bin/pslist | grep ^System | awk -e '{printf "%s\n", (gensub(/^([0-9])+.*/, "\\1", "g", $8) + 1) / 24; }')
+
+startTime=$(uptime -p | sed -e 's/.* up \([0-9][0-9]*\) days.*/\1/g') 
+if [ "$(echo "$startTime" | grep -c '[ :]')" != "0" ]; then
+    startTime=0
+fi
+
+startTime=$((startTime + 1))
+echo "Deleting everything older then $startTime days. Removing:"
+gfind $TMP /c/tmp /c/Windows/Temp -maxdepth 1 -mtime +$startTime -print0 | xargs -0 rm -rf 
+gfind $TMP /c/tmp /c/Windows/Temp -name 'jansi-*' -print0 | xargs -0 rm -rf 
+

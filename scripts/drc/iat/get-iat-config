@@ -1,0 +1,22 @@
+#!/bin/sh
+
+. ~/scripts/drc/set-iat-ssh-vars
+
+for host in $SERVERS; do
+
+    LOCAL_DIR=/c/dev/wksp/save/iat-env-config/${ENV}_${CLIENT}
+    HOST_DIR=${LOCAL_DIR}/$host
+    REMOTE_DIR=/usr/share/iat_conf/${CLIENT}_iat
+
+    mkdir -p $HOST_DIR
+
+    scp -Cpi ~/.ssh/drc_id_rsa $USER@$host:${REMOTE_DIR}/* $HOST_DIR 2>&1 | tail -n +11
+    echo "Logs are in ${HOST_DIR}/."
+done
+
+ONE_APP_CFG_FILE=$(ls -1 $LOCAL_DIR/*/app-config.groovy | tail -1)
+if [ -n "$ONE_APP_CFG_FILE" ]; then
+    sed -e 's/^com.datarecognitioncorp.security.bypassable.*/com.datarecognitioncorp.security.bypassable = "enable"/' \
+        < $ONE_APP_CFG_FILE > $LOCAL_DIR/app-config.groovy
+fi
+

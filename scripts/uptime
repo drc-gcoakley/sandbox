@@ -1,0 +1,1 @@
+/c/dev/bin/pslist | grep ^System | awk -e '{printf "%s\n", $7}'

@@ -1,0 +1,5 @@
+
+cat /proc/version
+
+cat /etc/*-release
+

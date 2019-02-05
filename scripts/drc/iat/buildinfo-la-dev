@@ -1,0 +1,1 @@
+ping-la-dev | grep '^Server:\|^  "build\.date\|BUILD_NUMBER'

@@ -1,0 +1,19 @@
+GET https://api-gateway-dev.drcedirect.com/eca-security-service/all-development-v0/v0/authenticate/eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNTMxNzU4NzU3LCJleHAiOjE1MzE3NjA1NTcsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.jy8iUTrhJxDzoR1v6oVJRe3ZqQGvl8ZIss016K49q6IACTev4S6RpCNInly4Q4QPAeyTW8ifdUOii1sHm6-Of_iWDOytBiRxVBl_qRTGzgkDOm1ms6jyeqpT4WjuPPTwc2O-8UTJvirUdZc7Q9I6erbaDDEcoqQwXv7ebtiw1S0_SVOI4SXKlg2QP5v5Huye65v6iKDTFMXhQHb3HVB2rxR0C3fSv6JJ8w6Mb7wcBdZb7PW2yR5fHFrFCNf_Cx83OnD7kVrXopdLjeS0YFZrPOabAITN4qE2xUJW80eDJ7QosZZ9r44r6YNakWHKVHxSeXMoza8J33JNpwfAmngvNg
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-07-16T113305.200.json
+<> 2018-07-16T113212.200.json
+<> 2018-07-13T041757.200.json
+<> 2018-07-13T033810.200.json
+<> 2018-07-13T033447.200.json
+<> 2018-07-11T085502.200.json
+<> 2018-07-11T085342.200.json
+
+###
+Replace everything in the URI after '/authenticate/' with the ECA token value.
+
+DEV		https://api-gateway-dev.drcedirect.com/eca-security-service/all-development-v0/
+SQA		https://api-gateway-sqa.drcedirect.com/eca-security-service/all-sqa-v0/
+PROD	https://api-gateway.drcedirect.com/eca-security-service/all-production-v0/

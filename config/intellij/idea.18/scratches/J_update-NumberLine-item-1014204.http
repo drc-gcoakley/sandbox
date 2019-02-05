@@ -1,0 +1,81 @@
+PUT https://ideasweb-sqa.drcedirect.com/sqa.ideas/webservices/REST/1.0/iat.svc/items/LA/1014204
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNTQ4MjY3MjM4LCJleHAiOjE1NDgyNjkwMzgsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.XVg3kZZ5ZkgEfVy0P43BbwaglHh3IcZajWCGazUhWg3f1911AOsWeQyl2ufH7qllOhtLFLgFJIfP2e3q5T-Yi6DvronA_W1LTKrpVfgozoFmBaXF1of5GAl-kRXqeMqPj-eMhLr_JqU2vYEuIv3tHdBXTdk0-w3tE0_GCK20g4C8Ppt3B3iHbru_htXsWg_2kLBNe9VipfhNdxsBkCEmN8glAVmJJ2sQuTx7HNUmOOr1zB5us8dD_9FVM6ohO6oYz5ZSL9vhsyrYJzwfY45zYcREcpHuP7ilKYtYw_7Tr8IuPQPofTQrSIJTQ6cynClGVqT2GVSbp-JcEBA_-X0Esw
+
+{
+    "iatStatus": "Pending",
+    "irlStatus": "Completed",
+    "itClientCode": "LA",
+    "itClientItemName": "1014204",
+    "itClientXml": "<PublishForm>\u000d\u000a  <clientdata>\u000d\u000a    <iat>\u000d\u000a      <source>MANUAL<\/source>\u000d\u000a      <approvedBy \/>\u000d\u000a      <dateApproved \/>\u000d\u000a      <uiDataMap>\u000d\u000a        <uiDataValue name=\"answerType\">P<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"closedpoint\">true<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"dashedgraphline\">false<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"dashedlineext\">false<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"dashedlineseg\">false<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"eraser\">true<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"graphline\">false<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"id\">lineinput1<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"inputoptions_closedpoint\">true<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"inputoptions_dashedgraphline\">false<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"inputoptions_dashedlineext\">false<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"inputoptions_dashedlineseg\">false<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"inputoptions_eraser\">true<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"inputoptions_graphline\">false<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"inputoptions_leftlineext\">false<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"inputoptions_linesegment\">true<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"inputoptions_openpoint\">true<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"inputoptions_rightlineext\">false<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"inputoptions_shade\">false<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"inputoptions_solidgraphline\">false<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"inputoptions_solidlineext\">false<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"inputoptions_solidlineseg\">false<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"inputoptions_undoredo\">true<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"leftlineext\">false<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"lines\" \/>\u000d\u000a        <uiDataValue name=\"linesegment\">true<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"maxnumberlines\">1<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"maxplotnumber\">2<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"minortickpixels\">16<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"minortickseparation\">4<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"minortomajortickratio\">4<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"openpoint\">false<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"points\">C:1\/4^C:5\/4<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"rightlineext\">true<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"shade\">false<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"solidgraphline\">false<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"solidlineext\">false<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"solidlineseg\">false<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"svgPreviewBase\">data:image\/png;base64,iVBORw0KGgoAAAANSUhEUgAAAu4AAABGCAYAAACTzRFgAAASkklEQVR4Xu2deWxVxRfHDy4Y3LGIGAVxBTGxLhFJAKmitLgHQf4AXOJCgnuCuFGpFncScYGkQeICJCJIRGOxKFgFEtS4YCKGqogiUcGKCwbBhV\/OxIf91S7nvnfPPPr6meT9AZ3tfs6dM987d+6ZDoMGDdpRUlIiJAhAAAIQgAAEIAABCEBg1yRQW1srHSZNmrSjoqJi1+whvYIABCAAAQhAAAIQgAAE5J577kG4cx9AAAIQgAAEIAABCEBgVyeAcN\/VLUT\/IAABCEAAAhCAAAQgIMKKO3cBBCAAAQhAAAIQgAAE2gIBVtzbgpXoIwQgAAEIQAACEIBAuyeAcG\/3twAAIAABCEAAAhCAAATaAgGEe1uwEn2EAAQgAAEIQAACEGj3BBDu7f4WAAAEIAABCEAAAhCAQFsggHBvC1aijxCAAAQgAAEIQAAC7Z4Awr3d3wIAgAAEIAABCEAAAhBoCwQQ7m3BSvQRAhCAAAQgAAEIQKDdE0C4t\/tbAAAQgAAEIAABCEAAAm2BAMI9gZU+\/vhjOe+886SoqEg++uijBCXJ6kFg8uTJUlVVJUOGDJGZM2d6NEGdCQiUlpbK6tWrZcqUKTJy5MgEJcnqQaBz586h2s2bN3tUT50JCMydO1fGjx8vffr0kZqamgQlyepB4KqrrpLFixfL2LFjZeLEiR5NUGcCAieddJLU19fLq6++KieeeGKCku0zK8I9gd2XLFkiZ599tuy5556yffv2BCXJ6kFg+PDh8uKLL0pxcTEPUh6AE9bZtWtX2bRpk1RWVjIZJmTnkb1Dhw6h2h07dnhUT50JCOgiQ3l5uRx88MGycePGBCXJ6kFAheKqVavkkksukfnz53s0QZ0JCHTs2FH++OMPeeONN2Tw4MEJSrbPrAj3BHZHuCeAFSErwj0C5ARNINwTwIqQFeEeAbKxCYS7EVSkbAj3SKCNzSDcjaD+yRZFuK9bt04uuOAC6dKli7z55pvJemjMvWXLFtHXX\/vuu6\/btokZM2bItdde67qK9fnnn8tdd90lxxxzjNx3333Gq0+WTbf5PPDAA6LO64477khW2Jh7+fLl8sQTT8iAAQPkhhtuMJZKlk3rXrFihXTv3l2+\/vrrZIWNuXU1Zt68eTJixAjRBwWP9PTTT8trr70mV155pZSVlXk0EWyhNlFbKDePpGPvt99+k3Hjxsm0adM8mghjQ8eIjg0dIx7ppptuku+++04ee+wx6datm0cTwVepz9ItXsrNI3kL9xg+V+2g9lA7qD08Ugyfe91118n06dNln332CXb3SDF8rvop9Vfqp9RfeaQYPrdHjx6yfv166d+\/f\/CLHimGz9V5XOdzncd1PvdIMXzu7rvvLn\/\/\/be88MILYa71SDF8rvb7pZdeCrbo2bOnx2WEOl2Fuwp2beCZZ57ZeQFer21\/\/PHHsPdcfz\/88IMLsEceeUQmTJgQ6va6jnfffVdOP\/308Fu5cqXLdajzHTp0aPhVV1e7tDFnzhwZPXp0+M2aNculjcyqiT4Q6hYNj6T3b0VFRfhNmjTJo4kgTB5\/\/PHw83rIGTNmjMyePTv8Ro0a5XIde+21V9hCdtlll8mzzz7r0ka\/fv3knXfeCb++ffu6tHHcccfJZ599Fn5eDwd6z+qeTv0ddNBBLtfhLdxj+FwV1ccee2z41dXVuXCK4XMvv\/xyee6550RXFrdt2+ZyHTF8rorRG2+8Mfy8HqRi+FzdsqQ6wXObZQyfe+6558qiRYvCz2vRJ4bPzfgqnTd0\/vBIMXyuat4jjzwydP+KK64ImsFDwLsI99ra2jCo9cmjcfISvDEmEYS7fTjFmEQQ7nZ7xJhEEO52e8SYRBDuNnsg3G2cNBfC3c4qhs9FuNvtEcPnqnDXRb6GC1cXX3xxWJwrKSmxd7aVnKkKdxXqKthVuGs64IADRDutF5J5CkG4t2yRGJMIK+728RNj9YcVd7s9Yqz+sOJus0eMxRJW3G220FwxFksQ7nZ7INztrAplxT1zxU0JeBXuN998s1x00UV2MM3kTEW461YYrUg7mxHs2kH9HXjggeH\/CmH1hxV3+\/0WYxJhxd1ujxiTCCvudnvEWP0pBJ+LcLffUzF8LsLdbo8YPpcVd7s9Yvjcxr356aefZOrUqeH3888\/hz\/r1hldzNbtc9mmrIW7dkhX11W0ZwT7EUccETqkq+wZwZ7pWCFMIgh3+20WYxJBuNvtEWMSQbjb7RFjEikEn4twt99TMXwuwt1ujxg+F+Fut0cMn9tcb1Qvq1ZWAf\/VV1\/tFPC6D17fuDfWy61dVVbCXb9iPvXUU8NXwJo0KsLhhx\/eYgSGzPaZNPf5NLw4jQGqEUY0xrp+Ke6RNHLJ2rVrQ9Ve1\/HLL7\/IBx98IPvvv7+ccsopHpch+opbD5PSj+K8Djv4\/vvv5dNPP5VDDjlEjj\/+eJfreO+990IUkz322MMtUoo+lOpPn5I9PjJRMPoR5IYNG8KHkDqOPJLaQm2itlCbeKS33norfLTtaXMdGzpGdGzoGPFI+uHr1q1bwwfinTp18mgi+Cr1Weqr1Gd5pELwuWoHtYfaQe3hkWL43Mz404epQYMGeVxGGN\/ePvebb74JUZ0OO+yw8MGwR4rhczWSzJ9\/\/hmi\/Jx22mkelxFs4e1zdR7X+Vznca+P3GP43Iyv6t27t1skrxg+13IjaaQsvcd\/\/\/33kH233XaT999\/P1FUoKyEe8MvZy0dJQ8EIAABCEAAAhCAAAQg8P8Evvzyy0QLg1kLd92f8\/bbb+9sXWND6ylkzcUSPfPMM0Nerzjuumqim\/51FW7hwoUu98Xzzz8vVVVVrtehT+kaB1tXRjXur0fSD2Bvu+22sIL14IMPejQRTkDTWNvnnHOO3HnnnS5tXH311fLFF1+Ej6CbimCURqP6dbi+4tJXWrnsSWupL\/r6ecGCBSEU5LBhw9Lo9n\/quP\/+++X1118PcdD19F+PpLbWVawhQ4a4nQ+gY0PHiI4Nrzc5+opbVxY1dKauLHok9VXqs9RXeb05KASfq2+iNKSsvonyCisbw+dqvO3FixeHt4M6Dj1SDJ+rfkr9lfopr9C1MXyubufVPcdHH320PPXUUx7mkBg+9\/bbbw9vpB566CG38LgxfG7GV+n1lJaWutgjhs9treO6W0VPe294dsAZZ5wR5oEk22WyEu6ZziX5crYQ9luyx7212\/Lfv8fYb8ked7s9Yuy3ZI+73R4x9lsWgs9lj7v9norhc9njbrdHDJ\/LHne7PWL43OZ601LExWy24OYk3DOdtHw5WwiTCMLdPkhiTCIId7s9YkwiCHe7PWJMIoXgcxHu9nsqhs9FuNvtEcPnItzt9ojhcxv3xhJx0X4F\/+ZMRbg3FPDNfTmr0WY0Ece9ZTMRx91+GyPc7axiTCIId7s9YkwiCHebPWL4XE5OtdlCc8U4O4OTU+32iHF2RiHFcU8acdFuCSfh3rADKuBVrGdC32T+hnBHuGdzozZVBuFuJ4lwt7PiACYbKw5gsnHSXAh3OyuEu50VK+52VjEWS3QPu+7XV\/Guqbi4OJxnpN\/IpZlSXXFvqmMa5kcFvIaKY8W9ddPFWP3h5NTW7ZDJEWMS4eRUuz1irP4g3G32QLjbOCHc7ZxYcU\/GCuFu5xVDuGtvMqGjVfd6hQ13F+4ZrBqRpVu3bm4Xou3MmzdP9HX9hRdeaLdmgpxa\/6WXXhribv71118JStqz6mS4ZMkSKSoqkrPOOsteMEFOjSO6bNkyOfTQQ93in2vMe\/3aXQ\/l6tu3b4Le2bOWlZVJTU2NqNBas2aNvWCCnKtXr5ZPPvlETjjhBOnTp0+Ckvas+pSusdxPPvnkEMvdI+kDob790khCPXr08GhCOnfuHFYaJkyYEKIceKSlS5dKfX29DB482C1usT7Y\/vrrrzJ06NBwRoVHevnll2Xbtm0yYsQIj+pDnd5bZWL43C1btsiiRYtkv\/32Ex3vHimGz9UoXg8\/\/HCIHLF582aPy5AYPle\/Ofjwww9DDPfmIsjlenExfG6vXr2krq4uRDDR8e6RYvhcjU7y7bffysCBA93in8fwuRptSTXVK6+8Iueff76HOSSGz9WOZ859cbmIfyqNJtw9LyJW3SqoNZSeHpiyffv2WM3STjMEhg8fHkIr6esoFb+k\/BLo2rWrbNq0SSorK2XixIn57QytRxHuYLYRmDx5spSXl4vurd64caOtELncCGS2WWoI6\/nz57u1Q8U2Ah07dgwH0mlIU12UIbVMAOGe4A5BuCeAFSErwj0C5ARNINwTwIqQNcaKe4TLKIgmEO67lhkR7ruWPRDuyeyBcE\/AS7eYaEhI3RLAimICcE5Z9UGquro6bMUZOXKkUytUayWghyLpgVj6IZ4ewU3KL4GpU6eGDujHUaT8EtCj6fVgIT3wRw+0IeWXwNy5c0W3sugecVZ482sLbV0fbHUL2a233uq25Sf\/V5leDxDu6bGkJghAAAIQgAAEIAABCLgRQLi7oaViCEAAAhCAAAQgAAEIpEcA4Z4eS2qCAAQgAAEIQAACEICAGwGEuxtaKoYABCAAAQhAAAIQgEB6BBDu6bGkJghAAAIQgAAEIAABCLgRQLi7oaViCEAAAhCAAAQgAAEIpEcA4Z4eS2qCAAQgAAEIQAACEICAGwGEuxtaKoYABCAAAQhAAAIQgEB6BBDu6bGkJghAAAIQgAAEIAABCLgRQLjniHbNmjXh1M5p06ZJ\/\/79c6yN4lYCGe6rVq2Se++9V8rLy61FyedEoLKyUjZs2CCPPvqodOrUyakVqm2NQMOxUVxcLHpKZK9evVorxt+dCKxYsUIGDBgQah87dizjw4lz0mrr6+vl+uuvl4qKCsZHUngp5lc7jBo1SmpqakKts2fPDv8mNU8A4Z7D3dHQIS9fvhzhngPLJEUbO1wVjEcddRSDPQnEFPNu3bpVbrnlFqmqqkKYpMg1m6p0bEyfPl3Gjx8fHp50bKifmjNnjhQVFWVTJWVyIKAPUdXV1WF8ZMbJwIED8VU5ME2jaMYWK1eu5ME2DaA51LFw4ULp3bs3D08JGCLcE8BqKmvmaVFXfFlxzxGmsbiKkLVr1+5cZdfJUVdNnnzyScSJkaFHNrXLsmXLWFH0gGuss66uLoyBjEjHPxnBOWVT\/nvvvffON1A6RjSxougE3FitisUuXbqEOYMVdyM0h2w6PhYsWCDXXHONQ+2FWyXCPUfbMjHmCDCL4o1X2LFBFhAdiiDcHaDmWCXbAXIEmGJxffMxa9YsHmxTZJpNVWqHdevWSVlZGVtlsgGYYhl2LWQHE+GeHbedpRCNOQJMWDzzinPMmDE733A09X8JqyV7CgQQ7ilATLkKnRiXLl3KNyApc01SHVvJktDyzdtwhZeHWl\/WltrXr18v3bt3l8x3Of369ePB1gAO4W6A1FIWhHuOABMWR7gnBBYxO8I9ImxDUzpWpkyZIuPGjWMLmYGXd5bMXNGzZ0\/EiTfsZuqfMWOGDBs2LIwHhHuejNBMsyzA2e2BcDew0q0Zd999d8jZOEoDwt0AMMUsTX3ghQNOEXAOVSHcc4DnUJSPvhyg5lgl3+PkCDCH4g2jLTWuhkgmOYBNsWhmGxPfgLQMFeGe402HcM8RYBbF+Tg1C2gRiiDcI0A2NsEEaAQVOZuKx5kzZ4pOvIRMjQy\/UXMs+OSXf1Ot47dsNkG42zg1mwvhniPALIoTDjILaBGKINwjQDY00Xhfu76l0o8i9bsQxKIBoGMWQtc6wk1YNcI9ITDn7DzU2gEj3O2s\/pOz8as3XrflADNhUQ5gSgjMOXvD7WSlpaXEDXfm3Vz1+vA0evTo\/\/yZcybyY5DG9sAO+bFDU60i3PNvi4bzBoeT2e2BcLezIicEIAABCEAAAhCAAATyRgDhnjf0NAwBCEAAAhCAAAQgAAE7AYS7nRU5IQABCEAAAhCAAAQgkDcCCPe8oadhCEAAAhCAAAQgAAEI2Akg3O2syAkBCEAAAhCAAAQgAIG8EUC45w09DUMAAhCAAAQgAAEIQMBOAOFuZ0VOCEAAAhCAAAQgAAEI5I0Awj1v6GkYAhCAAAQgAAEIQAACdgIIdzsrckIAAhCAAAQgAAEIQCBvBBDueUNPwxCAAAQgAAEIQAACELATQLjbWZETAhCAAAQgAAEIQAACeSOAcM8behqGAAQgAAEIQAACEICAnQDC3c6KnBCAAAQgAAEIQAACEMgbAYR73tDTMAQgAAEIQAACEIAABOwEEO52VuSEAAQgAAEIQAACEIBA3ggg3POGnoYhAAEIQAACEIAABCBgJxCEe0lJyY6SkhJ7KXJCAAIQgAAEIAABCEAAAlEJ1NbWyv8AS4wHUM30eHYAAAAASUVORK5CYII=<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"svgPreviewKey\">data:image\/png;base64,iVBORw0KGgoAAAANSUhEUgAAAu4AAABGCAYAAACTzRFgAAAGYUlEQVR4Xu3cPWidZRgG4PvFUhIkCOqi0KFoMTZLJYmgiIs\/IIhrl+IkuBS0oIubg1NBXASFLg4BXQUR0dUOntOCSOrPYkF08WepYE21n3hwUBrzFU56zvf0XJnf8733dz0P4U4IafFFgAABAgQIECBAgMDgBdrgEwpIgAABAgQIECBAgEAUd0tAgAABAgQIECBAoICA4l5gSCISIECAAAECBAgQUNztAAECBAgQIECAAIECAop7gSGJSIAAAQIECBAgQEBxtwMECBAgQIAAAQIECggo7gWGJCIBAgQIECBAgAABxd0OECBAgAABAgQIECggoLgXGJKIBAgQIECAAAECBBR3O0CAAAECBAgQIECggIDiXmBIIhIgQIAAAQIECBBQ3O0AAQIECBAgQIAAgQICinuBIYlIgAABAgQIECBAQHG3AwQIECBAgAABAgQKCCjuBYYkIgECBAgQIECAAAHF3Q4QIECAAAECBAgQKCCguBcYkogECBAgQIAAAQIEFHc7QGA3gXGeS5eH03J3uvyQlrPZyBlYcxD4PLdmJy8nWU3LSpKLuSVbeSBn55DGlQQIECBAYG4Civvc6F08SIFvs5Sf8l5anrkmX5f3c2eO53AuDzL7zRhqnHuSfJjkyH9er8sfSU5mM2\/fjK\/tnQgQIECAwG4Ciru9IPBvgVHeSsvz\/4vS5c1s5iS0GQj8\/UPUz\/kiyb173PZ0NvLBDNK4ggABAgQIzF1AcZ\/7CAQYjMC53J8uF3rztBzNer7sPefAdALjvJTkdM9DLmYjh6e7yKcJECBAgEANAcW9xpyknIXAKM+m5Z3eq1pOZD1bveccmE5glHfTcrz3Icu5I2v5pfecAwQIECBAoLiA4l58gOLvo8Aop9Lyeu8TW05lPW\/0nnNgOoFRPk7L470POZD7cizf9J5zgAABAgQIFBdQ3IsPUPx9FBjnySQf9T6xyxPZzCe95xyYTmA8+eHohZ6HXMl6ltJydbrLfJoAAQIECAxfQHEf\/owknJXAV1nJpWyn5dAeV36f5axmLb\/OKtbC3nM+D+VqPk2y1\/eprWzkxMIaeXECBAgQWCgBxX2hxu1lewXGeSTd5E80lq452+VyDuQx\/z+8V3H\/DpzLK+ny2q4P7PJ1VrKZ1Vzavws9iQABAgQIDFdAcR\/ubCSbl8BnOZQ2+TONp9KynC6\/Tf6XeJcX82C+m1eshb33fB7Nnzmdls1\/fvv+Y5IzuS2v5kh+X1gXL06AAAECCyeguC\/cyL3wdQts52B2cjQHcyFr2bnuzzl4YwS2c3uu5K4cy\/aNucBTCRAgQIDAsAUU92HPRzoCBAgQIECAAAECEwHF3SIQIECAAAECBAgQKCCguBcYkogECBAgQIAAAQIEFHc7QIAAAQIECBAgQKCAgOJeYEgiEiBAgAABAgQIEFDc7QABAgQIECBAgACBAgKKe4EhiUiAAAECBAgQIEBAcbcDBAgQIECAAAECBAoIKO4FhiQiAQIECBAgQIAAAcXdDhAgQIAAAQIECBAoIKC4FxiSiAQIECBAgAABAgQUdztAgAABAgQIECBAoICA4l5gSCISIECAAAECBAgQUNztAAECBAgQIECAAIECAop7gSGJSIAAAQIECBAgQEBxtwMECBAgQIAAAQIECggo7gWGJCIBAgQIECBAgAABxd0OECBAgAABAgQIECggoLgXGJKIBAgQIECAAAECBBR3O0CAAAECBAgQIECggIDiXmBIIhIgQIAAAQIECBBQ3O0AAQIECBAgQIAAgQICinuBIYlIgAABAgQIECBAQHG3AwQIECBAgAABAgQKCCjuBYYkIgECBAgQIECAAAHF3Q4QIECAAAECBAgQKCCguBcYkogECBAgQIAAAQIEFHc7QIAAAQIECBAgQKCAgOJeYEgiEiBAgAABAgQIEFDc7QABAgQIECBAgACBAgKKe4EhiUiAAAECBAgQIEBAcbcDBAgQIECAAAECBAoIKO4FhiQiAQIECBAgQIAAAcXdDhAgQIAAAQIECBAoIKC4FxiSiAQIECBAgAABAgQUdztAgAABAgQIECBAoICA4l5gSCISIECAAAECBAgQUNztAAECBAgQIECAAIECAop7gSGJSIAAAQIECBAgQEBxtwMECBAgQIAAAQIECggo7gWGJCIBAgQIECBAgACBvwAZhWJHSsWsdwAAAABJRU5ErkJggg==<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"undoredo\">false<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"xlabelset\" \/>\u000d\u000a        <uiDataValue name=\"xmaxrange\">5<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"xminrange\">-1<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"xscale\">1<\/uiDataValue>\u000d\u000a      <\/uiDataMap>\u000d\u000a    <\/iat>\u000d\u000a  <\/clientdata>\u000d\u000a<\/PublishForm>",
+    "itContArea": "MATH",
+    "itCreateByUserId": "81517887-240c-4841-8361-0381a5f4d52c",
+    "itCreateDate": "2018-11-20T12:25:48.403",
+    "itDepth": "",
+    "itDescription": "",
+    "itDifLevel": "L",
+    "itExtendedXml": "<PublishForm><rendering><stempercent \/><distractorrowspacing \/><distractorcolumnspacing \/><\/rendering><\/PublishForm>",
+    "itFocus": "",
+    "itGrade": "5",
+    "itItemID": 1014204,
+    "itItemImageXml": "<PublishForm><item>     <prompt>    <div class=\"iat-prompt-class\"><p>Using lines and points represent x &gt; 2 on the number line below.<\/p><\/div>  <\/prompt>  <mediaspecificattributes \/><scoregroup id=\"scoregroup1\" elemid=\"101\">    <responsepage>      <responsegroup id=\"responsegroup1\" elemid=\"102\">        <lineinput id=\"lineinput1\" xlabelset=\"\" xshowminorticks=\"true\" xminrange=\"-1\" xmaxrange=\"5\" xscale=\"1\" minortickpixels=\"16\" minortomajortickratio=\"4\" maxnumberlines=\"1\" maxplotnumber=\"2\" elemid=\"103\">          <lineinputoptions closedpoint=\"true\" openpoint=\"true\" rightlineext=\"false\" leftlineext=\"false\" linesegment=\"true\" graphline=\"false\" eraser=\"true\" undoredo=\"true\" \/>        <\/lineinput>      <\/responsegroup>    <\/responsepage>  <\/scoregroup><\/item><\/PublishForm>",
+    "itKey": "",
+    "itLastUpdatedByUserId": "81517887-240c-4841-8361-0381a5f4d52c",
+    "itPoints": "1",
+    "itProjectCode": "ELA842",
+    "itScoreLevel": "FullAuto",
+    "itSource": "IAT",
+    "itSourceItemId": "",
+    "itStatus": "External",
+    "itType": "LGR",
+    "itUpdateDate": "2019-01-23T11:48:01.367",
+    "itVerMajor": "8",
+    "itVerMinor": "58",
+    "itVerVital": "12",
+    "layout": "VERTICAL",
+    "mostRecentObjectTimestamp": "2018-12-03T13:45:50.360",
+    "orientation": "VERTICAL",
+    "passage": "00000000-0000-0000-0000-000000000000",
+    "passageId": "0",
+    "passageSourceId": "",
+    "passageTitle": "",
+    "standards": [
+        {
+            "set": "GLE",
+            "standard": "0.0.0.0.0"
+        }
+    ],
+    "configurations": null,
+    "graphics": null,
+    "history": null,
+    "notes": null,
+    "scoringSetup": {
+        "scoreLevel": "FullAuto",
+        "scoringStatus": "C",
+		"inputs": [
+			{
+				"correctResponses": [
+					{
+						"value": "1"
+					},
+					{
+						"value": "2"
+					}
+				],
+				"id": "lineinput1"
+			}
+		],
+		"templateName": "lineInput"
+    }
+}
+
+###
+# Different environment URIs:
+#   GET https://ideasweb-sqa.drcedirect.com/sqa.ideas/webservices/REST/1.0/iat.svc
+#   GET https://ideasweb.drcedirect.com/ideas/webservices/REST/1.0/iat.svc
+#
+# Using Edirect:
+#   SQA: http://ideasdevapp01/test.ideas/webservices/REST/1.0/iat.svc
+#   Prod: http://dcwidap014/ideas/webservices/REST/1.0/iat.svc

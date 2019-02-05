@@ -1,0 +1,1 @@
+The <strong><code>Image()</code></strong> constructor creates a new <a href="/en-US/docs/Web/API/HTMLImageElement" title="The HTMLImageElement interface provides special properties and methods &#xA0;for manipulating the layout and presentation of &lt;img&gt; elements."><code>HTMLImageElement</code></a> instance.

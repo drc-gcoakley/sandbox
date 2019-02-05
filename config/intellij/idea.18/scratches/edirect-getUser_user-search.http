@@ -1,0 +1,13 @@
+GET https://web-sqa.drcedirect.com/la/Services/INFORM.svc/Getusers/510842/?adminCode=510842&role=&screencode=&firstName=Glen
+Authorization: 3Direct@1nf0rm
+Content-Type: application/json; charset=UTF-8
+
+<> 2018-07-31T032257.404.html
+<> 2018-07-31T032254.200.json
+<> 2018-07-31T030653.404.html
+<> 2018-07-31T030505.404.html
+
+###
+
+POST https://web-sqa.drcedirect.com/la/Services/INFORM.svc
+POST https://la.drcedirect.com/Services/INFORM.svc

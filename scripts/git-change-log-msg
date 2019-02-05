@@ -1,0 +1,2 @@
+# Edit the last commit message in an editor.
+git commit --amend $@

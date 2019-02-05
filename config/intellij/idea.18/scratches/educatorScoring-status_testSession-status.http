@@ -1,0 +1,9 @@
+POST http://dcwhsct001:8080/api/instancestatus
+Content-Type: application/json; charset=UTF-8
+
+{AdministrationId:"510842", TestSessions:["500173522"], ContentAreas:["IAT"]}
+
+<> 2018-07-19T035610.200.json
+<> 2018-07-19T035549.200.json
+
+###

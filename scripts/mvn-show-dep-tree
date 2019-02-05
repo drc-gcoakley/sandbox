@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ -n "`git config --local remote.origin.url`" ]; then 
+    mvn dependency:tree $@
+else
+    echo "Not in a git repository."
+fi

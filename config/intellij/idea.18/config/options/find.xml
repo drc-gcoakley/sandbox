@@ -1,0 +1,39 @@
+<application>
+  <component name="FindSettings">
+    <option name="customScope" value="All Places" />
+    <option name="defaultScopeName" value="All Places" />
+    <option name="SEARCH_SCOPE" value="All Places" />
+    <recentFileMasks>
+      <mask>*ervice.groovy</mask>
+      <mask>*rvice.groovy</mask>
+      <mask>*vice.groovy</mask>
+      <mask>*ice.groovy</mask>
+      <mask>*ce.groovy</mask>
+      <mask>*e.groovy</mask>
+      <mask>*F.groovy</mask>
+      <mask>*Form.groovy</mask>
+      <mask>*Form*.groovy</mask>
+      <mask>*Fm*.groovy</mask>
+      <mask>**.groovy</mask>
+      <mask>*I.groovy</mask>
+      <mask>*IS.groovy</mask>
+      <mask>*ISp.groovy</mask>
+      <mask>*ISpe.groovy</mask>
+      <mask>*ISpec.groovy</mask>
+      <mask>*ec.groovy</mask>
+      <mask>*c.groovy</mask>
+      <mask>*C.groovy</mask>
+      <mask>*Confi.groovy</mask>
+      <mask>*Config.groovy</mask>
+      <mask>*Config*.groovy</mask>
+      <mask>*onfig*.groovy</mask>
+      <mask>*onfig.groovy</mask>
+      <mask>*nfig.groovy</mask>
+      <mask>*fig.groovy</mask>
+      <mask>*g.groovy</mask>
+      <mask>*.groovy</mask>
+      <mask>*S.groovy</mask>
+      <mask>*Spec.groovy</mask>
+    </recentFileMasks>
+  </component>
+</application>

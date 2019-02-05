@@ -1,0 +1,4 @@
+set -x 
+JAVA_HOME=$(cygpath -u $JAVA_HOME)
+sh -x /c/dev/bin/json_logs/olv-1.4.7/olv.sh
+

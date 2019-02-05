@@ -1,0 +1,85 @@
+<application>
+  <component name="ConsoleFoldingSettings">
+    <option name="addedPositive">
+      <list>
+        <option value="(&lt;generated&gt;)" />
+        <option value="(Unknown Source)" />
+        <option value="at grails.plugin." />
+        <option value="at java.awt." />
+        <option value="at javax.servlet." />
+        <option value="at javax.swing." />
+        <option value="at junit." />
+        <option value="at org.apache." />
+        <option value="at org.eclipse." />
+        <option value="at org.grails." />
+        <option value="at org.jetbrains.plugins." />
+        <option value="at org.junit." />
+        <option value="at org.springframework." />
+        <option value="at org.springsource." />
+        <option value="EDirectTokenAuthentication:" />
+        <option value="Error |" />
+        <option value="home/keepAlive" />
+        <option value="IdGeneratorConfigurer is already registered and will be used" />
+        <option value="_da19f248-7792-4fc7-98e8-eb9323d90e78.png" />
+      </list>
+    </option>
+    <option name="addedNegative">
+      <list>
+        <option value="at org.junit.Assert." />
+      </list>
+    </option>
+    <option name="removedPositive">
+      <list>
+        <option value="at org.springframework.web.filter." />
+        <option value="at org.junit.platform." />
+        <option value="at junit.framework.Assert.assert" />
+        <option value="at org.junit.jupiter.api.AssertEquals.assertEquals(" />
+        <option value="at java.awt.Component.processMouseEvent(" />
+        <option value="at org.junit.jupiter." />
+        <option value="at org.junit.runners." />
+        <option value="at java.awt.Component.processEvent(" />
+        <option value="at javax.swing.plaf.basic.BasicComboPopup$Handler.mouseReleased(" />
+        <option value="at javax.swing.AbstractButton$Handler.actionPerformed(" />
+        <option value="at org.junit.Assert.failNotSame(" />
+        <option value="at javax.swing.DefaultButtonModel.setPressed(" />
+        <option value="at java.awt.Container.dispatchEventImpl(" />
+        <option value="at javax.swing.AbstractButton.fireActionPerformed(" />
+        <option value="at java.awt.EventQueue" />
+        <option value="at org.junit.runner.JUnitCore." />
+        <option value="at org.jetbrains.plugins.gradle." />
+        <option value="at javax.swing.JComponent.processMouseEvent(" />
+        <option value="at org.junit.jupiter.api.Assertions.assertEquals(" />
+        <option value="at java.awt.event.InvocationEvent.dispatch(" />
+        <option value="at java.awt.EventDispatchThread" />
+        <option value="at java.awt.EventQueue.dispatchEventImpl(" />
+        <option value="at junit.framework.Assert.failSame(" />
+        <option value="at junit.framework.TestResult" />
+        <option value="at junit.framework.Assert.fail(" />
+        <option value="at junit.framework.TestCase.run" />
+        <option value="at junit.framework.TestSuite.run" />
+        <option value="at org.springframework.web.method." />
+        <option value="at java.awt.Component.dispatchEventImpl(" />
+        <option value="at java.awt.Container.processEvent(" />
+        <option value="at org.junit.Assert.failSame(" />
+        <option value="at org.springframework.web.servlet." />
+        <option value="at org.junit.Assert.fail(" />
+        <option value="at org.junit.internal.runners." />
+        <option value="at java.awt.Window.dispatchEventImpl(" />
+        <option value="at org.eclipse.persistence.internal.jpa." />
+        <option value="at org.junit.jupiter.api.AssertionUtils.fail(" />
+        <option value="at java.awt.Component.dispatchEvent(" />
+        <option value="at org.junit.vintage." />
+        <option value="at org.junit.internal.ComparisonCriteria.arrayEquals(" />
+        <option value="at org.junit.Assert.assert" />
+        <option value="at javax.swing.plaf.basic.BasicMenuItemUI" />
+        <option value="at javax.swing.DefaultButtonModel.fireActionPerformed(" />
+        <option value="at org.junit.rules." />
+        <option value="at junit.framework.Assert.failNotSame(" />
+        <option value="at org.junit.Assert.internalArrayEquals(" />
+        <option value="at java.awt.LightweightDispatcher." />
+        <option value="at javax.swing.AbstractButton.doClick(" />
+        <option value="at org.junit.jupiter.api.AssertEquals.failNotEqual(" />
+      </list>
+    </option>
+  </component>
+</application>

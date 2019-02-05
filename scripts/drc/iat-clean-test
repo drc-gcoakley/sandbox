@@ -1,0 +1,2 @@
+rm -rf target/*classes ; grails compile ; iat-test -rerun unit:
+

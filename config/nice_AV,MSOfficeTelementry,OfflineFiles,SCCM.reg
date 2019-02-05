@@ -1,0 +1,21 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\mobsync.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000005
+"IoPriority"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MsMpEng.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000005
+"IoPriority"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\msoia.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000005
+"IoPriority"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\CcmExec.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000005
+"IoPriority"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SCNotification.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000005
+"IoPriority"=dword:00000000

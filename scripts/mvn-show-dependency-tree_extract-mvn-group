@@ -1,0 +1,5 @@
+# Extract just the groupID from maven's groupId:artifactId:versionId (GAV) locator
+sed -e 's/[^ ]* [^ ]* \([^:]*\):.*/\1/g'
+
+# This would extract maven's groupId:artifactId:versionId (GAV) from the output of the command: mvn dependency:tree
+# sed -e 's/[^ ]* [^ ]* \([^:]*\):\([^:]*\):\([^:]*\):.*/\1:\2:\3/g'

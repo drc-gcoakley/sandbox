@@ -1,0 +1,22 @@
+POST https://api-gateway.drcedirect.com/eca-security-service/all-production-v0/v0/authenticate?token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNTMyOTg0ODkyLCJleHAiOjE1MzI5ODY2OTIsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.LN__Is4B4JSGUn-RJSMaOVb7bdRl4OH4YligColckQWqgxgHc3rDAo5dhSmNBxC8906WKhk8SM9lNNPlygzyWZ-SmZ-oOPTW7-Che3buNClU5UuNAMPv6JZWr26mk812HcS4a7-0tGEeLUztrvb0ndhOoFthw-uOaXfjtEN_D6ONb6PHJbZrmMsVlBS1bc1SUpoZ3_nQCRGNsRWQPyROwdBdDvBJLSounffMOBPVBpabsxsnOOW5DcwGrrpDX7uHoCszv9G5FaKlq0-WAQZqxK8RZeqtJoEY8njW-4Zb-PF8BgRUwwPfrilTEYdI7ORK5gfjAKF_Om4rcaRN8jikfA
+Accept: */*
+Content-Type: application/json
+
+{token:"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNTMyOTg0ODkyLCJleHAiOjE1MzI5ODY2OTIsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.LN__Is4B4JSGUn-RJSMaOVb7bdRl4OH4YligColckQWqgxgHc3rDAo5dhSmNBxC8906WKhk8SM9lNNPlygzyWZ-SmZ-oOPTW7-Che3buNClU5UuNAMPv6JZWr26mk812HcS4a7-0tGEeLUztrvb0ndhOoFthw-uOaXfjtEN_D6ONb6PHJbZrmMsVlBS1bc1SUpoZ3_nQCRGNsRWQPyROwdBdDvBJLSounffMOBPVBpabsxsnOOW5DcwGrrpDX7uHoCszv9G5FaKlq0-WAQZqxK8RZeqtJoEY8njW-4Zb-PF8BgRUwwPfrilTEYdI7ORK5gfjAKF_Om4rcaRN8jikfA"}
+
+<> 2018-07-30T041427.400.txt
+<> 2018-07-30T041423.400.txt
+<> 2018-07-30T041405.400.txt
+<> 2018-07-30T041215.400.txt
+<> 2018-07-30T041150.400.txt
+<> 2018-07-30T041120.400.txt
+<> 2018-07-30T041102.400.txt
+<> 2018-07-13T052326.400.txt
+<> 2018-07-13T045237.400.txt
+
+###
+Replace everything in the URI after 'token=' AND the value for 'token' in the POST data with the ECA token value.
+
+DEV		POST https://api-gateway-dev.drcedirect.com/eca-security-service/all-development-v0/
+SQA		POST https://api-gateway-sqa.drcedirect.com/eca-security-service/all-sqa-v0/
+PROD	POST https://api-gateway.drcedirect.com/eca-security-service/all-production-v0/

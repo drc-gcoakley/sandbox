@@ -1,0 +1,20 @@
+#!/bin/sh
+
+if [ -z "$1" ]; then 
+  echo "Usage: $(basename $0) <text to find> [directory. default=.] [filespec. default is all files]"
+else
+
+  TEXT=$1
+  shift
+  DIR=$1
+  if [ -n "$2" ]; then
+    FILES="-name $@"
+    shift 2
+  else
+    FILES=''
+  fi
+
+  echo "Did you exclude the node_modules directory?"
+  find $DIR $@ $FILES | grep "$TEXT"
+fi
+

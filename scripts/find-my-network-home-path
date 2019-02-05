@@ -1,0 +1,1 @@
+find /c/*/gcoakley /c/dev/[cr]* /c/dev/wksp/*/.idea -type f -print0 | xargs -0 grep -i '\(Users\|bpwfs01\)[\\/]gcoakley\|z:'

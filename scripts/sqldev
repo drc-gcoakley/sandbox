@@ -1,0 +1,4 @@
+# This was added to the below script:
+#    export DYLD_LIBRARY_PATH=/usr/local/oracleinstantclient.x64-11.2.0.4.0
+/Applications/SQLDeveloper.app/Contents/MacOS/sqldeveloper.sh
+

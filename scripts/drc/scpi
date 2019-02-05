@@ -1,0 +1,1 @@
+scp -Ci ~/.ssh/drc_id_rsa $@

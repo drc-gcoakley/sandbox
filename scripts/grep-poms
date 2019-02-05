@@ -1,0 +1,2 @@
+echo 'Matches are above filenames.'
+find . -iname pom.xml -exec grep $@ {} \; -print

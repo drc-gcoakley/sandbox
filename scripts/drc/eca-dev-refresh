@@ -1,0 +1,4 @@
+#!/bin/sh
+
+token="$1"
+curl -i "https://api-gateway-dev.drcedirect.com/eca-security-service/all-development-v0/v0/refresh?token=$token" -X POST -H 'Content-Type: application/json' -H 'Accept: */*' --data '{"token": "'$token'" }'

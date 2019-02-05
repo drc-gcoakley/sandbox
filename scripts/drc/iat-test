@@ -1,0 +1,21 @@
+#!/bin/sh
+# Note -unit :unit and unit: all seem to be valid arguments to only run unit tests.
+# To rerun just the failed tests, add: -rerun
+
+CWD=$(pwd)
+if [ $(basename $CWD) != iatapp ]; then
+   ~/scripts/regex-matches -q "$CWD" "/c/dev/wksp/iat\b.*"
+   if [ $? -eq 0 ]; then
+      cd /c/dev/wksp/iat/iatapp
+   else
+      ~/scripts/regex-matches -q "$CWD" "/c/dev/wksp/iat-spare\b.*"
+      if [ $? -eq 0 ]; then
+         cd /c/dev/wksp/iat-spare/iatapp
+      fi
+   fi
+fi
+
+time grails --offline --plain-output --stacktrace  test-app -echoOut $@
+
+echo -e "\tView failed tests: file:///C:/dev/wksp/iat/iatapp/target/test-reports/html/failed.html"
+

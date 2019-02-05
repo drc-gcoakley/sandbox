@@ -1,0 +1,9 @@
+<application>
+  <component name="ExportableFileTemplateSettings">
+    <internal_templates>
+      <template name="TestMe with Groovy, JUnit4 &amp; Mockito.groovy" reformat="false" live-template-enabled="false" enabled="true" />
+      <template name="TestMe with Groovy, Spock &amp; Mockito.groovy" reformat="false" live-template-enabled="false" enabled="true" />
+      <template name="TestMe with JUnit4 &amp; Mockito.java" reformat="false" live-template-enabled="false" enabled="true" />
+    </internal_templates>
+  </component>
+</application>

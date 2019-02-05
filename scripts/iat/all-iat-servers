@@ -1,0 +1,1 @@
+echo $(dev-servers) $(sqa-servers) $(staging-servers) $(prod-servers) $(perf-servers)

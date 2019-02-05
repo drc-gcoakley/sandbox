@@ -1,0 +1,71 @@
+POST https://ideasweb-sqa.drcedirect.com/sqa.ideas/webservices/REST/1.0/iat.svc/items/LA
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNTQyNzQwODE5LCJleHAiOjE1NDM1Nzk2MTksImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.oV48F4MFsxoiPzdWYPQnM1R-Iax29zIvvdWv2rnnPAuSbIzLOgeGvQ_susaoChbPNla4n9dczFKmp2ts56PSwUwDGDZTjpKORpZ1RoNedTGpF6wm7Vmvz4B7euXhjJo4wSN4CGZihK-3mmQD1BDxKDV2fwO1ECYkYnq_tZblNA4yXg-hIVTGJoXfeoTAL7Vz8leGC2Om-LCyeHSsX7ZpDZkzISfrCqy8lNDvRYuALD2rOGYs47iBihHbUi_DXfderW2T14U83e0IHTq9rVUBxSqj2MtocdyTOPZ1Cas5i9fQ7peMDcrMOZbmteBL7-zC0zr370yPW8BBEiN0k1AOoQ
+
+{
+    "iatStatus": "Pending",
+    "irlStatus": "Completed",
+    "itClientCode": "LA",
+    "itClientItemName": "",
+    "itClientXml": null,
+    "itContArea": "MATH",
+    "itCreateByUserId": "3884bb21-2dfb-47af-a82a-1c1024c80dfc",
+    "itCreateDate": "2018-11-20T12:25:48.403",
+    "itDepth": "",
+    "itDescription": "",
+    "itDifLevel": "L",
+    "itExtendedXml": "<PublishForm><rendering><stempercent \/><distractorrowspacing \/><distractorcolumnspacing \/><\/rendering><\/PublishForm>",
+    "itFocus": "",
+    "itGrade": "5",
+    "itItemImageXml": "<PublishForm><item workingmediatype=\"Online\" elemid=\"100\">\u000d\u000a  <prompt>\u000d\u000a    <p>Represent x &gt; 2 on the number line below. <\/p>\u000d\u000a  <\/prompt>\u000d\u000a  <mediaspecificattributes nextelementid=\"103\" \/>\u000d\u000a  <scoregroup id=\"scoregroup1\" elemid=\"101\">\u000d\u000a    <responsepage>\u000d\u000a      <responsegroup id=\"responsegroup1\" elemid=\"102\">\u000d\u000a        <lineinput id=\"lineinput1\" elemid=\"103\" xmaxrange=\"12\"><\/lineinput>\u000d\u000a      <\/responsegroup>\u000d\u000a    <\/responsepage>\u000d\u000a  <\/scoregroup>\u000d\u000a<\/item><\/PublishForm>",
+    "itKey": "",
+    "itLastUpdatedByUserId": "3884bb21-2dfb-47af-a82a-1c1024c80dfc",
+    "itPoints": "3",
+    "itProjectCode": "ELA842",
+    "itScoreLevel": "FullAuto",
+    "itSource": "",
+    "itSourceItemId": "",
+    "itStatus": "External",
+    "itType": "LGR",
+    "itUpdateDate": "2018-11-20T13:01:36.947",
+    "itVerMajor": "4",
+    "itVerMinor": "11",
+    "itVerVital": "3",
+    "layout": "VERTICAL",
+    "mostRecentObjectTimestamp": "2018-11-20T13:01:37.780",
+    "orientation": "VERTICAL",
+    "passage": "00000000-0000-0000-0000-000000000000",
+    "passageId": "0",
+    "passageSourceId": "",
+    "passageTitle": "",
+    "publishAdminId": "",
+    "publishDetails": "",
+    "publishStatus": "",
+    "standards": [
+        {
+            "set": "GLE",
+            "standard": "0.0.0.0.0"
+        }
+    ],
+    "configurations": null,
+    "graphics": null,
+    "history": null,
+    "notes": null,
+    "scoringSetup": {
+        "scoreLevel": "FullAuto",
+        "scoringStatus": "P"
+    }
+}
+
+<> 2018-10-08T085641.404.html
+
+###
+# Different environment URIs:
+#   GET https://ideasweb-sqa.drcedirect.com/sqa.ideas/webservices/REST/1.0/iat.svc
+#   GET https://ideasweb.drcedirect.com/ideas/webservices/REST/1.0/iat.svc
+#
+# Using Edirect:
+#   SQA: http://ideasdevapp01/test.ideas/webservices/REST/1.0/iat.svc
+#   Prod: http://dcwidap014/ideas/webservices/REST/1.0/iat.svc

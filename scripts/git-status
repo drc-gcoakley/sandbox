@@ -1,0 +1,8 @@
+#!/bin/sh
+
+REMOTE=`git status | grep origin/ | cut -d "'" -f2 | cut -d "/" -f1`
+if [ -n "$REMOTE" ]; then
+  git remote -v | grep ^$REMOTE
+fi
+git status
+

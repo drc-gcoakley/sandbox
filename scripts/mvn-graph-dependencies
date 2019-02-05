@@ -1,0 +1,14 @@
+INCLUDES=com.domain.*,com.domain.*
+
+mvn org.kuali.maven.plugins:graph-maven-plugin:1.0.3:condensed \
+	-Dgraph.includes=$INCLUDES
+
+# graph.reports values from most output to least: TEST, RUNTIME, COMPILE, PACKAGE
+#    -TRANSITIVE can be appended to any of the above to include all transitive dependencies.
+mvn org.fusesource.mvnplugins:maven-graph-plugin:project -Dhide-external=false -Dhide-optional=true -Dhide-scope=test \
+	-Dincludes=com.domain.package.root* -Dinclude-group-ids=com.domain.package.root*
+#   -Dhide-transitive=true
+
+#mvn org.fusesource.mvnplugins:maven-graph-plugin:project -Dhide-external=false -Dhide-scope=test
+
+#ref: https://github.com/fusesource/mvnplugins/tree/master/maven-graph-plugin

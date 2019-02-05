@@ -1,0 +1,40 @@
+<application>
+  <component name="WindowManager">
+    <frame x="1" y="0" width="1156" height="690" />
+    <layout>
+      <window_info id="Designer" order="2" />
+      <window_info anchor="right" id="Palette" order="2" />
+      <window_info anchor="bottom" id="Spring" order="14" show_stripe_button="false" weight="0.32983682" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5344828" weight="0.19225967" />
+      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24965987" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="bottom" id="CodeNarc" order="5" weight="0.32886723" />
+      <window_info id="Favorites" order="5" sideWeight="0.5442177" side_tool="true" weight="0.15306123" />
+      <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.32896304" />
+      <window_info anchor="right" id="Dynamic Properties" order="7" weight="0.3297546" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.51836735" side_tool="true" weight="0.30586767" />
+      <window_info anchor="bottom" id="Statistic" order="4" weight="0.3152174" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3257143" />
+      <window_info anchor="right" x="444" y="222" width="568" height="334" id="Documentation" internal_type="FLOATING" order="0" type="FLOATING" />
+      <window_info anchor="bottom" content_ui="combo" id="Hierarchy" internal_type="SLIDING" order="17" sideWeight="0.49393415" type="SLIDING" weight="0.2596754" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" show_stripe_button="false" />
+      <window_info anchor="bottom" id="JProfiler" order="16" />
+      <window_info anchor="bottom" id="Grails Console" order="0" sideWeight="0.48163265" weight="0.23880596" />
+      <window_info anchor="bottom" auto_hide="true" id="Version Control" order="8" sideWeight="0.5796388" weight="0.3068783" />
+      <window_info anchor="right" id="Maven Projects" order="4" />
+      <window_info id="Project" order="0" sideWeight="0.45578232" weight="0.2454844" />
+      <window_info anchor="bottom" x="479" y="402" width="1369" height="223" id="Messages" order="9" sideWeight="0.5040816" visible="true" weight="0.2659176" />
+      <window_info anchor="right" id="Database" order="5" weight="0.24895397" />
+      <window_info anchor="bottom" id="Message" order="7" />
+      <window_info id="Web" order="3" sideWeight="0.5224242" side_tool="true" weight="0.20598978" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Structure" order="1" sideWeight="0.45697328" visible="true" weight="0.20032841" />
+      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
+      <window_info anchor="right" x="101" y="197" width="822" height="541" id="Coverage" internal_type="WINDOWED" order="8" sideWeight="0.50606585" side_tool="true" type="WINDOWED" weight="0.22205989" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49178982" weight="0.38432837" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.48911566" visible="true" weight="0.47201493" />
+    </layout>
+  </component>
+</application>

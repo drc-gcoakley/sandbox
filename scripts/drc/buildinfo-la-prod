@@ -1,0 +1,1 @@
+ping-la-prod | grep 'Server:\|build\.date\|BUILD_NUMBER'
