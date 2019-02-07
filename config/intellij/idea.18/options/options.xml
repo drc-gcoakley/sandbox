@@ -75,7 +75,7 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="true" />
     <property name="MoveClassWithTarget.OpenInEditor" value="false" />
-    <property name="PLUGIN_FILTER" value="http&#10;automatically&#10;grep console&#10;REST&#10;grep" />
+    <property name="PLUGIN_FILTER" value="ruby&#10;http&#10;automatically&#10;grep console&#10;REST" />
     <property name="ProjectStructure.TopLevelElements" value="0.1607306" />
     <property name="RESTClient.httpMethod" value="GET&#10;POST&#10;PUT&#10;PATCH&#10;DELETE&#10;HEAD&#10;OPTIONS" />
     <property name="RunConfigurable.dividerProportion" value="0.21734798" />
@@ -112,8 +112,8 @@
     <property name="evlsprt3.171" value="15" />
     <property name="evlsprt3.172" value="16" />
     <property name="evlsprt3.173" value="18" />
-    <property name="file.chooser.recent.files" value="C:/dev/wksp/iat/iatapp/test/unit/script/common/ideas/IdeasUtilSpec.groovy&#10;C:/dev/wksp/iat/iatapp/test/unit/com/datarecognitioncorp/iat/security/eca/EcaRequestSpec.groovy&#10;C:/dev/wksp/iat/iatapp/web-app/js/ckeditor/config.js&#10;C:/dev/wksp/iat/iatapp/web-app/js/ckeditor/plugins/ckeditor_wiris/plugin.js&#10;C:/dev/wksp/save/patch/Local_drive_(not_network)_build.patch&#10;C:/dev/wksp/save/patch&#10;C:/dev/wksp/temp/patch/2019-01-23_before_rebase.patch&#10;C:/dev/wksp/temp/patch&#10;C:/dev/config/intellij/idea.18/scratches/example_output&#10;C:/dev/wksp/my_git_server/drc-gcoakley/sandbox&#10;C:/dev/bin/jdk1.8.0_31&#10;C:/dev/wksp/temp/patch/DnD-Fixes_multi-line_row_labels_(issue#43)__Adds_borders_to_drop_regions__Accepts_decimal_loca.patch&#10;C:/dev/temp/iat_issues/HotSpot/HotSpot content loads.txt&#10;C:/!!!!!2112583099/ZZZZZ844763129.sql&#10;C:/dev/wksp/iat/temp/hotSpot_Sep.24_at_9.52am.patch&#10;C:/dev/wksp/iat/temp&#10;C:/Windows/Media/Windows Default.wav&#10;C:/Windows/Media/Windows Feed Discovered.wav&#10;C:/Windows/Media/Windows Balloon.wav&#10;C:/Windows/Media/Windows Ding.wav&#10;C:/Windows/Media/Windows Error.wav&#10;C:/Windows/Media/Windows Navigation Start.wav&#10;C:/Windows/Media/Windows Pop-up Blocked.wav&#10;C:/Windows/Media/Windows Notify.wav&#10;C:/Windows/Media/Windows Critical Stop.wav&#10;C:/Windows/Media/Afternoon/Windows Critical Stop.wav&#10;C:/dev/wksp/iat/Saved_IAT_Config/IAT_Config.iml&#10;C:/dev/wksp/iat/config/local/local config.iml&#10;C:/dev/bin/jdk1.7.0_71&#10;C:/dev/wksp/iat/config" />
-    <property name="file.gist.reindex.count" value="225796" />
+    <property name="file.chooser.recent.files" value="C:/dev/wksp/my_git_server/drc-gcoakley/sandbox&#10;C:/dev/wksp/iat/iatapp/test/unit/script/common/ideas/IdeasUtilSpec.groovy&#10;C:/dev/wksp/iat/iatapp/test/unit/com/datarecognitioncorp/iat/security/eca/EcaRequestSpec.groovy&#10;C:/dev/wksp/iat/iatapp/web-app/js/ckeditor/config.js&#10;C:/dev/wksp/iat/iatapp/web-app/js/ckeditor/plugins/ckeditor_wiris/plugin.js&#10;C:/dev/wksp/save/patch/Local_drive_(not_network)_build.patch&#10;C:/dev/wksp/save/patch&#10;C:/dev/wksp/temp/patch/2019-01-23_before_rebase.patch&#10;C:/dev/wksp/temp/patch&#10;C:/dev/config/intellij/idea.18/scratches/example_output&#10;C:/dev/bin/jdk1.8.0_31&#10;C:/dev/wksp/temp/patch/DnD-Fixes_multi-line_row_labels_(issue#43)__Adds_borders_to_drop_regions__Accepts_decimal_loca.patch&#10;C:/dev/temp/iat_issues/HotSpot/HotSpot content loads.txt&#10;C:/!!!!!2112583099/ZZZZZ844763129.sql&#10;C:/dev/wksp/iat/temp/hotSpot_Sep.24_at_9.52am.patch&#10;C:/dev/wksp/iat/temp&#10;C:/Windows/Media/Windows Default.wav&#10;C:/Windows/Media/Windows Feed Discovered.wav&#10;C:/Windows/Media/Windows Balloon.wav&#10;C:/Windows/Media/Windows Ding.wav&#10;C:/Windows/Media/Windows Error.wav&#10;C:/Windows/Media/Windows Navigation Start.wav&#10;C:/Windows/Media/Windows Pop-up Blocked.wav&#10;C:/Windows/Media/Windows Notify.wav&#10;C:/Windows/Media/Windows Critical Stop.wav&#10;C:/Windows/Media/Afternoon/Windows Critical Stop.wav&#10;C:/dev/wksp/iat/Saved_IAT_Config/IAT_Config.iml&#10;C:/dev/wksp/iat/config/local/local config.iml&#10;C:/dev/bin/jdk1.7.0_71&#10;C:/dev/wksp/iat/config" />
+    <property name="file.gist.reindex.count" value="225799" />
     <property name="fileTypeChangedCounter" value="8" />
     <property name="find.popup.splitter" value="0.4017699" />
     <property name="gradle.runner.text.console_str" value="false" />
@@ -144,7 +144,6 @@
     <property name="lastTip" value="70" />
     <property name="log.debug.categories" value="" />
     <property name="markdown.do.not.ask.to.change.preview.provider" value="true" />
-    <property name="power.save.mode" value="true" />
     <property name="project.wizard.group" value="WEB_MODULE" />
     <property name="project.wizard.template" value="Static Web" />
     <property name="selected.color.option.type" value="LINE_NUMBERS_COLOR" />

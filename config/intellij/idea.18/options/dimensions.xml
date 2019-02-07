@@ -226,7 +226,7 @@
     <location key="WELCOME_SCREEN.0.0.1280.768" x="642" y="336" />
     <location key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2.0.0.1920.1080" x="220" y="248" />
     <location key="#com.intellij.ide.util.TreeClassChooserDialog.0.0.1920.1080" x="856" y="303" />
-    <location key="find.popup.0.0.1920.1080" x="338" y="0" />
+    <location key="find.popup.0.0.1920.1080" x="430" y="71" />
     <location key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog.0.0.1920.1080" x="867" y="321" />
     <location key="Git.Force.Push.Protected.Branches.0.0.1920.1080" x="830" y="375" />
     <location key="ProcessPopupWindow.0.0.3840.2160" x="2665" y="1764" />
@@ -596,10 +596,10 @@
     <size key="GridCell.Tab.3.bottom.0.0.1280.1024" width="1180" height="301" />
     <size key="DebuggerActiveHint.0.0.1280.1024" width="839" height="370" />
     <size key="XDebugger.FullValuePopup.0.0.1280.1024" width="632" height="469" />
-    <size key="GridCell.Tab.0.left.0.0.1920.1080" width="1541" height="275" />
-    <size key="GridCell.Tab.0.center.0.0.1920.1080" width="1541" height="275" />
-    <size key="GridCell.Tab.0.right.0.0.1920.1080" width="1541" height="275" />
-    <size key="GridCell.Tab.0.bottom.0.0.1920.1080" width="1541" height="275" />
+    <size key="GridCell.Tab.0.left.0.0.1920.1080" width="1540" height="770" />
+    <size key="GridCell.Tab.0.center.0.0.1920.1080" width="1540" height="770" />
+    <size key="GridCell.Tab.0.right.0.0.1920.1080" width="1540" height="770" />
+    <size key="GridCell.Tab.0.bottom.0.0.1920.1080" width="1540" height="770" />
     <size key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog.0.0.1280.1024" width="1038" height="737" />
     <size key="StructurePopup.1280.-40.1280.1024" width="436" height="385" />
     <size key="GridCell.Tab.1.left.1280.-40.1280.1024" width="1201" height="319" />
@@ -695,16 +695,16 @@
     <size key="GridCell.Tab.1.center.0.0.1280.768" width="1218" height="183" />
     <size key="GridCell.Tab.1.right.0.0.1280.768" width="1218" height="183" />
     <size key="GridCell.Tab.1.bottom.0.0.1280.768" width="1218" height="183" />
-    <size key="GridCell.Tab.0.left.0.0.1280.768" width="1236" height="158" />
-    <size key="GridCell.Tab.0.center.0.0.1280.768" width="1236" height="158" />
-    <size key="GridCell.Tab.0.right.0.0.1280.768" width="1236" height="158" />
-    <size key="GridCell.Tab.0.bottom.0.0.1280.768" width="1236" height="158" />
+    <size key="GridCell.Tab.0.left.0.0.1280.768" width="1540" height="217" />
+    <size key="GridCell.Tab.0.center.0.0.1280.768" width="1540" height="217" />
+    <size key="GridCell.Tab.0.right.0.0.1280.768" width="1540" height="217" />
+    <size key="GridCell.Tab.0.bottom.0.0.1280.768" width="1540" height="217" />
     <size key="NewModule_or_Project.wizard.0.0.1280.768" width="727" height="608" />
     <size key="findTextDialog.0.0.1280.768" width="597" height="572" />
     <size key="XDebugger.FullValuePopup.0.0.1920.1080" width="830" height="522" />
     <size key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2.0.0.1920.1080" width="918" height="625" />
     <size key="XDebugger.FullValuePopup.0.0.1280.768" width="580" height="366" />
-    <size key="find.popup.0.0.1920.1080" width="1484" height="1052" />
+    <size key="find.popup.0.0.1920.1080" width="1303" height="959" />
     <size key="#Project_Structure.0.0.1920.1080" width="1129" height="797" />
     <size key="CommitChangelistDialog2.0.0.1920.1080" width="995" height="741" />
     <size key="FileChooserDialogImpl.0.0.1920.1080" width="723" height="554" />

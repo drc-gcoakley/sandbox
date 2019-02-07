@@ -51,18 +51,20 @@ alias lt='ls -lt'
 alias ls='ls -Ch --file-type --color=no'                 # classify files in colour
 alias dir='ls --color=no --format=vertical'
 # alias vdir='ls --color=no --format=long'
-alias la='ls -A'                              # all but . and ..
-alias ll='ls -l'                              # long list
-alias lla='ls -lA'                            # long list of all but . and ..
-alias lld='ls -lad'                            # long list as directories--don't show directory contents.
+alias la='ls -A'                    # all but . and ..
+alias ll='ls -l'                    # long list
+alias lla='ls -lA'                  # long list of all but . and ..
+alias lld='ls -lad'                 # long list as directories--don't show directory contents.
 function mcd() { mkdir -p $@; cd $@; }
+alias npp='/c/dev/bin/Notepad++/notepad++.exe'
 alias scp='scp -i ~/.ssh/drc_id_rsa'
 alias sftp='sftp -i ~/.ssh/drc_id_rsa'
 alias ssh='ssh -i ~/.ssh/drc_id_rsa'
 
-export PATH=$(~/scripts/path-remove ' Files' '/windows/System32' 'SQL Server/')
+PATH=$(~/scripts/path-remove '/windows/System32' 'SQL Server/')
+export PATH=~/scripts/drc:~/scripts:~/bin:/c/dev/bin/grails-2.4.5/bin:/c/dev/bin/mongo-3.2.11/bin:/c/dev/bin/dockerToolbox:${PATH}
 
-PATH="/c/home/gcoakley/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PATH="${PATH}:/c/home/gcoakley/perl5/bin"; export PATH;
 PERL5LIB="/c/home/gcoakley/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/c/home/gcoakley/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/c/home/gcoakley/perl5\""; export PERL_MB_OPT;
@@ -97,6 +99,7 @@ function npml() { npmo --registry http://127.0.0.1:2222 $@; }
 alias nrd='npmo run dev'
 # https://docs.npmjs.com/misc/config
 alias ni='goto_pkg_json; [ -r package.json ] && npmo install'
+function win() { /c/windows/system32/$@ ; }
 
 export VAGRANT_HOME=c:/dev/runtime/vagrant
 
@@ -109,10 +112,10 @@ export BROWSER=google-chrome
 export NPM_GCACHE="/c/dev/runtime/npm_global_cache"
 export WKSP=/c/dev/wksp
 export ECA=$WKSP/eca
-function wksp() { cd $WKSP; [ -d "$1" ] && cd $1 && goto_pkg_json; }
+function wksp() { cd $WKSP; [ -n "$1" ] && [ -d $1 ] && cd $1 && goto_pkg_json; }
 alias ws='wksp'
-function eca() { cd $ECA; [ -d "$1" ] && cd $1 && goto_pkg_json; }
-function ets() { cd $ECA/typescript; [ -d "$1" ] && cd $1 && goto_pkg_json; }
+function eca() { cd $ECA; [ -n "$1" ] && [ -d $1 ] && cd $1 && goto_pkg_json; }
+function ets() { cd $ECA/typescript; [ -n "$1" ] && [ -d $1 ] && cd $1 && goto_pkg_json; }
 
 alias diff="\diff -x package-lock.json -x node_modules"
 alias ei='cd $eca/typescript/eca-ideas-portal-ui'

@@ -60,7 +60,7 @@ for ABBR in ${STATES}; do
   esac
 
   DB=${CLIENT}_iat_${ENV_NAME}
-  OUTPUTFILE=${ENV_NAME}_${ABBR}_dump_$(date '+%Y-%m-%d_%H%M%S' --utc)
+  OUTPUTFILE=${ENV_NAME}_${ABBR}_dump_$(date '+%Y-%b-%d_%H%M%S' --utc)
 
   echo -e "\n\n"
   echo mongodump --quiet --excludeCollection=system.users --port=$PORT --db=$DB --host=$HOST --username=$USERNAME --password=$PSWD --out="$(cygpath -w $OUTPUTDIR_UNIX/)$OUTPUTFILE" 

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# From https://stackoverflow.com/questions/13722076/git-disk-usage-per-branch/13743516#13743516
+BRANCHES=$(git branch -a | grep remotes | awk '{print $1}' | sed 's/remotes\/origin\///')
+for a in $BRANCHES; do 
+  echo -n ${a} -\ ; 
+  git clean -d -x -f > /dev/null 2>&1
+  git checkout ${a} > /dev/null 2>&1
+  du -hs .git
+done
