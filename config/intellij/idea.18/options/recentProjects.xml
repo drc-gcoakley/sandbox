@@ -2,8 +2,8 @@
   <component name="RecentProjectsManager">
     <option name="recentPaths">
       <list>
-        <option value="C:/dev/wksp/IAT" />
         <option value="C:/dev/wksp/my_git_server/drc-gcoakley/sandbox" />
+        <option value="C:/dev/wksp/IAT" />
         <option value="C:/dev/wksp/iat-spare" />
         <option value="C:/dev/wksp/puppet-deploy-control" />
         <option value="C:/dev/wksp/puppet-iatapp" />
@@ -32,10 +32,10 @@
     </option>
     <option name="openPaths">
       <list>
-        <option value="C:/dev/wksp/IAT" />
+        <option value="C:/dev/wksp/my_git_server/drc-gcoakley/sandbox" />
       </list>
     </option>
-    <option name="lastPath" value="C:/dev/wksp/IAT" />
+    <option name="lastPath" value="C:/dev/wksp/my_git_server/drc-gcoakley/sandbox" />
     <option name="pid" value="15956" />
     <option name="additionalInfo">
       <map>
@@ -540,7 +540,7 @@
               <option name="build" value="IU-181.4203.550" />
               <option name="productionCode" value="IU" />
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="projectOpenTimestamp" value="1549378922204" />
+              <option name="projectOpenTimestamp" value="1549561033048" />
               <option name="buildTimestamp" value="1522093196885" />
             </RecentProjectMetaInfo>
           </value>
