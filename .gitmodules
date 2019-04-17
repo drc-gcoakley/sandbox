@@ -1,0 +1,6 @@
+[submodule "service"]
+	path = service
+	url = https://github.com/DataRecognitionCorporation/eca-rtm-service.git
+[submodule "ui"]
+	path = ui
+	url = https://github.com/DataRecognitionCorporation/eca-rtm-ui.git
