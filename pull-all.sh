@@ -9,7 +9,7 @@ git submodule foreach --recursive "echo -e '\n'; git checkout $BRANCH"
 # Set git to use the latest version of the rtm-service and rtm-ui projects. If neither changed this does nothing.
 git add service ui  &&  git commit -m 'Updates to latest versions of submodules'  &&  git push
 
-echo -e '\n\nModules: (commit) (name) (fixed version)'
+echo -e '\n\nCurrent module versions: (commit) (name) (fixed version)'
 git submodule status --recursive
 
 
