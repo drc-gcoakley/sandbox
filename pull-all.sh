@@ -10,7 +10,4 @@ git submodule foreach --recursive "echo -e '\n'; git checkout $BRANCH"
 echo -e '\n\nModules: (commit) (name) (fixed version)'
 git submodule status --recursive
 
-# git submodule update --init
-# git submodule foreach --recursive "git checkout $BRANCH"
-# git submodule foreach "git pull"
 

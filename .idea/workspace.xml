@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8984f271-885d-4375-8d85-fccb8e829bd0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/rtm-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/rtm-app.iml" afterDir="false" />
+    <list default="true" id="8984f271-885d-4375-8d85-fccb8e829bd0" name="Default Changelist" comment="Adds rest-request scripts and .gitignore.">
+      <change beforePath="$PROJECT_DIR$/pull-all.sh" beforeDir="false" afterPath="$PROJECT_DIR$/pull-all.sh" afterDir="false" />
+    </list>
+    <list id="1b9c07f2-4d00-48ae-b4d4-188e3224a55f" name="@ DON'T COMMIT" comment="">
+      <change afterPath="$PROJECT_DIR$/rest-requests/environment/eca-login.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-04-17T010440.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-04-17T011558.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-04-17T011602.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-04-17T011610.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-04-17T011623.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service" beforeDir="false" afterPath="$PROJECT_DIR$/service" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/eca-rtm-ui/dist/" />
@@ -14,80 +26,114 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rtm-app.iml">
+        <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2019-04-17T030859.200.txt">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1407">
-              <caret line="85" column="20" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2019-04-17T032553.200.txt">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/LOGIN-DEV-ECA-as-gcoakley@drc....http">
+        <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2019-04-17T032631.400.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2019-04-17T034636.200.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2019-04-17T035020.200.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2019-04-17T043146.401.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2019-04-17T043205.200.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="9" selection-start-line="8" selection-end-line="9" />
+              <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/LOGIN-PROD-ECA-as-gcoakley@drc....http">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="40">
+              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/LOGIN-SQA-ECA-as-gcoakley@drc....http">
+        <entry file="file://$PROJECT_DIR$/pull-all.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="25" selection-start-column="25" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/http-client.env.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/http-client.private.env.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/auth-requests.http">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="24" selection-start-line="24" selection-end-line="24" selection-end-column="66" />
+            <state relative-caret-position="220">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ecaGateway</find>
+      <find>distScoreDirect</find>
+      <find>distScoreDirectURl</find>
+      <find>distScoreDirectUrl</find>
+      <find>'</find>
+      <find>gcoakley</find>
+      <find>:</find>
+      <find>;</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>apiGateway</replace>
+      <replace>distScoreDirectURl</replace>
+      <replace>distScoreDirectUrl</replace>
+      <replace>\&quot;</replace>
+      <replace>username</replace>
+      <replace>:\n</replace>
+      <replace>;\n</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
@@ -98,9 +144,29 @@
       <list>
         <option value="$APPLICATION_CONFIG_DIR$/scratches/http-client.env.json" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/http-client.private.env.json" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/LOGIN-DEV-ECA-as-gcoakley@drc....http" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/LOGIN-PROD-ECA-as-gcoakley@drc....http" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/LOGIN-SQA-ECA-as-gcoakley@drc....http" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/LOGIN-DEV-ECA-as-gcoakley@drc....http" />
+        <option value="$PROJECT_DIR$/rest-requests/!http-client.env.dev.json" />
+        <option value="$PROJECT_DIR$/rest-requests/DS-getHandScoringLocations.http" />
+        <option value="$PROJECT_DIR$/rest-requests/rest-client.private.env..json" />
+        <option value="$PROJECT_DIR$/rest-requests/rest-client.env.json" />
+        <option value="$PROJECT_DIR$/rest-requests/environment/eca-login.json" />
+        <option value="$PROJECT_DIR$/rest-requests/environment/eca-login-example.json" />
+        <option value="$PROJECT_DIR$/rest-requests/environment/rest-client.private.env..json" />
+        <option value="$PROJECT_DIR$/rest-requests/environment/rest-client.env.json" />
+        <option value="$PROJECT_DIR$/rest-requests/environment/rest-client.private.env.example.json" />
+        <option value="$PROJECT_DIR$/rest-requests/!eca-login.http" />
+        <option value="$PROJECT_DIR$/.idea/encodings.xml" />
+        <option value="$PROJECT_DIR$/service/vuln_check_gchat_changes.diff" />
+        <option value="$PROJECT_DIR$/service/env.txt" />
+        <option value="$PROJECT_DIR$/service/set.txt" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.txt" />
+        <option value="$PROJECT_DIR$/rest-requests/distibutedScoring-get-handScoringLocations.http" />
+        <option value="$PROJECT_DIR$/service/package.json" />
+        <option value="$PROJECT_DIR$/rest-requests/distibuted_scoring.http" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/pull-all.sh" />
       </list>
     </option>
   </component>
@@ -118,7 +184,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="238" />
     <option name="y" value="52" />
-    <option name="width" value="1580" />
+    <option name="width" value="1576" />
     <option name="height" value="951" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -128,7 +194,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -138,24 +204,19 @@
             </path>
             <path>
               <item name="rtm-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="rtm-app" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="rtm-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Scratches" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-            </path>
-            <path>
-              <item name="rtm-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Scratches" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-              <item name="ECA" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
+              <item name="rtm-app" type="462c0819:PsiDirectoryNode" />
+              <item name="rest-requests" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -165,26 +226,426 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ui" />
+    <property name="editor.config.ad.shown" value="true" />
+    <property name="javascript.karma.karma_node_package_dir" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/service/package.json" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="nodejs.mocha.mocha_node_package_dir" value="" />
+    <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/service/node_modules/mocha" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="options.lastSelected" value="Groovy compiler" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.1607306" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="settings.editor.splitter.proportion" value="0.24862888" />
+    <property name="ts.external.directory.path" value="C:\dev\wksp\eca\typescript\rtm-app\ui\node_modules\typescript\lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dev\wksp\eca\typescript\rtm-app\rest-requests\environment" />
+      <recent name="C:\dev\wksp\eca\typescript\rtm-app\rest-requests" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\dev\wksp\eca\typescript\rtm-app\rest-requests\environment" />
+      <recent name="C:\dev\wksp\eca\typescript\rtm-app\rest-requests" />
+      <recent name="C:\dev\wksp\eca\typescript\rtm-app\rest-requests\example_output" />
+    </key>
   </component>
   <component name="RestClientSettings">
     <option name="REQUEST_HISTORY">
       <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://dccdtsd002/distributedScoringService/rtmData/handScoringLocations" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNTU1NjAwMjU2LCJleHAiOjE1NTU2MDIwNTYsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.VX33uZAEB8XsSjX7KmgeXOeUEv3iNa4G2xQeXD1foCNKPcd0prPIsI7v-fbGeWsj6APkK_TCj_7oAUIiTAEwOaAgxA9qUEF45_K8CehRN5o5LdnVqmZYiCY8IA2khDG_tNpzdKbIMqgPjsHyuzRrCwVeP5llu1C709FnOAwdZujSJtbL2Jjz3VmYG-4EwNP4Ol8TbBaPbjqU3iESBcrnEoK_YqI34UJArVktdNYokjqGhuvyk2X0jdAlrcl0nDAxuMQGk-Vb9Wqn6o9bqnlXmiSQPFRNih3b2plmepSPsfrnYY-KkqB2fVsKhH6ngj988mwW6m3x758qoNM8D1OYJw" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{% client.assert(response.status === 200, &quot;Expected response status = 200; it was: &quot; + response.status); %}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://dccdtsd002/distributedScoringService/rtmData/handScoringClients" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNTU1NjAwMjU2LCJleHAiOjE1NTU2MDIwNTYsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.VX33uZAEB8XsSjX7KmgeXOeUEv3iNa4G2xQeXD1foCNKPcd0prPIsI7v-fbGeWsj6APkK_TCj_7oAUIiTAEwOaAgxA9qUEF45_K8CehRN5o5LdnVqmZYiCY8IA2khDG_tNpzdKbIMqgPjsHyuzRrCwVeP5llu1C709FnOAwdZujSJtbL2Jjz3VmYG-4EwNP4Ol8TbBaPbjqU3iESBcrnEoK_YqI34UJArVktdNYokjqGhuvyk2X0jdAlrcl0nDAxuMQGk-Vb9Wqn6o9bqnlXmiSQPFRNih3b2plmepSPsfrnYY-KkqB2fVsKhH6ngj988mwW6m3x758qoNM8D1OYJw" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{% client.assert(response.status === 200, &quot;Expected response status = 200; it was: &quot; + response.status); %}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://dccdtsd002/distributedScoringService/rtmData/handScoringClients" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer overridden by response handling code" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="{% client.assert(response.status === 200, &quot;Expected response status = 200; it was" />
+                <option name="value" value="&quot; + response.status); %}" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="https://api-gateway-sqa.drcedirect.com/eca-security-service/all-sqa-v0/v0/authenticate" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{ &quot;username&quot;: &quot;gcoakley@datarecognitioncorp.com&quot;, &quot;password&quot;: &quot;Password.19.1&quot; }" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://dccdtsd002/distributedScoringService/rtmData/extractTeams" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNTU1NTk1NTI4LCJleHAiOjE1NTU1OTczMjgsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.ltg2JvUkJOeiDdUR9iT8Jigi0OGQxdeedPY1oJ2BsWnF8lXRXj2XZhxVsSmvhBtFc5ARPbZUIT7kiwr6C3zg7t6LRctt3_E5s6nTxuxZQwhMEjTEhERca6tLw6mMVdZJ-5vrlKMyQMVBmz0YVIHvR8Wu57_Bje69jgwiWF7OAXRwTEJDYdQqiNpCzZnS2Zl1u7yqkNO4i3Dcjfi10CzTmv_WUic8h96fjh3zlqRRgzSFfZQAUfLl1HnGGeU1l3NTus3MhqXCj-MxgBYROqYhZbiP-7o-lbW0G7Z_C7cwydz_mJa-xF_FOX9tEr66DSv29t00dBDe41br6MbaNML8SQ" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://dccdtsd002/distributedScoringService/rtmData/extractShifts" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNTU1NTk1NTI4LCJleHAiOjE1NTU1OTczMjgsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.ltg2JvUkJOeiDdUR9iT8Jigi0OGQxdeedPY1oJ2BsWnF8lXRXj2XZhxVsSmvhBtFc5ARPbZUIT7kiwr6C3zg7t6LRctt3_E5s6nTxuxZQwhMEjTEhERca6tLw6mMVdZJ-5vrlKMyQMVBmz0YVIHvR8Wu57_Bje69jgwiWF7OAXRwTEJDYdQqiNpCzZnS2Zl1u7yqkNO4i3Dcjfi10CzTmv_WUic8h96fjh3zlqRRgzSFfZQAUfLl1HnGGeU1l3NTus3MhqXCj-MxgBYROqYhZbiP-7o-lbW0G7Z_C7cwydz_mJa-xF_FOX9tEr66DSv29t00dBDe41br6MbaNML8SQ" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://dccdtsd002/distributedScoringService/rtmData/extractQuestions" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNTU1NTk1NTI4LCJleHAiOjE1NTU1OTczMjgsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.ltg2JvUkJOeiDdUR9iT8Jigi0OGQxdeedPY1oJ2BsWnF8lXRXj2XZhxVsSmvhBtFc5ARPbZUIT7kiwr6C3zg7t6LRctt3_E5s6nTxuxZQwhMEjTEhERca6tLw6mMVdZJ-5vrlKMyQMVBmz0YVIHvR8Wu57_Bje69jgwiWF7OAXRwTEJDYdQqiNpCzZnS2Zl1u7yqkNO4i3Dcjfi10CzTmv_WUic8h96fjh3zlqRRgzSFfZQAUfLl1HnGGeU1l3NTus3MhqXCj-MxgBYROqYhZbiP-7o-lbW0G7Z_C7cwydz_mJa-xF_FOX9tEr66DSv29t00dBDe41br6MbaNML8SQ" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://dccdtsd002/distributedScoringService/rtmData/handScoringClients" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNTU1NTk1NTI4LCJleHAiOjE1NTU1OTczMjgsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.ltg2JvUkJOeiDdUR9iT8Jigi0OGQxdeedPY1oJ2BsWnF8lXRXj2XZhxVsSmvhBtFc5ARPbZUIT7kiwr6C3zg7t6LRctt3_E5s6nTxuxZQwhMEjTEhERca6tLw6mMVdZJ-5vrlKMyQMVBmz0YVIHvR8Wu57_Bje69jgwiWF7OAXRwTEJDYdQqiNpCzZnS2Zl1u7yqkNO4i3Dcjfi10CzTmv_WUic8h96fjh3zlqRRgzSFfZQAUfLl1HnGGeU1l3NTus3MhqXCj-MxgBYROqYhZbiP-7o-lbW0G7Z_C7cwydz_mJa-xF_FOX9tEr66DSv29t00dBDe41br6MbaNML8SQ" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://dccdtsd002/distributedScoringService/rtmData/handScoringLocations" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNTU1NTM2NzI0LCJleHAiOjE1NTU1Mzg1MjQsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.Mt_wCC8wH-uXUDsg-2ra7GBQPNeuwtj5c0eP-IQU-cE7cW0yKDwRDH0F7BlKcoCSe_wY1u2JagF0Vo0rOT4ZQOveN6WkUn0jX2cysdewOcbUq9snN7vI2PYXzi4_ITJNL6ZpmeQgb_pGghJoqhsgeoVpuy4xWe2fFjEFMO1aItHunFmiUqtuLvZKsd7VNJUJGywCxhvvc2fk23YLz-ytLDbn8xXPr4sqGT7-Gj1ob4JudtYYdF5EbYCQFRu4Vr1naqVCWaUre68ki8KayCJRi9LXOfbXo5Mcy4K8wMj8vpAoX4oI5mYOVH7PTqBD8EGgyKoSxZsCJvay6UMJn2rNlg" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://dccdtsd002/distributedScoringService/rtmData/handScoringLocations" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNTU1NTM0NDMxLCJleHAiOjE1NTU1MzYyMzEsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.OC5zKScd6IafzMqDJMo-KrUrwC-nompYSbAHuHtL2xSw6Ox0FvjHjebKlKfA2f6dBGvHrn4CufRDUver60HFXPFPEMJ37ZNFCT_QBBIMWFpWKpaXYODIylUezFF4wXPF_ytmYrYughL8qNK4iEGtUGlMvvmNTrrbEqPn75CfCX1n1-8GqOyYJH6ojaoW_5bqglUqP_RfS1Y6Xh5rbQGzjPZ8xT-FAufb4vL712jeMAqigX5xC7x4ZWN7yVTI1lk4vEuXd0kwZ0r8nq_0CDkCP-QZ8K_4vZvC-YdVjHMc2yobjQk27ZWByzkXFLvEF_oVCckK28tNrkWupi_aJVz2Sw" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://httpbin.org/status/200" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://httpbin.org/status/404" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="https://api-gateway-sqa.drcedirect.com/eca-security-service/all-sqa-v0/v0/authenticate" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{ 'username': 'gcoakley@datarecognitioncorp.com', 'password': 'Password.19.1' }" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://dccdtsd002/distributedScoringService/rtmData/handScoringLocations" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNTU1NTMxMTEzLCJleHAiOjE1NTU1MzI5MTMsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.dTHwwrOv7oiQI07BtKVSS6tx0eVlIYIPkip4pueK3iTiBGocVCzA43rK41j8Qh2LQEQk5CAhQBufPE1g24G_j-xNH1jqG8telIWThJRgBOtkBiuQWIxDdPS9wcwny7sWPI8yhBjZoZifYlFMOkAimq-6lBK9nHLMWK42Jpoj4shGUFQkyTCCmXXDYO4Dk5LOVuZMKO81KotSx33Y2cvgPjCTya-aFui8bTOjN7pQwXnvObkEOtFpuQbQR0E6uyi4psgO2yC0-bWqBMtBru-zY-pbdJLNWeijQzBqKyhKg0WO8GoDgsqah6o1_2SDYYkeTe6KFm-DuNXIXWkBLP3Zvw" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="https://api-gateway-sqa.drcedirect.com/eca-security-service/all-sqa-v0/v0/authenticate" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveFileToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="$PROJECT_DIR$/rest-requests/environment/eca-login.json" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="https://api-gateway-sqa.drcedirect.com/eca-security-service/all-sqa-v0/v0/authenticate" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{ &quot;username&quot;: &quot;overridden by private environment file&quot;, &quot;password&quot;: &quot;overridden by private environment file&quot; }" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="https://api-gateway-sqa.drcedirect.com/eca-security-service/all-sqa-v0/v0/authenticate" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{ &quot;username&quot;: &quot;overridden by private environment file&quot;, &quot;password&quot;: &quot;overridden by private environment file&quot; }&#10;# &lt; ./environment/eca-login.json" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="https://api-gateway-sqa.drcedirect.com/eca-security-service/all-sqa-v0/v0/authenticate" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{ &quot;username&quot;: &quot;gcoakley@datarecognitioncorp.com&quot;, &quot;password&quot;: &quot;Password.19.1&quot; }&#13;&#10;&#13;&#10;{ &quot;username&quot;: &quot;overridden by private environment file&quot;, &quot;password&quot;: &quot;overridden by private environment file&quot; }" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="https://api-gateway-sqa.drcedirect.com/eca-security-service/all-sqa-v0/v0/authenticate" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{ &quot;username&quot;: &quot;overridden by private environment file&quot;, &quot;password&quot;: &quot;overridden by private environment file&quot; }&#13;&#10;{ &quot;username&quot;: &quot;gcoakley@datarecognitioncorp.com&quot;, &quot;password&quot;: &quot;Password.19.1&quot; }&#13;&#10;" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="https://api-gateway-sqa.drcedirect.com/eca-security-service/all-sqa-v0/v0/authenticate" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json; charset=UTF-8" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{ &quot;username&quot;: &quot;overridden by private environment file&quot;, &quot;password&quot;: &quot;overridden by private environment file&quot; }" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="https://api-gateway-sqa.drcedirect.com/eca-security-service/all-sqa-v0/v0/authenticate" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json; charset=UTF-8" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="&#13;&#10;{ &quot;username&quot;: &quot;gcoakley@datarecognitioncorp.com&quot;, &quot;password&quot;: &quot;Password.19.1&quot; }" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="https://api-gateway-sqa.drcedirect.com/eca-security-service/all-sqa-v0/v0/authenticate" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json; charset=UTF-8" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{ &quot;username&quot;: &quot;gcoakley@datarecognitioncorp.com&quot;, &quot;password&quot;: &quot;Password.19.1&quot; }&#13;&#10;" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://dccdtsd002/distributedScoringService/rtmData/handScoringLocations" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNTU1NTI5NDE0LCJleHAiOjE1NTU1MzEyMTQsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.UczMXqV0FJ9X0i3H8PxQuiaGbw_mFWJGjllInYv0jzgbNgRrPupudriv1gV4GXqnbBYv0OGsygFuWkdt9KozDigj-vIiTSt4pw3-zrPlv2HH87M-Rv9kydpPz7neiK8dl0xT-jtqLDEeZ18ohpJPsSVpENDzon5uulixH0ye4n1m8_HoKqm70g4DzZpCrbSuJKS8As7gSk8q_tsB5rTqwnjES4Jt5OXNB--mxc99jx5BqmEIgEeWKMuKkvKyTAyonr0i6Y76-yZG58MlhEgB_hAJkDCrf949HW2KDINnns0q0UsO-GTCH1tpy69101So3prbBk-BsY-xMn4qCGWUgQ" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="https://api-gateway-sqa.drcedirect.com/eca-security-service/all-sqa-v0/v0/authenticate" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json; charset=UTF-8" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{ &quot;username&quot;: &quot;gcoakley@datarecognitioncorp.com&quot;, &quot;password&quot;: &quot;Password.19.1&quot; }" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://dccdtsd002/distributedScoringService/rtmData/handScoringLocations" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNTU1NTI4ODg0LCJleHAiOjE1NTU1MzA2ODQsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.gBs40SB5Dyrb49LfGI_q65B7jzo4399K4uUOWNHSBRws-JYgq6iQPn0as7MxN8F47TvDEBEeafAV-lI4Qg5QaBWX8qYGxTvzI8h2p4_ZWXifp-NrYkuHwSELt2-I6xzbpU8RTTyc9fmonFfW8fLBPLzwPCwHXJiLncM_eNxHj23PM8K7RqG4J0Em30aSSXa59nr8KU60ADadyncBuXqhcjo0pJv3lG8CY41RSrTtY9zX3l8fhqkBiVn-WWbOLDS7B4T_qTEWDh_jZDrUV-IhHSvkrb3zvj4NB38oZaUQALkh6gvqcJjzv5aXVAKambdLam_Lkh3yDrSHA2VSUHFJkQ" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://dccdtsd002/distributedScoringService/rtmData/handScoringLocations" />
+          <option name="urlPath" value="" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNTU1NTI4ODg0LCJleHAiOjE1NTU1MzA2ODQsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.gBs40SB5Dyrb49LfGI_q65B7jzo4399K4uUOWNHSBRws-JYgq6iQPn0as7MxN8F47TvDEBEeafAV-lI4Qg5QaBWX8qYGxTvzI8h2p4_ZWXifp-NrYkuHwSELt2-I6xzbpU8RTTyc9fmonFfW8fLBPLzwPCwHXJiLncM_eNxHj23PM8K7RqG4J0Em30aSSXa59nr8KU60ADadyncBuXqhcjo0pJv3lG8CY41RSrTtY9zX3l8fhqkBiVn-WWbOLDS7B4T_qTEWDh_jZDrUV-IhHSvkrb3zvj4NB38oZaUQALkh6gvqcJjzv5aXVAKambdLam_Lkh3yDrSHA2VSUHFJkQ" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
         <RestClientRequest>
           <option name="httpMethod" value="POST" />
           <option name="urlBase" value="https://api-gateway-sqa.drcedirect.com/eca-security-service/all-sqa-v0/v0/authenticate" />
@@ -256,22 +717,6 @@
           <option name="textToSend" value="" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="https://api-gateway-sqa.drcedirect.com/eca-security-service/all-sqa-v0/v0/authenticate" />
-          <option name="urlPath" value="" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Content-Type" />
-                <option name="value" value="application/json; charset=UTF-8" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="{ &quot;username&quot;: &quot;gcoakley@datarecognitioncorp.com&quot;, &quot;password&quot;: &quot;Password.19.1&quot; }" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
       </list>
     </option>
   </component>
@@ -287,7 +732,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="HTTP Request.LOGIN-DEV-ECA-as-gcoakley@drc...#1">
+  <component name="RunManager" selected="HTTP Request.distibuted_scoring#1">
     <configuration default="true" type="AntRunConfiguration" factoryName="Ant Target">
       <method />
     </configuration>
@@ -446,12 +891,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -478,19 +917,19 @@
       <setting name="depsClasspath" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="LOGIN-DEV-ECA-as-gcoakley@drc...#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/LOGIN-DEV-ECA-as-gcoakley@drc....http">
+    <configuration name="distibutedScoring-get-handScoringLocations#3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/rest-requests/distibutedScoring-get-handScoringLocations.http" index="3">
       <method v="2" />
     </configuration>
-    <configuration name="get-requests#1 (1)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/get-requests.http">
+    <configuration name="distibutedScoring-get-handScoringLocations#5" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/rest-requests/distibutedScoring-get-handScoringLocations.http" index="5">
       <method v="2" />
     </configuration>
-    <configuration name="get-requests#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/get-requests.http">
+    <configuration name="distibutedScoring-get-handScoringLocations#6" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/rest-requests/distibutedScoring-get-handScoringLocations.http" index="6">
       <method v="2" />
     </configuration>
-    <configuration name="get-requests#2 (1)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/get-requests.http" index="2">
+    <configuration name="distibuted_scoring#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/rest-requests/distibuted_scoring.http">
       <method v="2" />
     </configuration>
-    <configuration name="get-requests#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/get-requests.http" index="2">
+    <configuration name="distibuted_scoring#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/rest-requests/distibuted_scoring.http" index="2">
       <method v="2" />
     </configuration>
     <configuration default="true" type="Java Scratch">
@@ -500,35 +939,97 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Tests" type="JavaScriptTestRunnerKarma">
+      <config-file value="$PROJECT_DIR$/ui/src/karma.conf.js" />
+      <working-directory value="$PROJECT_DIR$/ui" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="E2E Tests" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/ui/e2e/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/ui/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="HTTP Request.!eca-login#1" />
+      <item itemvalue="HTTP Request.DEV distibutedScoring-get-handScoringLocations#1" />
+      <item itemvalue="HTTP Request.distibutedScoring-get-handScoringLocations#2" />
+      <item itemvalue="HTTP Request.distibutedScoring-get-handScoringLocations#3" />
+      <item itemvalue="HTTP Request.distibutedScoring-get-handScoringLocations#5" />
+      <item itemvalue="HTTP Request.distibutedScoring-get-handScoringLocations#6" />
+      <item itemvalue="HTTP Request.distibuted_scoring#2" />
+      <item itemvalue="HTTP Request.distibuted_scoring#1" />
+      <item itemvalue="JavaScript Debug.Angular Application" />
+      <item itemvalue="Karma.Tests" />
+      <item itemvalue="npm.Service - Integrations tests (Will run dynamodb.)" />
+      <item itemvalue="npm.Service - Run with NO data" />
+      <item itemvalue="npm.Angular CLI Server" />
+      <item itemvalue="Protractor.E2E Tests" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.LOGIN-DEV-ECA-as-gcoakley@drc...#1" />
-        <item itemvalue="HTTP Request.get-requests#2 (1)" />
-        <item itemvalue="HTTP Request.get-requests#2" />
-        <item itemvalue="HTTP Request.get-requests#1 (1)" />
-        <item itemvalue="HTTP Request.get-requests#1" />
+        <item itemvalue="HTTP Request.distibuted_scoring#1" />
+        <item itemvalue="HTTP Request.distibuted_scoring#2" />
+        <item itemvalue="HTTP Request.distibutedScoring-get-handScoringLocations#6" />
+        <item itemvalue="HTTP Request.distibutedScoring-get-handScoringLocations#5" />
+        <item itemvalue="HTTP Request.distibutedScoring-get-handScoringLocations#3" />
       </list>
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="LOGIN-DEV-ECA-as-gcoakley@drc___#1 - 2019.04.17 at 13h 48m 20s.xml">
-      <configuration name="LOGIN-DEV-ECA-as-gcoakley@drc...#1" configurationId="HttpClient.HttpRequestRunConfigurationType" />
+    <history-entry file="service_test_unit_auth_authorizer_spec_ts - 2019.04.17 at 16h 13m 57s.xml">
+      <configuration name="service\test\unit\auth\authorizer.spec.ts" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="LOGIN-DEV-ECA-as-gcoakley@drc___#1 - 2019.04.17 at 13h 48m 35s.xml">
-      <configuration name="LOGIN-DEV-ECA-as-gcoakley@drc...#1" configurationId="HttpClient.HttpRequestRunConfigurationType" />
+    <history-entry file="service_test_integration_readers_reader-service_spec_ts - 2019.04.17 at 16h 14m 04s.xml">
+      <configuration name="service\test\integration\readers\reader-service.spec.ts" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="LOGIN-DEV-ECA-as-gcoakley@drc___#1 - 2019.04.17 at 13h 48m 55s.xml">
-      <configuration name="LOGIN-DEV-ECA-as-gcoakley@drc...#1" configurationId="HttpClient.HttpRequestRunConfigurationType" />
+    <history-entry file="service_test_unit_auth_authorizer_spec_ts - 2019.04.17 at 16h 14m 12s.xml">
+      <configuration name="service\test\unit\auth\authorizer.spec.ts" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="LOGIN-DEV-ECA-as-gcoakley@drc___#1 - 2019.04.17 at 13h 49m 10s.xml">
-      <configuration name="LOGIN-DEV-ECA-as-gcoakley@drc...#1" configurationId="HttpClient.HttpRequestRunConfigurationType" />
+    <history-entry file="service_test_integration_readers_reader-service_spec_ts - 2019.04.17 at 16h 14m 53s.xml">
+      <configuration name="service\test\integration\readers\reader-service.spec.ts" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Service_-_Unit_tests - 2019.04.17 at 16h 22m 24s.xml">
+      <configuration name="Service - Unit tests" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Serivce_-_Integration_tests_(Requires_dynamodb_to_be_running_) - 2019.04.17 at 16h 23m 19s.xml">
+      <configuration name="Serivce - Integration tests (Requires dynamodb to be running.)" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="!eca-login#1 - 2019.04.17 at 16h 32m 05s.xml">
+      <configuration name="!eca-login#1" configurationId="HttpClient.HttpRequestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Serivce_-_Integration_tests_(Requires_dynamodb_to_be_running_) - 2019.04.17 at 16h 32m 28s.xml">
+      <configuration name="Serivce - Integration tests (Requires dynamodb to be running.)" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="!eca-login#1 - 2019.04.18 at 08h 52m 08s.xml">
+      <configuration name="!eca-login#1" configurationId="HttpClient.HttpRequestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="!eca-login#1 - 2019.04.18 at 10h 11m 03s.xml">
+      <configuration name="!eca-login#1" configurationId="HttpClient.HttpRequestRunConfigurationType" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="238" y="52" width="1580" height="951" extended-state="0" />
+    <frame x="238" y="52" width="1576" height="951" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.437613" visible="true" weight="0.24013157" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.437613" visible="true" weight="0.2328496" />
       <window_info id="Designer" order="1" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -536,30 +1037,32 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" sideWeight="0.5555556" side_tool="true" weight="0.22940776" />
       <window_info id="Persistence" order="7" show_stripe_button="false" side_tool="true" weight="0.32993197" />
-      <window_info id="Structure" order="8" sideWeight="0.562387" side_tool="true" weight="0.30657893" />
-      <window_info anchor="bottom" id="Grails Console" order="0" sideWeight="0.50246304" weight="0.19072165" />
-      <window_info anchor="bottom" id="REST Client" order="1" weight="0.40485075" />
-      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.5340136" weight="0.30489334" />
-      <window_info anchor="bottom" content_ui="combo" x="22" y="423" width="1876" height="204" id="Hierarchy" internal_type="SLIDING" order="3" sideWeight="0.49393415" weight="0.35427135" />
-      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.5210884" visible="true" weight="0.33627203" />
-      <window_info anchor="bottom" x="37" y="492" width="1218" height="193" id="Debug" order="5" sideWeight="0.48932678" weight="0.33029196" />
-      <window_info anchor="bottom" id="Statistic" order="6" weight="0.3152174" />
-      <window_info anchor="bottom" id="CodeNarc" order="7" weight="0.32886723" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.48947725" weight="0.30264816" />
-      <window_info anchor="bottom" id="Message" order="9" />
-      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5105227" side_tool="true" weight="0.30375" />
-      <window_info anchor="bottom" id="Java Enterprise" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Spring" order="13" show_stripe_button="false" weight="0.32983682" />
-      <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.32771537" />
-      <window_info anchor="bottom" id="TODO" order="16" weight="0.21259125" />
-      <window_info anchor="bottom" id="JProfiler" order="17" />
-      <window_info anchor="bottom" id="Database Changes" order="18" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="19" weight="0.32649255" />
-      <window_info anchor="bottom" id="Tail" order="20" weight="0.32955974" />
-      <window_info anchor="bottom" x="479" y="402" width="1369" height="223" id="Messages" order="21" sideWeight="0.53637564" weight="0.23308271" />
-      <window_info anchor="bottom" id="Problems" order="22" weight="0.32953104" />
+      <window_info id="Structure" order="8" sideWeight="0.562387" side_tool="true" weight="0.24060646" />
+      <window_info id="npm" order="9" sideWeight="0.562387" side_tool="true" weight="0.24076517" />
+      <window_info anchor="bottom" id="TypeScript" order="0" />
+      <window_info anchor="bottom" id="Grails Console" order="1" sideWeight="0.50246304" weight="0.19072165" />
+      <window_info anchor="bottom" id="REST Client" order="2" weight="0.40485075" />
+      <window_info anchor="bottom" id="Find" order="3" sideWeight="0.5340136" weight="0.3047859" />
+      <window_info anchor="bottom" content_ui="combo" x="22" y="423" width="1876" height="204" id="Hierarchy" internal_type="SLIDING" order="4" sideWeight="0.49393415" weight="0.35427135" />
+      <window_info anchor="bottom" id="Run" order="5" sideWeight="0.5210884" weight="0.30352646" />
+      <window_info anchor="bottom" x="37" y="492" width="1218" height="193" id="Debug" order="6" sideWeight="0.48932678" weight="0.33029196" />
+      <window_info anchor="bottom" id="Statistic" order="7" weight="0.3152174" />
+      <window_info anchor="bottom" id="CodeNarc" order="8" weight="0.32886723" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.48947725" visible="true" weight="0.30226701" />
+      <window_info anchor="bottom" id="Message" order="10" />
+      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5105227" side_tool="true" weight="0.30375" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Spring" order="14" show_stripe_button="false" weight="0.32983682" />
+      <window_info anchor="bottom" id="Inspection" order="15" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection Results" order="16" weight="0.32771537" />
+      <window_info anchor="bottom" id="TODO" order="17" weight="0.21259125" />
+      <window_info anchor="bottom" id="JProfiler" order="18" />
+      <window_info anchor="bottom" id="Database Changes" order="19" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="20" weight="0.32649255" />
+      <window_info anchor="bottom" id="Tail" order="21" weight="0.32955974" />
+      <window_info anchor="bottom" x="479" y="402" width="1369" height="223" id="Messages" order="22" sideWeight="0.53637564" weight="0.23308271" />
+      <window_info anchor="bottom" id="Problems" order="23" weight="0.32953104" />
       <window_info anchor="right" id="Ant Build" order="0" weight="0.24965987" />
       <window_info anchor="right" id="Palette" order="1" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
@@ -577,6 +1080,56 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myShow1" value="true" />
     <option name="myLimit" value="604800000" />
@@ -586,64 +1139,213 @@
       <path value="$PROJECT_DIR$/eca-rtm-service" />
       <path value="$PROJECT_DIR$/eca-rtm-ui" />
     </ignored-roots>
+    <MESSAGE value="Adds rest-request scripts and .gitignore." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adds rest-request scripts and .gitignore." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/rtm-app.iml">
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/scripts/check_dependency_vulnerabilities.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/vuln_check_gchat_changes.diff" />
+    <entry file="file://$PROJECT_DIR$/service/env.txt" />
+    <entry file="file://$PROJECT_DIR$/service/set.txt" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/serverless.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="35" column="119" selection-start-line="35" selection-start-column="119" selection-end-line="35" selection-end-column="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/runConfigurations/_eca_login_1.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/runConfigurations/DEV_distibutedScoring_get_handScoringLocations_1.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/runConfigurations/distibutedScoring_get_handScoringLocations_2.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/runConfigurations/Service___Integrations_tests__Will_run_dynamodb__.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/runConfigurations/Service___Run_with_NO_data.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1407">
-          <caret line="85" column="20" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
+        <state relative-caret-position="2240">
+          <caret line="101" column="16" lean-forward="true" selection-start-line="101" selection-start-column="16" selection-end-line="101" selection-end-column="16" />
+          <folding>
+            <element signature="e#5766#5772#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/get-requests.http">
+    <entry file="file://$PROJECT_DIR$/rest-requests/environment/eca-login.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-requests/environment/eca-login.json.EXAMPLE">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-requests/environment/rest-client.env.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-requests/environment/rest-client.private.env.json.EXAMPLE">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+        <state relative-caret-position="240">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/auth-requests.http">
+    <entry file="file://$PROJECT_DIR$/service/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="24" selection-start-line="24" selection-end-line="24" selection-end-column="66" />
+        <state relative-caret-position="140">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/http-client.env.json">
+    <entry file="file://$PROJECT_DIR$/ui/artifacts/test/ui-unit-test-index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rtm-app.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+        <state relative-caret-position="240">
+          <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/http-client.private.env.json">
+    <entry file="file://$PROJECT_DIR$/rest-requests/distibuted_scoring.http">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        <state relative-caret-position="160">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/LOGIN-DEV-ECA-as-gcoakley@drc....http">
+    <entry file="file://$PROJECT_DIR$/rest-requests/test-responses.http" />
+    <entry file="file://$PROJECT_DIR$/rest-requests/example_output/distibuted_scoring.text" />
+    <entry file="file://$PROJECT_DIR$/rest-requests/!eca-login.http">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2019-04-17T024401.200.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2019-04-17T024416.200.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2019-04-17T024936.200.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2019-04-17T025022.200.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2019-04-17T025649.200.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2019-04-17T025738.400.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2019-04-17T025743.400.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2019-04-17T025806.400.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2019-04-17T025833.200.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2019-04-17T030705.200.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2019-04-17T030748.200.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2019-04-17T032529.200.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2019-04-17T030859.200.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2019-04-17T032553.200.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2019-04-17T032631.400.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2019-04-17T034636.200.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2019-04-17T035020.200.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2019-04-17T043146.401.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2019-04-17T043205.200.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="9" selection-start-line="8" selection-end-line="9" />
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/LOGIN-PROD-ECA-as-gcoakley@drc....http">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="40">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/LOGIN-SQA-ECA-as-gcoakley@drc....http">
+    <entry file="file://$PROJECT_DIR$/pull-all.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" selection-start-column="25" selection-end-column="28" />
+        <state relative-caret-position="220">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
