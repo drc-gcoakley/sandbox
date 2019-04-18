@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="DEV distibutedScoring-get-handScoringLocations#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" environment="development" path="$PROJECT_DIR$/rest-requests/distibutedScoring-get-handScoringLocations.http">
+  <configuration default="false" name="DEV distibuted_scoring" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" environment="development" path="$PROJECT_DIR$/rest-requests/distibuted_scoring.http">
     <method v="2">
       <option name="RunConfigurationTask" enabled="true" run_configuration_name="!eca-login#1" run_configuration_type="HttpClient.HttpRequestRunConfigurationType" />
     </method>

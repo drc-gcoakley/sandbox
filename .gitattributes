@@ -194,4 +194,3 @@ Procfile    text
 **/bin/*    binary
 **/scripts/**    binary
 coverage/lcov.info   binary
-

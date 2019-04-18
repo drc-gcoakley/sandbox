@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="LOCAL distibuted_scoring" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" environment="local" path="$PROJECT_DIR$/rest-requests/distibuted_scoring.http">
+    <method v="2">
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="!eca-login#1" run_configuration_type="HttpClient.HttpRequestRunConfigurationType" />
+    </method>
+  </configuration>
+</component>
