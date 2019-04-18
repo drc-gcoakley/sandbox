@@ -2,4 +2,6 @@
 .idea/httpRequests/*
 .idea/workspace.xml
 workspace.xml
-rest-client.private.env.json
+# Intellij REST request files that hold personal information.
+rest-requests/environment/eca-login.json
+rest-requests/environment/rest-client.private.env.json
