@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="distibutedScoring-get-handScoringLocations#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" path="$PROJECT_DIR$/rest-requests/distibutedScoring-get-handScoringLocations.http" index="2">
+    <method v="2" />
+  </configuration>
+</component>

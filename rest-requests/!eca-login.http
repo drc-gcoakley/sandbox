@@ -1,0 +1,23 @@
+POST https://api-gateway-sqa.drcedirect.com/eca-security-service/all-sqa-v0/v0/authenticate
+Content-Type: application/json
+
+{{ecaCredentialsJson}}
+> {%
+// If you want to make this a 'test' then uncomment this block.
+// client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status must be 200 but was " + response.status);
+  client.assert(response.body.token.length > 512, "Response size must be > 512 but was " + response.body.token.length);
+// });
+
+// Set our variable to hold the ECA authorization bearer token / JWT token.
+client.global.set("ecaBearer", response.body.token);
+%}
+
+###
+# The response handling code is written in ECMAScript 5.1: https://www.ecma-international.org/ecma-262/5.1/
+# I'd expect the following to work when given as a request body but, ECA returns '403 forbidden'.
+#     { "username": "{{ecaUsername}}", "password": "{{ecaPassword}}" }
+# I guess variables are not expanded in request bodies. If all credentials were identical it could be read from a file:
+#     < ./environment/eca-login.json
+# To account for using different ECA credentials in the different environments the whole JSON is placed in
+# "ecaCredentialsJson".

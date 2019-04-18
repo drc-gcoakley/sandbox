@@ -3,12 +3,13 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <excludeFolder url="file://$MODULE_DIR$/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/httpRequests" />
       <excludeFolder url="file://$MODULE_DIR$/eca-rtm-ui/dist" />
       <excludeFolder url="file://$MODULE_DIR$/eca-rtm-ui/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/ui/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/ui/tmp" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="KotlinJavaScript" level="project" />
   </component>
 </module>

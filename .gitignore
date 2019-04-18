@@ -1,0 +1,5 @@
+# IntelliJ files that are not good to commit.
+.idea/httpRequests/*
+.idea/workspace.xml
+workspace.xml
+rest-client.private.env.json
