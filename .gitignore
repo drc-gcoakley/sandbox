@@ -1,5 +1,6 @@
 # IntelliJ files that are not good to commit.
 .idea/httpRequests/*
+.idea/shelf/*
 .idea/workspace.xml
 workspace.xml
 # Intellij REST request files that hold personal information.
