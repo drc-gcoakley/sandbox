@@ -6,6 +6,9 @@
       <excludeFolder url="file://$MODULE_DIR$/.idea/httpRequests" />
       <excludeFolder url="file://$MODULE_DIR$/eca-rtm-ui/dist" />
       <excludeFolder url="file://$MODULE_DIR$/eca-rtm-ui/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/service/.build" />
+      <excludeFolder url="file://$MODULE_DIR$/service/.dynamodb" />
+      <excludeFolder url="file://$MODULE_DIR$/service/dist" />
       <excludeFolder url="file://$MODULE_DIR$/ui/dist" />
       <excludeFolder url="file://$MODULE_DIR$/ui/tmp" />
     </content>
