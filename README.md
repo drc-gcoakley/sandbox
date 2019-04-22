@@ -2,4 +2,4 @@ This library package holds definitions of the model data that is common between 
 
 When using this workspace be sure to choose imports from the @drc-eca/eca-rtm-model and not from a lib/ or dist/ directory tree.
  
-After you have checkedout / pulled the latest changes you will find git reports one or both of the paths 'service' and 'ui' as updated.  These changes reflect the new version of the respective repositories (service = eca-rtm-service, ui = eca-rtm-ui) that the repository (rtm-app) now references. These must be committed and pushed back to git.
+After you have checked out and pulled the latest changes, using the 'pull-all-subs.sh' script, you may find git reports one or both of the paths 'service' and 'ui' as updated.  These changes reflect the new version of the respective repositories (service = eca-rtm-service, ui = eca-rtm-ui) that the repository (rtm-app) now references. These must be committed and pushed back to git.
