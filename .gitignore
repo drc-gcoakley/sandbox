@@ -8,3 +8,4 @@ rest-requests/environment/eca-login.json
 rest-requests/environment/rest-client.private.env.json
 # Unit test report files.
 artifacts/test/*
+artifacts/coverage/*
