@@ -1,5 +1,0 @@
-#!/bin/sh
-
-FILES=${@:-/c/dev/wksp/temp/la_prod_logs/dcriat*/iat.log*}
-
-cat $FILES | grep -n 'RestClient.*millis\| ERROR \|Exception\|^\sat \|null' | grep -v 'deprecated ItemSearchCommand' | grep -1 'ERROR \|Exception\|:\sat \|null'

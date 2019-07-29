@@ -1,7 +1,0 @@
-
-path=$1
-directory=`basename $path`
-sudo mkdir -p "/Volumes/$directory"
-sudo umount /Volumes/$directory
-sudo mount_smbfs -u smb://clnt-corp-f0458/$path  "/Volumes/$directory"
-

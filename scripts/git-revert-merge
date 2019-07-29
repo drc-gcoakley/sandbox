@@ -1,2 +1,0 @@
-# Revert merge changes. 
-git reset --merge $@

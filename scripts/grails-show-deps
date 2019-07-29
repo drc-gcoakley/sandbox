@@ -1,5 +1,0 @@
-#!/bin/sh
-
-# grails dependency-report also works
-grails dep-report $@ | tee /tmp/grails-show-deps.out
-echo "Output was saved in /tmp/grails-show-deps.out" >& 2

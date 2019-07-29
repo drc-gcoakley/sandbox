@@ -1,2 +1,0 @@
-# Show the branch's ancestry graph.
-git log --pretty=format:'%h %s' --graph $@

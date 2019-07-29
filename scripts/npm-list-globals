@@ -1,1 +1,0 @@
-npm -g list -depth 0 $@

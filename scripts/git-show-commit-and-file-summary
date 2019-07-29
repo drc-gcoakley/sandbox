@@ -1,2 +1,0 @@
-# Show summary of commit changes in Stage.
-git log --stat --summary $@

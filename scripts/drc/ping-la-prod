@@ -1,6 +1,0 @@
-#!/bin/sh
-
-for SVR in $(prod-servers); do
-    echo "Server: $SVR"
-    ping-iat-server $SVR la | simple-json-formatter | sort | grep ' "'
-done

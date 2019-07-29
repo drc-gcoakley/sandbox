@@ -1,2 +1,0 @@
-icacls $@ /reset /T /C /L /Q
-#icacls $@ /grant:r SYSTEM:F Administrators:F /T /C /L /Q

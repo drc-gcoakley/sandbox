@@ -1,3 +1,0 @@
-git branch --points-at HEAD | cut -c3-
-# git branch 2> /dev/null | grep '^\*' | cut -c3-
-# git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* //'

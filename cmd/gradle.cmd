@@ -1,1 +1,0 @@
-c:/dev/bin/gradle-2.2.1/bin/gradle %*

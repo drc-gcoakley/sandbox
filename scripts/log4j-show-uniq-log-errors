@@ -1,7 +1,0 @@
-grep ' ERROR  .*\(Error\|Exception\)' $@ \
-    | sed -e 's/.* ERROR //' \
-          -e 's;\([[/]\)[0-9a-zA-Z]*[0-9][0-9a-zA-Z]*\(\]*\);\1<OBJ_ID>\2;g' \
-          -e 's/\[[^]]*\] *$/[<USER_ID>]/' \
-    | tr '[:digit:]' '#' \
-    | sed -e 's/, *##*//g' \
-    | sort | uniq -c

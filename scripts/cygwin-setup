@@ -1,8 +1,0 @@
-#!/bin/sh
-
-cd /c/dev/_downloads
-curl -sSLO --insecure  https://cygwin.com/setup-x86_64.exe
-CYGWIN_SETUP=/c/dev/_downloads/cygwin-setup-x86_64.exe
-cp -up setup-x86_64.exe $CYGWIN_SETUP
-chmod ugo+x $CYGWIN_SETUP
-nohup $CYGWIN_SETUP &

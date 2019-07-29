@@ -1,4 +1,0 @@
-cat $@ | cut -d' ' -f4,6-7 | grep -vi HealthCheck | sed -e 's/:[0-9][0-9]:[0-9][0-9]:[0-9][0-9]//g' \
-        -e 's;\([^0-9a-ZA-Z]\)[0-9a-zA-Z]*[0-9][0-9a-zA-Z]*$;\1<UUID>;g' \
-	-e 's;\(^0-9]\)[0-9][0-9]*$;\1<ID>;g' \
-        | sort | uniq -c | sort -rn

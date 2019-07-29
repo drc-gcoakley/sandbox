@@ -1,9 +1,0 @@
-#!/bin/sh
-
-if [ -n "$*" ]; then
-    echo $@ | tr ' ' '\n' | grep -v dcciat
-else 
-    echo "Press [return] then [ctrl-D] to end."
-    cat | tr ' ' '\n' | grep -v dcciat | tr '\n' ' '
-fi
-

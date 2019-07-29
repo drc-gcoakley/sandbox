@@ -1,8 +1,0 @@
-#!/bin/sh
-
-path=$1
-while [ -n "$path" ] && [ "$path" != "/" ]; do
-    ls -ld $path
-    path=`dirname $path`
-done
-

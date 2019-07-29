@@ -1,3 +1,0 @@
-hostname=$1
-state=${2:-la}
-echo '{"serviceToken": "58230144-a057-49b1-b888-243e4214024a"}' | curl -kisS http://${1}/${state}/iatUtility/ping

@@ -1,0 +1,23 @@
+GET {{ideasEndpoint}}/webservices/REST/1.0/iat.svc/login/81517887-240c-4841-8361-0381a5f4d52c
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Authorization: Bearer {{ecaBearer}}
+firstName: Glen
+lastName: Coakley
+email: gcoakley@datarecognitioncorp.com
+
+<> 2018-07-11T084948.403.json
+<> 2018-07-11T084537.404.html
+<> 2018-07-11T084457.400.html
+<> 2018-07-11T084426.400.html
+<> 2018-07-09T035203.400.html
+
+###
+# Different environment ECA URIs:
+# SQA:  GET https://ideasweb-sqa.drcedirect.com/sqa.ideas/webservices/REST/1.0/iat.svc
+# PROD: GET https://ideasweb.drcedirect.com/ideas/webservices/REST/1.0/iat.svc
+#
+# Using Edirect:
+# SQA: http://ideasdevapp01/test.ideas/webservices/REST/1.0/iat.svc
+# Prod: http://dcwidap014/ideas/webservices/REST/1.0/iat.svc

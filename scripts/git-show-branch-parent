@@ -1,2 +1,0 @@
-# Show just the current branch's origin--from where it was cloned or branched.
-git config --get remote.origin.url

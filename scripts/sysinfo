@@ -1,2 +1,0 @@
-system_profiler -detailLevel mini > $USER.hw.txt
-grep 'Processor \|Number of Cores\|^  +Memory:\|Capacity:\|Model:' $USER.hw.txt

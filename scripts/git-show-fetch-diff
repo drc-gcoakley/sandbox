@@ -1,4 +1,0 @@
-# Show a summary of the commits and file changes AND the code changes between the parent branch 
-# and the local repository.
-git fetch
-git log --stat --patch --reverse HEAD..FETCH_HEAD

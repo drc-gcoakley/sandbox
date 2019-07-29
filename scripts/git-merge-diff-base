@@ -1,3 +1,0 @@
-# When a merge conflict occurs this will show the differences between the workspace file and 
-# the base version.
-git diff -1 $@

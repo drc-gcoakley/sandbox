@@ -1,3 +1,0 @@
-# Commit changed files. This will detect any modified AND new files in the workspace add them to
-# the Stage / index.
-git commit -a $@

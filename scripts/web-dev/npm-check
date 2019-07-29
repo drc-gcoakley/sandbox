@@ -1,8 +1,0 @@
-#  ljharb commented on Jun 15, 2017
-# 
-# A suggestion: temporarily modify travis.yml with an after_install line that runs npm ls >/dev/null. If it fails, 
-# parse the failure output to detect peer dep conflicts. Might work?
-#
-# https://github.com/greenkeeperio/greenkeeper/issues/278#issuecomment-308818609
-
-npm ls --production >/dev/null

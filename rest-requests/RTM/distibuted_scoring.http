@@ -1,0 +1,35 @@
+GET {{distScoreDirectUrl}}/handScoringLocations
+Authorization: Bearer {{ecaBearer}}
+
+{% client.assert(response.status === 200, "Expected response status = 200; it was: " + response.status); %}
+###
+
+GET {{distScoreDirectUrl}}/handScoringClients
+Authorization: Bearer {{ecaBearer}}
+
+{% client.assert(response.status === 200, "Expected response status = 200; it was: " + response.status); %}
+###
+
+GET {{distScoreDirectUrl}}/extractQuestions
+Authorization: Bearer {{ecaBearer}}
+
+{% client.assert(response.status === 200, "Expected response status = 200; it was: " + response.status); %}
+###
+
+GET {{distScoreDirectUrl}}/extractReaders
+Authorization: Bearer {{ecaBearer}}
+
+{% client.assert(response.status === 200, "Expected response status = 200; it was: " + response.status); %}
+###
+
+GET {{distScoreDirectUrl}}/extractShifts
+Authorization: Bearer {{ecaBearer}}
+
+{% client.assert(response.status === 200, "Expected response status = 200; it was: " + response.status); %}
+###
+
+GET {{distScoreDirectUrl}}/extractTeams
+Authorization: Bearer {{ecaBearer}}
+
+{% client.assert(response.status === 200, "Expected response status = 200; it was: " + response.status); %}
+###

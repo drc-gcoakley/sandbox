@@ -1,2 +1,0 @@
-# When a merge conflict occurs this will show the common base version.
-git show :1:$@

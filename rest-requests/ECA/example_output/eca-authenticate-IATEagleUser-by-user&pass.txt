@@ -1,0 +1,22 @@
+POST https://api-gateway-sqa.drcedirect.com/eca-security-service/all-sqa-v0/v0/authenticate
+
+HTTP/1.1 200 OK
+Server: nginx/1.12.2
+Date: Thu, 12 Jul 2018 15:52:25 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 691
+Connection: keep-alive
+Vary: X-HTTP-Method-Override, Accept-Encoding
+X-Powered-By: Sails <sailsjs.org>
+Set-Cookie: ecasamljwt=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IklBVEVhZ2xlVXNlckBnbWFpbC5jb20iLCJpYXQiOjE1MzE0MTA3NDUsImV4cCI6MTUzMTQxMjU0NSwiaXNzIjoiZWNhLWRyYyIsInN1YiI6IkJDOUU4RTRGLUMyRDMtNDU1RS04MDNDLTlGQjY5RDc3QTZBQiJ9.Q_VoScFvCcqwnJucZUR9uls3VDZmjStJkTxjn8HrGz9t-IpqYJxzWTCfq1sazSv-zTO8u6ai05LgCso4UDtnS1S5ei8s92nhvWU2MHwnc408g_QNvyM4Nk_mmaY0qBXVRDSriF_-qR5AFnXPQnr_jU-gK7-nNRQVzGTXRdh15vzvTrPtlmCRd_o4NXNY3lkObfFrcDsYPSrLTDqaw80NMIwLX318X-QYGoqzchUrgWFKTw63yt6Y1-U9YHvqn7dmYXIdz28qxjwCfWDWLM4oofsoFrI3aZeeeJaCHgw2SdUFsuiXwGIxfQ0PNv560hrPVtSSlake3qPj9GukcQ7w8Q; Max-Age=1800; Path=/eca-security-service; Expires=Thu, 12 Jul 2018 16:22:25 GMT; Secure
+ETag: W/"2b3-guq0V0TkO+tWPSDhZIyxAg"
+
+{
+  "username": "IATEagleUser@gmail.com",
+  "token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IklBVEVhZ2xlVXNlckBnbWFpbC5jb20iLCJpYXQiOjE1MzE0MTA3NDUsImV4cCI6MTUzMTQxMjU0NSwiaXNzIjoiZWNhLWRyYyIsInN1YiI6IkJDOUU4RTRGLUMyRDMtNDU1RS04MDNDLTlGQjY5RDc3QTZBQiJ9.Q_VoScFvCcqwnJucZUR9uls3VDZmjStJkTxjn8HrGz9t-IpqYJxzWTCfq1sazSv-zTO8u6ai05LgCso4UDtnS1S5ei8s92nhvWU2MHwnc408g_QNvyM4Nk_mmaY0qBXVRDSriF_-qR5AFnXPQnr_jU-gK7-nNRQVzGTXRdh15vzvTrPtlmCRd_o4NXNY3lkObfFrcDsYPSrLTDqaw80NMIwLX318X-QYGoqzchUrgWFKTw63yt6Y1-U9YHvqn7dmYXIdz28qxjwCfWDWLM4oofsoFrI3aZeeeJaCHgw2SdUFsuiXwGIxfQ0PNv560hrPVtSSlake3qPj9GukcQ7w8Q",
+  "refresh": 1531412245,
+  "expires": 1531412545,
+  "uid": "BC9E8E4F-C2D3-455E-803C-9FB69D77A6AB"
+}
+
+Response code: 200 (OK); Time: 429ms; Content length: 691 bytes

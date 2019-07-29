@@ -1,0 +1,196 @@
+GET https://api-gateway-dev.drcedirect.com/eca-security-service/all-development-v0/v0/group
+
+HTTP/1.1 200 OK
+Server: nginx/1.12.2
+Date: Wed, 11 Jul 2018 18:28:49 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Powered-By: Sails <sailsjs.org>
+ETag: W/"1be5-GYir+SyKmR+NmM57nnf45w"
+Vary: Accept-Encoding
+
+[
+  {
+    "groupId": "613B80DE-39A9-4347-85DE-0168FBA16240",
+    "name": "test 2.023",
+    "description": "something",
+    "createDate": "2016-08-03T23:42:48.000Z",
+    "updateDate": "2017-12-06T16:22:49.000Z",
+    "createUser": "B6B4B289-2EC4-4F83-80C2-5607A9BAC628",
+    "updateUser": "044BA056-C4B5-46C3-8323-82FCB020969B"
+  },
+  {
+    "groupId": "4C32FC67-2AB9-4585-88DF-034EE20B82D0",
+    "name": "ItemBank - SeniorGraphics",
+    "description": "Production - The Senior Graphics role provides access to create, read, and update graphics for the entire item/passage lifecycle.  Users setup with the role also need the Graphics role. ",
+    "createDate": "2018-02-15T16:33:55.508Z",
+    "updateDate": "2018-02-15T16:33:55.508Z",
+    "createUser": "75444582-3F4C-4C4A-9FA8-161C326D3374",
+    "updateUser": "75444582-3F4C-4C4A-9FA8-161C326D3374"
+  },
+  {
+    "groupId": "38FE67DA-9340-4279-8C51-041C93B0DDA1",
+    "name": "WIDA Attribute Editors",
+    "description": "Users who can edit the WIDA welcome page",
+    "createDate": "2018-06-01T18:41:25.000Z",
+    "updateDate": "2018-06-01T18:42:35.000Z",
+    "createUser": "4E516F8F-4C13-4463-AFDA-1D2E42433805",
+    "updateUser": "4E516F8F-4C13-4463-AFDA-1D2E42433805"
+  },
+  {
+    "groupId": "77A06FE4-8475-4BF8-AFAC-04ED8B22B9B3",
+    "name": "Help Desk Group - ECA Security",
+    "description": "Application: ECA-Security-UI\nPermission: Allows option to deactivate and expire passwords for all users\n",
+    "createDate": "2018-01-12T16:02:49.000Z",
+    "updateDate": "2018-01-12T16:08:03.000Z",
+    "createUser": "FF60871A-2006-4B8E-910E-EDA1CB06AAEA",
+    "updateUser": "FF60871A-2006-4B8E-910E-EDA1CB06AAEA"
+  },
+  {
+    "groupId": "AA16B9C2-0027-4FCC-BF26-054AAA6182F1",
+    "name": "ECA Security UI - Admin",
+    "description": "Gives access to all functionality of Security UI",
+    "createDate": "2016-08-04T16:04:51.000Z",
+    "updateDate": "2018-04-05T15:24:40.000Z",
+    "createUser": "C78C37E3-19FE-4AE3-812E-D3937D376255",
+    "updateUser": "FF60871A-2006-4B8E-910E-EDA1CB06AAEA"
+  },
+  {
+    "groupId": "DD685A31-01E3-4EAD-A911-09E5125D4EC3",
+    "name": "ItemBank - ContentSpecialist",
+    "description": "Production - This role provides the ability to create, read and update items and passages up to and including the status of WIP.  Primarily used for the Science team to provide the ability to split out permissions from the Editor role. ",
+    "createDate": "2018-02-15T16:33:55.300Z",
+    "updateDate": "2018-04-11T17:25:52.000Z",
+    "createUser": "75444582-3F4C-4C4A-9FA8-161C326D3374",
+    "updateUser": "3CA5FD00-3820-45D7-922A-1C2D999D501C"
+  },
+  {
+    "groupId": "D1F1A6F0-7C0B-44F6-803A-0A034DBFD416",
+    "name": "ItemBank - LeaseAgreementOverride",
+    "description": "For testing only - role that can be added to a user allowing a lease agreement to be overridden and allow any change.",
+    "createDate": "2018-02-15T16:33:55.299Z",
+    "updateDate": "2018-02-15T16:33:55.299Z",
+    "createUser": "75444582-3F4C-4C4A-9FA8-161C326D3374",
+    "updateUser": "75444582-3F4C-4C4A-9FA8-161C326D3374"
+  },
+  {
+    "groupId": "A49EAE5A-D952-4C71-AEBD-0C09C84F194D",
+    "name": "MI - Central Office UI",
+    "description": null,
+    "createDate": "2017-03-21T16:12:21.602Z",
+    "updateDate": "2017-03-21T16:12:21.602Z",
+    "createUser": "C78C37E3-19FE-4AE3-812E-D3937D376255",
+    "updateUser": "C78C37E3-19FE-4AE3-812E-D3937D376255"
+  },
+  {
+    "groupId": "5716ED4C-482A-4012-9E72-10ACA3B312C9",
+    "name": "ItemBank - Publications",
+    "description": "Production - The Publications role is used to update item information as needed and handle all aspects of form building.  ",
+    "createDate": "2018-02-15T16:33:55.468Z",
+    "updateDate": "2018-04-11T17:35:32.000Z",
+    "createUser": "75444582-3F4C-4C4A-9FA8-161C326D3374",
+    "updateUser": "3CA5FD00-3820-45D7-922A-1C2D999D501C"
+  },
+  {
+    "groupId": "04D08B29-4009-411E-A620-1132DD7F7826",
+    "name": "Super Administrator Group",
+    "description": null,
+    "createDate": "2017-07-27T15:44:05.644Z",
+    "updateDate": "2017-11-07T17:56:23.000Z",
+    "createUser": "C78C37E3-19FE-4AE3-812E-D3937D376255",
+    "updateUser": "FF60871A-2006-4B8E-910E-EDA1CB06AAEA"
+  },
+  {
+    "groupId": "A670ABC3-FF0A-4B88-B23F-1142F44CAD74",
+    "name": "ItemBank - Client_Pennsylvania2",
+    "description": "Production role for the Pennsylvania CDT SDE users",
+    "createDate": "2018-02-15T16:33:55.296Z",
+    "updateDate": "2018-02-15T16:33:55.296Z",
+    "createUser": "75444582-3F4C-4C4A-9FA8-161C326D3374",
+    "updateUser": "75444582-3F4C-4C4A-9FA8-161C326D3374"
+  },
+  {
+    "groupId": "E1804D30-8DCC-480C-AC66-115F5C3D5723",
+    "name": "NY - Central Office UI",
+    "description": null,
+    "createDate": "2017-03-21T16:12:22.601Z",
+    "updateDate": "2017-03-21T16:12:22.601Z",
+    "createUser": "C78C37E3-19FE-4AE3-812E-D3937D376255",
+    "updateUser": "C78C37E3-19FE-4AE3-812E-D3937D376255"
+  },
+  {
+    "groupId": "8BA5575F-80D9-4575-9FC4-130DACD246AE",
+    "name": "ItemBank - Client_SouthCarolina",
+    "description": "Production role for the South Carolina SDE users",
+    "createDate": "2018-02-15T16:33:55.298Z",
+    "updateDate": "2018-02-15T16:33:55.298Z",
+    "createUser": "75444582-3F4C-4C4A-9FA8-161C326D3374",
+    "updateUser": "75444582-3F4C-4C4A-9FA8-161C326D3374"
+  },
+  {
+    "groupId": "A74440FF-3101-4882-8A71-135B0FE45253",
+    "name": "test admin",
+    "description": "test",
+    "createDate": "2017-12-18T15:46:33.000Z",
+    "updateDate": "2017-12-18T15:46:33.000Z",
+    "createUser": "FF60871A-2006-4B8E-910E-EDA1CB06AAEA",
+    "updateUser": "FF60871A-2006-4B8E-910E-EDA1CB06AAEA"
+  },
+  {
+    "groupId": "DAFEACAE-5974-4404-B629-145B049C25A6",
+    "name": "DRC - Central Office UI",
+    "description": null,
+    "createDate": "2017-03-21T16:12:20.183Z",
+    "updateDate": "2017-03-21T16:12:20.183Z",
+    "createUser": "C78C37E3-19FE-4AE3-812E-D3937D376255",
+    "updateUser": "C78C37E3-19FE-4AE3-812E-D3937D376255"
+  },
+  {
+    "groupId": "26E0BDFC-C96B-4AC8-B335-1960001867A7",
+    "name": "ItemBank - SeniorEditor",
+    "description": "Production - The Senior Editor role provides access to update items/passages from Senior Review on.  To access items/passages prior to this you must also assign user the Content Specialist and Editor roles. ",
+    "createDate": "2018-02-15T16:33:55.497Z",
+    "updateDate": "2018-02-15T16:33:55.497Z",
+    "createUser": "75444582-3F4C-4C4A-9FA8-161C326D3374",
+    "updateUser": "75444582-3F4C-4C4A-9FA8-161C326D3374"
+  },
+  {
+    "groupId": "21353A55-3F23-4879-899A-1BB94DF1C954",
+    "name": "ECA Dynamic Reporting - Admin",
+    "description": "",
+    "createDate": "2018-05-18T20:45:58.000Z",
+    "updateDate": "2018-05-18T20:45:58.000Z",
+    "createUser": "FF60871A-2006-4B8E-910E-EDA1CB06AAEA",
+    "updateUser": "FF60871A-2006-4B8E-910E-EDA1CB06AAEA"
+  },
+  {
+    "groupId": "C7F20C89-8320-452C-8EE5-1D61F4CA7E61",
+    "name": "ECA Setup Configuration UI - Admin",
+    "description": "Gives access to all functionality of Setup Configuration UI",
+    "createDate": "2018-02-13T16:22:04.000Z",
+    "updateDate": "2018-04-05T15:26:25.000Z",
+    "createUser": "FF60871A-2006-4B8E-910E-EDA1CB06AAEA",
+    "updateUser": "FF60871A-2006-4B8E-910E-EDA1CB06AAEA"
+  },
+  {
+    "groupId": "C544A5A6-4D61-454E-ACC7-1DC69CAAEBE9",
+    "name": "ItemBank - DataAnalysis",
+    "description": "Production - This role is for users who need access to IDEAS for the purpose of pulling data via the web services. No updates are included in this role.",
+    "createDate": "2018-02-15T16:33:55.300Z",
+    "updateDate": "2018-04-11T17:27:16.000Z",
+    "createUser": "75444582-3F4C-4C4A-9FA8-161C326D3374",
+    "updateUser": "3CA5FD00-3820-45D7-922A-1C2D999D501C"
+  },
+  {
+    "groupId": "6A1AC2E5-3D87-44F7-8FC1-1E27DFAA3BB3",
+    "name": "setup config WI and drcportal view (Test)",
+    "description": "",
+    "createDate": "2018-04-04T00:15:26.000Z",
+    "updateDate": "2018-04-04T00:15:26.000Z",
+    "createUser": "FF60871A-2006-4B8E-910E-EDA1CB06AAEA",
+    "updateUser": "FF60871A-2006-4B8E-910E-EDA1CB06AAEA"
+  }
+]
+
+Response code: 200 (OK); Time: 378ms; Content length: 7141 bytes

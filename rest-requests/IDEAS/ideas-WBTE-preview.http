@@ -1,0 +1,21 @@
+GET https://ideasweb-sqa.drcedirect.com/sqa.ideas/Item/ItemHTMLPreview.aspx?PreviewCickType=left&hasaudio=true&playtts=false&PreviewType=wbte&itemid=517851
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNTM4NTg4NzAyLCJleHAiOjE1Mzg1OTA1MDIsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.WvpioaBFnxR_hVgppsKklVMPiQ2OPcrdxcZ7H9fbMW8NtF4UbHFqYqkomP_s0NTIu0OcKR9tL8AduR4oemJHvo48a3_ia8m_awkD1Haj23UDZrR9Lj4C0eQE_ZTCtcY6m66Tk3AkPWAyQmGegu01_Ffa1CStnQLU45zeMfBNkQPuz90A2xp-XPdiMCB14e_DIpyy-8nck4_FQ2e5kfGH8BzA3AcfGfsCsg7t58oSbHqbc8vAZ8MbX87rPRxkalPjkvlJAg2OTvE4zdDGsi3ug6SlUX8MnM4hCKfhjCcGWy85koiHPpGNpkKvW-Z2N9p32GdsEJ9bkyj9VIE2Pm9oQg
+
+<> 2018-10-04T044826.200.html
+<> 2018-10-04T044512.200.html
+<> 2018-07-18T124930.400.html
+<> 2018-07-18T122807.403.json
+
+
+###
+# Different environment URIs:
+# GET https://ideasweb-sqa.drcedirect.com/sqa.ideas/webservices/REST/1.0/iat.svc
+# GET https://ideasweb-sqa.drcedirect.com/sqa.ideas/webservices/REST/1.0/iat.svc
+# GET https://ideasweb.drcedirect.com/ideas/webservices/REST/1.0/iat.svc
+#
+# Using Edirect:
+# SQA: http://ideasdevapp01/test.ideas/webservices/REST/1.0/iat.svc
+# Prod: http://dcwidap014/ideas/webservices/REST/1.0/iat.svc

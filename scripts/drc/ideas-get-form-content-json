@@ -1,8 +1,0 @@
-#!/bin/sh
-
-# LA's 2017 admin code.
-ADMIN_ID=510642
-ALT_ID=$1
-cp -rup //coloisilon/Content/Prod/MasterItemPool/LA/Resources/${ADMIN_ID}/Forms/${ALT_ID}/*/content.json $TMP
-/c/dev/bin/misc/crypty &
-

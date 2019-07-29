@@ -1,2 +1,0 @@
-yarn remove --force $@
-yarn add $@

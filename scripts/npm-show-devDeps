@@ -1,9 +1,0 @@
-# require( "./package.json" )	-> Reads / loads the file 'package.json'
-# .devDependencies		-> Dereference the unnamed JSON object to get just the child 'devDependencies'
-# Object.keys(...)		-> Returns a list of the property names of the given object.
-# .map( function... )		-> Apply a function to each item in the map.
-# function( item ){ 		-> The function takes a parameter which is the entry in the map and names it 'item'.
-# { console.log( item ) }	-> The function sends the item to the console to be printed.
-#
-node -e 'Object.keys( require( "./package.json" ).devDependencies )
-    .map( function( item ){ console.log( item ) } );'

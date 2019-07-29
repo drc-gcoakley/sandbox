@@ -1,2 +1,0 @@
-# When a merge conflict occurs this will show the workspace HEAD version of the file.
-git show :2:$@

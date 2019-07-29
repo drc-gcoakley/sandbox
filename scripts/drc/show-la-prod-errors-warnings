@@ -1,8 +1,0 @@
-#!/bin/sh
-
-if [ -r /c/dev/wksp/temp/la_prod_logs/dcriat*/iat.log*.gz ]; then
-    gunzip /c/dev/wksp/temp/la_prod_logs/dcriat*/iat.log*.gz
-fi
-FILES=${@:-/c/dev/wksp/temp/la_prod_logs/dcriat*/iat.log*}
-
-cat $FILES | grep -n ' ERROR \| WARN \|Exception\|^\sat \|null' | grep -v 'UserActivityFilters  << null\|UserTokenController\|Successfully authenticated through eDirect\|deprecated ItemSearchCommand' | grep -1 'ERROR \| WARN \|Exception\|:\sat \|null'

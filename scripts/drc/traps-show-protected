@@ -1,9 +1,0 @@
-#!/bin/sh
-
-echo 'Name                Pid Pri Thd  Hnd   Priv        CPU Time    Elapsed Time'
-/c/Progr*/Palo*/Traps/cytool enum | while read pid other
-do
-  pslist -nobanner $pid | grep '[0-9]*:[0-9]*:[0-9]*'
-done
-
-

@@ -1,9 +1,0 @@
-#!/bin/sh
-
-CWD=$(pwd)
-for a in . $@; do 
-   cd ${CWD}/$a
-   echo Origin of $a is $(git remote get-url origin)
-   # echo Origin of $a is $(git config --get remote.origin.url)
-done 
-

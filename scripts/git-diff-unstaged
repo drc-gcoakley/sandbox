@@ -1,2 +1,0 @@
-# Show changes in the current Workspace that have not yet been staged.
-git diff $@

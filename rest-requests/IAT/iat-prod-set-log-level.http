@@ -1,0 +1,22 @@
+POST https://la-iat.drcedirect.com/la/iatUtility/loggingLevel
+
+{ logger: "com.datarecognitioncorp.iat.rest.RestClient",
+level: "TRACE",
+serviceToken: "756c7312-2700-4cc5-8a20-4b7fab083ba5" }
+
+<> 2018-07-27T093903.200.json
+<> 2018-07-27T093844.401.json
+<> 2018-07-27T083923.401.json
+<> 2018-07-26T021807.401.json
+<> 2018-07-26T021443.401.json
+<> 2018-07-26T020331.401.json
+<> 2018-07-26T020319.401.json
+<> 2018-07-26T015815.401.json
+<> 2018-07-26T015811.301.html
+<> 2018-07-26T015732.401.json
+<> 2018-07-26T015633.401.json
+
+###
+/usr/share/iat_conf/la_iat/app-config.groovy: eDirectSecretKey = 'NEEDKEY'
+/usr/share/iat_conf/la_iat/app-config.groovy: serviceTokenSecretKey = "d7039481-0d7f-4db5-a5dd-3fd1ff72f88d"
+/usr/share/iat_conf/la_iat/app-config.groovy: pingSecretKey = "7c3e39e7-9844-4693-b5ed-9d2cff73cbde"

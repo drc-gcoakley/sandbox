@@ -1,2 +1,0 @@
-# Show what is in Committed but not yet Pushed.
-git diff $@ ORIG_HEAD HEAD

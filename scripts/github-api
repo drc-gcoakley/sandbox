@@ -1,7 +1,0 @@
-# https://developer.github.com/v3/repos
-#
-# DO NOT COMMIT THIS WITH THE AUTH TOKEN. If you do github will notice and revoke the token.
-
-# Add -i if you need to see the headers.
-curl -H "Authorization: token $(cat ~/scripts/github-api-OAuth-token.txt)" -H 'User-Agent: curl' https://api.github.com/$@
-

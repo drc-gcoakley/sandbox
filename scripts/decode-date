@@ -1,8 +1,0 @@
-#!/bin/sh
-UNIX_DATE_LONG=$1
-if [ -n "$UNIX_DATE_LONG" ]; then
-   node -e "console.log('Arg: ' + new Date(${UNIX_DATE_LONG}*1000).toLocaleString() + '\nNow: ' + new Date().toLocaleString());"
-else
-   echo "Usage: $(basename $0) <seconds since epoch>"
-fi
-

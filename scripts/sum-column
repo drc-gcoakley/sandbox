@@ -1,7 +1,0 @@
-#!/bin/sh
-
-columnNumber=${1:-1}
-awk '{total += $'${columnNumber}'} END {print "sum:", total}'
-
-#paste -sd+ - | bc
-

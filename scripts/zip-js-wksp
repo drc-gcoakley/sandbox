@@ -1,3 +1,0 @@
-ZIPFILE=../$(basename $PWD).zip
-/bin/ls -A1 | grep -v '^\(.git\|.ng_pkg_build\|build\|dist\|out\|node_modules\|workspace.xml\)$' \
-    | xargs zip -rup $ZIPFILE

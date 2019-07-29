@@ -1,9 +1,0 @@
-#!/bin/sh
-
-for host in $(prod-servers)
-do
-   echo "On host: $host"
-   # Could use $USER or $(id -un) but the case of the name is incorrect.
-   ssh -qi ~/.ssh/drc_id_rsa $USER@${host} $@
-done
-

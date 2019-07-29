@@ -1,0 +1,44 @@
+# This response handling code is written in ECMAScript 5.1: https://www.ecma-international.org/ecma-262/5.1/
+POST {{apiGatewayUrl}}/eca-security-service/all-{{envName}}-v0/v0/authenticate
+Content-Type: application/json
+
+{ "username": "gcoakley@datarecognitioncorp.com", "password": "Password.19.2" }
+> {% client.global.set("ecaBearer", response.body.token);
+// If you want to make this a 'test' then uncomment this block.
+// client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status must be 200 but was " + response.status);
+  client.assert(response.body.token.length > 512, "Response size must be > 512 but was " + response.body.token.length);
+// });
+%}
+
+<> 2019-05-22T111346.200.json
+<> 2019-05-21T041017.200.json
+<> 2019-05-21T040946.200.json
+
+### DEVELOPMENT
+POST https://api-gateway-dev.drcedirect.com/eca-security-service/all-development-v0/v0/authenticate
+Content-Type: application/json
+
+{ "username": "gcoakley@datarecognitioncorp.com", "password": "Password.19.2" }
+> {% client.global.set("ecaBearer", response.body.token); %}
+
+### SQA
+POST https://api-gateway-sqa.drcedirect.com/eca-security-service/all-sqa-v0/v0/authenticate
+Content-Type: application/json
+
+{ "username": "gcoakley@datarecognitioncorp.com", "password": "Password.19.2" }
+> {% client.global.set("ecaBearer", response.body.token); %}
+
+### Production IAT
+POST https://api-gateway.drcedirect.com/eca-security-service/all-production-v0/v0/authenticate
+Content-Type: application/json
+
+{ "username": "gcoakley@datarecognitioncorp.com", "password": "Password.19.2" }
+> {% client.global.set("ecaBearer", response.body.token); %}
+
+### Production IDEAS
+POST https://api-gateway.drcedirect.com/eca-security-service/all-production-v0/v0/authenticate
+Content-Type: application/json
+
+{ "username": "gcoakley", "password": "Password.18.4" }
+> {% client.global.set("ecaBearer", response.body.token); %}

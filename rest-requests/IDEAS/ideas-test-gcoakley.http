@@ -1,0 +1,19 @@
+GET https://ideasweb.drcedirect.com/ideas/webservices/REST/1.0/iat.svc/itemsandcount/LA?query=((itStatus%3DOPReady)%2C(iatStatus%3DApproved))&sort=itGradeSort++asc&pagesize=15
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNTMxOTM2MTA4LCJleHAiOjE1MzE5Mzc5MDgsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiJEQTU2QUEwQi03NTdFLTQ5MjUtOTU4NC0wOTVDQ0Y3MjA4REQifQ.k6nKE9ECgBWS4ef_aHFwqjou_AsHKmTjRk9aoLuFWWIP1JcV_T356zrwkcjq-NDX3tcc7w_IkxAgVnmUFl88PUw7gIREIOn0PYUOI-v9O5dJsYOJ6MMycpF5bFyRYW0Ypo7wwqFErIuOQA-ozezCxi6kMFt4weq3LjAQb5Ermzf8YjsYoSimSXtaO2onDrwxvhMJA0OM9Z5L-WGVCMYCaHm6-fhr5zOwN-yHjqdoDKyMTVPkewCMFVrOclZgokDqKcW20-l1ERiNs6ZUcpw7c1j5GChkki8MjpsXNbtkEasztTga37rlpLT-zBmp6wZAJoN7dbpDcX4BvtJtVqmNZA
+
+<> 2018-07-18T124930.400.html
+<> 2018-07-18T122807.403.json
+
+
+###
+Different environment URIs:
+GET https://ideasweb-sqa.drcedirect.com/sqa.ideas/webservices/REST/1.0/iat.svc
+GET https://ideasweb-sqa.drcedirect.com/sqa.ideas/webservices/REST/1.0/iat.svc
+GET https://ideasweb.drcedirect.com/ideas/webservices/REST/1.0/iat.svc
+
+Using Edirect:
+SQA: http://ideasdevapp01/test.ideas/webservices/REST/1.0/iat.svc
+Prod: http://dcwidap014/ideas/webservices/REST/1.0/iat.svc

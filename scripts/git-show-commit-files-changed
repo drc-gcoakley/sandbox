@@ -1,3 +1,0 @@
-git diff --name-only $@
-# Similar but, will show duplicates if multiple commits changed the same file. 
-#  git show --pretty="format:" --name-only $@

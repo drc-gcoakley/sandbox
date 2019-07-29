@@ -1,7 +1,0 @@
-TR_DOMAINS=com.thomson,com.thomsonreuters,com.tlgr,com.tr,com.trgr,com.westgroup,com.westlaw
-
-# Download the -sources .jar files.  
-mvn dependency:sources -DincludeGroupIds=$TR_DOMAINS -Dclassifier=sources
-
-# Download the -javadoc .jar files.  This should be irrelavent if the sources are downloaded.
-# mvn dependency:sources -DincludeGroupIds=$TR_DOMAINS -Dclassifier=javadoc

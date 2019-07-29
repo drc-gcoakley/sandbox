@@ -1,9 +1,0 @@
-#!/bin/sh
-
-if [ -z "$1" ]; then
-   echo 'Usage: <item_id>'
-fi
-
-echo -e "\t Ideas ID: $1"
-curl -s http://ideasprod/ideas/webservices/REST/1.0/iat.svc/items/LA/$1 | sed -e 's/,/,\n/g'
-echo ''

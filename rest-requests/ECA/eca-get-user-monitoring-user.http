@@ -1,0 +1,11 @@
+GET {{apiGatewayUrl}}/eca-security-service/all-{{envName}}-v0/v0/user/7c3e39e7-9844-4693-b5ed-9d2cff73cbde
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Authorization: Bearer {{ecaBearer}}
+
+<> 2018-07-23T112415.401.txt
+<> 2018-07-11T085502.200.json
+<> 2018-07-11T085342.200.json
+
+###

@@ -1,3 +1,0 @@
-# Revert all changes in the current workspace.
-git reset HEAD -- .
-git checkout .

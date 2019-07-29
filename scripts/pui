@@ -1,4 +1,0 @@
-git checkout integration && \
-   git fetch upstream && \
-   git merge upstream/integration && \
-   git push origin integration

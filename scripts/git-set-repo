@@ -1,8 +1,0 @@
-# Set the default report respository so that you don't have to keep typing for the commands: 
-#  fetch, merge, pull, push. 
-
-echo "You should avoid using this and instead create and use aliases such as with this command: "
-echo "    git remote add myLocalAlias git@someHost:path/to/git/repository"
-echo ""
-
-git remote add origin $@

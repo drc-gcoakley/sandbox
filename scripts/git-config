@@ -1,7 +1,0 @@
-# Set default configuration settings for every workspace on this machine for the current user.
-#   Configure the current user.
-git config --global user.name "Glen Coakley"
-git config --global user.email glen.coakley@thomsonreuters.com
-
-git config --global apply.whitespace nowarn
-git config --global merge.tool kdiff3

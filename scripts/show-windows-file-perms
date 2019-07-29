@@ -1,3 +1,0 @@
-ls -ld $@
-getfacls $@
-icacls $@ /t /q /verify

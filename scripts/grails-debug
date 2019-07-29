@@ -1,3 +1,0 @@
-#!/bin/sh
-
-grails --stacktrace --verbose --reloading -Dgrails.project.fork.run.debugArgs=-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005 $@

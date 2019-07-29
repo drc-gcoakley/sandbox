@@ -1,1 +1,0 @@
-grep '\[INFO\] +-\|\[INFO\] |' | sed -e 's;|[        ];;g' -e 's;.INFO.[     ]*[\\+]-;;g' -e 's/:[a-z]*$//g' | sort | uniq

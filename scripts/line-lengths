@@ -1,5 +1,0 @@
-#!/bin/sh
-
-env IFS='
-' cat replacements.6 | while read s; do echo ${#s}; done | sort -h -k2
-

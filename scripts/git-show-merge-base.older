@@ -1,2 +1,0 @@
-# Remove the specified arguments from the stage.
-git reset HEAD -- $@

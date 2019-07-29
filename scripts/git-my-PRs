@@ -1,9 +1,0 @@
-#!/bin/sh
-
-if [ -d .git ]; then
-  git-log-search-all-modules Glen-Coakley/
-else
-  cd ~/dev/workspaces/ari
-  in-git-dirs git-log-search-all-modules Glen-Coakley/
-fi
-

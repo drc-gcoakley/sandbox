@@ -1,0 +1,6 @@
+GET {{apiGatewayUrl}}/eca-security-service/all-{{envName}}-v0/v0/authorize/{{ecaBearer}}/acls
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+###

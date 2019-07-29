@@ -1,1 +1,0 @@
-git log HEAD..`git-current-branch`

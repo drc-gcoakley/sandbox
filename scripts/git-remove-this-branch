@@ -1,6 +1,0 @@
-#!/bin/sh
-
-BRANCH=`git-current-branch`
-git checkout integration
-git branch -D $BRANCH
-

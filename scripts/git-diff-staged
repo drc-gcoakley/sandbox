@@ -1,2 +1,0 @@
-# Show what is in Staged but not yet Committed.
-git diff --cached $@

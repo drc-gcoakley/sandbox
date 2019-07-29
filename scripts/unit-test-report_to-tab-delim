@@ -1,1 +1,0 @@
-grep '^<h2>\|class="testname\|Executed in' | grep -v '^<h2>\(Standard output\|System error\)' | sed -e 's;<b [^>]*>;;' -e 's;<p [^>]*>;\t\t\t;g' -e 's;<[^>]*>;\t;g' -e 's;Executed in ;;'

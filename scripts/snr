@@ -1,2 +1,0 @@
-perl -p -i.snr.bak -e $@
-# sed -i 's/OLD/NEW/g' $FILES

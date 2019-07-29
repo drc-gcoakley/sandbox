@@ -1,0 +1,84 @@
+POST https://ideasweb-sqa.drcedirect.com/sqa.ideas/webservices/REST/1.0/iat.svc/items/LA
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNTQ2NjIzOTE0LCJleHAiOjE1NDY2MjU3MTQsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.BBXBJHDUEoPGakcMXhQOPNB_6l_RyWVXvMrkNtUDIngmXpEL8NaTTfbIcLKJkcPKlHnzt35RNdFeExyr1sBT7L02Bmu1IhpfOve8ZQvliXxegmcayQ2C_27i4P-czkCtTQDlYmcd6QNxblJP9b3ETDPECeQxQoVn7ey1gKCv46KZtjXbI7Vi9x7WbF21KYlexZ_DVj9vjcjbE4LeTZfAVquca34Oic2Fi08bsw7R4Adve6Zxj5tVQnYV5gBqf-spFenlL9VNX2s9Ltw4IQ6-4EnRUya2tAbtBJ4At4RBjgEKZwL5NrKYXcCeWxPWsZc_CiyZTkeqtmanOW3o5RHInA
+
+{
+    "iatStatus": "Pending",
+    "irlStatus": "Completed",
+    "itClientCode": "LA",
+    "itClientItemName": "1014445",
+    "itClientXml": "<PublishForm>\u000d\u000a  <clientdata>\u000d\u000a    <iat>\u000d\u000a      <source>MANUAL<\/source>\u000d\u000a      <approvedBy \/>\u000d\u000a      <dateApproved \/>\u000d\u000a      <uiDataMap>\u000d\u000a        <uiDataValue name=\"_\" \/>\u000d\u000a        <uiDataValue name=\"answerType\">P<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"answer_model\" \/>\u000d\u000a        <uiDataValue name=\"id\">lineinput1<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"inputoptions_closedpoint\">checked<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"inputoptions_eraser\">checked<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"inputoptions_leftlineext\">checked<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"inputoptions_linesegment\">checked<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"inputoptions_openpoint\">checked<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"inputoptions_rightlineext\">checked<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"inputoptions_undoredo\">checked<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"lines\">A:-4^O:-2_C:2^A:4<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"maxnumberlines\">2<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"maxplotnumber\">3<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"minortickpixels\">16<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"minortickseparation\">2<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"minortomajortickratio\">1<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"points\">C:-1^O:0^C:1<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"xlabelset\" \/>\u000d\u000a        <uiDataValue name=\"xmaxrange\">4<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"xminrange\">-4<\/uiDataValue>\u000d\u000a        <uiDataValue name=\"xscale\">1<\/uiDataValue>\u000d\u000a      <\/uiDataMap>\u000d\u000a    <\/iat>\u000d\u000a  <\/clientdata>\u000d\u000a<\/PublishForm>",
+    "itContArea": "MATH",
+    "itCreateByUserId": "81517887-240c-4841-8361-0381a5f4d52c",
+    "itCreateDate": "2018-12-13T12:16:03.013",
+    "itDepth": "",
+    "itDescription": "",
+    "itDifLevel": "L",
+    "itExtendedXml": "<PublishForm><rendering><stempercent \/><distractorrowspacing>20<\/distractorrowspacing><distractorcolumnspacing>26<\/distractorcolumnspacing><\/rendering><\/PublishForm>",
+    "itFocus": "",
+    "itGrade": "5",
+    "itItemImageXml": "<PublishForm><item>     <prompt>    <div class=\"iat-prompt-class\"><p>Represent abs(x) &gt; 2 on the number line below.<\/p><\/div>  <\/prompt>  <mediaspecificattributes \/><scoregroup id=\"scoregroup1\" elemid=\"101\">    <responsepage>      <responsegroup id=\"responsegroup1\" elemid=\"102\">        <lineinput id=\"lineinput1\" xlabelset=\"\" xminrange=\"-4\" xmaxrange=\"4\" xscale=\"1\" minortickpixels=\"16\" minortomajortickratio=\"1\" maxnumberlines=\"2\" elemid=\"103\">          <lineinputoptions eraser=\"true\" undoredo=\"true\" closedpoint=\"true\" openpoint=\"true\" rightlineext=\"true\" leftlineext=\"true\" linesegment=\"true\" graphline=\"false\" \/>        <\/lineinput>      <\/responsegroup>    <\/responsepage>  <\/scoregroup><\/item><\/PublishForm>",
+    "itKey": "",
+    "itLastUpdatedByUserId": "81517887-240c-4841-8361-0381a5f4d52c",
+    "itPoints": "1",
+    "itProjectCode": "ELA842",
+    "itScoreLevel": "FullAuto",
+    "itSource": "IAT",
+    "itSourceItemId": "",
+    "itStatus": "WIP",
+    "itType": "LGR",
+    "itUpdateDate": "2019-01-04T11:33:01.207",
+    "itVerMajor": "1",
+    "itVerMinor": "154",
+    "itVerVital": "3",
+    "layout": "VERTICAL",
+    "mostRecentObjectTimestamp": "2019-01-04T11:33:01.993",
+    "orientation": "VERTICAL",
+    "passage": "00000000-0000-0000-0000-000000000000",
+    "passageId": "0",
+    "passageSourceId": "",
+    "passageTitle": "",
+    "publishAdminId": "",
+    "publishDetails": "",
+    "publishStatus": "",
+    "standards": [
+        {
+            "set": "GLE",
+            "standard": "0.0.0.0.0"
+        }
+    ],
+    "configurations": [
+        {
+            "settingName": "Rulers",
+            "settingValue": "none"
+        },
+        {
+            "settingName": "Protractors",
+            "settingValue": "none"
+        },
+        {
+            "settingName": "Calculators",
+            "settingValue": "none"
+        }
+    ],
+    "graphics": null,
+    "history": null,
+    "notes": null,
+    "scoringSetup": {
+        "scoreLevel": "FullAuto",
+        "scoringStatus": "P"
+    }
+}
+
+<> 2018-10-08T085641.404.html
+
+###
+# Different environment URIs:
+#   GET https://ideasweb-sqa.drcedirect.com/sqa.ideas/webservices/REST/1.0/iat.svc
+#   GET https://ideasweb.drcedirect.com/ideas/webservices/REST/1.0/iat.svc
+#
+# Using Edirect:
+#   SQA: http://ideasdevapp01/test.ideas/webservices/REST/1.0/iat.svc
+#   Prod: http://dcwidap014/ideas/webservices/REST/1.0/iat.svc

@@ -1,6 +1,0 @@
-#!/bin/sh
-
-cd /c/dev/wksp/iat/iatapp
-rm -rf target/*classes
-grails compile
-

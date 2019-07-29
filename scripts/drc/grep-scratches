@@ -1,1 +1,0 @@
-grep $@ $GAC_CFG_DIR/intellij/idea.18/scratches/*
