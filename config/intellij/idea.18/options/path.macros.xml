@@ -1,9 +1,0 @@
-<application>
-  <component name="PathMacrosImpl">
-    <macro name="KOTLIN_BUNDLED" value="C:\Program Files\JetBrains\IntelliJ IDEA 2018.1\plugins\Kotlin\kotlinc" />
-    <macro name="MAVEN_REPOSITORY" value="C:/dev/runtime/maven_repo" />
-    <macro name="env" value="sqa" />
-    <macro name="iat_ping_ep" value="https://la-iat-{env}.drcedirect.com/la/ping" />
-    <macro name="ideas_ep" value="https://ideasweb-sqa.drcedirect.com/sqa.ideas/webservices/REST/1.0" />
-  </component>
-</application>

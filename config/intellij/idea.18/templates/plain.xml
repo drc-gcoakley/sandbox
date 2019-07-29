@@ -1,9 +1,0 @@
-<templateSet group="plain">
-  <template name="logg" value="def log = LoggerFactory.getLogger(this.class)" description="def log = LoggerFactory.getLogger(this.class)" toReformat="false" toShortenFQNames="true" />
-  <template name="js2s" value="groovy.json.JsonOutput.toJson().toString()" description="JSONObject to JSON string" toReformat="false" toShortenFQNames="true">
-    <context>
-      <option name="GROOVY_EXPRESSION" value="true" />
-      <option name="GROOVY_STATEMENT" value="true" />
-    </context>
-  </template>
-</templateSet>
