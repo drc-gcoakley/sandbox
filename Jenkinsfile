@@ -42,7 +42,7 @@ pipeline {
   parameters {
 	booleanParam(description: 'Run Unit Tests', 		name: 'runUnitTests',  defaultValue: isAutoBuild)
 	booleanParam(description: 'Run integration Tests', name: 'runIntTests',   defaultValue: isAutoBuild)
-	booleanParamdescription: 'Run vulnerability check', name: 'runVulnCheck',  defaultValue: isAutoBuild)
+	booleanParam(description: 'Run vulnerability check', name: 'runVulnCheck',  defaultValue: isAutoBuild)
 //	booleanParam()description: 'Run static analysis', 	name: 'runStaticAnalysis', defaultValue: isAutoBuild)
 	booleanParam(description: 'Please only upload master form images if some have changed',
 		name: 'uploadMasterFormImages',  defaultValue: isAutoBuild)
