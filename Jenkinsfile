@@ -9,11 +9,11 @@ def branchesAlwaysBuilt = ['develop', 'sqa'] + prodAccountBranches
 def clients = ['tabe']
 def regions = ['us-east-1', 'us-east-2']
 def stageDataList = [
-	{ name: 'runUnitTests', defaultAutoValue: true, defaultManualValue: true },
-	{ name: 'runIntTests',  defaultAutoValue: true, defaultManualValue: true },
-	{ name: 'runVulnCheck', defaultAutoValue: true, defaultManualValue: true },
-//	{ name: 'runStaticAnalysis', defaultAutoValue: true,  defaultManualValue: true },
-	{ name: 'uploadMasterFormImages', defaultAutoValue: true,  defaultManualValue: true },
+	[ name: 'runUnitTests', defaultAutoValue: true, defaultManualValue: true ],
+	[ name: 'runIntTests',  defaultAutoValue: true, defaultManualValue: true ],
+	[ name: 'runVulnCheck', defaultAutoValue: true, defaultManualValue: true ],
+//	[ name: 'runStaticAnalysis', defaultAutoValue: true,  defaultManualValue: true ],
+	[ name: 'uploadMasterFormImages', defaultAutoValue: true,  defaultManualValue: true ],
 ]
 
 // When I declared this with 'def' it was not seen as having a value in all places.
@@ -36,6 +36,7 @@ pipeline {
   environment {
     SCM_URL = scm.getUserRemoteConfigs()[0].getUrl()
     buildInstigator = sh(returnStdout: true, script: "git log -1 --format='%an' ${env.GIT_COMMIT}").trim()
+	contributers = sh (returnStdout: true, script: "[ -r CONTRIBUTERS ] && cat CONTRIBUTERS").trim()
   }
 
   parameters {
