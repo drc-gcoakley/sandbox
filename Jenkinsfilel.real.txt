@@ -1,3 +1,4 @@
+#!/usr/bin/env groovy
 @Library('DRC_Global_Pipeline_Libraries@v1.3.0')
 
 // CONSTANTS
@@ -189,6 +190,37 @@ pipeline {
         }
       }
     }
+
+    stage('Upload to Artifactory') {
+      when {
+        branch br_map[env.BRANCH_NAME]
+      }
+      steps {
+        script {
+          def myJson = readJSON file: "${env.WORKSPACE}/app/package.json"
+          pkgNum = myJson.version
+        }
+
+        uploadToArtifactory([repo: arti_RepoMap[env.BRANCH_NAME],
+                             pattern: "app/rpms/*-eca-security-service-${pkgNum}*.rpm",
+                             git_proj: "eca-security-service",
+                             arti_url: 'http://artifactory.datarecognitioncorp.com/artifactory',
+                             isYumRepo: false])
+        checkRPMArtifactory([arti_repo: arti_RepoMap[env.BRANCH_NAME],
+                             context: 'all',
+                             time_iter: 6,
+                             app_name: 'eca-security-service',
+                             ctx_dilimiter: '-',
+      						 version: "${pkgNum}"])
+      }
+      post {
+        always {
+          dir('app/rpms') {
+            deleteDir()
+          }
+        }
+      }
+	}
 
     stage('Deploy to DEV, SQA, LoadTest') {
       when {
@@ -423,4 +455,44 @@ def configGlobalTables(deployTarget) {
     }
   }
   echo "configGlobalTables END - ${deployTarget.env}"
+}
+
+def generateVerificationTasks(stashName, environments) {
+
+  def verifyTasks = [:]
+  // // download jmeter
+
+  environments.each { env ->
+     verifyTasks[env.name] = {
+       node('coel7_agent') {
+         stage(env.name) {
+           sh 'curl -v -O -L \'http://artifactory.datarecognitioncorp.com/artifactory/downloads/apache-jmeter-4.0.tgz/apache-jmeter-4.0.tgz\' && tar zxf apache-jmeter-4.0.tgz'
+           runJmeter stashName, env
+         }
+       }
+     }
+   }
+  return verifyTasks
+}
+def runJmeter(stashName, env) {
+  echo "runJmeter received env name as :   ${env.name}"
+  dir(path: "loadtest-results-${env.name}") {
+    deleteDir()
+  }
+  sh "ls -lt"
+  echo "unstashing ${stashName}"
+  unstash stashName
+  echo "unstash done"
+  sh "ls"
+  sh "apache-jmeter-4.0/bin/jmeter -f -n -t smoketests/ECA-Security-Service-SmokeTests.jmx -l jmeter.log -e -o ../smoketests-results-${env.name} -JapiBaseUrl=${env.apiGatewayUrl} \$(cat smoketests/configs/${env.name}_properties.txt)"
+  publishHTML allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: "../smoketests-results-${env.name}", reportFiles: 'results-*.xml', reportName: "JMeter Verification Report ${env.name}", reportTitles: ''
+  sh "ls -lr"
+  // publishHTML allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: "loadtest-results", reportFiles: 'results.xml', reportName: "JMeter Results XML ${env.name}", reportTitles: ''
+  def jmeterResults = sh(returnStdout: true, script: "cat smoketests-results-${env.name}/results.xml | wc -l").trim()
+  def COLOR_MAP = ['SUCCESS': 'GREEN', 'FAILURE': 'RED', 'UNSTABLE': 'YELLOW', 'ABORTED': 'GRAY']
+  if (new Integer(jmeterResults) > 4) {
+    currentBuild.result = 'FAILURE'
+    googlechatnotification message: "Security Service, verification of ${env.JOB_NAME} in ${env.name} for PR ${prTitle}:  ${currentBuild.result}', (<${env.BUILD_URL}|Link>)", url: 'https://chat.googleapis.com/v1/spaces/AAAAPSo2Vpg/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=CFhOMwzj_URdSa7sPx5egdt1fbMARFk5bbVQMsdobKg%3D'
+    sh 'exit 1'
+  }
 }

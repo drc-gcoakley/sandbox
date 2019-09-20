@@ -44,6 +44,7 @@ pipeline {
 	booleanParam(description: 'Run integration Tests', name: 'runIntTests',   defaultValue: isAutoBuild)
 	booleanParam(description: 'Run vulnerability check', name: 'runVulnCheck',  defaultValue: isAutoBuild)
 //	booleanParam()description: 'Run static analysis', 	name: 'runStaticAnalysis', defaultValue: isAutoBuild)
+    // TODO: Change default back to false when we are no longer expiring master forms every 14 days.
 	booleanParam(description: 'Please only upload master form images if some have changed',
 		name: 'uploadMasterFormImages',  defaultValue: isAutoBuild)
     choice(description: 'Select a common branch', name: 'branchSelected', choices: branchesAlwaysBuilt, defaultValue: '')
@@ -51,10 +52,6 @@ pipeline {
 				 branchFilter: 'refs/heads/(.*)', tagFilter: '*', type: 'PT_BRANCH_TAG',
 				 quickFilterEnabled: true, sortMode: 'ASCENDING_SMART')
 //	string(description: 'Enter a custom branch', name: 'branchTyped', defaultValue: '')
-  }
-
-    // TODO: Change default back to false when we are no longer expiring master forms every 14 days.
-    booleanParam(defaultValue: true, description: 'Please only upload master form images if some have changed', name: 'uploadMasterFormImages')
   }
 
   options {
