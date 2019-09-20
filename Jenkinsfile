@@ -49,7 +49,7 @@ pipeline {
 		name: 'uploadMasterFormImages',  defaultValue: isAutoBuild)
     choice(description: 'Select a common branch', name: 'branchSelected', choices: branchesAlwaysBuilt, defaultValue: '')
 	gitParameter(description: 'Select a branch', name: 'GIT_BRANCH',
-				 branchFilter: 'refs/heads/(.*)', tagFilter: '*', type: 'PT_BRANCH_TAG',
+				 branchFilter: 'origin/(.*)', tagFilter: '*', type: 'PT_BRANCH_TAG',
 				 quickFilterEnabled: true, sortMode: 'ASCENDING_SMART')
 //	string(description: 'Enter a custom branch', name: 'branchTyped', defaultValue: '')
   }
