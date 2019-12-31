@@ -1,0 +1,246 @@
+Serverless: Load command interactiveCli
+Serverless: Load command config
+Serverless: Load command config:credentials
+Serverless: Load command config:tabcompletion
+Serverless: Load command config:tabcompletion:install
+Serverless: Load command config:tabcompletion:uninstall
+Serverless: Load command create
+Serverless: Load command install
+Serverless: Load command package
+Serverless: Load command deploy
+Serverless: Load command deploy:function
+Serverless: Load command deploy:list
+Serverless: Load command deploy:list:functions
+Serverless: Load command invoke
+Serverless: Load command invoke:local
+Serverless: Load command info
+Serverless: Load command logs
+Serverless: Load command metrics
+Serverless: Load command print
+Serverless: Load command remove
+Serverless: Load command rollback
+Serverless: Load command rollback:function
+Serverless: Load command slstats
+Serverless: Load command plugin
+Serverless: Load command plugin
+Serverless: Load command plugin:install
+Serverless: Load command plugin
+Serverless: Load command plugin:uninstall
+Serverless: Load command plugin
+Serverless: Load command plugin:list
+Serverless: Load command plugin
+Serverless: Load command plugin:search
+Serverless: Load command config
+Serverless: Load command config:credentials
+Serverless: Load command rollback
+Serverless: Load command rollback:function
+Serverless: Load command login
+Serverless: Load command logout
+Serverless: Load command generate-event
+Serverless: Load command test
+Serverless: Load command dashboard
+Serverless: Invoke deploy
+Serverless: Invoke package
+Serverless: Invoke aws:common:validate
+Serverless: Invoke aws:common:cleanupTempDir
+Serverless: Packaging service...
+Serverless: Excluding development dependencies...
+Serverless: Invoke aws:package:finalize
+Serverless: Invoke aws:common:moveArtifactsToPackage
+Serverless: Invoke aws:common:validate
+Serverless: Invoke aws:deploy:deploy
+Serverless: [AWS cloudformation 200 0.346s 0 retries] describeStacks({ StackName: 'hello-layered-dev' })
+Serverless: [AWS cloudformation 200 0.306s 0 retries] describeStackResource({ StackName: 'hello-layered-dev',
+  LogicalResourceId: 'ServerlessDeploymentBucket' })
+Serverless: [AWS s3 200 0.336s 0 retries] listObjectsV2({ Bucket: 'hello-layered-dev-serverlessdeploymentbucket-ztiqagfsg009',
+  Prefix: 'serverless/hello-layered/dev' })
+Serverless: [AWS s3 200 0.267s 0 retries] headObject({ Bucket: 'hello-layered-dev-serverlessdeploymentbucket-ztiqagfsg009',
+  Key:
+   'serverless/hello-layered/dev/1576558784577-2019-12-17T04:59:44.577Z/compiled-cloudformation-template.json' })
+Serverless: [AWS s3 200 0.274s 0 retries] headObject({ Bucket: 'hello-layered-dev-serverlessdeploymentbucket-ztiqagfsg009',
+  Key:
+   'serverless/hello-layered/dev/1576558784577-2019-12-17T04:59:44.577Z/hello-layered.zip' })
+Serverless: [AWS lambda 404 0.327s 0 retries] getFunction({ FunctionName: 'hello-layered-dev-goServerless' })
+Serverless: [AWS lambda 404 0.339s 0 retries] getFunction({ FunctionName: 'hello-layered-dev-helloWorld' })
+Serverless: [AWS sts 200 0.289s 0 retries] getCallerIdentity({})
+Serverless: Uploading CloudFormation file to S3...
+Serverless: [AWS s3 200 0.39s 0 retries] putObject({ Body:
+   <Buffer 7b 22 41 57 53 54 65 6d 70 6c 61 74 65 46 6f 72 6d 61 74 56 65 72 73 69 6f 6e 22 3a 22 32 30 31 30 2d 30 39 2d 30 39 22 2c 22 44 65 73 63 72 69 70 74 ... >,
+  Bucket: 'hello-layered-dev-serverlessdeploymentbucket-ztiqagfsg009',
+  Key:
+   'serverless/hello-layered/dev/1576559049285-2019-12-17T05:04:09.285Z/compiled-cloudformation-template.json',
+  ContentType: 'application/json',
+  Metadata:
+   { filesha256: 'mA/FtuRaQqZBg8UWiWZ0Dfb/xLmjSRtZvbOXXUp14Qw=' } })
+Serverless: Uploading artifacts...
+Serverless: Uploading service hello-layered.zip file to S3 (40.72 MB)...
+Serverless: [AWS s3 200 0.334s 0 retries] createMultipartUpload({ Bucket: 'hello-layered-dev-serverlessdeploymentbucket-ztiqagfsg009',
+  Key:
+   'serverless/hello-layered/dev/1576559049285-2019-12-17T05:04:09.285Z/hello-layered.zip',
+  ContentType: 'application/zip',
+  Metadata:
+   { filesha256: 'cUjRu0xv2hhDTD5ZTmKJnyF7QmFFvxbavDPLHyIympM=' } })
+Serverless: [AWS s3 200 10.277s 0 retries] uploadPart({ Body:
+   <Buffer c5 bd ee 72 e8 33 f1 ff bc 57 a1 82 1c da e2 23 86 aa b4 e9 81 08 d6 c3 65 a2 20 59 cf 87 c9 55 b8 8d 89 b7 0b 8d 50 e4 82 ae 3f d5 ca 63 9f 23 d6 b2 ... >,
+  ContentLength: 5242880,
+  PartNumber: 3,
+  Bucket: 'hello-layered-dev-serverlessdeploymentbucket-ztiqagfsg009',
+  Key:
+   'serverless/hello-layered/dev/1576559049285-2019-12-17T05:04:09.285Z/hello-layered.zip',
+  UploadId:
+   'MuuwhgIN3.0nVKXwdJdn7n0GUcHuhAZnGY0Ua.wYhCglN6BChxXANEuRsflXHz_f.0S9OFFaGoaEyOBk6vfOvUyETAjoxNR.nbtJJ6YwKyLNi2GCgNDP_xJgG9i4yWpe' })
+Serverless: [AWS s3 200 10.699s 0 retries] uploadPart({ Body:
+   <Buffer 2e fc 3f 57 d1 4b d9 6b 2c 79 13 b4 0e 3e 85 fe bc f7 a2 49 c9 e1 8e 28 69 08 ca 9e 64 66 3e af 26 d0 24 11 01 68 a4 1b 10 c5 d8 59 2b f7 b0 bf 9f 33 ... >,
+  ContentLength: 5242880,
+  PartNumber: 2,
+  Bucket: 'hello-layered-dev-serverlessdeploymentbucket-ztiqagfsg009',
+  Key:
+   'serverless/hello-layered/dev/1576559049285-2019-12-17T05:04:09.285Z/hello-layered.zip',
+  UploadId:
+   'MuuwhgIN3.0nVKXwdJdn7n0GUcHuhAZnGY0Ua.wYhCglN6BChxXANEuRsflXHz_f.0S9OFFaGoaEyOBk6vfOvUyETAjoxNR.nbtJJ6YwKyLNi2GCgNDP_xJgG9i4yWpe' })
+Serverless: [AWS s3 200 11.241s 0 retries] uploadPart({ Body:
+   <Buffer 50 4b 03 04 14 00 08 00 08 00 00 00 21 00 00 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 66 69 72 73 74 2d 6c 61 79 65 72 65 64 2e 6a 73 5d 51 5d 4b ... >,
+  ContentLength: 5242880,
+  PartNumber: 1,
+  Bucket: 'hello-layered-dev-serverlessdeploymentbucket-ztiqagfsg009',
+  Key:
+   'serverless/hello-layered/dev/1576559049285-2019-12-17T05:04:09.285Z/hello-layered.zip',
+  UploadId:
+   'MuuwhgIN3.0nVKXwdJdn7n0GUcHuhAZnGY0Ua.wYhCglN6BChxXANEuRsflXHz_f.0S9OFFaGoaEyOBk6vfOvUyETAjoxNR.nbtJJ6YwKyLNi2GCgNDP_xJgG9i4yWpe' })
+Serverless: [AWS s3 200 21.12s 0 retries] uploadPart({ Body:
+   <Buffer bd 6e 3d d4 49 73 1e 60 43 9f c0 70 77 55 a0 21 1e da 97 4c f4 24 13 f3 af 5e 37 02 e3 34 ab 0e bd b2 1e 21 6f 6c e2 65 be 8f ed 01 26 b0 2b c3 85 fe ... >,
+  ContentLength: 5242880,
+  PartNumber: 6,
+  Bucket: 'hello-layered-dev-serverlessdeploymentbucket-ztiqagfsg009',
+  Key:
+   'serverless/hello-layered/dev/1576559049285-2019-12-17T05:04:09.285Z/hello-layered.zip',
+  UploadId:
+   'MuuwhgIN3.0nVKXwdJdn7n0GUcHuhAZnGY0Ua.wYhCglN6BChxXANEuRsflXHz_f.0S9OFFaGoaEyOBk6vfOvUyETAjoxNR.nbtJJ6YwKyLNi2GCgNDP_xJgG9i4yWpe' })
+Serverless: [AWS s3 200 27.382s 0 retries] uploadPart({ Body:
+   <Buffer 7f 4f 7f dd 92 46 1a 96 87 9d 43 2e 71 15 86 d1 a3 9f 5f 7f 6a 69 dc b5 5a b5 ce 56 33 37 de 1b 5d 97 56 55 cb a5 9e 57 a5 d3 6a 5f 59 fd a9 ab ac 2e ... >,
+  ContentLength: 5242880,
+  PartNumber: 4,
+  Bucket: 'hello-layered-dev-serverlessdeploymentbucket-ztiqagfsg009',
+  Key:
+   'serverless/hello-layered/dev/1576559049285-2019-12-17T05:04:09.285Z/hello-layered.zip',
+  UploadId:
+   'MuuwhgIN3.0nVKXwdJdn7n0GUcHuhAZnGY0Ua.wYhCglN6BChxXANEuRsflXHz_f.0S9OFFaGoaEyOBk6vfOvUyETAjoxNR.nbtJJ6YwKyLNi2GCgNDP_xJgG9i4yWpe' })
+Serverless: [AWS s3 200 29.65s 0 retries] uploadPart({ Body:
+   <Buffer 8a b1 0e 6a 54 26 f0 7a a1 c9 0f 02 11 82 73 19 ee 3e 46 35 a9 0a 72 08 8e 8e 14 40 f2 19 a4 3d de 21 d6 2e 04 e0 b4 25 41 3e 32 d8 bf 4d 4f e1 3f 3c ... >,
+  ContentLength: 5242880,
+  PartNumber: 5,
+  Bucket: 'hello-layered-dev-serverlessdeploymentbucket-ztiqagfsg009',
+  Key:
+   'serverless/hello-layered/dev/1576559049285-2019-12-17T05:04:09.285Z/hello-layered.zip',
+  UploadId:
+   'MuuwhgIN3.0nVKXwdJdn7n0GUcHuhAZnGY0Ua.wYhCglN6BChxXANEuRsflXHz_f.0S9OFFaGoaEyOBk6vfOvUyETAjoxNR.nbtJJ6YwKyLNi2GCgNDP_xJgG9i4yWpe' })
+Serverless: [AWS s3 200 30.606s 0 retries] uploadPart({ Body:
+   <Buffer 77 77 64 63 53 a8 69 dd 36 3b 5f 85 89 8d af d6 1f 8e eb 13 f8 91 57 79 e6 d4 c2 5f f1 59 59 78 c3 7a f8 88 92 c3 0d f2 7f c8 eb de 71 2c 8f 37 a5 aa ... >,
+  ContentLength: 5242880,
+  PartNumber: 7,
+  Bucket: 'hello-layered-dev-serverlessdeploymentbucket-ztiqagfsg009',
+  Key:
+   'serverless/hello-layered/dev/1576559049285-2019-12-17T05:04:09.285Z/hello-layered.zip',
+  UploadId:
+   'MuuwhgIN3.0nVKXwdJdn7n0GUcHuhAZnGY0Ua.wYhCglN6BChxXANEuRsflXHz_f.0S9OFFaGoaEyOBk6vfOvUyETAjoxNR.nbtJJ6YwKyLNi2GCgNDP_xJgG9i4yWpe' })
+Serverless: [AWS s3 200 6.73s 0 retries] uploadPart({ Body:
+   <Buffer 73 2f 6d 6f 6d 65 6e 74 2f 73 72 63 2f 6c 6f 63 61 6c 65 2f 62 6e 2e 6a 73 50 4b 01 02 2d 03 14 00 08 00 08 00 00 00 21 00 a1 53 0e c5 71 05 00 00 b9 ... >,
+  ContentLength: 754720,
+  PartNumber: 9,
+  Bucket: 'hello-layered-dev-serverlessdeploymentbucket-ztiqagfsg009',
+  Key:
+   'serverless/hello-layered/dev/1576559049285-2019-12-17T05:04:09.285Z/hello-layered.zip',
+  UploadId:
+   'MuuwhgIN3.0nVKXwdJdn7n0GUcHuhAZnGY0Ua.wYhCglN6BChxXANEuRsflXHz_f.0S9OFFaGoaEyOBk6vfOvUyETAjoxNR.nbtJJ6YwKyLNi2GCgNDP_xJgG9i4yWpe' })
+Serverless: [AWS s3 200 17.257s 0 retries] uploadPart({ Body:
+   <Buffer 99 36 88 4e 2d 0b 24 29 27 27 69 92 fc 56 62 bc 35 15 3b 12 df 53 70 c8 ae aa 1d 83 ce 3c be 63 77 a9 a9 74 4d 58 9e bf f9 29 0e f9 a5 32 b0 91 6b ba ... >,
+  ContentLength: 5242880,
+  PartNumber: 8,
+  Bucket: 'hello-layered-dev-serverlessdeploymentbucket-ztiqagfsg009',
+  Key:
+   'serverless/hello-layered/dev/1576559049285-2019-12-17T05:04:09.285Z/hello-layered.zip',
+  UploadId:
+   'MuuwhgIN3.0nVKXwdJdn7n0GUcHuhAZnGY0Ua.wYhCglN6BChxXANEuRsflXHz_f.0S9OFFaGoaEyOBk6vfOvUyETAjoxNR.nbtJJ6YwKyLNi2GCgNDP_xJgG9i4yWpe' })
+Serverless: [AWS s3 200 0.455s 0 retries] completeMultipartUpload({ MultipartUpload:
+   { Parts:
+      [ { ETag: '"800a407399aa2450ff6990a92e059efd"', PartNumber: 1 },
+        { ETag: '"f7b644bff97a23b97bde73fef56756f7"', PartNumber: 2 },
+        { ETag: '"3014ebe0fbcdbc4559cbcf2d735abebf"', PartNumber: 3 },
+        { ETag: '"2746737a1639d700398af7b53a1eed4a"', PartNumber: 4 },
+        { ETag: '"2fd894667ed8595ea75be9e0244b91ff"', PartNumber: 5 },
+        { ETag: '"7fac88a898b9e19fead1c3b0fc7eb5d8"', PartNumber: 6 },
+        { ETag: '"c11a222c4828166ca73e151ff6ea6055"', PartNumber: 7 },
+        { ETag: '"af765273f8265f494b0d325c7bd45cdb"', PartNumber: 8 },
+        { ETag: '"f57040236cf8711201ac3c1c4ef756b4"', PartNumber: 9 },
+        [length]: 9 ] },
+  Bucket: 'hello-layered-dev-serverlessdeploymentbucket-ztiqagfsg009',
+  Key:
+   'serverless/hello-layered/dev/1576559049285-2019-12-17T05:04:09.285Z/hello-layered.zip',
+  UploadId:
+   'MuuwhgIN3.0nVKXwdJdn7n0GUcHuhAZnGY0Ua.wYhCglN6BChxXANEuRsflXHz_f.0S9OFFaGoaEyOBk6vfOvUyETAjoxNR.nbtJJ6YwKyLNi2GCgNDP_xJgG9i4yWpe' })
+Serverless: Validating template...
+Serverless: [AWS cloudformation 200 0.649s 0 retries] validateTemplate({ TemplateURL:
+   'https://s3.amazonaws.com/hello-layered-dev-serverlessdeploymentbucket-ztiqagfsg009/serverless/hello-layered/dev/1576559049285-2019-12-17T05:04:09.285Z/compiled-cloudformation-template.json' })
+Serverless: Updating Stack...
+Serverless: [AWS cloudformation 200 0.711s 0 retries] updateStack({ StackName: 'hello-layered-dev',
+  Capabilities: [ 'CAPABILITY_IAM', 'CAPABILITY_NAMED_IAM', [length]: 2 ],
+  Parameters: [ [length]: 0 ],
+  TemplateURL:
+   'https://s3.amazonaws.com/hello-layered-dev-serverlessdeploymentbucket-ztiqagfsg009/serverless/hello-layered/dev/1576559049285-2019-12-17T05:04:09.285Z/compiled-cloudformation-template.json',
+  Tags: [ { Key: 'STAGE', Value: 'dev' }, [length]: 1 ] })
+Serverless: Checking Stack update progress...
+Serverless: [AWS cloudformation 200 0.561s 0 retries] describeStackEvents({ StackName:
+   'arn:aws:cloudformation:us-east-1:635469595622:stack/hello-layered-dev/9c607340-2084-11ea-bac8-12713880e578' })
+....Serverless: [AWS cloudformation 200 0.574s 0 retries] describeStackEvents({ StackName:
+   'arn:aws:cloudformation:us-east-1:635469595622:stack/hello-layered-dev/9c607340-2084-11ea-bac8-12713880e578' })
+.....Serverless: [AWS cloudformation 200 0.492s 0 retries] describeStackEvents({ StackName:
+   'arn:aws:cloudformation:us-east-1:635469595622:stack/hello-layered-dev/9c607340-2084-11ea-bac8-12713880e578' })
+Serverless: [AWS cloudformation 200 0.422s 0 retries] describeStackEvents({ StackName:
+   'arn:aws:cloudformation:us-east-1:635469595622:stack/hello-layered-dev/9c607340-2084-11ea-bac8-12713880e578' })
+..Serverless: [AWS cloudformation 200 0.822s 0 retries] describeStackEvents({ StackName:
+   'arn:aws:cloudformation:us-east-1:635469595622:stack/hello-layered-dev/9c607340-2084-11ea-bac8-12713880e578' })
+.Serverless: [AWS cloudformation 200 0.511s 0 retries] describeStackEvents({ StackName:
+   'arn:aws:cloudformation:us-east-1:635469595622:stack/hello-layered-dev/9c607340-2084-11ea-bac8-12713880e578' })
+Serverless: [AWS cloudformation 200 0.462s 0 retries] describeStackEvents({ StackName:
+   'arn:aws:cloudformation:us-east-1:635469595622:stack/hello-layered-dev/9c607340-2084-11ea-bac8-12713880e578' })
+Serverless: [AWS cloudformation 200 0.471s 0 retries] describeStackEvents({ StackName:
+   'arn:aws:cloudformation:us-east-1:635469595622:stack/hello-layered-dev/9c607340-2084-11ea-bac8-12713880e578' })
+..........Serverless: [AWS cloudformation 200 0.668s 0 retries] describeStackEvents({ StackName:
+   'arn:aws:cloudformation:us-east-1:635469595622:stack/hello-layered-dev/9c607340-2084-11ea-bac8-12713880e578' })
+..
+Serverless: Stack update finished...
+Serverless: Invoke aws:info
+Serverless: [AWS cloudformation 200 0.311s 0 retries] describeStacks({ StackName: 'hello-layered-dev' })
+Serverless: [AWS cloudformation 200 0.307s 0 retries] listStackResources({ StackName: 'hello-layered-dev' })
+Service Information
+service: hello-layered
+stage: dev
+region: us-east-1
+stack: hello-layered-dev
+resources: 9
+api keys:
+  None
+endpoints:
+  None
+functions:
+  goServerless: hello-layered-dev-goServerless
+  helloWorld: hello-layered-dev-helloWorld
+layers:
+  None
+Serverless: Invoke aws:deploy:finalize
+Serverless: [AWS s3 200 0.339s 0 retries] listObjectsV2({ Bucket: 'hello-layered-dev-serverlessdeploymentbucket-ztiqagfsg009',
+  Prefix: 'serverless/hello-layered/dev' })
+Serverless: Removing old service artifacts from S3...
+Serverless: [AWS s3 200 0.469s 0 retries] deleteObjects({ Bucket: 'hello-layered-dev-serverlessdeploymentbucket-ztiqagfsg009',
+  Delete:
+   { Objects:
+      [ { Key:
+           'serverless/hello-layered/dev/1576556450696-2019-12-17T04:20:50.696Z/compiled-cloudformation-template.json' },
+        { Key:
+           'serverless/hello-layered/dev/1576556450696-2019-12-17T04:20:50.696Z/hello-layered.zip' },
+        { Key:
+           'serverless/hello-layered/dev/1576556625674-2019-12-17T04:23:45.674Z/compiled-cloudformation-template.json' },
+        { Key:
+           'serverless/hello-layered/dev/1576556625674-2019-12-17T04:23:45.674Z/hello-layered.zip' },
+        [length]: 4 ] } })
+Serverless: Run the "serverless" command to setup monitoring, troubleshooting and testing.

@@ -1,0 +1,6 @@
+When to use layers.
+https://lumigo.io/blog/lambda-layers-when-to-use-it/
+
+How-to use local and external layers.
+https://serverless.com/blog/publish-aws-lambda-layers-serverless-framework/
+

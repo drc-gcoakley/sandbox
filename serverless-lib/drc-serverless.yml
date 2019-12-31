@@ -1,0 +1,5 @@
+fncs: ${file(./drc-sls-functions.js)}
+
+vpc: ${file(./drc-vpc.yml)}
+
+dynamo: drc-dynamo.yml

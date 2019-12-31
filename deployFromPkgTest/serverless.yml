@@ -1,0 +1,34 @@
+
+service: deployFromPkgTest
+
+plugins:
+  - serverless-webpack
+# Cannot use this since we need to explicitly include the opencv4nodejs module with its shared libraries.
+#  - serverless-bundle
+
+package:
+  individually: true
+
+custom:
+  webpack:
+    #webpackConfig: 'webpack.config.js'   # Name of webpack configuration file
+    #packagePath: '../package.json' # relative path to custom package.json file.
+    #packager: 'npm'   # Packager that will be used to package your external modules
+    includeModules:   # Node modules configuration for packaging
+      forceExclude:
+        - aws-sdk
+    excludeFiles: src/**/*.spec.js # Provide a glob for files to ignore
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+#  deploymentBucket:
+#    name: us-east-1-deployments
+#    serverSideEncryption: AES256
+
+functions:
+  goServerless:
+    handler: first-deployFromPkgTest.goServerless
+  helloWorld:
+    handler: second-deployFromPkgTest.helloWorld
+

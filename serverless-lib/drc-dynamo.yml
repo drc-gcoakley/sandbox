@@ -1,0 +1,30 @@
+  dynamodb:
+    # If you only want to use DynamoDB Local in some stages, declare them here
+    stages:
+      - dev
+      - sqa
+      - stg
+      - stg2
+    start:
+      port: 8000
+      inMemory: true
+      heapInitial: 200m
+      heapMax: 1g
+      migrate: true
+      seed: true
+      convertEmptyValues: true
+    seed:
+      domain:
+        sources:
+          #          - table: ${self:custom.vars.documentResultsTableNameOld}
+          #            sources: [./db/local-seed-data/document-results.json]
+          #          - table: ${self:custom.vars.scansTableNameOld}
+          #            sources: [./db/local-seed-data/scans.json]
+          #          - table: ${self:custom.vars.sessionsTableNameOld}
+          #            sources: [./db/local-seed-data/sessions.json]
+          #          - table: ${self:custom.vars.formsTableNameOld}
+          #            sources: [./db/local-seed-data/forms.json]
+          - table: ${self:custom.vars.formsTableName}
+            sources: [./db/local-seed-data/forms.json]
+    # Uncomment only if you already have a DynamoDB running locally
+    # noStart: true

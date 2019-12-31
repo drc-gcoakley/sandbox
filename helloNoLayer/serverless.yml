@@ -1,0 +1,15 @@
+
+service: hello-no-layer
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+#  deploymentBucket:
+#    name: us-east-1-deployments
+#    serverSideEncryption: AES256
+
+functions:
+  goServerless:
+    handler: first-no-layer.goServerless
+  helloWorld:
+    handler: second-no-layer.helloWorld

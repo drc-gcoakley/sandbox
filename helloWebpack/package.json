@@ -1,0 +1,27 @@
+{
+  "name": "svrls-testing_hello-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Glen Coakley <gcoakley@datarecognitioncorp.com>",
+  "license": "ISC",
+  "dependencies": {
+    "opencv4nodejs": "^2.38.0"
+  },
+  "devDependencies": {
+    "serverless": "^1.58.0",
+    "serverless-domain-manager": "^3.3.0",
+    "serverless-offline": "^5.12.1",
+    "serverless-plugin-common-excludes": "^3.0.0",
+    "serverless-plugin-include-dependencies": "^4.0.0",
+    "serverless-plugin-typescript": "^1.1.9",
+    "serverless-prune-plugin": "^1.4.1",
+    "serverless-scriptable-plugin": "^1.0.4",
+    "serverless-webpack": "^5.3.1",
+    "webpack": "^4.41.2",
+    "webpack-node-externals": "^1.7.2"
+  }
+}

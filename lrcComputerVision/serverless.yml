@@ -1,0 +1,21 @@
+service: lrc-computer-vision
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  deploymentBucket:
+    name: us-east-1-deployments
+    serverSideEncryption: AES256
+
+layers:
+  lrcComputerVision:
+    path: src
+	# Could use 'artifact' instead of 'path', like this:
+    #	package
+    #	  artifact layerSource.zip
+    #name: ${self:service}-${self:provider.stage} # optional, Deployed Lambda layer name
+	#description: Description of what the lambda layer does # optional, Description to publish to AWS
+	#licenseInfo: 'ISC'
+	#allowedAccounts: # optional, a list of AWS account IDs allowed to access this layer.
+	#  - '635469595622'
+	#retain: true # optional, false by default. If true, layer versions are not deleted as new ones are created

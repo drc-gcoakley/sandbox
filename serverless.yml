@@ -1,0 +1,36 @@
+
+custom:
+  fncDrcSls: ./serverless-lib/drc-sls-functions.js
+  fncToday: ${file(${self:custom.fncDrcSls}):todayAsIsoString}
+  project: svrls-testing
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'us-east-1'}
+  vars: ${file(./serverless-lib/${self:custom.stage}.yml)}
+
+service: ${self:custom.project}
+
+plugins:
+  - serverless-scriptable-plugin
+  - serverless-domain-manager
+  - serverless-offline
+  - serverless-plugin-common-excludes
+  - serverless-plugin-include-dependencies
+  - serverless-prune-plugin
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: ${self:custom.stage}
+  region: ${self:custom.region}
+  role: ${self:custom.vars.iamRoleLambdaExecution}
+  environment:
+    STAGE: ${self:custom.stage}
+    REGION: ${self:custom.region}
+    TMP_DIR: ${self:custom.vars.tmpDir}
+    DYNAMODB: ${self:custom.vars.dynamoDb}
+
+  deploymentBucket:
+    name: ${self:provider.region}-${self:custom.vars.deploymentbucket} # Deployment bucket name.
+    serverSideEncryption: AES256 # when using server-side encryption
+
+  vpc: ${self:custom.vars.${self:provider.region}.vpc} #VPC Subnets and Security Groups

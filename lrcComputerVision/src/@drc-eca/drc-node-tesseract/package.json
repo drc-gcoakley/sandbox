@@ -1,0 +1,72 @@
+{
+  "_from": "@drc-eca/drc-node-tesseract",
+  "_id": "@drc-eca/drc-node-tesseract@1.1.0",
+  "_inBundle": false,
+  "_integrity": "sha1-YNf6OiZ0x+NM9QDMpnI4fJBpd3s=",
+  "_location": "/@drc-eca/drc-node-tesseract",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "@drc-eca/drc-node-tesseract",
+    "name": "@drc-eca/drc-node-tesseract",
+    "escapedName": "@drc-eca%2fdrc-node-tesseract",
+    "scope": "@drc-eca",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://artifactory:443/artifactory/api/npm/drc_local_npm/@drc-eca/drc-node-tesseract/-/@drc-eca/drc-node-tesseract-1.1.0.tgz",
+  "_shasum": "60d7fa3a2674c7e34cf500cca672387c9069777b",
+  "_spec": "@drc-eca/drc-node-tesseract",
+  "_where": "/Users/glencoakley/dev/drc/wksp/lrc/svrls-testing",
+  "author": {
+    "name": "DRC"
+  },
+  "bugs": {
+    "url": "https://github.com/DataRecognitionCorporation/drc-node-tesseract/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "glob": "^7.1.4",
+    "uuid": "^3.3.2"
+  },
+  "deprecated": false,
+  "description": "A simple wrapper for the Tesseract OCR 4.x package",
+  "devDependencies": {
+    "mocha": "~6.1.4",
+    "should": "~13.2.3"
+  },
+  "engine": {
+    "node": ">=0.6"
+  },
+  "files": [
+    "package.json",
+    "index.js",
+    "lib/**"
+  ],
+  "homepage": "https://github.com/DataRecognitionCorporation/drc-node-tesseract#readme",
+  "keywords": [
+    "tesseract",
+    "ocr",
+    "text recognition"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "@drc-eca/drc-node-tesseract",
+  "publishConfig": {
+    "registry": "http://artifactory/artifactory/api/npm/drc_local_npm/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DataRecognitionCorporation/drc-node-tesseract.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "version": "1.1.0"
+}

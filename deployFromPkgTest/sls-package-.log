@@ -1,0 +1,13 @@
+Serverless: Bundling with Webpack...
+Time: 81ms
+Built at: 12/18/2019 4:09:34 PM
+                     Asset     Size  Chunks             Chunk Names
+first-deployFromPkgTest.js  1.1 KiB       0  [emitted]  first-deployFromPkgTest
+Entrypoint first-deployFromPkgTest = first-deployFromPkgTest.js
+[0] ./first-deployFromPkgTest.js 421 bytes {0} [built]
+Time: 63ms
+Built at: 12/18/2019 4:09:34 PM
+                      Asset      Size  Chunks             Chunk Names
+second-deployFromPkgTest.js  1.19 KiB       0  [emitted]  second-deployFromPkgTest
+Entrypoint second-deployFromPkgTest = second-deployFromPkgTest.js
+[0] ./second-deployFromPkgTest.js 520 bytes {0} [built]

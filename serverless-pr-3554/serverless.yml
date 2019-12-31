@@ -1,0 +1,34 @@
+# serverless.yml
+
+service: serverless-async-vars
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+custom:
+  data: # some data to reference
+    zero: 0
+    nooo: false
+  varA: ${env:TESTING} # env vars
+  varB: ${opt:stage} # opts vars
+  varC: ${self:provider.name} # self vars
+  varD: ${env:TESTING}-${opt:stage} # two vars in a string
+  varE: ${opt:${env:TESTING}hoo} # nested vars
+  varF: ${opt:region, opt:stage} # overwrite functionality
+  varG: ${file(./vars.js):hello} # JS file running sync
+  varH: ${file(./vars.js):promised} # JS file running async/promised NEW!!!
+  varI: ${file(./vars.json):hoo.hoo2} # deep JSON file
+  varJ: ${file(./vars.yml):hee.hee2} # deep YAML file
+  varK: my stage is ${opt:stage} # vars sub string
+  varL: your account number is ${opt:number} # number vars as sub string
+  varM: ${opt:number} # preserving data type
+  varN: ${self:plugins, self:package, self:service} # multiple overwrites when empty object and undefined
+  varO: ${self:custom.data.zero, self:service} # shouldn't overwrite 0 values
+  varP: ${self:custom.data.nooo, self:service} # shouldn't overwrite false values
+  varQ: ${self:} # referencing the entire config file
+
+functions:
+  hello:
+    handler: handler.hello
+

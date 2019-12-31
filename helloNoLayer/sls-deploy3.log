@@ -1,0 +1,108 @@
+Serverless: Load command interactiveCli
+Serverless: Load command config
+Serverless: Load command config:credentials
+Serverless: Load command config:tabcompletion
+Serverless: Load command config:tabcompletion:install
+Serverless: Load command config:tabcompletion:uninstall
+Serverless: Load command create
+Serverless: Load command install
+Serverless: Load command package
+Serverless: Load command deploy
+Serverless: Load command deploy:function
+Serverless: Load command deploy:list
+Serverless: Load command deploy:list:functions
+Serverless: Load command invoke
+Serverless: Load command invoke:local
+Serverless: Load command info
+Serverless: Load command logs
+Serverless: Load command metrics
+Serverless: Load command print
+Serverless: Load command remove
+Serverless: Load command rollback
+Serverless: Load command rollback:function
+Serverless: Load command slstats
+Serverless: Load command plugin
+Serverless: Load command plugin
+Serverless: Load command plugin:install
+Serverless: Load command plugin
+Serverless: Load command plugin:uninstall
+Serverless: Load command plugin
+Serverless: Load command plugin:list
+Serverless: Load command plugin
+Serverless: Load command plugin:search
+Serverless: Load command config
+Serverless: Load command config:credentials
+Serverless: Load command rollback
+Serverless: Load command rollback:function
+Serverless: Load command login
+Serverless: Load command logout
+Serverless: Load command generate-event
+Serverless: Load command test
+Serverless: Load command dashboard
+Serverless: Invoke deploy
+Serverless: Invoke package
+Serverless: Invoke aws:common:validate
+Serverless: Invoke aws:common:cleanupTempDir
+Serverless: Packaging service...
+Serverless: Excluding development dependencies...
+Serverless: Invoke aws:package:finalize
+Serverless: Invoke aws:common:moveArtifactsToPackage
+Serverless: Invoke aws:common:validate
+Serverless: [AWS s3 404 0.207s 0 retries] getBucketLocation({ Bucket: 'us-east-1-deployments' })
+ 
+  Serverless Error ---------------------------------------
+ 
+  ServerlessError: Could not locate deployment bucket. Error: The specified bucket does not exist
+      at BbPromise.resolve.then.then.catch.err (/Users/glencoakley/dev/drc/wksp/lrc/svrls-testing/helloNoLayer/node_modules/serverless/lib/plugins/aws/deploy/lib/existsDeploymentBucket.js:25:15)
+  From previous event:
+      at AwsDeploy.existsDeploymentBucket (/Users/glencoakley/dev/drc/wksp/lrc/svrls-testing/helloNoLayer/node_modules/serverless/lib/plugins/aws/deploy/lib/existsDeploymentBucket.js:24:13)
+      at AwsDeploy.BbPromise.bind.then.then (/Users/glencoakley/dev/drc/wksp/lrc/svrls-testing/helloNoLayer/node_modules/serverless/lib/plugins/aws/deploy/index.js:73:27)
+  From previous event:
+      at Object.before:deploy:deploy [as hook] (/Users/glencoakley/dev/drc/wksp/lrc/svrls-testing/helloNoLayer/node_modules/serverless/lib/plugins/aws/deploy/index.js:70:12)
+      at BbPromise.reduce (/Users/glencoakley/dev/drc/wksp/lrc/svrls-testing/helloNoLayer/node_modules/serverless/lib/classes/PluginManager.js:489:55)
+  From previous event:
+      at PluginManager.invoke (/Users/glencoakley/dev/drc/wksp/lrc/svrls-testing/helloNoLayer/node_modules/serverless/lib/classes/PluginManager.js:489:22)
+      at getHooks.reduce.then (/Users/glencoakley/dev/drc/wksp/lrc/svrls-testing/helloNoLayer/node_modules/serverless/lib/classes/PluginManager.js:524:24)
+  From previous event:
+      at PluginManager.run (/Users/glencoakley/dev/drc/wksp/lrc/svrls-testing/helloNoLayer/node_modules/serverless/lib/classes/PluginManager.js:524:8)
+      at variables.populateService.then (/Users/glencoakley/dev/drc/wksp/lrc/svrls-testing/helloNoLayer/node_modules/serverless/lib/Serverless.js:115:33)
+      at runCallback (timers.js:705:18)
+      at tryOnImmediate (timers.js:676:5)
+      at processImmediate (timers.js:658:5)
+      at process.topLevelDomainCallback (domain.js:126:23)
+  From previous event:
+      at Serverless.run (/Users/glencoakley/dev/drc/wksp/lrc/svrls-testing/helloNoLayer/node_modules/serverless/lib/Serverless.js:102:74)
+      at serverless.init.then (/Users/glencoakley/dev/drc/wksp/lrc/svrls-testing/helloNoLayer/node_modules/serverless/bin/serverless.js:72:30)
+      at /Users/glencoakley/dev/drc/wksp/lrc/svrls-testing/helloNoLayer/node_modules/graceful-fs/graceful-fs.js:111:16
+      at /Users/glencoakley/dev/drc/wksp/lrc/svrls-testing/helloNoLayer/node_modules/graceful-fs/graceful-fs.js:45:10
+      at FSReqWrap.args [as oncomplete] (fs.js:140:20)
+  From previous event:
+      at initializeErrorReporter.then (/Users/glencoakley/dev/drc/wksp/lrc/svrls-testing/helloNoLayer/node_modules/serverless/bin/serverless.js:72:8)
+      at runCallback (timers.js:705:18)
+      at tryOnImmediate (timers.js:676:5)
+      at processImmediate (timers.js:658:5)
+      at process.topLevelDomainCallback (domain.js:126:23)
+  From previous event:
+      at Object.<anonymous> (/Users/glencoakley/dev/drc/wksp/lrc/svrls-testing/helloNoLayer/node_modules/serverless/bin/serverless.js:61:4)
+      at Module._compile (internal/modules/cjs/loader.js:778:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+      at Module.load (internal/modules/cjs/loader.js:653:32)
+      at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+      at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+      at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+      at findNodeScript.then.existing (/Users/glencoakley/dev/bin/nvm/versions/node/v10.17.0/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)
+ 
+  Get Support --------------------------------------------
+     Docs:          docs.serverless.com
+     Bugs:          github.com/serverless/serverless/issues
+     Issues:        forum.serverless.com
+ 
+  Your Environment Information ---------------------------
+     Operating System:          darwin
+     Node Version:              10.17.0
+     Framework Version:         1.58.0
+     Plugin Version:            3.2.5
+     SDK Version:               2.2.1
+     Components Core Version:   1.1.2
+     Components CLI Version:    1.4.0
+ 

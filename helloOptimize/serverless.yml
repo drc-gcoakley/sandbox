@@ -1,0 +1,28 @@
+
+service: hello-optimize
+
+# serverless-plugin-optimize seems like it is for front-end code since it uses Browserify and Babel
+plugins:
+  - serverless-plugin-optimize
+
+custom:
+  optimize: # https://www.npmjs.com/package/serverless-plugin-optimize
+    exclude:
+      - 'aws-sdk'
+
+package:
+  individually: true
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+#  deploymentBucket:
+#    name: us-east-1-deployments
+#    serverSideEncryption: AES256
+
+functions:
+  goServerless:
+    handler: first.goServerless
+  helloWorld:
+    handler: second.helloWorld
+

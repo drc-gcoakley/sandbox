@@ -1,0 +1,25 @@
+
+service: hello-bundle
+
+# serverless-bundle just includes a webpack configuration and does not allow for user 
+# configuration of it.
+
+plugins:
+  - serverless-bundle
+
+package:
+  individually: true
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+#  deploymentBucket:
+#    name: us-east-1-deployments
+#    serverSideEncryption: AES256
+
+functions:
+  goServerless:
+    handler: first.goServerless
+  helloWorld:
+    handler: second.helloWorld
+
