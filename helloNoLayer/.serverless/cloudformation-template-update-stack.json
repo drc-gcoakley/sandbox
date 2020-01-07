@@ -1,0 +1,179 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "The AWS CloudFormation template for this Serverless application",
+  "Resources": {
+    "GoServerlessLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/hello-no-layer-dev-goServerless"
+      }
+    },
+    "HelloWorldLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/hello-no-layer-dev-helloWorld"
+      }
+    },
+    "IamRoleLambdaExecution": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": [
+                  "lambda.amazonaws.com"
+                ]
+              },
+              "Action": [
+                "sts:AssumeRole"
+              ]
+            }
+          ]
+        },
+        "Policies": [
+          {
+            "PolicyName": {
+              "Fn::Join": [
+                "-",
+                [
+                  "dev",
+                  "hello-no-layer",
+                  "lambda"
+                ]
+              ]
+            },
+            "PolicyDocument": {
+              "Version": "2012-10-17",
+              "Statement": [
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "logs:CreateLogStream"
+                  ],
+                  "Resource": [
+                    {
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/hello-no-layer-dev*:*"
+                    }
+                  ]
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "logs:PutLogEvents"
+                  ],
+                  "Resource": [
+                    {
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/hello-no-layer-dev*:*:*"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "Path": "/",
+        "RoleName": {
+          "Fn::Join": [
+            "-",
+            [
+              "hello-no-layer",
+              "dev",
+              {
+                "Ref": "AWS::Region"
+              },
+              "lambdaRole"
+            ]
+          ]
+        }
+      }
+    },
+    "GoServerlessLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": "us-east-1-deployments",
+          "S3Key": "serverless/hello-no-layer/dev/1576682863228-2019-12-18T15:27:43.228Z/hello-no-layer.zip"
+        },
+        "FunctionName": "hello-no-layer-dev-goServerless",
+        "Handler": "first-no-layer.goServerless",
+        "MemorySize": 1024,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs12.x",
+        "Timeout": 6
+      },
+      "DependsOn": [
+        "GoServerlessLogGroup",
+        "IamRoleLambdaExecution"
+      ]
+    },
+    "GoServerlessLambdaVersionwskXEBaWH7sr73KGSZkDaBcfvhd2IU4j5ejZHq8OZk4": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "GoServerlessLambdaFunction"
+        },
+        "CodeSha256": "Be96F8Ci67R6d+1XR3CfOIKqva5ZPPKl4S/MSxtZbSQ="
+      }
+    },
+    "HelloWorldLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": "us-east-1-deployments",
+          "S3Key": "serverless/hello-no-layer/dev/1576682863228-2019-12-18T15:27:43.228Z/hello-no-layer.zip"
+        },
+        "FunctionName": "hello-no-layer-dev-helloWorld",
+        "Handler": "second-no-layer.helloWorld",
+        "MemorySize": 1024,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs12.x",
+        "Timeout": 6
+      },
+      "DependsOn": [
+        "HelloWorldLogGroup",
+        "IamRoleLambdaExecution"
+      ]
+    },
+    "HelloWorldLambdaVersioniSF6poosDtam22BNEOlUMRyoUqHKknh6iRhqXjZLHSM": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "HelloWorldLambdaFunction"
+        },
+        "CodeSha256": "Be96F8Ci67R6d+1XR3CfOIKqva5ZPPKl4S/MSxtZbSQ="
+      }
+    }
+  },
+  "Outputs": {
+    "ServerlessDeploymentBucketName": {
+      "Value": "us-east-1-deployments"
+    },
+    "GoServerlessLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "GoServerlessLambdaVersionwskXEBaWH7sr73KGSZkDaBcfvhd2IU4j5ejZHq8OZk4"
+      }
+    },
+    "HelloWorldLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "HelloWorldLambdaVersioniSF6poosDtam22BNEOlUMRyoUqHKknh6iRhqXjZLHSM"
+      }
+    }
+  }
+}
