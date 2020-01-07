@@ -1,4 +1,4 @@
-GET http://iatudb-prod.datarecognitioncorp.com/iatudbservice/510842/TestSessionMixedItemPerformanceReport?TestSessionID~eq=500819346
+GET {{udbService}}/510842/TestSessionMixedItemPerformanceReport?TestSessionID~eq=501243956
 Authorization: 3Direct@1nf0rm
 Content-Type: application/json; charset=UTF-8
 

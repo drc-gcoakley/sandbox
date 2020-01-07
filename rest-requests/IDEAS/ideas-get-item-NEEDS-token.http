@@ -1,4 +1,4 @@
-GET {{ideasEndpoint}}/webservices/REST/1.0/iat.svc/items/LA/1017960
+GET {{ideasEndpoint}}/webservices/REST/1.0/iat.svc/items/LA/1009668
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json

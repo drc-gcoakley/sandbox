@@ -2,7 +2,7 @@
 POST {{apiGatewayUrl}}/eca-security-service/all-{{envName}}-v0/v0/authenticate
 Content-Type: application/json
 
-{ "username": "gcoakley@datarecognitioncorp.com", "password": "Password.19.2" }
+{ "username": "gcoakley@datarecognitioncorp.com", "password": "Password.19.3" }
 > {% client.global.set("ecaBearer", response.body.token);
 // If you want to make this a 'test' then uncomment this block.
 // client.test("Request executed successfully", function() {

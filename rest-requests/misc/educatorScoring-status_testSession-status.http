@@ -1,4 +1,4 @@
-POST http://dcwhsct001:8080/api/instancestatus
+POST {{oicService}}/api/instancestatus
 Content-Type: application/json; charset=UTF-8
 
 {"AdministrationId":"510842", "TestSessions":["500173522"], "ContentAreas":["IAT"]}

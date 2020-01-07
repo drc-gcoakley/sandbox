@@ -1,14 +1,8 @@
-GET {{ideasEndpoint}}/webservices/REST/1.0/iat.svc/items/LA/1009668
+GET https://api-gateway-sqa.drcedirect.com/eca-document-management-service/all-sqa-v0/v0/items/IDEAS/1018120/documents?documentSetType%7Eeq=rubric&available%7Eeq=true&disableDate%7Eis=null
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 Authorization: Bearer {{ecaBearer}}
-
-<> 2019-05-17T033433.404.json
-<> 2018-10-08T085109.200.json
-<> 2018-10-08T085021.403.json
-<> 2018-10-08T020219.200.json
-<> 2018-10-07T084114.200.json
 
 ###
 # Different environment URIs:

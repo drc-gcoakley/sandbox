@@ -1,8 +1,8 @@
-POST http://dcwhsct001:8080/api/instancestatus
+POST {{oicService}}/api/instancestatus
 Authorization: 3Direct@1nf0rm
 Content-Type: application/json; charset=UTF-8
 
 {"AdministrationId": "510942", "SubAdministrationId": null,
-    "TestSessions": ["500174122"], "ContentAreas": ["Science","IAT"]}
+    "TestSessions": ["501243956"], "ContentAreas": ["Science","IAT"]}
 
 ###

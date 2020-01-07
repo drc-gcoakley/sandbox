@@ -6,8 +6,8 @@ GET http://10.200.15.229/la/iatUtility/ping
 GET http://10.200.63.118/la/iatUtility/ping
 ###
 
-### The following key is for development.
-GET http://10.200.63.118/la/userToken/serviceUserToken
+### The following key is for production (and development ?).
+GET http://dcciatp-05eed232f22fbf123/la/userToken/serviceUserToken
 
 {
   "serviceId": "IATUTILITY",
@@ -18,8 +18,14 @@ GET http://10.200.63.118/la/userToken/serviceUserToken
 
 ###
 
-GET http://10.200.63.118/la/iatUtility/serverInfo
+GET http://dcciatp-05eed232f22fbf123.datarecognitioncorp.com/la/iatUtility/serverInfo
 
 { "serviceToken": "{{iatServiceToken}}" }
 
 ###
+GET http://dcciatp-0d91b985e6bf9fd2a.datarecognitioncorp.com/la/iatUtility/serverInfo
+
+{ "serviceToken": "{{iatServiceToken}}" }
+
+###
+
