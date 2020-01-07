@@ -1,0 +1,21 @@
+POST http://securitycontextservice-sqa.datarecognitioncorp.com/securitycontextservice/contexts
+Content-Type: application/json; charset=UTF-8
+
+{ 	"contextId":"0",
+	"userId":"1e2c9bbe-ebb9-4df2-bf43-d4b4096ad368",
+	"userName":"ayoganarasimha@datarecognitioncorp.com",
+	"firstName":"Uknown",
+	"lastName":"Uknown",
+	"createDate":"12/31/2000 00:00:00 AM",
+	"expireDate":"12/31/3000 00:00:00 AM",
+	"context": {
+		"administrationId":"510842",
+		"testSessionId":"500173522",
+	}
+}
+
+<> 2018-07-19T023755.200.json
+<> 2018-07-19T023734.200.json
+
+###
+If the administration id is changed to 510642 it will work--well it returns a HTTP status of 200 with not test session data because that test session only exists in 510842.

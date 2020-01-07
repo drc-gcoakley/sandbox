@@ -1,0 +1,12 @@
+GET https://eca-online-scoring-api-sqa.awcl.drcedirect-le.com/status
+Authorization: Bearer {{ecaBearer}}
+Accept: */*
+Content-Type: application/json
+
+###
+GET https://eca-online-scoring-api-sqa.awcl.drcedirect-le.com/forms
+Authorization: Bearer {{ecaBearer}}
+Accept: */*
+Content-Type: application/json
+
+###
