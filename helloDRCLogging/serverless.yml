@@ -1,0 +1,24 @@
+
+service: hello-logging
+
+custom:
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'us-east-2'}
+  awsAccountId: 177429746880
+  scriptHooks:
+    after:deploy:compileEvents: serverless-lib/add-drc-log-subscriptions.js
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+#  deploymentBucket:
+#    name: us-east-1-deployments
+#    serverSideEncryption: AES256
+  logSubscriptionDestinationArn: arn:aws:firehose:${self:custom.region}:${self:custom.awsAccountId}:deliverystream/cloudwatch-firehose-s3-stream
+  logSubscriptionRoleArn: arn:aws:iam::${self:custom.awsAccountId}:role/CWLtoKinesisFirehoseRole
+
+functions:
+  goServerless:
+    handler: first-logging.goServerless
+  helloWorld:
+    handler: second-logging.helloWorld
