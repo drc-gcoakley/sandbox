@@ -1,0 +1,30 @@
+{
+  "extends": ["tslint-angular"],
+  "rulesDirectory": [
+    "node_modules/codelyzer",
+    "node_modules/@nrwl/schematics/src/tslint"
+  ],
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      ["eca"],
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      ["eca", "app"],
+      "kebab-case"
+    ],
+    "nx-enforce-module-boundaries": [
+      true,
+      {
+        "allow": [],
+        "depConstraints": [
+          { "sourceTag": "*", "onlyDependOnLibsWithTags": ["*"] }
+        ]
+      }
+    ]
+  }
+}

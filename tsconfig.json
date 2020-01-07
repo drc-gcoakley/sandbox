@@ -1,0 +1,46 @@
+{
+  // This file allows single-line comments. 
+  "compileOnSave": false,
+  "compilerOptions": {
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@eca/*": [
+        // You can replace the uncommented line below with the commented out one while 
+        // developing the library. Doing so will allow hot-code replacement without 
+        // explicitly rebuilding the library. Without this some source changes required 
+        // the server to be restarted before they would appear. Before running finaly tests 
+        // and commiting the code be sure that the "libs/*" line is commented out. Testing 
+        // with the "dist/@eca/" path ensures that the layout of the library distribution 
+        // is also tested by the demo app. Ideally, we'd have a unit/integration test that
+        // can confirm this. 
+        //   "libs/*", 
+        // Where to find 'production' library files in the development workspace.
+        "dist/@eca/*",
+        // Mapping of where those files will exist in the distributed package.
+        "node_modules/@eca/*"
+      ],
+      // List all the peer dependencies that your library requires so, the compiler can find them.
+      // pointing them at the local copy in the apps node_modules folder.
+      "@angular/*": [
+        "node_modules/@angular/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
+}

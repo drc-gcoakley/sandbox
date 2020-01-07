@@ -1,0 +1,35 @@
+
+All files
+72.43% Statements 381/526
+44.44% Branches 16/36
+60.95% Functions 103/169
+71.77% Lines 333/464
+
+Press n or j to go to the next uncovered block, b, p or k for the previous block.
+File 		Statements 		Branches 		Functions 		Lines 	
+eca-client-lib 	
+	100% 	11/11 	100% 	0/0 	100% 	1/1 	100% 	11/11
+eca-client-lib/apps/lib-demo-eca-client/src 	
+	100% 	2/2 	100% 	0/0 	100% 	0/0 	100% 	2/2
+eca-client-lib/apps/lib-demo-eca-client/src/app 	
+	100% 	6/6 	100% 	0/0 	100% 	3/3 	100% 	4/4
+eca-client-lib/dist/@eca/client-lib/esm5 	
+	66.51% 	145/218 	42.11% 	8/19 	62.07% 	54/87 	66.17% 	133/201
+eca-client-lib/libs/eca-client/src 	
+	100% 	41/41 	100% 	0/0 	100% 	1/1 	100% 	39/39
+eca-client-lib/libs/eca-client/src/eca-footer 	
+	100% 	6/6 	100% 	0/0 	100% 	3/3 	100% 	4/4
+eca-client-lib/libs/eca-client/src/eca-header 	
+	97.06% 	33/34 	50% 	1/2 	100% 	8/8 	96.43% 	27/28
+eca-client-lib/libs/eca-client/src/portal-container 	
+	97.22% 	35/36 	100% 	2/2 	91.67% 	11/12 	96.55% 	28/29
+eca-client-lib/libs/eca-client/src/services 	
+	50% 	54/108 	0% 	0/4 	27.78% 	10/36 	50% 	45/90
+eca-client-lib/libs/eca-client/src/state 	
+	37.5% 	6/16 	0% 	0/4 	0% 	0/2 	37.5% 	6/16
+eca-client-lib/libs/eca-client/src/state/configuration 	
+	85% 	34/40 	100% 	4/4 	76.92% 	10/13 	82.35% 	28/34
+eca-client-lib/libs/eca-client/src/state/session 	
+	100% 	3/3 	100% 	1/1 	100% 	1/1 	100% 	3/3
+eca-client-lib/libs/eca-client/src/unauthorized 	
+	100% 	5/5 	100% 	0/0 	50% 	1/2 	100% 	3/3

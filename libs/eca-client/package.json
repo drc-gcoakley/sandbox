@@ -1,0 +1,12 @@
+{
+  "$schema": "../../node_modules/ng-packagr/package.schema.json",
+  "name": "@eca/client-lib",
+  "version": "1.0.0",
+  "ngPackage": {
+    "lib": {
+      "entryFile": "index.ts",
+      "comments": "none"
+    },
+    "dest": "../../dist/@eca/client-lib"
+  }
+}

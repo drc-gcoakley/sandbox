@@ -1,0 +1,7 @@
+{
+  "client": "DRCPORTAL",
+  "portalHeaderLibUrl": "https://cdn-app-sqa.drcedirect.com/eca-portal-header-lib/latest/eca-portal-header-lib.js",
+  "securityServiceApiUrl": "https://api-gateway-sqa.drcedirect.com/eca-security-service/all-development-v0",
+  "portalAppApiUrl": "https://api-gateway-cloud-sqa.drcedirect.com/eca-UNSET_APP_NAME-web-api/tabe-development-v0",
+  "portalAppTitle": "Application title not set."
+}

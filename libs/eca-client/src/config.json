@@ -1,0 +1,18 @@
+{
+  "// comment": "This is a comment.",
+  "// TODO": "The hostnames and endpoints should come from the configuration service.",
+  "// variables": "Any properties can be added to this file and used as variables expanded using: ${property_name}.",
+  "portalAppTitle": "UNSET_APP_TITLE",
+  "portalAppApiUrl": "https://api-gateway-cloud-sqa.drcedirect.com/eca-UNSET_APP_NAME-api/all-development-v0",
+  "configEndpointUrl": "https://api-gateway-sqa.drcedirect.com/eca-setup-configuration-service/all-sqa-v0/v0",
+  "//configUrlPathFor*": "The following expect the variables shown will be replaced with appropriate values.",
+  "configUrlPathForApp": "${configEndpointUrl}/applications/${appId}",
+  "configUrlPathForGroups": "${configEndpointUrl}/attribute-groups/${groupId}",
+  "configUrlPathForClient": "${configEndpointUrl}/clients/${clientId}/attributes",
+  "// client": "TODO is this a clientId, *Name, *Abbreviation?",
+  "// client": "In a live system this will come from the INSIGHT portal.",
+  "// client": "This is useful here for some client-specific application and to provide values for tests.",
+  "client": "DRCPORTAL",
+  "portalHeaderLibUrl": "https://cdn-app-sqa.drcedirect.com/eca-portal-header-lib/latest/eca-portal-header-lib.js",
+  "securityServiceApiUrl": "https://api-gateway-sqa.drcedirect.com/eca-security-service/all-development-v0"
+}
