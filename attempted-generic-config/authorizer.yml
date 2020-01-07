@@ -1,0 +1,7 @@
+# Merges this into the <root>/authorizer section of the serverless configuration.
+
+name: authorizer
+type: TOKEN
+identitySource: method.request.header.Authorization
+resultTtlInSeconds: 0
+identityValidationExpression: Bearer (.*)

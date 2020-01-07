@@ -1,0 +1,25 @@
+# Merges this into the <root>/custom section of the serverless configuration.
+
+cnameWeights: # define cname weights by region
+  us-east-1: 100
+  us-east-2: 0
+customDomain: # serverless-domain-manager config
+  enabled: true
+  domainName: ${self:service.name}-${self:custom.stage}.${self:custom.vars.domainName}
+  stage: ${self:custom.stage}
+  basePath: ''
+  certificateName: '*.${self:custom.vars.domainName}'
+  createRoute53Record: false
+  endpointType: regional
+
+drc:
+  global-table-regions: [us-east-1, us-east-2]
+  dashboards:
+    name: ${self:custom.region}-${self:service.name}-${opt:stage, self:provider.stage}
+    create: true
+  customDomain: # multi-region, weighted cname config
+    cname: true
+    weight: ${self:custom.${self:custom.region}.cnameWeight} # references the appropriate weight by region above
+    ttl: 60
+    setId: ${self:service.name}.${self:custom.region}
+    publicPrivate: true

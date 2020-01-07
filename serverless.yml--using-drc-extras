@@ -1,0 +1,780 @@
+service: eca-form-recognition-service
+
+# Install serverless-drc-extras using the URL to its repository:
+#   http://github.com/DataRecognitionCorporation/serverless-drc-extras.git#v.1.0.12
+plugins:
+  - serverless-plugin-typescript
+  - serverless-scriptable-plugin
+  - serverless-plugin-aws-alerts
+  - serverless-domain-manager
+  - serverless-plugin-lambda-dead-letter
+  - serverless-dynamodb-local
+  - serverless-s3-local
+  - serverless-offline
+  - seed-s3-local
+  - serverless-plugin-common-excludes
+  - serverless-plugin-include-dependencies
+  - serverless-prune-plugin
+  - serverless-plugin-split-stacks
+  - serverless-drc-extras
+package:
+  include:
+    - images/**
+    - index.js
+    - lib/**
+    - configs/cors.xml
+    - tessdata/**
+    - tesseract
+  # Using serverless-plugin-include-dependencies over excludeDevDependencies: true
+  excludeDevDependencies: false
+  exclude:
+    - .git/**
+    - .idea/**
+    - .nvmrc
+    - .nyc_output/**
+    - .tmp/**
+    - analyzeIntensities/**
+    - artifacts/**
+    - build.sh
+    - stacks-map.js
+    - db/**
+    - docs/**
+    - forms/**
+    - Jenkinsfile
+    - Jenkinsfile-slsdeploy
+    - node_modules/**/aws-sdk/**
+    - opencv4nodejs-min.zip
+    - package-lock.json
+    - package.json
+    - pdfToPngs/**
+    - publish_master_forms.sh
+    - README.md
+    - sample/**
+    - scripts/**
+    - slspkg/**
+    - spec/**
+    - templates/**
+    - tesseract.zip
+    - tsconfig.json
+    - tslint.json
+
+custom:
+  region: ${opt:region, 'us-east-1'}
+  stage: ${opt:stage, 'dev'}
+  configFile: ./configs/${self:custom.stage}.yml
+  vars: ${file(${self:custom.configFile})}
+  bucketName: "form-recognition-images-${self:custom.stage}"
+  clientListFilePath: "shared/configData/clientList-${self:custom.stage}.json"
+  $merge-env: ${file(./config/env.${self:custom.stage}.yml)}
+  $merge-custom: ${file(./config/custom.yml)}
+
+  prune:
+    automatic: true
+    includeLayers: true
+    number: 10
+
+  splitStacks:
+    perFunction: false
+    perType: true
+    perGroupFunction: false
+
+  authorizer:
+    name: authorizer
+    type: TOKEN
+    identitySource: method.request.header.Authorization
+    resultTtlInSeconds: 0
+    identityValidationExpression: Bearer (.*)
+
+  corsConfig:
+    $merge-cors: ${file(./config/cors.yml)}
+
+  dynamodb:
+    # If you only want to use DynamoDB Local in some stages, declare them here
+    stages:
+      - dev
+    start:
+      port: 8000
+      inMemory: true
+      heapInitial: 200m
+      heapMax: 1g
+      migrate: true
+      seed: true
+      convertEmptyValues: true
+    seed:
+      domain:
+        sources:
+          #          - table: ${self:custom.vars.documentResultsTableNameOld}
+          #            sources: [./db/local-seed-data/document-results.json]
+          #          - table: ${self:custom.vars.scansTableNameOld}
+          #            sources: [./db/local-seed-data/scans.json]
+          #          - table: ${self:custom.vars.sessionsTableNameOld}
+          #            sources: [./db/local-seed-data/sessions.json]
+          #          - table: ${self:custom.vars.formsTableNameOld}
+          #            sources: [./db/local-seed-data/forms.json]
+          - table: ${self:custom.vars.formsTableName}
+            sources: [./db/local-seed-data/forms.json]
+    # Uncomment only if you already have a DynamoDB running locally
+    # noStart: true
+
+  s3:
+    host: 0.0.0.0
+    port: 9000
+    directory: s3tmp  # this directory must be already created.
+    # Uncomment this line to test locally--to use CORS with specified policy.
+    # Do not uncomment the these lines only if your want to use CORS with default policy
+    # This is needed when running a local web-ui against a local form-recognition-service project.
+    # DO NOT CHECK IN because it is not the policy that we want on the production servers.
+    # TODO Is there a way to configure the policy to work for both environments?
+    #   cors: configs/cors.xml
+    # Uncomment this line only if you don't want to use CORS
+    #   website: relative/path/to/your/website.xml
+    # Uncomment this if you want to test with local API changes but, don't need to upload or download scans.
+    # Comment out and use S3 in the dev. env. to test with local API changes and you need to upload or download scans.
+    # Or, if serverless-s3-local supports v4 signed URLs, our app. sends scan requests through the API or
+    # otherwise accomodates it..
+    #   noStart: true
+
+  seedS3local:
+    # fileTypes property is comma-delimited. If not defined, all files in source directory will be seeded
+    sources:
+      - bucketName: ${self:custom.bucketName}
+        sourceDirectory: ./seedData/forms/TABE
+        targetS3Folder: TABE/forms
+        fileTypes: png
+        omitSuffix: false
+      - bucketName: ${self:custom.bucketName}
+        sourceDirectory: ./seedData/shared/configData
+        targetS3Folder: shared/configData
+        omitSuffix: false
+        fileTypes: json
+
+  #  scriptHooks:
+  #    before:deploy:createDeploymentArtifacts:
+  #      - unzip -o tesseract.zip
+  #      - unzip -o opencv4nodejs-min.zip
+
+  alerts: #CloudWatch Alerts
+    stages:
+      - dev
+      - sqa
+      - stg
+    # - lt
+    # - prod
+    alarms:
+      - functionThrottles
+      - functionErrors
+      - functionInvocations
+      - functionDuration
+      - fatalExceptions
+      - dynamodbExceededException
+    dashboards: true
+    topics:
+      alarm: ${self:custom.stage}-${self:custom.vars.alarmTopicName}
+    definitions:
+      fatalExceptions:
+        metric: fatalExceptions
+        threshold: 0
+        statistic: Sum
+        period: 60
+        evaluationPeriods: 1
+        comparisonOperator: GreaterThanThreshold
+        pattern: 'FATAL'
+      dynamodbExceededException:
+        metric: dynamodbExceededExceptions
+        threshold: 0
+        statistic: Sum
+        period: 300
+        evaluationPeriods: 1
+        comparisonOperator: GreaterThanThreshold
+        pattern: 'ProvisionedThroughputExceededException'
+      functionInvocations:
+        threshold: 100
+        period: 60
+        evaluationPeriods: 2
+        treatMissingData: notBreaching
+      functionErrors:
+        threshold: 10
+        period: 60
+        evaluationPeriods: 2
+        treatMissingData: missing
+      functionThrottles:
+        threshold: 10
+        period: 60
+        evaluationPeriods: 2
+        treatMissingData: missing
+      functionDuration:
+        threshold: 500
+        statistic: Maximum
+        period: 60
+        evaluationPeriods: 2
+        treatMissingData: notBreaching
+
+provider:
+  $merge-provider: ${file(./config/provider.yml)}
+  runtime: nodejs8.10
+  environment:
+    UDB_SERVICE: ${self:custom.vars.udbService}
+    BUCKET_NAME: ${self:custom.bucketName}
+    MIGRATION_DEST_BUCKET: ${self:custom.bucketName}
+    DYNAMODB: ${self:custom.vars.dynamoDb}
+    FORMS_TABLE_NAME: ${self:custom.vars.formsTableName}
+    SCANS_TABLE_NAME: ${self:custom.vars.scansTableName}
+    DOCUMENT_RESULTS_TABLE_NAME: ${self:custom.vars.documentResultsTableName}
+    PENDING_TABLE_NAME: ${self:custom.vars.pendingTableName}
+    SESSIONS_TABLE_NAME: ${self:custom.vars.sessionsTableName}
+    TMP_DIR: ${self:custom.vars.tmpDir}
+    LRC_WEB_API: ${self:custom.vars.lrc_web_api}
+    API_GATEWAY_URL: ${self:custom.vars.api_gateway_url}
+    ECA_DEPLOYMENT: ${self:custom.vars.eca_deployment}
+    CLIENT_LIST_FILE: ${self:custom.clientListFilePath}
+
+functions:
+  recognition:
+    handler: src/index.handler
+    deadLetter:
+      sqs: "Form-Recognition-Dead-Letter-Queue-Processing-${self:custom.stage}"
+    events:
+      - sns: ${self:custom.vars.processingTopic}
+    timeout: ${self:custom.vars.recognitionTimeout}
+    memorySize: ${self:custom.vars.recognitionMemorySize}
+    reservedConcurrency: ${self:custom.vars.recognitionConcurrency}
+
+  scoring:
+    handler: src/ScoringHandler.handler
+    deadLetter:
+      sqs: "Form-Recognition-Dead-Letter-Queue-Scoring-${self:custom.stage}"
+    events:
+      - sns: ${self:custom.vars.scoringSnsTopic}
+    timeout: ${self:custom.vars.scoringTimeout}
+    memorySize: ${self:custom.vars.scoringMemorySize}
+    reservedConcurrency: ${self:custom.vars.scoringConcurrency}
+
+  ############# API methods #############
+
+  authorizer:
+    handler: src/auth/authorizerLambda.authorize
+
+  apiGetStatus:
+    handler: src/status/statusLambda.status
+    description: Get Form Recognition Service status.
+    events:
+      - http:
+          path: status
+          method: GET
+          cors: ${self:custom.corsConfig}
+
+  apiGetClientAndProjectList:
+    handler: src/clients/clientsLambda.get
+    description: Get a list of clients (and their projects) available for local scanning.
+    events:
+      - http:
+          path: clients
+          method: GET
+          cors: ${self:custom.corsConfig}
+          authorizer: ${self:custom.authorizer}
+
+  apiGetUnscored:
+    handler: src/scanSessions/scanSessionLambda.getUnscored
+    description: Get unscored sessions by used ID.
+    events:
+      - http:
+          path: sessions
+          method: GET
+          cors: ${self:custom.corsConfig}
+          authorizer: ${self:custom.authorizer}
+
+  apiGetUnsubmitted:
+    handler: src/scanSessions/scanSessionLambda.getUnsubmitted
+    description: Get unsubmitted sessions by used ID.
+    events:
+      - http:
+          path: sessions/unsubmitted
+          method: GET
+          cors: ${self:custom.corsConfig}
+          authorizer: ${self:custom.authorizer}
+
+  apiCreateForm:
+    handler: src/forms/formLambda.create
+    description: Creates a master form record, but does not allow overwrite of an existing master form.
+    events:
+      - http:
+          path: forms
+          method: POST
+          cors: ${self:custom.corsConfig}
+          authorizer: ${self:custom.authorizer}
+
+  apiGetFormById:
+    handler: src/forms/formLambda.get
+    description: Get a master form record by material ID.
+    events:
+      - http:
+          path: forms/{materialId}
+          method: GET
+          cors: ${self:custom.corsConfig}
+          authorizer: ${self:custom.authorizer}
+
+  apiGetForms:
+    handler: src/forms/formLambda.getAll
+    description: Get a master form.
+    events:
+      - http:
+          path: forms
+          method: GET
+          cors: ${self:custom.corsConfig}
+          authorizer: ${self:custom.authorizer}
+
+  apiPutForm:
+    handler: src/forms/formLambda.put
+    description: Update an existing master form.
+    events:
+      - http:
+          path: forms/{materialId}
+          method: PUT
+          cors: ${self:custom.corsConfig}
+          authorizer: ${self:custom.authorizer}
+
+  apiGetMasterImage:
+    handler: src/forms/masterImageLambda.get
+    description: Get form master image by ID.
+    events:
+      - http:
+          path: masterimage
+          method: GET
+          cors: ${self:custom.corsConfig}
+          authorizer: ${self:custom.authorizer}
+          request:
+            parameters:
+              querystrings:
+                imageId: true
+
+  apiGetDocumentResults:
+    handler: src/documentResults/documentResultsLambda.index
+    description: Get document results by session ID.
+    events:
+      - http:
+          path: results/{sessionId}
+          method: GET
+          cors: ${self:custom.corsConfig}
+          authorizer: ${self:custom.authorizer}
+
+  apiGetScans:
+    handler: src/webApiProxyLambda.requestProxy
+    description: Gets scans by session id.
+    events:
+      - http:
+          path: scans
+          method: GET
+          cors: ${self:custom.corsConfig}
+          authorizer: ${self:custom.authorizer}
+
+  apiCreateScans:
+    handler: src/webApiProxyLambda.requestProxy
+    description: Creates a scan.
+    events:
+      - http:
+          path: scans
+          method: POST
+          cors: ${self:custom.corsConfig}
+          authorizer: ${self:custom.authorizer}
+
+  apiGetScansPolicy:
+    handler: src/webApiProxyLambda.requestProxy
+    description: Get presigned POST URL for uploading scanned images to S3.
+    events:
+      - http:
+          path: scans/policy
+          method: GET
+          cors: ${self:custom.corsConfig}
+          authorizer: ${self:custom.authorizer}
+
+  apiGetScansSignedurl:
+    handler: src/webApiProxyLambda.requestProxy
+    description: Get signed URL for a scan image that resides in S3.
+    events:
+      - http:
+          path: scans/signedurl
+          method: GET
+          cors: ${self:custom.corsConfig}
+          authorizer: ${self:custom.authorizer}
+
+  apiCreateScansMetadataPolicy:
+    handler: src/webApiProxyLambda.requestProxy
+    description: ???
+    events:
+      - http:
+          path: scans/metadata/policy
+          method: POST
+          cors: ${self:custom.corsConfig}
+          authorizer: ${self:custom.authorizer}
+
+  ############# BEGIN: Temporary Web API proxy methods #############
+
+  apiDiagnosticsDebug:
+    handler: src/webApiProxyLambda.requestProxy
+    description: Get debug image URLs for diagnostics page.
+    events:
+      - http:
+          path: diagnostics/debug
+          method: GET
+          cors: ${self:custom.corsConfig}
+          authorizer: ${self:custom.authorizer}
+
+  apiDiagnosticsReprocess:
+    handler: src/webApiProxyLambda.requestProxy
+    description: ???
+    events:
+      - http:
+          path: diagnostics/reprocess
+          method: POST
+          cors: ${self:custom.corsConfig}
+          authorizer: ${self:custom.authorizer}
+
+  apiUpdateRejectResultStatus:
+    handler: src/webApiProxyLambda.requestProxy
+    description: Remove scored status from session for a test document.
+    events:
+      - http:
+          path: sessions/{sessionId}/reject/{documentId}
+          method: POST
+          cors: ${self:custom.corsConfig}
+          authorizer: ${self:custom.authorizer}
+
+  apiGetBiographics:
+    handler: src/webApiProxyLambda.requestProxy
+    description: Get biographics information for a session.
+    events:
+      - http:
+          path: sessions/{sessionId}/biographics
+          method: GET
+          cors: ${self:custom.corsConfig}
+          authorizer: ${self:custom.authorizer}
+
+  apiGetBiographicsById:
+    handler: src/webApiProxyLambda.requestProxy
+    description: Get biographics information by document ID.
+    events:
+      - http:
+          path: sessions/{sessionId}/biographics/{documentId}
+          method: GET
+          cors: ${self:custom.corsConfig}
+          authorizer: ${self:custom.authorizer}
+
+  apiUpdateBiographics:
+    handler: src/webApiProxyLambda.requestProxy
+    description: Update biographics for a specific test document.
+    events:
+      - http:
+          path: sessions/{sessionId}/biographics/{documentId}
+          method: PATCH
+          cors: ${self:custom.corsConfig}
+          authorizer: ${self:custom.authorizer}
+
+  apiGetAlertsByUser:
+    handler: src/webApiProxyLambda.requestProxy
+    description: Get all alerts by user.
+    events:
+      - http:
+          path: pending
+          method: GET
+          cors: ${self:custom.corsConfig}
+          authorizer: ${self:custom.authorizer}
+
+  apiUpdateAlert:
+    handler: src/webApiProxyLambda.requestProxy
+    description: Update an alert.
+    events:
+      - http:
+          path: pending/{pendingId}
+          method: PATCH
+          cors: ${self:custom.corsConfig}
+          authorizer: ${self:custom.authorizer}
+
+  apiGetAlertImage:
+    handler: src/webApiProxyLambda.requestProxy
+    description: Get the alert image to display to the user.
+    events:
+      - http:
+          path: pending/image/{imageId}
+          method: GET
+          cors: ${self:custom.corsConfig}
+          authorizer: ${self:custom.authorizer}
+
+  apiClearAlerts:
+    handler: src/webApiProxyLambda.requestProxy
+    description: Clear a single alert.
+    events:
+      - http:
+          path: pending/{pendingId}/alerts
+          method: DELETE
+          cors: ${self:custom.corsConfig}
+          authorizer: ${self:custom.authorizer}
+
+  apiPendingClearAlerts:
+    handler: src/webApiProxyLambda.requestProxy
+    description: Clear all alerts for the user.
+    events:
+      - http:
+          path: pending/clear-alerts
+          method: POST
+          cors: ${self:custom.corsConfig}
+          authorizer: ${self:custom.authorizer}
+
+  apiSubmitScoring:
+    handler: src/webApiProxyLambda.requestProxy
+    description: Sumbit a set of document results to scoring.
+    events:
+      - http:
+          path: pending/score
+          method: POST
+          cors: ${self:custom.corsConfig}
+          authorizer: ${self:custom.authorizer}
+
+  ############# END: Temporary Web API proxy methods #############
+
+resources:
+  Resources:
+    ImagesBucket: ${self:custom.vars.imagesS3Bucket.${self:custom.region}}
+
+    MasterFormTable:
+      Type: AWS::DynamoDB::Table
+      $global: true
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: materialId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: materialId
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: ${self:custom.vars.capacity.masterFormTable.default.read}
+          WriteCapacityUnits: ${self:custom.vars.capacity.masterFormTable.default.write}
+        TableName: ${self:provider.environment.FORMS_TABLE_NAME}
+        StreamSpecification:
+          StreamViewType: NEW_AND_OLD_IMAGES
+
+        Tags:
+          - Key: "Name"
+            Value: "${self:custom.region}-form-recognition-master-forms-table"
+          - Key: "Environment"
+            Value: "${self:custom.stage}"
+          - Key: "CostCenter"
+            Value: "ECA"
+
+    ScansTable:
+      Type: AWS::DynamoDB::Table
+      $global: true
+      DependsOn: SessionsTable
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+          - AttributeName: sessionId
+            AttributeType: S
+          - AttributeName: materialId
+            AttributeType: S
+          - AttributeName: lithocode
+            AttributeType: S
+          - AttributeName: createdAt
+            AttributeType: N
+          - AttributeName: userId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        GlobalSecondaryIndexes:
+          - IndexName: sessionIdIndex
+            KeySchema:
+              - AttributeName: sessionId
+                KeyType: HASH
+            Projection:
+              ProjectionType: ALL
+            ProvisionedThroughput:
+              ReadCapacityUnits: ${self:custom.vars.capacity.scansTable.sessionIndex.read}
+              WriteCapacityUnits: ${self:custom.vars.capacity.scansTable.sessionIndex.write}
+          - IndexName: lithocodeIndex
+            KeySchema:
+              - AttributeName: lithocode
+                KeyType: HASH
+              - AttributeName: materialId
+                KeyType: RANGE
+            Projection:
+              ProjectionType: ALL
+            ProvisionedThroughput:
+              ReadCapacityUnits: ${self:custom.vars.capacity.scansTable.lithocodeIndex.read}
+              WriteCapacityUnits: ${self:custom.vars.capacity.scansTable.lithocodeIndex.write}
+          - IndexName: userIdIndex
+            KeySchema:
+              - AttributeName: userId
+                KeyType: HASH
+              - AttributeName: createdAt
+                KeyType: RANGE
+            Projection:
+              ProjectionType: KEYS_ONLY
+            ProvisionedThroughput:
+              ReadCapacityUnits: ${self:custom.vars.capacity.scansTable.userIdIndex.read}
+              WriteCapacityUnits: ${self:custom.vars.capacity.scansTable.userIdIndex.write}
+          - IndexName: createdAtIndex
+            KeySchema:
+              - AttributeName: createdAt
+                KeyType: HASH
+              - AttributeName: id
+                KeyType: RANGE
+            Projection:
+              ProjectionType: KEYS_ONLY
+            ProvisionedThroughput:
+              ReadCapacityUnits: ${self:custom.vars.capacity.scansTable.createdAtIndex.read}
+              WriteCapacityUnits: ${self:custom.vars.capacity.scansTable.createdAtIndex.write}
+        ProvisionedThroughput:
+          ReadCapacityUnits: ${self:custom.vars.capacity.scansTable.default.read}
+          WriteCapacityUnits: ${self:custom.vars.capacity.scansTable.default.write}
+        TableName: ${self:provider.environment.SCANS_TABLE_NAME}
+        StreamSpecification:
+          StreamViewType: NEW_AND_OLD_IMAGES
+        Tags:
+          - Key: "Name"
+            Value: "${self:custom.region}-form-recognition-scans-table"
+          - Key: "Environment"
+            Value: "${self:custom.stage}"
+          - Key: "CostCenter"
+            Value: "ECA"
+
+    DocumentResultsTable:
+      Type: AWS::DynamoDB::Table
+      $global: true
+      DependsOn: ScansTable
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: sessionId
+            AttributeType: S
+          - AttributeName: sortKey
+            AttributeType: S
+          - AttributeName: userId
+            AttributeType: S
+          - AttributeName: createdAt
+            AttributeType: N
+        KeySchema:
+          - AttributeName: sessionId
+            KeyType: HASH
+          - AttributeName: sortKey
+            KeyType: RANGE
+        GlobalSecondaryIndexes:
+          - IndexName: userIdIndex
+            KeySchema:
+              - AttributeName: userId
+                KeyType: HASH
+            Projection:
+              ProjectionType: ALL
+            ProvisionedThroughput:
+              ReadCapacityUnits: ${self:custom.vars.capacity.documentResults.userIdIndex.read}
+              WriteCapacityUnits: ${self:custom.vars.capacity.documentResults.userIdIndex.write}
+          - IndexName: createdAtIndex
+            KeySchema:
+              - AttributeName: createdAt
+                KeyType: HASH
+              - AttributeName: sessionId
+                KeyType: RANGE
+            Projection:
+              ProjectionType: KEYS_ONLY
+            ProvisionedThroughput:
+              ReadCapacityUnits: ${self:custom.vars.capacity.documentResults.createdAtIndex.read}
+              WriteCapacityUnits: ${self:custom.vars.capacity.documentResults.createdAtIndex.write}
+        ProvisionedThroughput:
+          ReadCapacityUnits: ${self:custom.vars.capacity.documentResults.default.read}
+          WriteCapacityUnits: ${self:custom.vars.capacity.documentResults.default.write}
+        TableName: ${self:provider.environment.DOCUMENT_RESULTS_TABLE_NAME}
+        StreamSpecification:
+          StreamViewType: NEW_AND_OLD_IMAGES
+        Tags:
+          - Key: "Name"
+            Value: "${self:custom.region}-form-recognition-document-results-table"
+          - Key: "Environment"
+            Value: "${self:custom.stage}"
+          - Key: "CostCenter"
+            Value: "ECA"
+
+    PendingTable:
+      Type: AWS::DynamoDB::Table
+      $global: true
+      DependsOn: DocumentResultsTable
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: lithocode
+            AttributeType: S
+          - AttributeName: userId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: lithocode
+            KeyType: HASH
+        GlobalSecondaryIndexes:
+          - IndexName: userIdIndex
+            KeySchema:
+              - AttributeName: userId
+                KeyType: HASH
+            Projection:
+              ProjectionType: ALL
+            ProvisionedThroughput:
+              ReadCapacityUnits: ${self:custom.vars.capacity.pending.userIdIndex.read}
+              WriteCapacityUnits: ${self:custom.vars.capacity.pending.userIdIndex.write}
+        ProvisionedThroughput:
+          ReadCapacityUnits: ${self:custom.vars.capacity.pending.default.read}
+          WriteCapacityUnits: ${self:custom.vars.capacity.pending.default.write}
+        TableName: ${self:provider.environment.PENDING_TABLE_NAME}
+        StreamSpecification:
+          StreamViewType: NEW_AND_OLD_IMAGES
+        Tags:
+          - Key: "Name"
+            Value: "${self:custom.region}-pending-table"
+          - Key: "Environment"
+            Value: "${self:custom.stage}"
+          - Key: "CostCenter"
+            Value: "ECA"
+
+    SessionsTable:
+      Type: AWS::DynamoDB::Table
+      $global: true
+      DependsOn: MasterFormTable
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: sessionId
+            AttributeType: S
+          - AttributeName: userId
+            AttributeType: S
+          - AttributeName: createdAt
+            AttributeType: N
+        KeySchema:
+          - AttributeName: sessionId
+            KeyType: HASH
+        GlobalSecondaryIndexes:
+          - IndexName: userIdIndex
+            KeySchema:
+              - AttributeName: userId
+                KeyType: HASH
+            Projection:
+              ProjectionType: ALL
+            ProvisionedThroughput:
+              ReadCapacityUnits: ${self:custom.vars.capacity.sessions.userIdIndex.read}
+              WriteCapacityUnits: ${self:custom.vars.capacity.sessions.userIdIndex.write}
+          - IndexName: createdAtIndex
+            KeySchema:
+              - AttributeName: createdAt
+                KeyType: HASH
+              - AttributeName: sessionId
+                KeyType: RANGE
+            Projection:
+              ProjectionType: KEYS_ONLY
+            ProvisionedThroughput:
+              ReadCapacityUnits: ${self:custom.vars.capacity.sessions.createdAtIndex.read}
+              WriteCapacityUnits: ${self:custom.vars.capacity.sessions.createdAtIndex.write}
+        ProvisionedThroughput:
+          ReadCapacityUnits: ${self:custom.vars.capacity.sessions.default.read}
+          WriteCapacityUnits: ${self:custom.vars.capacity.sessions.default.write}
+        TableName: ${self:provider.environment.SESSIONS_TABLE_NAME}
+        StreamSpecification:
+          StreamViewType: NEW_AND_OLD_IMAGES
+        Tags:
+          - Key: "Name"
+            Value: "${self:custom.region}-form-recognition-sessions-table"
+          - Key: "Environment"
+            Value: "${self:custom.stage}"
+          - Key: "CostCenter"
+            Value: "ECA"

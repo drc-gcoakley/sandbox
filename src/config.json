@@ -1,0 +1,12 @@
+{
+  "client": "TABE",
+  "portalUrl": "https://cdn-app-dev.drcedirect.com/all/eca-portal-v2-ui",
+  "dynamsoftResourcesPath": "https://api-gateway-cloud-dev.drcedirect.com/eca-local-scanning-web-ui/all-development-v0/Resources",
+  "localScanningWebApi": "https://api-gateway-cloud-dev.drcedirect.com/eca-local-scanning-web-api/tabe-development-v0",
+  "securityServiceApi": "https://api-gateway-dev.drcedirect.com/eca-security-service/all-development-v0",
+  "apiGatewayConfig": {
+    "apiGatewayUrl": "https://api-gateway-dev.drcedirect.com/",
+    "apiGatewayCloudUrl": "https://api-gateway-cloud-dev.drcedirect.com",
+    "deployment": "development"
+  }
+}

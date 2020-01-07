@@ -1,0 +1,14 @@
+# Merges this into the <root>/provider section of the serverless configuration.
+
+name: aws
+runtime: nodejs8.10
+stage: ${self:custom.stage}
+region: ${self:custom.region}
+cfLogs: true
+role: arn:aws:iam::${self:custom.vars.accountId}:role/${self:custom.vars.iamRoleName}
+
+deploymentBucket:
+  name: ${self:custom.region}-${self:custom.vars.deploymentbucket} # Deployment bucket name.
+  serverSideEncryption: AES256 # when using server-side encryption
+
+vpc: ${self:custom.vars.${self:custom.region}.vpc} # VPC Subnets and Security Groups

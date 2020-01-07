@@ -1,0 +1,266 @@
+#!/usr/bin/env groovy
+@Library('DRC_Global_Pipeline_Libraries@v1.6.0') // Why can't the latest version (HEAD or LATEST) be used here?
+// https://jenkins.io/blog/2017/02/01/pipeline-scalability-best-practice/
+
+/*
+    Future changes:
+     * Use the multi-level plugin to select the repository, then branch? This may require a script.
+        @see: https://www.coveros.com/generate-parameter-values-dynamically-jenkins/
+     * Use a script to get the possible version choices from Jenkins api ( url:.../$job-name/api/json )
+        @see: https://medium.com/@rijoalvi/jenkins-dynamic-parameters-using-extended-choice-parameter-plugin-and-groovy-1a6ffc41063f
+     * Read the list of AWS regions from serverless configuration?
+ */
+//
+// CONSTANTS - Don't declare them with 'def' or a type.
+//
+AWS_LOWER_ENV_ACCT_NUM = "177429746880"
+AWS_UPPER_ENV_ACCT_NUM = "385888483640"
+NODEJS_VERSION = 'NODE_10_LTS'
+NODE_AGENT_LABEL = 'coel7_agent_aws&&aws&&role_prod'
+PROD_ACCOUNT_BRANCHES = ['master', 'staging']
+BRANCHES_ALWAYS_BUILT = ['', 'develop', 'sqa', 'loadtest'] + PROD_ACCOUNT_BRANCHES
+REGIONS = ['us-east-1', 'us-east-2']
+STAGE_DATA_LIST = [
+        [ name: 'Run_unit_tests', defaultAutoValue: true, defaultManualValue: true ],
+        [ name: 'Run_integration_tests',  defaultAutoValue: true, defaultManualValue: true ],
+        [ name: 'Run_verification', defaultAutoValue: true, defaultManualValue: true ],
+//	[ name: 'runStaticAnalysis', defaultAutoValue: true,  defaultManualValue: true ],
+        [ name: 'Upload_master_form_images', defaultAutoValue: true,  defaultManualValue: false ],
+]
+
+// Reset some constants with project specific values.
+//
+// LRC doesn't have a branch for each env. so, this resets the branch lists.
+PROD_ACCOUNT_BRANCHES = ['master']
+BRANCHES_ALWAYS_BUILT = ['', 'develop'] + PROD_ACCOUNT_BRANCHES
+DEV_TEAM_CHAT_URL = 'https://chat.googleapis.com/v1/spaces/AAAARqVi1KU/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=6yglYc02qH8R_QEPa4GPyubfYe_-rzrkg0ZIcb9XkDI%3D'
+NODEJS_VERSION = 'NODE_8_LTS'
+
+// Project specific constants.
+//
+CLIENTS = ['tabe']
+
+//
+// VARIABLES - Don't declare them with 'def' or a type.
+//
+gitParamRepoRE = ".*${getRepositoryShortName()}.git"
+buildInstigator = ''
+lastCommiter = ''
+chosenBranch = ''
+buildCause = ''
+buildStatus = 'successful'
+isAutoBuild = false
+keepExecuting = true
+
+boolean isCollectionOrArray(object) {
+    [Collection, Object[]].any { it.isAssignableFrom(object.getClass()) }
+}
+
+pipeline {
+    tools {
+        nodejs NODEJS_VERSION
+    }
+
+    parameters {
+        // The names of these parameters are shown on the UI.
+        //	booleanParam()description: 'Run static analysis', 	name: 'runStaticAnalysis', defaultValue: isAutoBuild)
+        // TODO: Change default back to false when we are no longer expiring master forms every 14 days.
+        booleanParam(name: 'Upload_master_form_images',
+                description: '(Optional) Select if master form images have changed.',
+                defaultValue: isAutoBuild)
+
+        choice(name: 'Choose_branch_from_common_list',
+                description: 'Build- (Option 1) Select a common branch name to build',
+                choices: BRANCHES_ALWAYS_BUILT)
+        // useRepository is key to making this work even if there is only one URL used! This might have something to do
+        // with using the DRC @Library which is pulled from a git repository.
+        gitParameter(name: 'Choose_branch_or_tag_from_git',
+                description: 'Build- (Option 2) Select from all branches or tags',
+                type: 'PT_BRANCH_TAG', branchFilter: 'origin/(.*)', tagFilter: '*',
+                quickFilterEnabled: true, sortMode: 'ASCENDING_SMART',
+                selectedValue: 'NONE',
+                useRepository: gitParamRepoRE)
+        string(name: 'Choose_branch_by_typing',
+                description: 'Build- (Option 3) Enter a custom branch or tag name',
+                defaultValue: '')
+        string(name: 'Choose_a_build_version',
+                description: 'Build- Enter a build/version number. Leave blank for the latest.',
+                defaultValue: 'HEAD')
+
+        // This is a brief overview of the functionality of this plugin:
+        //   https://jenkinsci.datarecognitioncorp.com/user/gcoakley/my-views/view/Experimenting/job/glen-pipeline/pipeline-syntax/html
+        //   Drill down to: Steps Reference > DSL Reference/Steps > properties > parameters > parameterDefinitions > extendedChoice
+        // Sadly the most useful reference for this plugin is the source code:
+        //   https://github.com/jenkinsci/extended-choice-parameter-plugin/blob/master/src/main/java/com/cwctravel/hudson/plugins/extended_choice_parameter/ExtendedChoiceParameterDefinition.java#L344
+        // This seems like a good example of some powerful things this plugin can do, if you can decipher them.
+        //   https://wiki.jenkins.io/display/JENKINS/Extended+Choice+Parameter+plugin
+        extendedChoice(name: 'Deploy_to_environments',
+                description: 'Choose environment(s) to deploy to',
+                type: 'PT_CHECKBOX',
+                multiSelectDelimiter: ',',
+                value: 'dev,sqa,loadtest,stg,prod',
+                descriptionPropertyValue: 'Development,Quality Assurance,Load Test,Staging,Production',
+                defaultValue: 'dev'
+        )
+        extendedChoice(name: 'Deploy_to_AWS_regions',
+                description: 'Choose region(s) to deploy to',
+                type: 'PT_MULTI_SELECT',
+                multiSelectDelimiter: ',',
+                value: 'us-east-1,us-east-2',
+                descriptionPropertyValue: 'us-east-1 / N. Virginia,us-east-2 / Ohio',
+                defaultValue: 'us-east-1,us-east-2',
+                visibleItemCount: 2
+        )
+
+        booleanParam(name: 'Run_unit_tests', description: 'Stage- (Recommended) Run Unit Tests', defaultValue: isAutoBuild)
+        booleanParam(name: 'Run_integration_tests', description: 'Stage- (Recommended) Run integration Tests', defaultValue: isAutoBuild)
+        booleanParam(name: 'Run_verification', description: 'Stage- (Recommended) Run verification (incl. vulnerability) checks', defaultValue: isAutoBuild)
+
+        booleanParam(name: 'Reload_parameters',
+                description: 'Some parameter configuration data are only stored (for display in the UI) after a successful run of a job.\n ' +
+                        'Therefore, build parameter changes may not be reflected until the next run of a job.',
+                defaultValue: false)
+    }
+
+    environment {
+        // Set any environment variables needed.
+        something = 'Block must not be empty.'
+    }
+
+    options {
+        ansiColor('xterm')
+        buildDiscarder(logRotator(daysToKeepStr: '7', artifactNumToKeepStr: '50'))
+    }
+
+    triggers {
+        issueCommentTrigger('.*test this please.*')
+    }
+
+    agent {
+        node {
+            label NODE_AGENT_LABEL
+        }
+    }
+
+    stages {
+        stage('While continuing') { // Allows a controlled exit, bypassing all later stages.
+            when { expression { keepExecuting } }
+            stages {
+                stage('Intialization') {
+                    steps {
+                        wrap([$class: 'BuildUser']) {
+                            script {
+                                println('This script runs as class: ' + this.class.name)
+                                contributers = sh(returnStdout: true, script: "[ -r CONTRIBUTERS ] && cat CONTRIBUTERS").trim()
+                                lastCommiter = sh(returnStdout: true, script: "git log -1 --format='%an' ${env.GIT_COMMIT}").trim()
+                                buildInstigator = lastCommiter // buildInstigator may be changed later.
+                                chosenBranch = getChosenBranch()
+
+                                buildCause = getBuildCause()
+                                isAutoBuild = buildCause != 'User'
+
+                                if (!isAutoBuild) {
+                                    if (env.BUILD_USER_LAST_NAME) {
+                                        // Remove commas from names which are in the format "LastName, FirstName".
+                                        buildInstigator = "${env.BUILD_USER_LAST_NAME} ${env.BUILD_USER_FIRST_NAME.replace(',', '')}"
+                                    }
+                                }
+
+                                sh '''
+                                    uname -psr
+                                    uname -a
+                                    env | sort
+                                '''
+                                if (env.Just_reload_params || !chosenBranch) {
+                                    keepExecuting = false
+                                }
+
+                                printGlobalVariables('In initialization step')
+                            }
+                        }
+                        googlechatnotification(message: "Build started by ${buildInstigator} " +
+                                "for ${env.JOB_NAME} (<${env.BUILD_URL}>)", url: DEV_TEAM_CHAT_URL)
+                    }
+                }
+                stage('Conditional execution') {
+                    // https://jenkins.io/doc/book/pipeline/syntax/#when
+                    when {
+                        beforeAgent true //` Check conditions before starting agent because we don't need it yet.
+                        anyOf {
+                            expression { isAutoBuild || chosenBranch}
+                        }
+                    }
+                    steps {
+                        script {
+                            printGlobalVariables("In Conditional execution step")
+                        }
+                    }
+                }
+            }
+            post { // After all stages
+                always {
+                    script {
+                        if (GIT_BRANCH in BRANCHES_ALWAYS_BUILT) {
+                            googlechatnotification(message: "Build started by ${buildInstigator} ${buildStatus} for " +
+                                    "${env.JOB_NAME} [${env.BUILD_NUMBER}], (<${env.BUILD_URL}|Link>)", url: DEV_TEAM_CHAT_URL)
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+private printGlobalVariables(message = '') {
+    println "${message}"
+    println "Contibuters: ${contributers}"
+    println "Last Committer: ${lastCommiter}"
+    println "Chosen branch: ${chosenBranch}"
+    println "Is automatic build: ${isAutoBuild}"
+    println "Build instigator: ${buildInstigator}"
+    println "Build cause: ${buildCause}"
+    println "Keep executing: ${keepExecuting}"
+    println "gitParamRepoRE: ${gitParamRepoRE}"
+    int counter = 1
+    scm.getUserRemoteConfigs().each { println "SCM URL ${counter++}: ${it.getUrl()}" }
+}
+
+private void printParams(message = '') {
+    println message
+    println "Choose_branch_by_typing: ${env.Choose_branch_by_typing}"
+    println "Choose_branch_or_tag_from_git: ${env.Choose_branch_or_tag_from_git}"
+    println "Choose_branch_from_common_list: ${env.Choose_branch_from_common_list}"
+    println "Chosen branch: ${chosenBranch}\n"
+}
+
+String getRepositoryShortName() {
+    def matcher = env.GIT_URL =~ /.*github.com.*[^\/](.*)\.git/
+    if (matcher.find()) {
+        return matcher.group(1)
+    } else {
+        println('Could not find repository name; using "personal-testing".')
+        return 'personal-testing'
+    }
+}
+
+String getChosenBranch() {
+    chosenBranch = [env.Choose_branch_by_typing, env.Choose_branch_or_tag_from_git, env.Choose_branch_from_common_list, '']
+            .findResult { it }
+    printParams()
+    chosenBranch = chosenBranch ?: [env.GIT_BRANCH, BRANCH_NAME]
+            .findResult { it in BRANCHES_ALWAYS_BUILT ? it : null }
+    printParams()
+    return chosenBranch
+}
+
+String getBuildCause() {
+    println('Build causes: ' + currentBuild.getBuildCauses().toString())
+
+    // started by commit
+    if (currentBuild.getBuildCauses('jenkins.branch.BranchEventCause')) { return 'SCM' }
+    // started by user
+    else if (currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause')) { return 'User' }
+    // started by timer
+    else if (currentBuild.getBuildCauses('hudson.triggers.TimerTrigger$TimerTriggerCause')) { return 'Timer' }
+    return ''
+}

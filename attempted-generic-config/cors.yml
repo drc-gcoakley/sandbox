@@ -1,0 +1,14 @@
+# Merges this into the <root>/corsConfig section of the serverless configuration.
+
+# This config only sets up the OPTIONS pre-flight request responses. We still need to return CORS headers in code
+# for the actual API web requests. See responseUtilities.makeResponse().
+origin: '*'
+headers:
+  - Accept
+  - Authorization
+  - Content-Type
+  - Origin
+  - X-Requested-With
+  - eca-session
+  - eca-client
+allowCredentials: false

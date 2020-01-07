@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GitSharedSettings">
+    <option name="FORCE_PUSH_PROHIBITED_PATTERNS">
+      <list>
+        <option value="master" />
+        <option value="release" />
+      </list>
+    </option>
+  </component>
+  <component name="IssueNavigationConfiguration">
+    <option name="links">
+      <list>
+        <IssueNavigationLink>
+          <option name="issueRegexp" value="IAT\-\d+" />
+          <option name="linkRegexp" value="https://datarecognitioncorp.atlassian.net/browse/$0" />
+        </IssueNavigationLink>
+        <IssueNavigationLink>
+          <option name="issueRegexp" value="TeamOne\-\d+" />
+          <option name="linkRegexp" value="https://datarecognitioncorp.atlassian.net/browse/$0" />
+        </IssueNavigationLink>
+        <IssueNavigationLink>
+          <option name="issueRegexp" value="IDEAS\-\d+" />
+          <option name="linkRegexp" value="https://datarecognitioncorp.atlassian.net/browse/$0" />
+        </IssueNavigationLink>
+        <IssueNavigationLink>
+          <option name="issueRegexp" value="[A-Z]+\-\d+" />
+          <option name="linkRegexp" value="https://datarecognitioncorp.atlassian.net/browse/$0" />
+        </IssueNavigationLink>
+      </list>
+    </option>
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/drc_jenkins@develop" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/test/build/classes/groovy/test/drc_jenkins@develop" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/test-jenkins/build/classes/groovy/test/drc_jenkins@develop" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/test-jenkins/test/build/classes/groovy/test/drc_jenkins@develop" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/test/build/classes/groovy/test/drc_jenkins@develop" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/testJenkins/test/build/classes/groovy/test/drc_jenkins@develop" vcs="Git" />
+  </component>
+</project>

@@ -1,0 +1,1035 @@
+service: eca-form-recognition-service
+plugins:
+  - serverless-plugin-typescript
+  - serverless-scriptable-plugin
+  - serverless-plugin-aws-alerts
+  - serverless-domain-manager
+  - serverless-plugin-lambda-dead-letter
+  - serverless-dynamodb-local
+  - serverless-s3-local
+  - serverless-offline
+  - seed-s3-local
+  - serverless-plugin-common-excludes
+  - serverless-plugin-include-dependencies
+  - serverless-prune-plugin
+  - serverless-plugin-split-stacks
+  - serverless-drc-extras
+package:
+  include:
+    - images/**
+    - index.js
+    - lib/**
+    - configs/cors.xml
+    - tessdata/**
+    - tesseract
+  excludeDevDependencies: false
+  exclude:
+    - .git/**
+    - .idea/**
+    - .nvmrc
+    - .nyc_output/**
+    - .tmp/**
+    - analyzeIntensities/**
+    - artifacts/**
+    - build.sh
+    - db/**
+    - docs/**
+    - forms/**
+    - Jenkinsfile
+    - Jenkinsfile-slsdeploy
+    - node_modules/**/aws-sdk/**
+    - opencv4nodejs-min.zip
+    - package-lock.json
+    - package.json
+    - pdfToPngs/**
+    - publish_master_forms.sh
+    - README.md
+    - sample/**
+    - scripts/**
+    - slspkg/**
+    - spec/**
+    - templates/**
+    - tesseract.zip
+    - tsconfig.json
+    - tslint.json
+custom:
+  stage: dev
+  configFile: ./configs/dev.yml
+  vars:
+    accountId: 177429746880
+    deploymentbucket: drc-serverlessdeployments-le
+    iamRoleLambdaExecution: 'arn:aws:iam::177429746880:role/Lambda-Local-Scanning-Form-Service-LE'
+    domainName: awcl.drcedirect-le.com
+    alarmTopicName: FormRecognitionAlarmTopic
+    recognitionConcurrency: 6
+    recognitionMemorySize: 3008
+    recognitionTimeout: 60
+    scoringConcurrency: 3
+    scoringMemorySize: 512
+    scoringTimeout: 60
+    imageExpirationInDays: 14
+    capacity:
+      masterFormTable:
+        default:
+          read: 1
+          write: 6
+      scansTable:
+        default:
+          read: 4
+          write: 2
+        sessionIndex:
+          read: 4
+          write: 2
+        lithocodeIndex:
+          read: 4
+          write: 2
+        userIdIndex:
+          read: 4
+          write: 2
+        createdAtIndex:
+          read: 4
+          write: 2
+      documentResults:
+        default:
+          read: 6
+          write: 8
+        userIdIndex:
+          read: 6
+          write: 8
+        createdAtIndex:
+          read: 6
+          write: 8
+      sessions:
+        default:
+          read: 1
+          write: 1
+        userIdIndex:
+          read: 1
+          write: 4
+        createdAtIndex:
+          read: 1
+          write: 4
+      pending:
+        default:
+          read: 15
+          write: 10
+        userIdIndex:
+          read: 15
+          write: 10
+    processingTopic: Local-Scanning-Form-Service-Processing-Topic-dev
+    scoringSnsTopic: Local-Scanning-Form-Service-Scoring-Topic-dev
+    udbService: >-
+      https://api-gateway-dev.drcedirect.com/eca-local-scanning-udb-service/all-development-v0/
+    lrc_web_api: >-
+      https://api-gateway-cloud-dev.drcedirect.com/eca-local-scanning-web-api/tabe-development-v0/v0
+    api_gateway_url: api-gateway-dev.drcedirect.com
+    api_gateway_cloud_url: api-gateway-cloud-dev.drcedirect.com
+    eca_deployment: development
+    dynamoDb: dynamodb.us-east-1.amazonaws.com
+    formsTableName: ECA-Local-Scanning-forms-table-dev-tabe
+    scansTableName: ECA-Local-Scanning-scans-table-dev-tabe
+    documentResultsTableName: ECA-Local-Scanning-document-results-table-dev-tabe
+    sessionsTableName: ECA-Local-Scanning-sessions-table-dev-tabe
+    pendingTableName: ECA-Local-Scanning-pending-table-dev-tabe
+    tmpDir: /tmp
+    us-east-1:
+      vpc:
+        subnetIds:
+          - subnet-c379c2ef
+          - subnet-2ed7a766
+          - subnet-cbc0c691
+        securityGroupIds:
+          - sg-c23dcc89
+      enableRoute53: false
+      cnameWeight: 100
+    us-east-2:
+      vpc:
+        subnetIds:
+          - subnet-4edf9d26
+          - subnet-7e8c3704
+          - subnet-e37193af
+        securityGroupIds:
+          - sg-df472db5
+      enableRoute53: true
+      cnameWeight: 0
+    imagesS3Bucket:
+      us-east-1:
+        Type: 'AWS::S3::Bucket'
+        Properties:
+          BucketName: form-recognition-images-dev
+          Tags:
+            - Key: Name
+              Value: form-recognition-images-bucket
+            - Key: Environment
+              Value: dev
+            - Key: CostCenter
+              Value: ECA
+          LifecycleConfiguration:
+            Rules:
+              - Id: auto-delete-noncurrent-versions-after-90-days
+                Prefix: ''
+                Status: Enabled
+                AbortIncompleteMultipartUpload:
+                  DaysAfterInitiation: 7
+                NoncurrentVersionExpirationInDays: 90
+              - Id: dont-delete-master-forms
+                TagFilters:
+                  - Key: image
+                    Value: masterform
+                Status: Enabled
+                ExpirationDate: '2099-12-31'
+              - Id: expire-image-uploads
+                TagFilters:
+                  - Key: image
+                    Value: scan
+                Status: Enabled
+                ExpirationInDays: 14
+          LoggingConfiguration:
+            DestinationBucketName: us-east-1-drc-s3-logs-dev
+            LogFilePrefix: eca-form-recognition-images-bucket
+          VersioningConfiguration:
+            Status: Enabled
+          CorsConfiguration:
+            CorsRules:
+              - AllowedOrigins:
+                  - '*'
+                AllowedHeaders:
+                  - '*'
+                AllowedMethods:
+                  - GET
+                  - PUT
+                  - POST
+                  - DELETE
+                  - HEAD
+                MaxAge: 300
+      us-east-2:
+        Type: 'AWS::S3::Bucket'
+        Properties:
+          BucketName: form-recognition-images-dev-ignore
+          Tags:
+            - Key: Name
+              Value: form-recognition-images-bucket
+            - Key: Environment
+              Value: dev
+            - Key: CostCenter
+              Value: ECA
+          LifecycleConfiguration:
+            Rules:
+              - Id: auto-delete-noncurrent-versions-after-90-days
+                Prefix: ''
+                Status: Enabled
+                AbortIncompleteMultipartUpload:
+                  DaysAfterInitiation: 7
+                NoncurrentVersionExpirationInDays: 90
+              - Id: dont-delete-master-forms
+                TagFilters:
+                  - Key: image
+                    Value: masterform
+                Status: Enabled
+                ExpirationDate: '2099-12-31'
+              - Id: expire-image-uploads
+                TagFilters:
+                  - Key: image
+                    Value: scan
+                Status: Enabled
+                ExpirationInDays: 14
+          LoggingConfiguration:
+            DestinationBucketName: us-east-2-drc-s3-logs-dev
+            LogFilePrefix: eca-form-recognition-images-bucket-ignore
+          VersioningConfiguration:
+            Status: Enabled
+          CorsConfiguration:
+            CorsRules:
+              - AllowedOrigins:
+                  - '*'
+                AllowedHeaders:
+                  - '*'
+                AllowedMethods:
+                  - GET
+                  - PUT
+                  - POST
+                  - DELETE
+                  - HEAD
+                MaxAge: 300
+  region: us-east-1
+  bucketName: form-recognition-images-dev
+  clientListFilePath: shared/configData/clientList-dev.json
+  prune:
+    automatic: true
+    includeLayers: true
+    number: 10
+  splitStacks:
+    perFunction: false
+    perType: true
+    perGroupFunction: false
+  authorizer:
+    name: authorizer
+    type: TOKEN
+    identitySource: method.request.header.Authorization
+    resultTtlInSeconds: 0
+    identityValidationExpression: Bearer (.*)
+  corsConfig:
+    origin: '*'
+    headers:
+      - Content-Type
+      - Authorization
+      - Origin
+      - X-Requested-With
+      - Accept
+      - eca-session
+      - eca-client
+    allowCredentials: false
+  dynamodb:
+    stages:
+      - dev
+    start:
+      port: 8000
+      inMemory: true
+      heapInitial: 200m
+      heapMax: 1g
+      migrate: true
+      seed: true
+      convertEmptyValues: true
+    seed:
+      domain:
+        sources:
+          - table: ECA-Local-Scanning-forms-table-dev-tabe
+            sources:
+              - ./db/local-seed-data/forms.json
+  s3:
+    host: 0.0.0.0
+    port: 9000
+    directory: s3tmp
+  seedS3local:
+    sources:
+      - bucketName: form-recognition-images-dev
+        sourceDirectory: ./seedData/forms/TABE
+        targetS3Folder: TABE/forms
+        fileTypes: png
+        omitSuffix: false
+      - bucketName: form-recognition-images-dev
+        sourceDirectory: ./seedData/shared/configData
+        targetS3Folder: shared/configData
+        omitSuffix: false
+        fileTypes: json
+  cnameWeights:
+    us-east-1: 100
+    us-east-2: 0
+  customDomain:
+    enabled: true
+    domainName: eca-form-recognition-service-dev.awcl.drcedirect-le.com
+    stage: dev
+    basePath: ''
+    certificateName: '*.awcl.drcedirect-le.com'
+    createRoute53Record: false
+    endpointType: regional
+  drc:
+    global-table-regions:
+      - us-east-1
+      - us-east-2
+    dashboards:
+      name: us-east-1-eca-form-recognition-service-dev
+      create: true
+    customDomain:
+      cname: true
+      weight: 100
+      ttl: 60
+      setId: eca-form-recognition-service.us-east-1
+      publicPrivate: true
+    global-tables:
+      - ECA-Local-Scanning-forms-table-dev-tabe
+      - ECA-Local-Scanning-scans-table-dev-tabe
+      - ECA-Local-Scanning-document-results-table-dev-tabe
+      - ECA-Local-Scanning-pending-table-dev-tabe
+      - ECA-Local-Scanning-sessions-table-dev-tabe
+    node-options: {}
+  alerts:
+    stages:
+      - dev
+      - sqa
+      - stg
+    alarms:
+      - functionThrottles
+      - functionErrors
+      - functionInvocations
+      - functionDuration
+      - fatalExceptions
+      - dynamodbExceededException
+    dashboards: true
+    topics:
+      alarm: dev-FormRecognitionAlarmTopic
+    definitions:
+      fatalExceptions:
+        metric: fatalExceptions
+        threshold: 0
+        statistic: Sum
+        period: 60
+        evaluationPeriods: 1
+        comparisonOperator: GreaterThanThreshold
+        pattern: FATAL
+      dynamodbExceededException:
+        metric: dynamodbExceededExceptions
+        threshold: 0
+        statistic: Sum
+        period: 300
+        evaluationPeriods: 1
+        comparisonOperator: GreaterThanThreshold
+        pattern: ProvisionedThroughputExceededException
+      functionInvocations:
+        threshold: 100
+        period: 60
+        evaluationPeriods: 2
+        treatMissingData: notBreaching
+      functionErrors:
+        threshold: 10
+        period: 60
+        evaluationPeriods: 2
+        treatMissingData: missing
+      functionThrottles:
+        threshold: 10
+        period: 60
+        evaluationPeriods: 2
+        treatMissingData: missing
+      functionDuration:
+        threshold: 500
+        statistic: Maximum
+        period: 60
+        evaluationPeriods: 2
+        treatMissingData: notBreaching
+provider:
+  stage: dev
+  region: us-east-1
+  name: aws
+  runtime: nodejs8.10
+  cfLogs: true
+  role: 'arn:aws:iam::177429746880:role/Lambda-Local-Scanning-Form-Service-LE'
+  environment:
+    UDB_SERVICE: >-
+      https://api-gateway-dev.drcedirect.com/eca-local-scanning-udb-service/all-development-v0/
+    BUCKET_NAME: form-recognition-images-dev
+    MIGRATION_DEST_BUCKET: form-recognition-images-dev
+    DYNAMODB: dynamodb.us-east-1.amazonaws.com
+    FORMS_TABLE_NAME: ECA-Local-Scanning-forms-table-dev-tabe
+    SCANS_TABLE_NAME: ECA-Local-Scanning-scans-table-dev-tabe
+    DOCUMENT_RESULTS_TABLE_NAME: ECA-Local-Scanning-document-results-table-dev-tabe
+    PENDING_TABLE_NAME: ECA-Local-Scanning-pending-table-dev-tabe
+    SESSIONS_TABLE_NAME: ECA-Local-Scanning-sessions-table-dev-tabe
+    TMP_DIR: /tmp
+    LRC_WEB_API: >-
+      https://api-gateway-cloud-dev.drcedirect.com/eca-local-scanning-web-api/tabe-development-v0/v0
+    API_GATEWAY_URL: api-gateway-dev.drcedirect.com
+    API_GATEWAY_CLOUD_URL: api-gateway-cloud-dev.drcedirect.com
+    ECA_DEPLOYMENT: development
+    CLIENT_LIST_FILE: shared/configData/clientList-dev.json
+  deploymentBucket:
+    name: us-east-1-drc-serverlessdeployments-le
+    serverSideEncryption: AES256
+  vpc:
+    $ref: '$["custom"]["vars"]["us-east-1"]["vpc"]'
+functions:
+  recognition:
+    handler: src/index.handler
+    deadLetter:
+      sqs: Form-Recognition-Dead-Letter-Queue-Processing-dev
+    events:
+      - sns: Local-Scanning-Form-Service-Processing-Topic-dev
+    timeout: 60
+    memorySize: 3008
+    reservedConcurrency: 6
+    name: eca-form-recognition-service-dev-recognition
+  scoring:
+    handler: src/ScoringHandler.handler
+    deadLetter:
+      sqs: Form-Recognition-Dead-Letter-Queue-Scoring-dev
+    events:
+      - sns: Local-Scanning-Form-Service-Scoring-Topic-dev
+    timeout: 60
+    memorySize: 512
+    reservedConcurrency: 3
+    name: eca-form-recognition-service-dev-scoring
+  authorizer:
+    handler: src/auth/authorizerLambda.authorize
+    events: []
+    name: eca-form-recognition-service-dev-authorizer
+  apiGetStatus:
+    handler: src/status/statusLambda.status
+    description: Get Form Recognition Service status.
+    events:
+      - http:
+          path: status
+          method: GET
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+    name: eca-form-recognition-service-dev-apiGetStatus
+  apiGetClientAndProjectList:
+    handler: src/clients/clientsLambda.get
+    description: Get a list of clients (and their projects) available for local scanning.
+    events:
+      - http:
+          path: clients
+          method: GET
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+          authorizer:
+            $ref: '$["custom"]["authorizer"]'
+    name: eca-form-recognition-service-dev-apiGetClientAndProjectList
+  apiGetUnscored:
+    handler: src/scanSessions/scanSessionLambda.getUnscored
+    description: Get unscored sessions by used ID.
+    events:
+      - http:
+          path: sessions
+          method: GET
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+          authorizer:
+            $ref: '$["custom"]["authorizer"]'
+    name: eca-form-recognition-service-dev-apiGetUnscored
+  apiGetUnsubmitted:
+    handler: src/scanSessions/scanSessionLambda.getUnsubmitted
+    description: Get unsubmitted sessions by used ID.
+    events:
+      - http:
+          path: sessions/unsubmitted
+          method: GET
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+          authorizer:
+            $ref: '$["custom"]["authorizer"]'
+    name: eca-form-recognition-service-dev-apiGetUnsubmitted
+  apiCreateForm:
+    handler: src/forms/formLambda.create
+    description: >-
+      Creates a master form record, but does not allow overwrite of an existing
+      master form.
+    events:
+      - http:
+          path: forms
+          method: POST
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+          authorizer:
+            $ref: '$["custom"]["authorizer"]'
+    name: eca-form-recognition-service-dev-apiCreateForm
+  apiGetFormById:
+    handler: src/forms/formLambda.get
+    description: Get a master form record by material ID.
+    events:
+      - http:
+          path: 'forms/{materialId}'
+          method: GET
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+          authorizer:
+            $ref: '$["custom"]["authorizer"]'
+    name: eca-form-recognition-service-dev-apiGetFormById
+  apiGetForms:
+    handler: src/forms/formLambda.get
+    description: Get a master form.
+    events:
+      - http:
+          path: forms
+          method: GET
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+          authorizer:
+            $ref: '$["custom"]["authorizer"]'
+    name: eca-form-recognition-service-dev-apiGetForms
+  apiPutForm:
+    handler: src/forms/formLambda.put
+    description: Update an existing master form.
+    events:
+      - http:
+          path: 'forms/{materialId}'
+          method: PUT
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+          authorizer:
+            $ref: '$["custom"]["authorizer"]'
+    name: eca-form-recognition-service-dev-apiPutForm
+  apiGetMasterImage:
+    handler: src/forms/masterImageLambda.get
+    description: Get form master image by ID.
+    events:
+      - http:
+          path: masterimage
+          method: GET
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+          authorizer:
+            $ref: '$["custom"]["authorizer"]'
+          request:
+            parameters:
+              querystrings:
+                imageId: true
+    name: eca-form-recognition-service-dev-apiGetMasterImage
+  apiGetFormImageSignedUrl:
+    handler: src/forms/masterImageLambda.getSignedUrl
+    description: Get signed URL to upload a master form image to S3.
+    events:
+      - http:
+          path: 'masterimage/signed-url/{client}'
+          method: GET
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+          authorizer:
+            $ref: '$["custom"]["authorizer"]'
+          request:
+            parameters:
+              querystrings:
+                imageId: true
+    name: eca-form-recognition-service-dev-apiGetFormImageSignedUrl
+  apiGetDocumentResults:
+    handler: src/documentResults/documentResultsLambda.getBySession
+    description: Get document results by session ID.
+    events:
+      - http:
+          path: 'results/{sessionId}'
+          method: GET
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+          authorizer:
+            $ref: '$["custom"]["authorizer"]'
+    name: eca-form-recognition-service-dev-apiGetDocumentResults
+  apiGetScans:
+    handler: src/scans/scanLambda.getAll
+    description: Gets scans by session id.
+    events:
+      - http:
+          path: scans
+          method: GET
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+          authorizer:
+            $ref: '$["custom"]["authorizer"]'
+    name: eca-form-recognition-service-dev-apiGetScans
+  apiCreateScans:
+    handler: src/scans/scanLambda.create
+    description: Creates a scan.
+    events:
+      - http:
+          path: scans
+          method: POST
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+          authorizer:
+            $ref: '$["custom"]["authorizer"]'
+    name: eca-form-recognition-service-dev-apiCreateScans
+  apiGetScansPolicy:
+    handler: src/scans/scanLambda.createPolicyForUpload
+    description: Get presigned POST URL for uploading scanned images to S3.
+    events:
+      - http:
+          path: scans/policy
+          method: GET
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+          authorizer:
+            $ref: '$["custom"]["authorizer"]'
+    name: eca-form-recognition-service-dev-apiGetScansPolicy
+  apiGetScansSignedurl:
+    handler: src/scans/scanLambda.createSignedUrl
+    description: Get signed URL for a scan image that resides in S3.
+    events:
+      - http:
+          path: scans/signedurl
+          method: GET
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+          authorizer:
+            $ref: '$["custom"]["authorizer"]'
+    name: eca-form-recognition-service-dev-apiGetScansSignedurl
+  apiCreateScansMetadataPolicy:
+    handler: src/scans/scanLambda.createMetadataPolicy
+    description: '???'
+    events:
+      - http:
+          path: scans/metadata/policy
+          method: POST
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+          authorizer:
+            $ref: '$["custom"]["authorizer"]'
+    name: eca-form-recognition-service-dev-apiCreateScansMetadataPolicy
+  apiDiagnosticsDebug:
+    handler: src/webApiProxyLambda.requestProxy
+    description: Get debug image URLs for diagnostics page.
+    events:
+      - http:
+          path: diagnostics/debug
+          method: GET
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+          authorizer:
+            $ref: '$["custom"]["authorizer"]'
+    name: eca-form-recognition-service-dev-apiDiagnosticsDebug
+  apiDiagnosticsReprocess:
+    handler: src/webApiProxyLambda.requestProxy
+    description: '???'
+    events:
+      - http:
+          path: diagnostics/reprocess
+          method: POST
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+          authorizer:
+            $ref: '$["custom"]["authorizer"]'
+    name: eca-form-recognition-service-dev-apiDiagnosticsReprocess
+  apiUpdateRejectResultStatus:
+    handler: src/webApiProxyLambda.requestProxy
+    description: Remove scored status from session for a test document.
+    events:
+      - http:
+          path: 'sessions/{sessionId}/reject/{documentId}'
+          method: POST
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+          authorizer:
+            $ref: '$["custom"]["authorizer"]'
+    name: eca-form-recognition-service-dev-apiUpdateRejectResultStatus
+  apiGetBiographics:
+    handler: src/webApiProxyLambda.requestProxy
+    description: Get biographics information for a session.
+    events:
+      - http:
+          path: 'sessions/{sessionId}/biographics'
+          method: GET
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+          authorizer:
+            $ref: '$["custom"]["authorizer"]'
+    name: eca-form-recognition-service-dev-apiGetBiographics
+  apiGetBiographicsById:
+    handler: src/webApiProxyLambda.requestProxy
+    description: Get biographics information by document ID.
+    events:
+      - http:
+          path: 'sessions/{sessionId}/biographics/{documentId}'
+          method: GET
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+          authorizer:
+            $ref: '$["custom"]["authorizer"]'
+    name: eca-form-recognition-service-dev-apiGetBiographicsById
+  apiUpdateBiographics:
+    handler: src/webApiProxyLambda.requestProxy
+    description: Update biographics for a specific test document.
+    events:
+      - http:
+          path: 'sessions/{sessionId}/biographics/{documentId}'
+          method: PATCH
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+          authorizer:
+            $ref: '$["custom"]["authorizer"]'
+    name: eca-form-recognition-service-dev-apiUpdateBiographics
+  apiGetAlertsByUser:
+    handler: src/webApiProxyLambda.requestProxy
+    description: Get all alerts by user.
+    events:
+      - http:
+          path: pending
+          method: GET
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+          authorizer:
+            $ref: '$["custom"]["authorizer"]'
+    name: eca-form-recognition-service-dev-apiGetAlertsByUser
+  apiUpdateAlert:
+    handler: src/webApiProxyLambda.requestProxy
+    description: Update an alert.
+    events:
+      - http:
+          path: 'pending/{pendingId}'
+          method: PATCH
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+          authorizer:
+            $ref: '$["custom"]["authorizer"]'
+    name: eca-form-recognition-service-dev-apiUpdateAlert
+  apiGetAlertImage:
+    handler: src/webApiProxyLambda.requestProxy
+    description: Get the alert image to display to the user.
+    events:
+      - http:
+          path: 'pending/image/{imageId}'
+          method: GET
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+          authorizer:
+            $ref: '$["custom"]["authorizer"]'
+    name: eca-form-recognition-service-dev-apiGetAlertImage
+  apiClearAlerts:
+    handler: src/webApiProxyLambda.requestProxy
+    description: Clear a single alert.
+    events:
+      - http:
+          path: 'pending/{pendingId}/alerts'
+          method: DELETE
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+          authorizer:
+            $ref: '$["custom"]["authorizer"]'
+    name: eca-form-recognition-service-dev-apiClearAlerts
+  apiPendingClearAlerts:
+    handler: src/webApiProxyLambda.requestProxy
+    description: Clear all alerts for the user.
+    events:
+      - http:
+          path: pending/clear-alerts
+          method: POST
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+          authorizer:
+            $ref: '$["custom"]["authorizer"]'
+    name: eca-form-recognition-service-dev-apiPendingClearAlerts
+  apiSubmitScoring:
+    handler: src/webApiProxyLambda.requestProxy
+    description: Sumbit a set of document results to scoring.
+    events:
+      - http:
+          path: pending/score
+          method: POST
+          cors:
+            $ref: '$["custom"]["corsConfig"]'
+          authorizer:
+            $ref: '$["custom"]["authorizer"]'
+    name: eca-form-recognition-service-dev-apiSubmitScoring
+resources:
+  Resources:
+    ImagesBucket:
+      $ref: '$["custom"]["vars"]["imagesS3Bucket"]["us-east-1"]'
+    MasterFormTable:
+      Type: 'AWS::DynamoDB::Table'
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: materialId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: materialId
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 6
+        TableName: ECA-Local-Scanning-forms-table-dev-tabe
+        StreamSpecification:
+          StreamViewType: NEW_AND_OLD_IMAGES
+        Tags:
+          - Key: Name
+            Value: us-east-1-form-recognition-master-forms-table
+          - Key: Environment
+            Value: dev
+          - Key: CostCenter
+            Value: ECA
+    ScansTable:
+      Type: 'AWS::DynamoDB::Table'
+      DependsOn: SessionsTable
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+          - AttributeName: sessionId
+            AttributeType: S
+          - AttributeName: materialId
+            AttributeType: S
+          - AttributeName: lithocode
+            AttributeType: S
+          - AttributeName: createdAt
+            AttributeType: 'N'
+          - AttributeName: userId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        GlobalSecondaryIndexes:
+          - IndexName: sessionIdIndex
+            KeySchema:
+              - AttributeName: sessionId
+                KeyType: HASH
+            Projection:
+              ProjectionType: ALL
+            ProvisionedThroughput:
+              ReadCapacityUnits: 4
+              WriteCapacityUnits: 2
+          - IndexName: lithocodeIndex
+            KeySchema:
+              - AttributeName: lithocode
+                KeyType: HASH
+              - AttributeName: materialId
+                KeyType: RANGE
+            Projection:
+              ProjectionType: ALL
+            ProvisionedThroughput:
+              ReadCapacityUnits: 4
+              WriteCapacityUnits: 2
+          - IndexName: userIdIndex
+            KeySchema:
+              - AttributeName: userId
+                KeyType: HASH
+              - AttributeName: createdAt
+                KeyType: RANGE
+            Projection:
+              ProjectionType: KEYS_ONLY
+            ProvisionedThroughput:
+              ReadCapacityUnits: 4
+              WriteCapacityUnits: 2
+          - IndexName: createdAtIndex
+            KeySchema:
+              - AttributeName: createdAt
+                KeyType: HASH
+              - AttributeName: id
+                KeyType: RANGE
+            Projection:
+              ProjectionType: KEYS_ONLY
+            ProvisionedThroughput:
+              ReadCapacityUnits: 4
+              WriteCapacityUnits: 2
+        ProvisionedThroughput:
+          ReadCapacityUnits: 4
+          WriteCapacityUnits: 2
+        TableName: ECA-Local-Scanning-scans-table-dev-tabe
+        StreamSpecification:
+          StreamViewType: NEW_AND_OLD_IMAGES
+        Tags:
+          - Key: Name
+            Value: us-east-1-form-recognition-scans-table
+          - Key: Environment
+            Value: dev
+          - Key: CostCenter
+            Value: ECA
+    DocumentResultsTable:
+      Type: 'AWS::DynamoDB::Table'
+      DependsOn: ScansTable
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: sessionId
+            AttributeType: S
+          - AttributeName: sortKey
+            AttributeType: S
+          - AttributeName: userId
+            AttributeType: S
+          - AttributeName: createdAt
+            AttributeType: 'N'
+        KeySchema:
+          - AttributeName: sessionId
+            KeyType: HASH
+          - AttributeName: sortKey
+            KeyType: RANGE
+        GlobalSecondaryIndexes:
+          - IndexName: userIdIndex
+            KeySchema:
+              - AttributeName: userId
+                KeyType: HASH
+            Projection:
+              ProjectionType: ALL
+            ProvisionedThroughput:
+              ReadCapacityUnits: 6
+              WriteCapacityUnits: 8
+          - IndexName: createdAtIndex
+            KeySchema:
+              - AttributeName: createdAt
+                KeyType: HASH
+              - AttributeName: sessionId
+                KeyType: RANGE
+            Projection:
+              ProjectionType: KEYS_ONLY
+            ProvisionedThroughput:
+              ReadCapacityUnits: 6
+              WriteCapacityUnits: 8
+        ProvisionedThroughput:
+          ReadCapacityUnits: 6
+          WriteCapacityUnits: 8
+        TableName: ECA-Local-Scanning-document-results-table-dev-tabe
+        StreamSpecification:
+          StreamViewType: NEW_AND_OLD_IMAGES
+        Tags:
+          - Key: Name
+            Value: us-east-1-form-recognition-document-results-table
+          - Key: Environment
+            Value: dev
+          - Key: CostCenter
+            Value: ECA
+    PendingTable:
+      Type: 'AWS::DynamoDB::Table'
+      DependsOn: DocumentResultsTable
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: lithocode
+            AttributeType: S
+          - AttributeName: userId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: lithocode
+            KeyType: HASH
+        GlobalSecondaryIndexes:
+          - IndexName: userIdIndex
+            KeySchema:
+              - AttributeName: userId
+                KeyType: HASH
+            Projection:
+              ProjectionType: ALL
+            ProvisionedThroughput:
+              ReadCapacityUnits: 15
+              WriteCapacityUnits: 10
+        ProvisionedThroughput:
+          ReadCapacityUnits: 15
+          WriteCapacityUnits: 10
+        TableName: ECA-Local-Scanning-pending-table-dev-tabe
+        StreamSpecification:
+          StreamViewType: NEW_AND_OLD_IMAGES
+        Tags:
+          - Key: Name
+            Value: us-east-1-pending-table
+          - Key: Environment
+            Value: dev
+          - Key: CostCenter
+            Value: ECA
+    SessionsTable:
+      Type: 'AWS::DynamoDB::Table'
+      DependsOn: MasterFormTable
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: sessionId
+            AttributeType: S
+          - AttributeName: userId
+            AttributeType: S
+          - AttributeName: createdAt
+            AttributeType: 'N'
+        KeySchema:
+          - AttributeName: sessionId
+            KeyType: HASH
+        GlobalSecondaryIndexes:
+          - IndexName: userIdIndex
+            KeySchema:
+              - AttributeName: userId
+                KeyType: HASH
+            Projection:
+              ProjectionType: ALL
+            ProvisionedThroughput:
+              ReadCapacityUnits: 1
+              WriteCapacityUnits: 4
+          - IndexName: createdAtIndex
+            KeySchema:
+              - AttributeName: createdAt
+                KeyType: HASH
+              - AttributeName: sessionId
+                KeyType: RANGE
+            Projection:
+              ProjectionType: KEYS_ONLY
+            ProvisionedThroughput:
+              ReadCapacityUnits: 1
+              WriteCapacityUnits: 4
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: ECA-Local-Scanning-sessions-table-dev-tabe
+        StreamSpecification:
+          StreamViewType: NEW_AND_OLD_IMAGES
+        Tags:
+          - Key: Name
+            Value: us-east-1-form-recognition-sessions-table
+          - Key: Environment
+            Value: dev
+          - Key: CostCenter
+            Value: ECA
+

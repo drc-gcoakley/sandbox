@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CurrentJenkinsfileSpec" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-10-08T15:30:25" hostname="drc29201.datarecognitioncorp.com" time="0.031">
+  <properties/>
+  <testcase name="test all library code could be loaded" classname="CurrentJenkinsfileSpec" time="0.031"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

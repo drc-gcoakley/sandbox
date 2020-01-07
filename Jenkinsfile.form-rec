@@ -1,0 +1,583 @@
+@Library('DRC_Global_Pipeline_Libraries@v1.6.0') _
+// Use DRC_Global_Pipeline_Libraries@develop ?
+import java.lang.reflect.Array
+
+// TODO Always use the LATEST or HEAD here. Is that possible?
+// https://jenkins.io/blog/2017/02/01/pipeline-scalability-best-practice/
+
+// Future changes:
+//     * Use the multi-level plugin to select the repository, then branch? This may require a script.
+//        @see: https://www.coveros.com/generate-parameter-values-dynamically-jenkins/
+//     * Use a script to get the possible version choices from Jenkins api ( url:.../$job-name/api/json )
+//        @see: https://medium.com/@rijoalvi/jenkins-dynamic-parameters-using-extended-choice-parameter-plugin-and-groovy-1a6ffc41063f
+//     * Read the list of AWS regions from serverless configuration?
+
+// CONSTANTS - Do not declare them with 'def' or a type.
+
+// NODE_AGENT_LABEL = 'coel7_agent_aws&&aws&&role_dev' or 'coel7_agent_aws&&aws&&role_prod' as set in generateDeployTasks()
+
+DEV_PERMISSION_ACK_DURATION = 14400 // 4 hrs
+PROD_PERMISSION_ACK_DURATION = 3600 // 1 hr
+NODEJS_VERSION = 'NODE_8_LTS'
+PROD_ACCOUNT_ENVS = ['stg', 'prod']
+PROD_ACCOUNT_BRANCHES = ['master', 'staging']
+LOWER_ACCOUNT_BRANCHES = ['develop', 'sqa', 'loadtest']
+BRANCHES_ALWAYS_BUILT = [''] + LOWER_ACCOUNT_BRANCHES + PROD_ACCOUNT_BRANCHES
+REGIONS = ['us-east-1', 'us-east-2']
+
+// Project specific constants.
+//
+// LRC doesn't have a branch for each env. so, this resets the branch lists.
+PROD_ACCOUNT_BRANCHES = ['master']
+BRANCHES_ALWAYS_BUILT = ['', 'develop'] + PROD_ACCOUNT_BRANCHES
+DEV_TEAM_CHAT_URL = 'https://chat.googleapis.com/v1/spaces/AAAARqVi1KU/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=6yglYc02qH8R_QEPa4GPyubfYe_-rzrkg0ZIcb9XkDI%3D'
+
+//
+// VARIABLES - Don't declare them with 'def' or a type.
+//
+buildInstigator = ''
+buildCause = ''
+buildDate = ''
+buildStatus = 'successful'
+chosenBranch = ''
+gitParamRepoRE = ".*${getRepositoryShortName()}.git"
+isAutoBuild = false
+keepExecuting = true
+dryRunPrefix = ''
+
+pipeline {
+    tools {
+        nodejs NODEJS_VERSION
+    }
+
+    environment {
+        buildDate = sh(returnStdout: true, script: "date +%F-%T").trim()
+    }
+
+    parameters {
+        // The names of these parameters are shown on the UI.
+        // If you want something fancier or with more style ro flexibility consider adding an Extended Choice that uses
+        // JSON configuration and building that configuration using https://github.com/json-editor/json-editor as
+        // referenced by: https://wiki.jenkins.io/display/JENKINS/Extended+Choice+Parameter+plugin
+
+        choice(name: 'Choose_branch_from_common_list',
+                description: 'Build- (Option 1) Select a common branch name to build',
+                choices: BRANCHES_ALWAYS_BUILT)
+        // useRepository is key to making this work even if there is only one URL used! This might have something to do
+        // with using the DRC @Library which is pulled from a git repository.
+        gitParameter(name: 'Choose_branch_or_tag_from_git',
+                description: 'Build- (Option 2) Select from all branches or tags',
+                type: 'PT_BRANCH_TAG', branchFilter: 'origin/(.*)', tagFilter: '*',
+                quickFilterEnabled: true, sortMode: 'ASCENDING_SMART',
+                selectedValue: 'NONE',
+                useRepository: gitParamRepoRE)
+        string(name: 'Choose_branch_by_typing',
+                description: 'Build- (Option 3) Enter a custom branch or tag name',
+                defaultValue: '')
+        string(name: 'Enter_a_build_version',
+                description: 'Build- Enter a build/version number. Leave blank for the latest.',
+                defaultValue: '')
+
+//        booleanParam(name: 'Run_unit_tests', description: 'Stage- (Recommended) Run unit tests', defaultValue: true)
+        booleanParam(name: 'Run_integration_tests', description: 'Stage- (Recommended) Run integration tests', defaultValue: true)
+//        booleanParam(name: 'Run_functional_tests', description: 'Stage- (Recommended) Run end-to-end tests', defaultValue: true)
+        booleanParam(name: 'Run_verification', description: 'Stage- (Recommended) Run verification (incl. vulnerability) checks', defaultValue: true)
+        //	booleanParam()description: 'Run static analysis', 	name: 'runStaticAnalysis', defaultValue: isAutoBuild)
+
+        // This is a brief overview of the functionality of this plugin:
+        //   https://jenkinsci.datarecognitioncorp.com/user/gcoakley/my-views/view/Experimenting/job/glen-pipeline/pipeline-syntax/html
+        //   Drill down to: Steps Reference > DSL Reference/Steps > properties > parameters > parameterDefinitions > extendedChoice
+        // Sadly the most useful reference for this plugin is the source code:
+        //   https://github.com/jenkinsci/extended-choice-parameter-plugin/blob/master/src/main/java/com/cwctravel/hudson/plugins/extended_choice_parameter/ExtendedChoiceParameterDefinition.java#L344
+        // This seems like a good example of some powerful things this plugin can do, if you can decipher them.
+        //   https://wiki.jenkins.io/display/JENKINS/Extended+Choice+Parameter+plugin
+        extendedChoice(name: 'Deploy_to_environments',
+                description: 'Choose environment(s) to deploy to',
+                type: 'PT_CHECKBOX',
+                multiSelectDelimiter: ',',
+                value: 'dev,sqa,loadtest,stg,prod',
+                descriptionPropertyValue: 'Development,Quality Assurance,Load Test,Staging,Production',
+                defaultValue: 'dev'
+        )
+
+        // TODO: Change default back to false when we are no longer expiring master forms every 14 days.
+        booleanParam(name: 'Update_master_forms_in_db',
+                description: '(Optional) Update the master form data in DynamoDB.',
+                defaultValue: true)
+
+        // TODO: Change default back to false when we are no longer expiring master forms every 14 days.
+        booleanParam(name: 'Upload_master_form_images',
+                description: '(Optional) Select if master form images have changed.',
+                defaultValue: isAutoBuild)
+
+        booleanParam(name: 'Remove_stack_before_deploy_DELETING_DB_DATA',
+                description: '(Optional) Select to remove the serverless stack for the environment before deploying.',
+                defaultValue: false)
+
+        extendedChoice(name: 'Deploy_to_AWS_regions',
+                description: 'Choose region(s) to deploy to',
+                type: 'PT_MULTI_SELECT',
+                multiSelectDelimiter: ',',
+                value: 'us-east-1,us-east-2',
+                descriptionPropertyValue: 'us-east-1 / N. Virginia,us-east-2 / Ohio',
+                defaultValue: 'us-east-1,us-east-2',
+                visibleItemCount: 2
+        )
+
+        booleanParam(name: 'Reload_parameters_dry_run',
+                description: 'Provides a dry-run through the script. It will examine configuration and executge ' +
+                        'conditions but not perform any tasks that change data. Some parameter configuration data ' +
+                        'ere only stored (for display in the UI) after a successful run of a job.\n Therefore, build ' +
+                        'parameter changes may not be reflected until the following run of a job.',
+                defaultValue: false)
+    }
+
+    options {
+        ansiColor('xterm')
+        // TODO keep the first failure if the build currently, still fails.
+        buildDiscarder(logRotator(numToKeepStr: '5', artifactNumToKeepStr: '5'))
+    }
+
+    triggers {
+        issueCommentTrigger('.*test this please.*')
+    }
+
+    agent {
+        node {
+            label 'coel7_agent_aws&&aws&&role_dev'
+        }
+    }
+
+    stages {
+        stage('While continuing') { // Allows a controlled exit, bypassing all later stages.
+            when { expression { keepExecuting } }
+
+            stages {
+                stage('Intialization') {
+                    steps {
+                        wrap([$class: 'BuildUser']) {
+                            script {
+                                if (params.Remove_stack_before_deploy_DELETING_DB_DATA &&
+                                        (Deploy_to_environments.intersect(PROD_ACCOUNT_ENVS).size() > 0)) {
+                                    error 'Removing the stack will delete data from Dynamo (but not from S3).'
+                                }
+                                Deploy_to_environments = ensureIsArray(Deploy_to_environments)
+                                contributers = sh(returnStdout: true, script: "[ -r CONTRIBUTERS ] && cat CONTRIBUTERS").trim()
+                                buildInstigator = sh(returnStdout: true, script: "git log -1 --format='%an' ${env.GIT_COMMIT}").trim()
+                                chosenBranch = getChosenBranch()
+                                buildCause = getBuildCause()
+                                isAutoBuild = buildCause != 'User'
+                                if (!isAutoBuild && env.BUILD_USER_LAST_NAME) {
+                                    // Remove commas from names which are in the format "LastName, FirstName".
+                                    buildInstigator = "${env.BUILD_USER_LAST_NAME} ${env.BUILD_USER_FIRST_NAME.replace(',', '')}"
+                                }
+                                if (env.Reload_parameters_dry_run) {
+                                    dryRunPrefix = 'echo Would run: '
+                                }
+                                if (!chosenBranch) {
+                                    keepExecuting = false
+                                    println 'Setting exeuction to stop because no source branch was set.'
+                                }
+
+                                printGlobalVariables('In initialization step')
+                                sh "${dryRunPrefix} ~/scripts/jenkins/dump-working-env.sh"
+                            }
+                        }
+                        sendToChat("Build started by ${buildInstigator}")
+                    }
+                }
+
+                stage('Quality verification') {
+                    parallel {
+                        stage('Test') {
+                            when {
+                                beforeAgent true // Check conditions before starting agent because we don't need it yet.
+                                expression { params.Run_unit_tests }
+                            }
+                            steps {
+                                withEnv(getEnvFor_OpenCV_and_Dynamo()) {
+                                    script {
+                                        assumeRole('dev')
+                                        sh "${dryRunPrefix} ~/scripts/jenkins/test.sh"
+                                    }
+                                }
+                            }
+                        }
+
+/*
+                        stage('Integration (between classes/files) Tests') {
+                            when {
+                                beforeAgent true // Check conditions before starting agent because we don't need it yet.
+                                expression { params.Run_integration_tests }
+                            }
+                            steps {
+                                withEnv(getEnvFor_OpenCV_and_Dynamo()) {
+                                    script {
+                                        assumeRole('dev')
+                                        sh "${dryRunPrefix} ~/scripts/jenkins/integration_tests.sh"
+                                    }
+                                }
+                            }
+                        }
+
+                        stage('End-to-End (E2E) (Functional/feature) Tests') {
+                            when {
+                                beforeAgent true // Check conditions before starting agent because we don't need it yet.
+                                expression { params.Run_functional_tests }
+                            }
+                            steps {
+                                withEnv(getEnvFor_OpenCV_and_Dynamo()) {
+                                    script {
+                                        assumeRole('dev')
+                                        sh "${dryRunPrefix} ~/scripts/jenkins/e2e_tests.sh"
+                                    }
+                                }
+                            }
+                        }
+*/
+
+                        stage('Check Vulnerabilities') {
+                            when {
+                                beforeAgent true // Check conditions before starting agent because we don't need it yet.
+                                expression { params.Run_verification }
+                            }
+                            steps {
+                                withEnv(["PATH=./node_modules/.bin/:${env.PATH}"]) {
+                                    script {
+                                        try {
+                                            sh "${dryRunPrefix} ~/scripts/jenkins/verify.sh"
+                                        } catch (exitCode) {
+                                            if (env.BRANCH_NAME == 'master') {
+                                                sendToChat("NPM dependency VULNERABILITIES found and need approval to continue")
+                                                drc_AskForPermission([name       : "Bypass vulnerabilities",
+                                                                      to_time    : 20,
+                                                                      to_unit    : 'MINUTES',
+                                                                      id         : "VulnCheck${env.JOB_ID}",
+                                                                      message    : "Bypass High/Critical vulnerabilities or abort?",
+                                                                      submitter  : contributers,
+                                                                      description: 'Approve? Type "yes" to proceed'])
+                                                if (currentBuild.result == 'ABORTED') {
+                                                    error 'Aborting build because NPM dependency vulnerabilities were found and not accepted.'
+                                                }
+                                            } else {
+                                                error 'NPM dependency vulnerabilities found.'
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    } // end of parallel
+                } // end of stage wrapping parallel
+
+
+                stage('Coverage Reporting') {
+                    steps {
+                        publishHTML(allowMissing: true, alwaysLinkToLastBuild: false, keepAll: true,
+                                reportDir: 'artifacts/coverage', reportFiles: 'index.html',
+                                reportName: 'Code Coverage Report', reportTitles: '')
+                        publishHTML(allowMissing: true, alwaysLinkToLastBuild: false, keepAll: true,
+                                reportDir: 'artifacts', reportFiles: 'report.html',
+                                reportName: 'Unit Test Report', reportTitles: '')
+//                                    cobertura(autoUpdateHealth: false, autoUpdateStability: false, maxNumberOfBuilds: 0,
+//                                            conditionalCoverageTargets: '80, 0, 0', lineCoverageTargets: '80, 0, 0',
+//                                            methodCoverageTargets: '80, 0, 0',
+//                                            coberturaReportFile: 'artifacts/coverage/cobertura*.xml', sourceEncoding: 'ASCII',
+//                                            failUnhealthy: false, failUnstable: false, onlyStable: false, zoomCoverageChart: false)
+                    }
+                }
+
+
+                stage('Undeploy (remove stack)') {
+                    when {
+                        beforeAgent true // Check conditions before starting agent because we don't need it yet.
+                        expression { params.Remove_stack_before_deploy_DELETING_DB_DATA }
+                    }
+                    steps {
+                        script {
+                            Deploy_to_environments.each { env ->
+                                assumeRole(env)
+                                sh "${dryRunPrefix} ENV=${env} ~/scripts/jenkins/undeploy.sh"
+                            }
+                        }
+                    }
+                }
+
+
+                stage('Artifact creation') {
+                    parallel {
+                        stage('Deploy') {
+                            when {
+                                // To be clear: if it (is NOT an AutoBuild) or
+                                // (it is an AutoBuild and the branch == 'develop')
+                                expression { !isAutoBuild || GIT_BRANCH == 'develop' }
+                            }
+                            steps {
+                                sh "${dryRunPrefix} rm -rf .serverless/"
+                                script {
+                                    // TODO move the generation of deploy tasks to its on stage then run the deploy
+                                    // script tasks in parallel during 'this' stage.
+                                    def tasksToExec = generateDeployTasks(Deploy_to_environments)
+                                    tasksToExec.each { env, tasks -> tasks() }
+                                }
+                            }
+                        }
+
+                        stage('Seed Master Forms') {
+                            when {
+                                beforeAgent true // Check conditions before starting agent because we don't need it yet.
+                                expression { params.Update_master_forms_in_db }
+                            }
+                            steps {
+                                withEnv(getEnvFor_OpenCV_and_Dynamo()) {
+                                    script {
+                                        Deploy_to_environments.each { env ->
+                                            assumeRole(env)
+                                            sh "${dryRunPrefix} ENV=${env} ~/scripts/jenkins/seed-form-db-data.sh"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        // Since we don't mock S3, these have to be uploaded prior to running specs
+                        stage('Upload Master Form images') {
+                            when {
+                                beforeAgent true // Check conditions before starting agent because we don't need it yet.
+                                expression { params.Upload_master_form_images }
+                            }
+                            steps {
+                                script {
+                                    Deploy_to_environments.each { env ->
+                                        assumeRole(env)
+                                        s3Upload(
+                                                bucket: "form-recognition-images-${environment}",
+                                                file: 'seedData/forms/TABE', // path in workspace <repo.>/...
+                                                path: 'TABE/forms/' // path in S3
+                                        )
+                                    }
+                                }
+                            }
+                        }
+
+                    } // end of parallel
+                } // end of stage wrapping parallel
+
+            } // while (continuing) > stages
+        } // while (continuing)
+    } // (outer) stages
+
+    post { // after all stages have run
+        always {
+            script {
+                if (GIT_BRANCH in BRANCHES_ALWAYS_BUILT) {
+                    sendToChat("Build started by ${buildInstigator} ${buildStatus}")
+                }
+            }
+        }
+    }
+}
+
+
+/////////////////////////////////////////////////
+//            Project functions
+/////////////////////////////////////////////////
+
+/**
+ * @return String[] set of environment variables as would be returned by 'env' or 'printenv'.
+ */
+List<String> getEnvFor_OpenCV() {
+    return [
+            "PATH=./:./node_modules/.bin:${env.PATH}",
+            "LD_LIBRARY_PATH=./lib",
+            "OPENCV4NODEJS_DISABLE_AUTOBUILD=1",
+            "TESSDATA_PREFIX=./"
+    ]
+}
+
+/**
+ * @return String[] set of environment variables as would be returned by 'env' or 'printenv'.
+ */
+List<String> getEnvFor_OpenCV_and_Dynamo() {
+    def env = getEnvFor_OpenCV()
+    env << "DYNAMO_PORT=8000"
+    return env
+}
+
+void sendToChat(String messageText) {
+    googlechatnotification message: messageText + " for build job ${env.JOB_NAME} [${env.BUILD_NUMBER}], (<${env.BUILD_URL}|Link>)", url: DEV_TEAM_CHAT_URL
+}
+
+/**
+ *
+ * @param environment :String - the AWS account to use: 'dev' for lower environments, 'prod' for upper.
+ * @param deployTargetsArray Array<Object> - signature: {*        env: String,
+ *        regions?: Array<String>,
+ *        askForPermission: boolean,
+ *        clients?: Array<String>
+ *}*        example: {*          env: "dev",
+ *          regions: REGIONS,
+ *          askForPermission: false,
+ *          clients: CLIENTS
+ *}* @return
+ */
+Map<String, Closure> generateDeployTasks(deployTargetsArray) {
+
+    // deployTasks will contain the list of jobs to execute.
+    def deployTasks = [:]
+
+    deployTargetsArray.each { deploy ->
+        println "Generating deploy for environment: ${deploy}."
+        def slsStage = deploy
+        def askForPermission = isUpperEnv(slsStage)
+
+        // This assumeRole() and the chat notifications appear to run on the master (not on the slave nodes) so, the
+        // queries for permission will always happen. TODO: Ensure this does not tie up the master jenkins node or the job.
+        assumeRole(slsStage)
+
+        if (askForPermission) {
+            sendToChat("${buildInstigator} needs approval to deploy to ${slsStage}")
+            drc_AskForPermission([name       : "Deploy to ${slsStage}",
+                                  to_time    : 2,
+                                  to_unit    : 'HOURS',
+                                  id         : "DeployTo${slsStage}",
+                                  message    : "Deploy to ${slsStage} or abort?",
+                                  submitter  : contributers,
+                                  description: 'Approve deploy? Type "yes" to proceed'])
+        }
+        println "Current build status after ask for permission for deploy = ${currentBuild.result}"
+
+        if (keepExecuting) {
+            if (currentBuild.result == 'ABORTED') {
+                sentToChat("Deployment by ${buildInstigator} to ${slsStage} aborted")
+                println "Exiting aborted Stage"
+                return
+            } else {
+                sendToChat("Deployment by ${buildInstigator} to ${slsStage} is approved")
+
+                def nodeDescriptor = 'coel7_agent_aws&&aws&&role_' + (isUpperEnv(slsStage) ? 'prod' : 'dev')
+                REGIONS.each { region ->
+                    // define each deploy task as a closure so it defers execution.
+                    deployTasks["${slsStage} - ${region}"] = {
+                        node(nodeDescriptor) {
+                            stage("deploy to ${region} for ${slsStage}") {
+                                scmVars = checkout scm
+                                deployAssetsTask(slsStage, region)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return deployTasks
+}
+
+def deployAssetsTask(String slsStage, String region) {
+    echo "STARTING deployAssets to environment: ${slsStage}, region: ${region}"
+    withEnv(["PATH=./node_modules/.bin:${env.PATH}", "BUILD_NUMBER=${env.BUILD_NUMBER}", "BUILD_DATE=${buildDate}"]) {
+        sh "${dryRunPrefix} ~/scripts/jenkins/deploy.sh ${slsStage} ${region}"
+    }
+    echo "deployAssets END  - ${slsStage} - ${region}"
+}
+
+
+/////////////////////////////////////////////////
+//             Utility functions
+/////////////////////////////////////////////////
+
+Object[] ensureIsArray(Object object) {
+    return (object && object instanceof Array) ? object : [object]
+}
+
+boolean isUpperEnv(String environment) {
+    return environment in PROD_ACCOUNT_ENVS
+}
+
+boolean isLowerEnv(String environment) {
+    return !isUpperEnv
+}
+
+String getAccountForEnv(String environment) {
+    return isUpperEnv(environment) ? drc_getAccountNumber([env: 'prod']) : drc_getAccountNumber([env: 'dev'])
+}
+
+/**
+ * Assume the role needed to perform operations in the specified environment.
+ *
+ * @param environment :String - the AWS account to use: 'dev' for lower environments, 'prod' for upper.
+ * @return
+ */
+void assumeRole(String environment) {
+    def roleAccount = getAccountForEnv(environment)
+    if (roleAccount == getAccountForEnv('dev')) {
+        return // Prevent trying to assume the current role.
+    }
+    def duration = (environment in PROD_ACCOUNT_ENVS) ? PROD_PERMISSION_ACK_DURATION : DEV_PERMISSION_ACK_DURATION
+
+    println "Assuming role for ${environment} with Account: ${roleAccount}"
+    drc_AwsAssumeRole([acctNum: roleAccount,
+                       appName: 'eca-form-recognition-service',
+                       bldNum : env.BUILD_NUMBER,
+                       timeout: duration])
+}
+
+void printGlobalVariables(String message = '') {
+    println "${message}"
+    println "Contibuters: ${contributers}"
+    println "Chosen branch: ${chosenBranch}"
+    println "Is automatic build: ${isAutoBuild}"
+    println "Build instigator: ${buildInstigator}"
+    println "Build cause: ${buildCause}"
+    println "Keep executing: ${keepExecuting}"
+    println "gitParamRepoRE: ${gitParamRepoRE}"
+    int counter = 1
+    scm.getUserRemoteConfigs().each { println "SCM URL ${counter++}: ${it.getUrl()}" }
+}
+
+void printParams(message = '') {
+    println message
+    println "Choose_branch_by_typing: ${env.Choose_branch_by_typing}"
+    println "Choose_branch_or_tag_from_git: ${env.Choose_branch_or_tag_from_git}"
+    println "Choose_branch_from_common_list: ${env.Choose_branch_from_common_list}"
+    println "Chosen branch: ${chosenBranch}\n"
+}
+
+String getRepositoryShortName() {
+    def matcher = scm.getUserRemoteConfigs().first() =~ /.*github.com.*\/([^\/]*)\.git/
+    if (matcher.find()) {
+        return matcher.group(1)
+    } else {
+        println('ERROR: Could not find repository name; using "personal-testing".')
+        return null
+    }
+}
+
+String getChosenBranch() {
+    chosenBranch = [env.Choose_branch_by_typing, env.Choose_branch_or_tag_from_git, env.Choose_branch_from_common_list]
+            .findResult { it ? it : null}
+    printParams('Set chosenBranch from user selections.')
+    chosenBranch = chosenBranch ?: [env.GIT_BRANCH, BRANCH_NAME]
+            .findResult { it in BRANCHES_ALWAYS_BUILT ? it : null }
+    printParams('Set chosenBranch from Jenkins-SCM environment variable.')
+    return chosenBranch
+}
+
+String getBuildCause() {
+    println('Build causes: ' + currentBuild.getBuildCauses().toString())
+
+    // started by commit
+    if (currentBuild.getBuildCauses('jenkins.branch.BranchEventCause')) {
+        return 'SCM'
+    }
+    // started by user
+    else if (currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause')) {
+        return 'User'
+    }
+    // started by timer
+    else if (currentBuild.getBuildCauses('hudson.triggers.TimerTrigger$TimerTriggerCause')) {
+        return 'Timer'
+    }
+    return ''
+}

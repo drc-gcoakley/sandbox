@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+# The 'java_home' program allows selection of any installed versions of java.
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+
+cd $(dirname $0)/../test-jenkins
+./gradlew $@ -console verbose test
+
+REPORT_PATH=build/reports/tests/test/index.html
+grep -B1 '"counter"' $REPORT_PATH
+echo "Test output is in: `pwd`/$REPORT_PATH"

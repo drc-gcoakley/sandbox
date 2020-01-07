@@ -1,0 +1,393 @@
+@Library('DRC_Global_Pipeline_Libraries@v1.3.0')
+
+def br_map = ['develop': 'develop', 'master': 'master']
+
+def leDeployTargets = [
+  [env: 'dev', regions:['us-east-1', 'us-east-2'], askForPermission: false, client: 'tabe'],
+  [env: 'sqa', regions:['us-east-1', 'us-east-2'], askForPermission: false, client: 'tabe']
+  // [env: 'loadtest', regions:['us-east-1', 'us-east-2'], askForPermission: false, client: 'tabe']
+]
+
+def stagingDeployTargets = [
+  [env: 'stg', regions:['us-east-1', 'us-east-2'], askForPermission: false, client: 'tabe']
+]
+
+def prodDeployTargets = [
+  [env: 'prod', regions:['us-east-1', 'us-east-2'], askForPermission: true, client: 'tabe']
+]
+
+def buildInstigator = ''
+
+devTeamChatUrl = 'https://chat.googleapis.com/v1/spaces/AAAARqVi1KU/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=6yglYc02qH8R_QEPa4GPyubfYe_-rzrkg0ZIcb9XkDI%3D'
+
+pipeline {
+  tools {
+    nodejs 'NODE_8_LTS'
+  }
+
+  environment {
+    leAcctNum = "177429746880"
+    prodAcctNum = "385888483640"
+    SCM_URL = scm.getUserRemoteConfigs()[0].getUrl()
+    buildInstigator = sh(returnStdout: true, script: "git log -1 --format='%an' ${env.GIT_COMMIT}").trim()
+  }
+
+  parameters {
+    booleanParam(defaultValue: true, description: 'Execute tests', name: 'runTests')
+    // TODO change default back to false when we are no longer expiring master forms every 14 days
+    booleanParam(defaultValue: true, description: 'Please only upload master form images if some have changed', name: 'uploadMasterFormImages')
+  }
+
+  options {
+    ansiColor('xterm')
+    buildDiscarder(logRotator(numToKeepStr: '5', artifactNumToKeepStr: '5'))
+  }
+
+  triggers {
+    issueCommentTrigger('.*test this please.*')
+  }
+
+  agent {
+    node {
+      label 'coel7_agent_aws&&aws&&role_prod'
+    }
+  }
+
+  stages {
+
+    // Since we don't mock S3, these have to be uploaded prior to running specs
+    stage('Upload DEV, SQA, LoadTest Master Form Images') {
+      when {
+        branch 'develop'
+        expression { params.uploadMasterFormImages }
+      }
+      steps {
+        uploadMasterFormImagesToS3('dev')
+        uploadMasterFormImagesToS3('sqa')
+        uploadMasterFormImagesToS3('loadtest')
+      }
+    }
+
+    stage('Upload Staging Master Form Images') {
+      when {
+        branch 'master'
+        expression { params.uploadMasterFormImages }
+      }
+      steps {
+        uploadMasterFormImagesToS3('stg')
+      }
+    }
+
+    stage('Upload Prod Master Form Images') {
+      when {
+        branch 'master'
+        expression { params.uploadMasterFormImages }
+      }
+      steps {
+        uploadMasterFormImagesToS3('prod')
+      }
+    }
+
+    stage('Test') {
+      when {
+        expression { params.runTests }
+      }
+      steps {
+        withEnv(getEnvFor_OpenCV_and_Dynamo()) {
+          sh 'npm config set registry http://registry.npmjs.org'
+          sh 'unzip -o opencv4nodejs-min.zip'
+          sh 'unzip -o tesseract.zip'
+          sh 'npm install'
+          sh 'npm update'
+          sh 'npm run lint'
+          assumeRole('dev')
+
+          sh 'npm run local:sls:dynamo:install'
+
+          // start serverless offline (which will start local dynamo and s3) and capture startup output
+          sh 'nohup npm run local:sls:start > sls.out &'
+          sleep 30
+          sh 'cat sls.out'
+
+          // use aws credentials for integration tests until S3 access not needed
+          sh 'SKIP_PAYLOAD_LOG=true npm run ci:test'
+        }
+      }
+      post {
+        success {
+          publishHTML allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'artifacts/coverage', reportFiles: 'index.html', reportName: 'Code Coverage Report', reportTitles: ''
+          publishHTML allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'artifacts', reportFiles: 'report.html', reportName: 'Unit Test Report', reportTitles: ''
+          cobertura autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: 'artifacts/coverage/cobertura*.xml', conditionalCoverageTargets: '80, 0, 0', failUnhealthy: false, failUnstable: false, lineCoverageTargets: '80, 0, 0', maxNumberOfBuilds: 0, methodCoverageTargets: '80, 0, 0', onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false
+        }
+      }
+    }
+
+    stage('Check Vulnerabilities') {
+      when {
+        anyOf { branch br_map[env.BRANCH_NAME]; }
+      }
+      steps {
+        ansiColor('xterm') {
+          withEnv(["PATH=./node_modules/.bin/:${env.PATH}"]) {
+            script {
+              try {
+                sh ''' npm run vuln_check '''
+              } catch (exitCode) {
+                if (env.BRANCH_NAME == 'master') {
+                  googlechatnotification(
+                    message: "NPM dependency VULNERABILITIES found and need approval to continue " +
+                      "${env.JOB_NAME} [${env.BUILD_NUMBER}], (<${env.BUILD_URL}|Link>) ", url: devTeamChatUrl)
+                  drc_AskForPermission([name       : "Bypass vulnerabilities",
+                                        to_time    : 20,
+                                        to_unit    : 'MINUTES',
+                                        id         : "VulnCheck${env.JOB_ID}",
+                                        message    : "Bypass High/Critical vulnerabilities or abort?",
+                                        submitter  : "astevens,cnicholson,dmoos,dresch,gcoakley,grees,mwald,rcampbell,rdyck,rjiroutek",
+                                        description: 'Approve? Type "yes" to proceed'])
+                  if (currentBuild.result == 'ABORTED') {
+                    error 'Aborting build because NPM dependency vulnerabilities were found and not accepted.'
+                  }
+                } else {
+                  error 'NPM dependency vulnerabilities found.'
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    stage('Deploy to DEV, SQA, LoadTest') {
+      when {
+        branch 'develop'
+      }
+      steps {
+        sh 'rm -rf .serverless/'
+        script {
+          def tasksToExec = generateDeployTasks 'dev', leDeployTargets
+          tasksToExec.each { k, v -> v() }
+        }
+      }
+    }
+
+    stage('Deploy to Staging') {
+      when {
+        branch 'master'
+      }
+      steps {
+        sh 'rm -rf .serverless/'
+        script {
+          def tasksToExec = generateDeployTasks 'dev', stagingDeployTargets
+          tasksToExec.each { k, v -> v() }
+        }
+      }
+    }
+
+    stage('Seed DEV, SQA, LoadTest Master Forms') {
+      when {
+        branch 'develop'
+      }
+      steps {
+        withEnv(getEnvFor_OpenCV_and_Dynamo()) {
+          sh 'unzip -o opencv4nodejs-min.zip'
+          sh 'unzip -o tesseract.zip'
+          sh 'npm install'
+          assumeRole('dev')
+          sh 'ENV=dev npm run seed:masterForms'
+          sh 'ENV=sqa npm run seed:masterForms'
+          sh 'ENV=loadtest npm run seed:masterForms'
+        }
+      }
+    }
+
+    stage('Seed Staging Master Forms') {
+      when {
+        branch 'develop'
+      }
+      steps {
+        withEnv(getEnvFor_OpenCV_and_Dynamo()) {
+          sh 'unzip -o opencv4nodejs-min.zip'
+          sh 'unzip -o tesseract.zip'
+          sh 'npm install'
+          assumeRole('dev')
+          sh 'ENV=stg npm run seed:masterForms'
+        }
+      }
+    }
+
+    stage('Deploy Production') {
+      when {
+        branch 'master'
+      }
+      steps {
+        sh 'rm -rf .serverless/'
+        script {
+          def tasksToExec = generateDeployTasks 'prod', prodDeployTargets
+          tasksToExec.each { k, v -> v() }
+        }
+      }
+    }
+
+    stage('Seed PRODUCTION Master Forms') {
+      when {
+        branch 'master'
+      }
+      steps {
+        withEnv(getEnvFor_OpenCV_and_Dynamo()) {
+          sh 'unzip -o opencv4nodejs-min.zip'
+          sh 'unzip -o tesseract.zip'
+          sh 'npm install'
+          assumeRole('prod')
+          sh 'ENV=prod npm run seed:masterForms'
+        }
+      }
+    }
+  }
+  post {
+    always {
+      deleteDir()
+    }
+    failure {
+      script {
+        if (GIT_BRANCH == 'develop' || GIT_BRANCH == 'master') {
+          googlechatnotification(message: "Build started by ${buildInstigator} failed for " +
+            "${env.JOB_NAME} [${env.BUILD_NUMBER}], (<${env.BUILD_URL}|Link>)", url: devTeamChatUrl)
+        }
+      }
+    }
+    success {
+      script {
+        if ((GIT_BRANCH == 'develop' || GIT_BRANCH == 'master') && currentBuild?.getPreviousBuild()?.result == 'FAILURE') {
+          googlechatnotification(message: "Build started by ${buildInstigator} was successful for " +
+            "${env.JOB_NAME} [${env.BUILD_NUMBER}], (<${env.BUILD_URL}|Link>)", url: devTeamChatUrl)
+        }
+      }
+    }
+  }
+}
+
+def assumeRole(String environment) {
+  def devAccount = '177429746880'
+  def prodAccount = '385888483640'
+  def devDuration = 14400 // 4hrs
+  def prodDuration = 3600 // 1hr
+
+  def roleAccount = (environment == 'prod') ? prodAccount : devAccount
+  def duration = (environment == 'prod') ? prodDuration : devDuration
+
+  def sessionNamePrefix = 'eca-form-recognition-service'
+
+  echo "Assuming role with Account: [${roleAccount}] - Build Number: [${env.BUILD_NUMBER}]"
+  drc_AwsAssumeRole([acctNum: roleAccount,
+                     appName: sessionNamePrefix,
+                     bldNum : env.BUILD_NUMBER,
+                     timeout: duration])
+}
+
+def getEnvFor_OpenCV() {
+  [
+    "PATH=./:./node_modules/.bin:${env.PATH}",
+    "LD_LIBRARY_PATH=./lib",
+    "OPENCV4NODEJS_DISABLE_AUTOBUILD=1",
+    "TESSDATA_PREFIX=./"
+  ]
+}
+
+def getEnvFor_OpenCV_and_Dynamo() {
+  def port = 8000
+  def env = getEnvFor_OpenCV()
+  env << "DYNAMO_PORT=${port}"
+  env
+}
+
+def uploadMasterFormImagesToS3(String environment) {
+  assumeRole (environment)
+  s3Upload(
+    bucket: "form-recognition-images-${environment}",
+    file:'seedData/forms/TABE', // path in workspace <repo.>/...
+    path:'TABE/forms/' // path in S3
+  )
+}
+
+def generateDeployTasks(String environment, deployTargetsArray) {
+
+  // deployTasks will contain the list of jobs to execute.
+  def deployTasks = [:]
+  assumeRole (environment)
+  deployTargetsArray.each { deploy ->
+    def slsStage = deploy.env
+    def askForPermission = deploy.askForPermission
+
+    if (askForPermission) {
+      googlechatnotification message: "${buildInstigator} needs approval to deploy to ${slsStage}: " +
+        "'${env.JOB_NAME} [${env.BUILD_NUMBER}]', (<${env.BUILD_URL}|Link>)", url: devTeamChatUrl
+      drc_AskForPermission([name       : "Deploy to ${slsStage}",
+                            to_time    : 2,
+                            to_unit    : 'HOURS',
+                            id         : "DeployTo${slsStage}",
+                            message    : "Deploy to ${slsStage} or abort?",
+                            submitter  : "astevens,cnicholson,dmoos,dresch,gcoakley,grees,mwald,rcampbell,rdyck,rjiroutek",
+                            description: 'Approve deploy? Type "yes" to proceed'])
+    }
+
+    echo "current build status = ${currentBuild.result}"
+    if (currentBuild.result == 'ABORTED') {
+      googlechatnotification message: "Deployment by ${buildInstigator} to ${slsStage} aborted for " +
+        "'${env.JOB_NAME} [${env.BUILD_NUMBER}]', (<${env.BUILD_URL}|Link>)", url: devTeamChatUrl
+      echo "Exiting aborted Stage"
+      return
+    } else {
+      googlechatnotification message: "Deployment by ${buildInstigator} to ${slsStage} approved for " +
+        "'${env.JOB_NAME} [${env.BUILD_NUMBER}]', (<${env.BUILD_URL}|Link>)", url: devTeamChatUrl
+      deploy.regions.each { region ->
+        // define each deploy task as a closure so it defers execution.
+        deployTasks["${slsStage} - ${region}"] = {
+          node('coel7_agent_aws&&aws&&role_prod') {
+            stage("deploy ${slsStage} - ${region}") {
+              scmVars = checkout scm
+              deployAssets(slsStage, region)
+            }
+          }
+        }
+      }
+      deployTasks["globalTables-${slsStage}"] = {
+        node('coel7_agent_aws&&aws&&role_prod') {
+          stage("provision global tables ${slsStage}") {
+            scmVars = checkout scm
+            configGlobalTables(deploy)
+          }
+        }
+      }
+    }
+  }
+  return deployTasks
+}
+
+def deployAssets(String slsStage, String region) {
+  echo "deployAssets START - ${slsStage} - ${region}"
+  withEnv(["PATH=./node_modules/.bin:${env.PATH}"]) {
+    sh 'node --version'
+    sh 'npm --version'
+    sh 'npm config set registry http://registry.npmjs.org'
+    sh 'unzip -o opencv4nodejs-min.zip'
+    sh 'unzip -o tesseract.zip'
+    sh 'umask 0002 && npm install'
+    sh 'chmod -R ugo+rx .'
+    // sh "umask 0022 && sls remove --stage ${slsStage} --region ${region} --verbose"
+    sh "umask 0002 && SLS_DEBUG=* sls deploy --stage ${slsStage} --region ${region} --verbose"
+  }
+  echo "deployAssets END  - ${slsStage} - ${region}"
+}
+
+def configGlobalTables(deployTarget) {
+  echo "configGlobalTables START - ${deployTarget.env}"
+  withEnv(getEnvFor_OpenCV()) {
+    sh 'unzip -o opencv4nodejs-min.zip'
+    sh 'npm install'
+    sh "umask 0022 && node ./scripts/globalTables.js ECA-Local-Scanning-scans-table-${deployTarget.env}-${deployTarget.client} ${deployTarget.regions.join(',')}"
+    sh "umask 0022 && node ./scripts/globalTables.js ECA-Local-Scanning-sessions-table-${deployTarget.env}-${deployTarget.client} ${deployTarget.regions.join(',')}"
+    sh "umask 0022 && node ./scripts/globalTables.js ECA-Local-Scanning-forms-table-${deployTarget.env}-${deployTarget.client} ${deployTarget.regions.join(',')}"
+    sh "umask 0022 && node ./scripts/globalTables.js ECA-Local-Scanning-document-results-table-${deployTarget.env}-${deployTarget.client} ${deployTarget.regions.join(',')}"
+  }
+  echo "configGlobalTables END - ${deployTarget.env}"
+}

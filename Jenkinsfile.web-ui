@@ -1,0 +1,335 @@
+@Library('DRC_Global_Pipeline_Libraries@v1.3.0')
+
+def br_map = ['develop': 'develop', 'master': 'master']
+def s3_BucketMap = [
+        'dev': 'us-east-2-cdn-app-91h49n5i-dev.drcedirect.com',
+        'sqa': 'us-east-2-cdn-app-717py9n0-sqa.drcedirect.com',
+        'staging': 'us-east-2-cdn-app-6g11bd3h-stg.drcedirect.com',
+        'loadtesting': 'us-east-2-cdn-app-914552xb-loadtest.drcedirect.com',
+        'td': 'us-east-2-cdn-app-s226ke91-td.drcedirect.com',
+        'prod': 'us-east-2-cdn-app-1a28588f-prod.drcedirect.com'
+]
+
+def buildInstigator = ''
+def buildDate = ''
+
+devTeamChatUrl = 'https://chat.googleapis.com/v1/spaces/AAAARqVi1KU/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=6yglYc02qH8R_QEPa4GPyubfYe_-rzrkg0ZIcb9XkDI%3D'
+
+pipeline {
+    tools {
+        nodejs 'NODE_10_LTS'
+    }
+
+    environment {
+        leAcctNum = "177429746880"
+        prodAcctNum = "385888483640"
+        SCM_URL = scm.getUserRemoteConfigs()[0].getUrl()
+        buildInstigator = sh(returnStdout: true, script: "git log -1 --format='%an' ${env.GIT_COMMIT}").trim()
+        buildDate = sh(returnStdout: true, script: "date +%F-%T").trim()
+    }
+
+    agent {
+        node {
+            label 'coel7_agent_aws&&aws&&role_prod'
+        }
+    }
+
+    triggers {
+        issueCommentTrigger('.*test this please.*')
+    }
+
+    options { buildDiscarder(logRotator(daysToKeepStr: '5', artifactDaysToKeepStr: '5')) }
+
+    stages {
+        stage('Run Tests') {
+            stages {
+                // stage('Test on Grid') {
+                //   agent { label 'dccdvtp005_agent' }
+                //   options { timeout(time: 5, unit: 'MINUTES') }
+                //   steps {
+                //     withEnv(["PATH=${env.PATH}:./node_modules/.bin"]) {
+                //       sh 'DEBUG=* npm run test:ci:grid'
+                //     }
+                //   }
+                // }
+                stage('Test') {
+                    agent { label 'coel7_agent_aws&&aws&&role_prod' }
+                    steps {
+                        ansiColor('xterm') {
+                            withEnv(["PATH=${env.PATH}:./node_modules/.bin"]) {
+                                sh "${dryRunPrefix} ~/scripts/jenkins/test.sh"
+                            }
+                        }
+                    }
+                    post {
+                        success {
+                            publishHTML allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'coverage',
+                                    reportFiles: 'index.html', reportName: 'Code Coverage Report', reportTitles: ''
+                            publishHTML allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: '.',
+                                    reportFiles: 'unitTestReport.html', reportName: 'Unit Test Report', reportTitles: ''
+                            cobertura autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: 'coverage/cobertura*.xml',
+                                    conditionalCoverageTargets: '80, 0, 0', failUnhealthy: false, failUnstable: false, lineCoverageTargets: '80, 0, 0',
+                                    maxNumberOfBuilds: 0, methodCoverageTargets: '80, 0, 0', onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false
+                        }
+                    }
+                }
+            }
+        }
+
+        stage('Check Vulnerabilities') {
+            when {
+                anyOf { branch br_map[env.BRANCH_NAME]; }
+            }
+            steps {
+                ansiColor('xterm') {
+                    withEnv(["PATH=./node_modules/.bin/:${env.PATH}"]) {
+                        script {
+                            try {
+                                sh ''' npm run vuln_check '''
+                            } catch (exitCode) {
+                                if (env.BRANCH_NAME == 'master') {
+                                    googlechatnotification(
+                                            message: "NPM dependency VULNERABILITIES found and need approval to continue " +
+                                                    "${env.JOB_NAME} [${env.BUILD_NUMBER}], (<${env.BUILD_URL}|Link>) ", url: devTeamChatUrl)
+                                    drc_AskForPermission([name       : "Bypass vulnerabilities",
+                                                          to_time    : 20,
+                                                          to_unit    : 'MINUTES',
+                                                          id         : "VulnCheck${env.JOB_ID}",
+                                                          message    : "Bypass High/Critical vulnerabilities or abort?",
+                                                          submitter  : "astevens,cnicholson,dmoos,gcoakley,grees,mwald,rcampbell,rdyck,rjiroutek",
+                                                          description: 'Approve? Type "yes" to proceed'])
+                                    if (currentBuild.result == 'ABORTED') {
+                                        error 'Aborting build because NPM dependency vulnerabilities were found and not accepted.'
+                                    }
+                                } else {
+                                    error 'NPM dependency vulnerabilities found!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        stage('Deploy from develop') {
+            when {
+                branch 'develop'
+            }
+            steps {
+                script {
+                    def leDeployTargets = [
+                            [env: 'dev', region: 'us-east-2', askForPermission: false, acct: leAcctNum, s3Bucket: s3_BucketMap['dev']],
+                            [env: 'sqa', region: 'us-east-2', askForPermission: true, acct: leAcctNum, s3Bucket: s3_BucketMap['sqa']]
+                            // Commenting out loadtesting until we get a configuration for it in angular.json
+                            // [env: 'loadtesting', region: 'us-east-1', askForPermission: true, acct: prodAcctNum, s3Bucket: s3_BucketMap['loadtesting']]
+                    ]
+                    def tasksToExec = generateDeployTasks leDeployTargets
+                    tasksToExec.each { k, v -> v() }
+                }
+            }
+        }
+
+        stage('Deploy from master') {
+            when {
+                branch 'master'
+            }
+            steps {
+                script {
+                    def prodDeployTargets = [
+                            [env: 'staging', region: 'us-east-2', askForPermission: true, acct: leAcctNum, s3Bucket: s3_BucketMap['staging']],
+                            [env: 'production', region: 'us-east-2', askForPermission: true, acct: prodAcctNum, s3Bucket: s3_BucketMap['prod']]
+                    ]
+                    def tasksToExec = generateDeployTasks prodDeployTargets
+                    tasksToExec.each { k, v -> v() }
+                }
+            }
+        }
+
+        // stage('Tag Branch') {
+        //   when {
+        //     branch 'develop'
+        //   }
+        //   steps {
+        //     ansiColor('xterm') {
+        //       withEnv(["PATH=./node_modules/.bin/:${env.PATH}"]) {
+        //         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: '45ee37ec-f327-4ffd-84bb-c155c86087b5', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
+        //           sh '''
+        //             echo $SCM_URL
+        //             git tag -a 0.0.${BUILD_NUMBER} -m "Jenkins develop branch build"
+        //             SCM_SSH_URL=$(echo $SCM_URL | awk -Fcom/ '{ print $2; }') && git push git@github.com:${SCM_SSH_URL} --tags
+        //           '''
+        //         }
+        //       }
+        //     }
+        //   }
+        // }
+    }
+    post {
+        always {
+            deleteDir()
+        }
+        failure {
+            script {
+                if (GIT_BRANCH == 'develop' || GIT_BRANCH == 'master') {
+                    googlechatnotification(message: "Build started by ${buildInstigator} failed for " +
+                            "${env.JOB_NAME} [${env.BUILD_NUMBER}], (<${env.BUILD_URL}|Link>)", url: devTeamChatUrl)
+                }
+            }
+        }
+        success {
+            script {
+                if ((GIT_BRANCH == 'develop' || GIT_BRANCH == 'master') && currentBuild?.getPreviousBuild()?.result == 'FAILURE') {
+                    googlechatnotification(message: "Build started by ${buildInstigator} was successful for " +
+                            "${env.JOB_NAME} [${env.BUILD_NUMBER}], (<${env.BUILD_URL}|Link>)", url: devTeamChatUrl)
+                }
+            }
+        }
+    }
+}
+
+def setupConfig(env) {
+    sh 'sed -i.bak s:\\<base\\ href=\\"/\\"\\>:\\<base\\ href=\\"/all/eca-local-scanning-web-ui/\\"\\>:g dist/index.html'
+
+    def client = 'TABE'
+    def clientLower = 'tabe'
+
+    def longform = [
+            'dev': 'development',
+            'sqa': 'sqa',
+            'staging': 'staging',
+            'loadtesting': 'loadtesting',
+            'prod': 'production'
+    ]
+
+    def dynamsoftShortform = [
+            'dev': 'dev',
+            'sqa': 'sqa',
+            'staging': 'sqa', // we do not have staging servers due to liceneses; staging should point to sqa
+            'loadtesting': 'loadtesting',
+            'prod': 'prod'
+    ]
+
+    def dynamsoftLongformEnvironment = [
+            'dev': 'development',
+            'sqa': 'sqa',
+            'staging': 'sqa', // we do not have staging servers due to licenses; staging should point to sqa
+            'loadtesting': 'loadtesting',
+            'prod': 'production'
+    ]
+
+    def environment = longform[env]
+    def dynamsoftEnv = dynamsoftShortform[env]
+    def dynamsoftEnvironment = dynamsoftLongformEnvironment[env]
+
+    def configJson = readJSON( file: 'dist/config.json')
+
+    // lower environment domain construction
+    def cdnDomain = "https://cdn-app-${env}.drcedirect.com"
+    def apiGatewayDomain = "https://api-gateway-${env}.drcedirect.com"
+    def apiGatewayCloudUrl = "https://api-gateway-cloud-${env}.drcedirect.com"
+    def apiGatewayToDynamsoft = "https://api-gateway-cloud-${dynamsoftEnv}.drcedirect.com"
+
+    // production environment domains
+    if (env == 'prod') {
+        cdnDomain = "https://www.drcedirect.com"
+        apiGatewayDomain = "https://api-gateway.drcedirect.com"
+        apiGatewayCloudUrl = "https://api-gateway-cloud.drcedirect.com"
+        apiGatewayToDynamsoft = "https://api-gateway-cloud.drcedirect.com"
+    }
+
+    // readJSON returns a JSONObject (or JSONArray, depending on file content)
+    // we can edit the key/value pairs or add new ones with .put
+    // unfortunately, strings stored here with interpolation tokens will remain representations of an INTERPOLATION string instead of a real string
+    // so we concatenate an empty string at the beginning of each, to force the issue. Kthxbai.
+
+    configJson["client"] = client
+    configJson["dynamsoftResourcesPath"] = "" + "${apiGatewayToDynamsoft}/eca-local-scanning-web-ui/all-${dynamsoftEnvironment}-v0/Resources"
+    configJson["localScanningWebApi"] = "" + "${apiGatewayCloudUrl}/eca-local-scanning-web-api/${clientLower}-${environment}-v0"
+    configJson["securityServiceApi"] = "" + "${apiGatewayDomain}/eca-security-service/all-${environment}-v0"
+    configJson["portalUrl"] = "" + "${cdnDomain}/all/eca-portal-v2-ui"
+
+    configJson.apiGatewayConfig.apiGatewayUrl = "" + "${apiGatewayDomain}/"
+    configJson.apiGatewayConfig.apiGatewayCloudUrl = "" + "${apiGatewayCloudUrl}/"
+    configJson.apiGatewayConfig.deployment = environment
+
+    writeJSON( file: 'dist/config.json', json: configJson, pretty: 2 )
+}
+
+def generateDeployTasks(targets) {
+    def deployTasks = [:]
+
+    targets.each { deploy ->
+        def stg = deploy.env
+        def region = deploy.region
+        def askForPermission = deploy.askForPermission
+        def acctNum = deploy.acct
+        def s3Bucket = deploy.s3Bucket
+
+        deployTasks["${stg}"] = {
+            // Execute on nodes (i.e. slaves) with this label
+            node('coel7_agent_aws&&aws&&role_prod') {
+                stage("deploy ${stg}") {
+                    if (askForPermission) {
+                        googlechatnotification message: "${buildInstigator} needs approval to deploy to ${stg}: " +
+                                "'${env.JOB_NAME} [${env.BUILD_NUMBER}]', (<${env.BUILD_URL}|Link>)", url: devTeamChatUrl
+                        drc_AskForPermission([name       : "Deploy to ${stg}",
+                                              to_time    : 2,
+                                              to_unit    : 'HOURS',
+                                              id         : "DeployTo${stg}",
+                                              message    : "Deploy to ${stg} or abort?",
+                                              submitter  : "astevens,cnicholson,dmoos,gcoakley,grees,mwald,rcampbell,rdyck,rjiroutek,dresch",
+                                              description: 'Approve deploy? Type "yes" to proceed'])
+                    }
+                    echo "current build status = ${currentBuild.result}"
+
+                    if (currentBuild.result == 'ABORTED') {
+                        googlechatnotification message: "Deployment by ${buildInstigator} to ${stg} aborted for " +
+                                "'${env.JOB_NAME} [${env.BUILD_NUMBER}]', (<${env.BUILD_URL}|Link>)", url: devTeamChatUrl
+                        echo "Exiting aborted Stage"
+                        return
+                    } else {
+                        googlechatnotification message: "Deployment by ${buildInstigator} to ${stg} approved for " +
+                                "'${env.JOB_NAME} [${env.BUILD_NUMBER}]', (<${env.BUILD_URL}|Link>)", url: devTeamChatUrl
+                    }
+
+                    checkout scm
+
+                    withEnv(["PATH=./node_modules/.bin/:${env.PATH}","BUILD_NUMBER=${env.BUILD_NUMBER}", "BUILD_DATE=${buildDate}"]) {
+                        sh 'rm -rf dist/'
+                        sh 'npm install'
+                        sh "npm run build:setInfo"
+                        sh "ng build -c=${stg} --outputHashing=all"
+
+                        setupConfig(stg)
+
+                        sh "cat dist/config.json"
+
+                        drc_AwsAssumeRole([acctNum: acctNum,
+                                           appName: "eca-local-scanning-web-ui-${stg}",
+                                           bldNum : env.BUILD_NUMBER])
+
+                        withAWS(region: "${region}") {
+                            s3Delete(
+                                    bucket: "${s3Bucket}",
+                                    path: "all/eca-local-scanning-web-ui/"
+                            )
+                            s3Upload(
+                                    bucket: "${s3Bucket}",
+                                    file: "dist",
+                                    path: "all/eca-local-scanning-web-ui",
+                                    excludePathPattern: "dist/index.html"
+                            )
+                            s3Upload(
+                                    bucket: "${s3Bucket}",
+                                    file: "dist/index.html",
+                                    path: "all/eca-local-scanning-web-ui/index.html",
+                                    cacheControl: "public, must-revalidate, proxy-revalidate, max-age=0"
+                            )
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return deployTasks
+}

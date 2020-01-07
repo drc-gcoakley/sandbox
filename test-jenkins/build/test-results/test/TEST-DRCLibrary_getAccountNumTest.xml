@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="DRCLibrary_getAccountNumTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-10-08T15:30:23" hostname="drc29201.datarecognitioncorp.com" time="2.221">
+  <properties/>
+  <testcase name="test a library method can be called" classname="DRCLibrary_getAccountNumTest" time="1.722"/>
+  <testcase name="test library code was downloaded" classname="DRCLibrary_getAccountNumTest" time="0.499"/>
+  <system-out><![CDATA[Loading shared library drc_jenkins with version develop
+Loading shared library drc_jenkins with version develop
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
