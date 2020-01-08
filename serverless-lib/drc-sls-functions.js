@@ -10,7 +10,7 @@ const awsSts = new AWS.STS();
  * @return {String} AMI name
  */
 function todayAsIsoString() {
-    return `${new Date().toISOString().replace(/-/g, '').substring(0, 8)}`;
+    return new Date().toISOString().replace(/-/g, '').substring(0, 8);
 }
 
 /**
