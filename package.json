@@ -13,7 +13,8 @@
     "opencv4nodejs": "^2.38.0"
   },
   "devDependencies": {
-    "serverless": "^1.58.0",
+    "flatted": "^2.0.1",
+    "serverless": "^1.60.5",
     "serverless-domain-manager": "^3.3.0",
     "serverless-offline": "^5.12.1",
     "serverless-plugin-common-excludes": "^3.0.0",

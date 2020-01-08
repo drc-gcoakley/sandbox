@@ -1,11 +1,14 @@
 
 custom:
-  fncDrcSls: ./serverless-lib/drc-sls-functions.js
-  fncToday: ${file(${self:custom.fncDrcSls}):todayAsIsoString}
   project: svrls-testing
   stage: ${opt:stage, 'dev'}
   region: ${opt:region, 'us-east-1'}
-  vars: ${file(./serverless-lib/${self:custom.stage}.yml)}
+
+  vars: ${file( ./serverless-lib/${self:custom.stage}.yml )}
+
+  fncDrcSls: ./serverless-lib/drc-sls-functions.js
+  fncToday: ${file( ${self:custom.fncDrcSls} ):todayAsIsoString}
+  #fncSlsCfg: ${file( ${self:custom.fncDrcSls} ):dumpServerlessConfig}
 
 service: ${self:custom.project}
 
@@ -23,6 +26,7 @@ provider:
   stage: ${self:custom.stage}
   region: ${self:custom.region}
   role: ${self:custom.vars.iamRoleLambdaExecution}
+
   environment:
     STAGE: ${self:custom.stage}
     REGION: ${self:custom.region}
