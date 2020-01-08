@@ -1,1 +1,6 @@
-  deploymentbucket: drc-serverlessdeployments-le
+deploymentbucket: drc-serverlessdeployments-le
+iamRoleLambdaExecution: aws:arn:something
+tmpDir: /tmp
+dynamoDb: yes
+us-east-1:
+  vpc: something
