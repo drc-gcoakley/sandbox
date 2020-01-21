@@ -1,0 +1,15 @@
+GET {{apiGatewayUrl}}/eca-security-service/all-{{envName}}-v0/v0/user/81517887-240C-4841-8361-0381A5F4D52C
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Authorization: Bearer {{ecaBearer}}
+
+<> 2018-07-27T031159.200.json
+<> 2018-07-27T031057.401.txt
+<> 2018-07-23T112415.401.txt
+<> 2018-07-11T085502.200.json
+<> 2018-07-11T085342.200.json
+
+###
+Replace the UUID in the URI (after '/user/') with the user id.
+gcoakley@datarecognitioncorp.com: 81517887-240C-4841-8361-0381A5F4D52C

@@ -1,0 +1,10 @@
+### Production
+# Note uses TLS/SSL
+GET https://la-iat.drcedirect.com/la/iatUtility/ping
+
+###
+# Note not TLS/SSL
+GET http://dcciatp-0d71365512b069675/la/iatUtility/ping
+
+### SQA
+GET https://la-iat-sqa.drcedirect.com/la/iatUtility/ping

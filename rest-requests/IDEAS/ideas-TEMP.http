@@ -1,0 +1,14 @@
+GET https://api-gateway-sqa.drcedirect.com/eca-document-management-service/all-sqa-v0/v0/items/IDEAS/1018120/documents?documentSetType%7Eeq=rubric&available%7Eeq=true&disableDate%7Eis=null
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Authorization: Bearer {{ecaBearer}}
+
+###
+# Different environment URIs:
+#   GET https://ideasweb-sqa.drcedirect.com/sqa.ideas/webservices/REST/1.0/iat.svc
+#   GET https://ideasweb.drcedirect.com/ideas/webservices/REST/1.0/iat.svc
+#
+# Using Edirect:
+#   SQA: http://ideasdevapp01/test.ideas/webservices/REST/1.0/iat.svc
+#   Prod: http://dcwidap014/ideas/webservices/REST/1.0/iat.svc

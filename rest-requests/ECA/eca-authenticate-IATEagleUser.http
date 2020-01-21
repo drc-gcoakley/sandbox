@@ -1,0 +1,8 @@
+POST {{apiGatewayUrl}}/eca-security-service/all-{{envName}}-v0/v0/authenticate
+Content-Type: application/json; charset=UTF-8
+
+{"username":"IATEagleUser@gmail.com","password":"Testing1234$"}
+
+<> 2018-07-12T103149.200.json
+
+###

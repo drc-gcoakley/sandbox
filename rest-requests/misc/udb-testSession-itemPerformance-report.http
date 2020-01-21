@@ -1,0 +1,5 @@
+GET {{udbService}}/510842/TestSessionItemPerformanceReport?TestSessionID~eq=501243956
+Authorization: 3Direct@1nf0rm
+Content-Type: application/json; charset=UTF-8
+
+###

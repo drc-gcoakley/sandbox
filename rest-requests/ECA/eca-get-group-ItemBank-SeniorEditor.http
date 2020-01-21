@@ -1,0 +1,12 @@
+GET {{apiGatewayUrl}}/eca-security-service/all-{{envName}}-v0/v0/group/26E0BDFC-C96B-4AC8-B335-1960001867A7
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Authorization: Bearer {{ecaBearer}}
+
+<> 2018-07-11T013232.200.json
+<> 2018-07-11T012849.200.json
+<> 2018-07-11T085448.200.json
+<> 2018-07-11T085342.200.json
+
+###

@@ -1,0 +1,6 @@
+
+      × should extract the expected values after extraction for C:\dev\wksp\eca\typescript\lrc\form-rec-svc\spec\unit\fixtures\serials\937c5753-7697-4b83-a49d-b56d595b3572.png
+        - TypeError [ERR_INVALID_CALLBACK]: Callback must be a function
+        - Failed: Callback must be a function
+
+

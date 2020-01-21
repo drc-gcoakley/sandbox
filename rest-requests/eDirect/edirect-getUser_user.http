@@ -1,0 +1,10 @@
+POST {{eDirectInsightUrl}}/la/Services/INFORM.svc/Getuser
+Authorization: 3Direct@1nf0rm
+Content-Type: application/json; charset=UTF-8
+
+["81517887-240C-4841-8361-0381A5F4D52C"]
+
+<> 2018-08-08T125110.200.json
+
+###
+81517887-240C-4841-8361-0381A5F4D52C is gcoakley@datarecognitioncorp.com's Edirect/ECA id.

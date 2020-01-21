@@ -1,0 +1,1017 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="aec71807-1b4c-4a43-89a6-175562ffcb09" name="Dumps serverless config. object." comment="Simplifies (removes interpolation) in todayAsIsoString()." />
+    <list id="65730a75-c489-4c46-b9ee-d2e23b644b8e" name="Default Changelist" comment="Moves all jenkins testing files under test-jenkins.">
+      <change afterPath="$PROJECT_DIR$/.idea/sandbox.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="personal-testing" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="personal-testing" type="f1a62948:ProjectNode" />
+                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="personal-testing" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="personal-testing" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build setup" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="personal-testing" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="personal-testing" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="serverless-layers" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="C:/dev/runtime/npm_global_cache/node_modules/bower" />
+    <bower.json value="" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>false</service-enabled>
+    <exe-path />
+    <other-services-enabled>false</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/.gitignore" />
+        <option value="$PROJECT_DIR$/.idea/personal-testing.iml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+        <option value="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1R6snKQ0cFnDcesrRN7qdbhn7I0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Groovy JUnit" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/scripts/jenkins" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="options.lastSelected" value="Groovy compiler" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
+    <property name="settings.editor.splitter.proportion" value="0.24862888" />
+    <property name="vcs.patch.path" value="$PROJECT_DIR$/../../lrc/patches" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="util" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test-jenkins" />
+      <recent name="$PROJECT_DIR$/test-jenkins/build" />
+      <recent name="$PROJECT_DIR$/test-jenkins/src" />
+      <recent name="$PROJECT_DIR$/scripts" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="groovy.util.GroovyTestCase" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="util" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/scripts/jenkins" />
+      <recent name="$PROJECT_DIR$/scripts" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/config" />
+      <recent name="$PROJECT_DIR$/configs" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.personal-testing [test]">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GoogleAppEngineDevServer" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <server-settings />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TomeeConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_Default_(Template)_Project_2" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="58532" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_Default_(Template)_Project" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="58527" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CurrentJenkinsfileSpec" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;CurrentJenkinsfileSpec&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="DRCLibrary_getAccountNumTest" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;DRCLibrary_getAccountNumTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="DrcLibrary_getAccountNumSpec" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;DRCLibrary_getAccountNumSpec&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="personal-testing [test]" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--stacktrace" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="passParentEnv" value="true" />
+      <setting name="grailsApplicationRoot" value="" />
+      <setting name="launchBrowser" value="true" />
+      <setting name="launchBrowserUrl" value="" />
+      <setting name="depsClasspath" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <module name="sr" />
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="true" />
+      <setting name="addClasspath" value="true" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Java Scratch">
+      <option name="ALTERNATIVE_JRE_PATH" value="Java 1.7" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.personal-testing [test]" />
+      <item itemvalue="Gradle.DRCLibrary_getAccountNumTest" />
+      <item itemvalue="Gradle.DrcLibrary_getAccountNumSpec" />
+      <item itemvalue="Gradle.CurrentJenkinsfileSpec" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.CurrentJenkinsfileSpec" />
+        <item itemvalue="Gradle.DrcLibrary_getAccountNumSpec" />
+        <item itemvalue="Gradle.CurrentJenkinsfileSpec" />
+        <item itemvalue="Gradle.DrcLibrary_getAccountNumSpec" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",SHOW_PROPERTIES,ALPHA_COMPARATOR,VISIBILITY_SORTER" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="65730a75-c489-4c46-b9ee-d2e23b644b8e" name="Default Changelist" comment="" />
+      <changelist id="aec71807-1b4c-4a43-89a6-175562ffcb09" name="Dumps serverless config. object." comment="" />
+      <created>1568999045922</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1568999045922</updated>
+      <workItem from="1568999047369" duration="222000" />
+      <workItem from="1568999281362" duration="3624000" />
+      <workItem from="1569003737130" duration="585000" />
+      <workItem from="1569004599554" duration="19213000" />
+      <workItem from="1569035464725" duration="1801000" />
+      <workItem from="1569246019979" duration="46576000" />
+      <workItem from="1569429302630" duration="21900000" />
+      <workItem from="1569473131923" duration="290000" />
+      <workItem from="1569473440196" duration="401000" />
+      <workItem from="1569501409202" duration="5483000" />
+      <workItem from="1569507661498" duration="44696000" />
+      <workItem from="1569589494197" duration="9714000" />
+      <workItem from="1569608564877" duration="652000" />
+      <workItem from="1569609241813" duration="18000" />
+      <workItem from="1569854565227" duration="27505000" />
+      <workItem from="1570024461399" duration="45744000" />
+      <workItem from="1570193511850" duration="17451000" />
+      <workItem from="1570234643033" duration="1233000" />
+      <workItem from="1570460142318" duration="6393000" />
+      <workItem from="1570475768727" duration="17883000" />
+      <workItem from="1570735106365" duration="1970000" />
+      <workItem from="1570824028427" duration="57000" />
+      <workItem from="1570824647830" duration="4553000" />
+      <workItem from="1571058397856" duration="595000" />
+      <workItem from="1571157836062" duration="272000" />
+      <workItem from="1571158156349" duration="9000" />
+      <workItem from="1571159693861" duration="1726000" />
+      <workItem from="1571167533925" duration="43000" />
+      <workItem from="1571174047682" duration="247000" />
+      <workItem from="1571255622130" duration="532000" />
+      <workItem from="1571669246152" duration="1103000" />
+      <workItem from="1571697957900" duration="15000" />
+      <workItem from="1571752727578" duration="944000" />
+      <workItem from="1571850811453" duration="625000" />
+      <workItem from="1574873541612" duration="49000" />
+      <workItem from="1578440605345" duration="3234000" />
+      <workItem from="1578447385971" duration="540000" />
+      <workItem from="1578492975991" duration="601000" />
+      <workItem from="1578501417679" duration="251000" />
+      <workItem from="1579576143544" duration="1196000" />
+    </task>
+    <task id="LOCAL-00254" summary="Adds buildBranch instead of chosenBranch to clarify use.">
+      <created>1570141346204</created>
+      <option name="number" value="00254" />
+      <option name="presentableId" value="LOCAL-00254" />
+      <option name="project" value="LOCAL" />
+      <updated>1570141346204</updated>
+    </task>
+    <task id="LOCAL-00255" summary="Adds 'stages' statement.">
+      <created>1570151217123</created>
+      <option name="number" value="00255" />
+      <option name="presentableId" value="LOCAL-00255" />
+      <option name="project" value="LOCAL" />
+      <updated>1570151217123</updated>
+    </task>
+    <task id="LOCAL-00256" summary="Collapses stages together. Catches package.json not found exception.">
+      <created>1570154459950</created>
+      <option name="number" value="00256" />
+      <option name="presentableId" value="LOCAL-00256" />
+      <option name="project" value="LOCAL" />
+      <updated>1570154459950</updated>
+    </task>
+    <task id="LOCAL-00257" summary="Collapses stages together. Catches package.json not found exception.">
+      <created>1570154569286</created>
+      <option name="number" value="00257" />
+      <option name="presentableId" value="LOCAL-00257" />
+      <option name="project" value="LOCAL" />
+      <updated>1570154569286</updated>
+    </task>
+    <task id="LOCAL-00258" summary="Comments out errant 'when'.">
+      <created>1570154675667</created>
+      <option name="number" value="00258" />
+      <option name="presentableId" value="LOCAL-00258" />
+      <option name="project" value="LOCAL" />
+      <updated>1570154675667</updated>
+    </task>
+    <task id="LOCAL-00259" summary="Moves deploy's 'withEnv' outside of script, step, stage, node.">
+      <created>1570155358351</created>
+      <option name="number" value="00259" />
+      <option name="presentableId" value="LOCAL-00259" />
+      <option name="project" value="LOCAL" />
+      <updated>1570155358351</updated>
+    </task>
+    <task id="LOCAL-00260" summary="Moves deploy's 'withEnv' inside of step.">
+      <created>1570155861843</created>
+      <option name="number" value="00260" />
+      <option name="presentableId" value="LOCAL-00260" />
+      <option name="project" value="LOCAL" />
+      <updated>1570155861843</updated>
+    </task>
+    <task id="LOCAL-00261" summary="Removes deploy's 'steps' statement.">
+      <created>1570156157257</created>
+      <option name="number" value="00261" />
+      <option name="presentableId" value="LOCAL-00261" />
+      <option name="project" value="LOCAL" />
+      <updated>1570156157257</updated>
+    </task>
+    <task id="LOCAL-00262" summary="Restore deploy's 'when' statement.">
+      <created>1570156582584</created>
+      <option name="number" value="00262" />
+      <option name="presentableId" value="LOCAL-00262" />
+      <option name="project" value="LOCAL" />
+      <updated>1570156582584</updated>
+    </task>
+    <task id="LOCAL-00263" summary="Testing 'node' stemement inside 'stage'.">
+      <created>1570156888463</created>
+      <option name="number" value="00263" />
+      <option name="presentableId" value="LOCAL-00263" />
+      <option name="project" value="LOCAL" />
+      <updated>1570156888463</updated>
+    </task>
+    <task id="LOCAL-00264" summary="Comments out errant 'when'.">
+      <created>1570156981306</created>
+      <option name="number" value="00264" />
+      <option name="presentableId" value="LOCAL-00264" />
+      <option name="project" value="LOCAL" />
+      <updated>1570156981306</updated>
+    </task>
+    <task id="LOCAL-00265" summary="Puts 'node' back on the outside. Leaves @NonCPS.">
+      <created>1570157469715</created>
+      <option name="number" value="00265" />
+      <option name="presentableId" value="LOCAL-00265" />
+      <option name="project" value="LOCAL" />
+      <updated>1570157469715</updated>
+    </task>
+    <task id="LOCAL-00266" summary="Removes @NonCPS.">
+      <created>1570157567736</created>
+      <option name="number" value="00266" />
+      <option name="presentableId" value="LOCAL-00266" />
+      <option name="project" value="LOCAL" />
+      <updated>1570157567736</updated>
+    </task>
+    <task id="LOCAL-00267" summary="Wraps checkRPMArtifactory() arguments in GStrings.">
+      <created>1570157793517</created>
+      <option name="number" value="00267" />
+      <option name="presentableId" value="LOCAL-00267" />
+      <option name="project" value="LOCAL" />
+      <updated>1570157793518</updated>
+    </task>
+    <task id="LOCAL-00268" summary="Unwraps checkRPMArtifactory() arguments from GStrings.">
+      <created>1570158159523</created>
+      <option name="number" value="00268" />
+      <option name="presentableId" value="LOCAL-00268" />
+      <option name="project" value="LOCAL" />
+      <updated>1570158159524</updated>
+    </task>
+    <task id="LOCAL-00269" summary="Adds back the @NonCPS now that the build is succeeding.">
+      <created>1570158504363</created>
+      <option name="number" value="00269" />
+      <option name="presentableId" value="LOCAL-00269" />
+      <option name="project" value="LOCAL" />
+      <updated>1570158504363</updated>
+    </task>
+    <task id="LOCAL-00270" summary="Nope. @NonCPS causes a NullPointerException.">
+      <created>1570158606784</created>
+      <option name="number" value="00270" />
+      <option name="presentableId" value="LOCAL-00270" />
+      <option name="project" value="LOCAL" />
+      <updated>1570158606784</updated>
+    </task>
+    <task id="LOCAL-00271" summary="Increases number of builds kept.">
+      <created>1570159595821</created>
+      <option name="number" value="00271" />
+      <option name="presentableId" value="LOCAL-00271" />
+      <option name="project" value="LOCAL" />
+      <updated>1570159595821</updated>
+    </task>
+    <task id="LOCAL-00272" summary="Guards pull from artifactory during deploy.">
+      <created>1570160279966</created>
+      <option name="number" value="00272" />
+      <option name="presentableId" value="LOCAL-00272" />
+      <option name="project" value="LOCAL" />
+      <updated>1570160279966</updated>
+    </task>
+    <task id="LOCAL-00273" summary="Moves checkRPMArtifactory() into deployAssetsTask, marks the latter with @NonCPS">
+      <created>1570197238594</created>
+      <option name="number" value="00273" />
+      <option name="presentableId" value="LOCAL-00273" />
+      <option name="project" value="LOCAL" />
+      <updated>1570197238595</updated>
+    </task>
+    <task id="LOCAL-00274" summary="Move assumeRole() inside dry-run check.">
+      <created>1570204105363</created>
+      <option name="number" value="00274" />
+      <option name="presentableId" value="LOCAL-00274" />
+      <option name="project" value="LOCAL" />
+      <updated>1570204105363</updated>
+    </task>
+    <task id="LOCAL-00275" summary="Moves permission verification to initialization step.">
+      <created>1570219644391</created>
+      <option name="number" value="00275" />
+      <option name="presentableId" value="LOCAL-00275" />
+      <option name="project" value="LOCAL" />
+      <updated>1570219644391</updated>
+    </task>
+    <task id="LOCAL-00276" summary="Moves permission verification to initialization step. Code fix.">
+      <created>1570219773790</created>
+      <option name="number" value="00276" />
+      <option name="presentableId" value="LOCAL-00276" />
+      <option name="project" value="LOCAL" />
+      <updated>1570219773791</updated>
+    </task>
+    <task id="LOCAL-00277" summary="Moves permission verification to initialization step. Code fix 2.">
+      <created>1570219895306</created>
+      <option name="number" value="00277" />
+      <option name="presentableId" value="LOCAL-00277" />
+      <option name="project" value="LOCAL" />
+      <updated>1570219895306</updated>
+    </task>
+    <task id="LOCAL-00278" summary="Moves permission verification to initialization step. Code fix 3.">
+      <created>1570220017279</created>
+      <option name="number" value="00278" />
+      <option name="presentableId" value="LOCAL-00278" />
+      <option name="project" value="LOCAL" />
+      <updated>1570220017279</updated>
+    </task>
+    <task id="LOCAL-00279" summary="Moves permission verification to initialization step. Code fix 4.">
+      <created>1570220165156</created>
+      <option name="number" value="00279" />
+      <option name="presentableId" value="LOCAL-00279" />
+      <option name="project" value="LOCAL" />
+      <updated>1570220165157</updated>
+    </task>
+    <task id="LOCAL-00280" summary="Moves permission verification to initialization step. Adds debug.">
+      <created>1570220618213</created>
+      <option name="number" value="00280" />
+      <option name="presentableId" value="LOCAL-00280" />
+      <option name="project" value="LOCAL" />
+      <updated>1570220618213</updated>
+    </task>
+    <task id="LOCAL-00281" summary="Moves permission verification to initialization step. Adds debug 2.">
+      <created>1570220824754</created>
+      <option name="number" value="00281" />
+      <option name="presentableId" value="LOCAL-00281" />
+      <option name="project" value="LOCAL" />
+      <updated>1570220824754</updated>
+    </task>
+    <task id="LOCAL-00282" summary="Moves permission verification to initialization step. Code fix 5.">
+      <created>1570220939475</created>
+      <option name="number" value="00282" />
+      <option name="presentableId" value="LOCAL-00282" />
+      <option name="project" value="LOCAL" />
+      <updated>1570220939475</updated>
+    </task>
+    <task id="LOCAL-00283" summary="Moves permission verification to initialization step. Code fix 6">
+      <created>1570221106469</created>
+      <option name="number" value="00283" />
+      <option name="presentableId" value="LOCAL-00283" />
+      <option name="project" value="LOCAL" />
+      <updated>1570221106469</updated>
+    </task>
+    <task id="LOCAL-00284" summary="Moves permission verification to initialization step. Code fix 7">
+      <created>1570221345904</created>
+      <option name="number" value="00284" />
+      <option name="presentableId" value="LOCAL-00284" />
+      <option name="project" value="LOCAL" />
+      <updated>1570221345904</updated>
+    </task>
+    <task id="LOCAL-00285" summary="Moves permission verification to initialization step. Wrote an intersect().">
+      <created>1570221562337</created>
+      <option name="number" value="00285" />
+      <option name="presentableId" value="LOCAL-00285" />
+      <option name="project" value="LOCAL" />
+      <updated>1570221562337</updated>
+    </task>
+    <task id="LOCAL-00286" summary="Moves permission verification to initialization step. Code fix 9.">
+      <created>1570221641904</created>
+      <option name="number" value="00286" />
+      <option name="presentableId" value="LOCAL-00286" />
+      <option name="project" value="LOCAL" />
+      <updated>1570221641904</updated>
+    </task>
+    <task id="LOCAL-00287" summary="Moves permission verification to initialization step. Code fix 10.">
+      <created>1570221886826</created>
+      <option name="number" value="00287" />
+      <option name="presentableId" value="LOCAL-00287" />
+      <option name="project" value="LOCAL" />
+      <updated>1570221886826</updated>
+    </task>
+    <task id="LOCAL-00288" summary="Moves permission verification to initialization step. Code fix 11.">
+      <created>1570221968768</created>
+      <option name="number" value="00288" />
+      <option name="presentableId" value="LOCAL-00288" />
+      <option name="project" value="LOCAL" />
+      <updated>1570221968768</updated>
+    </task>
+    <task id="LOCAL-00289" summary="Improves premission messages.">
+      <created>1570222657601</created>
+      <option name="number" value="00289" />
+      <option name="presentableId" value="LOCAL-00289" />
+      <option name="project" value="LOCAL" />
+      <updated>1570222657602</updated>
+    </task>
+    <task id="LOCAL-00290" summary="Uses groovy iteration.">
+      <created>1570225712973</created>
+      <option name="number" value="00290" />
+      <option name="presentableId" value="LOCAL-00290" />
+      <option name="project" value="LOCAL" />
+      <updated>1570225712973</updated>
+    </task>
+    <task id="LOCAL-00291" summary="Adds trap and dirname to scripts.">
+      <created>1570542163034</created>
+      <option name="number" value="00291" />
+      <option name="presentableId" value="LOCAL-00291" />
+      <option name="project" value="LOCAL" />
+      <updated>1570542163035</updated>
+    </task>
+    <task id="LOCAL-00292" summary="Replaced 'undefined' (not a Groovy keyword) with null.">
+      <created>1570542268824</created>
+      <option name="number" value="00292" />
+      <option name="presentableId" value="LOCAL-00292" />
+      <option name="project" value="LOCAL" />
+      <updated>1570542268824</updated>
+    </task>
+    <task id="LOCAL-00293" summary="Removes ~/">
+      <created>1570542726625</created>
+      <option name="number" value="00293" />
+      <option name="presentableId" value="LOCAL-00293" />
+      <option name="project" value="LOCAL" />
+      <updated>1570542726625</updated>
+    </task>
+    <task id="LOCAL-00294" summary="Uses /bin/sh instead of /usr/bin/env.">
+      <created>1570542859910</created>
+      <option name="number" value="00294" />
+      <option name="presentableId" value="LOCAL-00294" />
+      <option name="project" value="LOCAL" />
+      <updated>1570542859910</updated>
+    </task>
+    <task id="LOCAL-00295" summary="Moves all jenkins testing files under test-jenkins.">
+      <created>1570547901478</created>
+      <option name="number" value="00295" />
+      <option name="presentableId" value="LOCAL-00295" />
+      <option name="project" value="LOCAL" />
+      <updated>1570547901479</updated>
+    </task>
+    <task id="LOCAL-00296" summary="Moves all jenkins testing files under test-jenkins. Fix.">
+      <created>1570548515080</created>
+      <option name="number" value="00296" />
+      <option name="presentableId" value="LOCAL-00296" />
+      <option name="project" value="LOCAL" />
+      <updated>1570548515080</updated>
+    </task>
+    <task id="LOCAL-00297" summary="Moves all jenkins testing files under test-jenkins.">
+      <created>1570548558117</created>
+      <option name="number" value="00297" />
+      <option name="presentableId" value="LOCAL-00297" />
+      <option name="project" value="LOCAL" />
+      <updated>1570548558118</updated>
+    </task>
+    <task id="LOCAL-00298" summary="Dumps serverless config. object.">
+      <created>1578442020323</created>
+      <option name="number" value="00298" />
+      <option name="presentableId" value="LOCAL-00298" />
+      <option name="project" value="LOCAL" />
+      <updated>1578442020324</updated>
+    </task>
+    <task id="LOCAL-00299" summary="Adds missing config. values to dev.yml.">
+      <created>1578442131536</created>
+      <option name="number" value="00299" />
+      <option name="presentableId" value="LOCAL-00299" />
+      <option name="project" value="LOCAL" />
+      <updated>1578442131536</updated>
+    </task>
+    <task id="LOCAL-00300" summary="Dumps serverless config. object.">
+      <created>1578442283786</created>
+      <option name="number" value="00300" />
+      <option name="presentableId" value="LOCAL-00300" />
+      <option name="project" value="LOCAL" />
+      <updated>1578442283786</updated>
+    </task>
+    <task id="LOCAL-00301" summary="Adds a (less than useful) method to dump serverless config. object.">
+      <created>1578443769937</created>
+      <option name="number" value="00301" />
+      <option name="presentableId" value="LOCAL-00301" />
+      <option name="project" value="LOCAL" />
+      <updated>1578443769937</updated>
+    </task>
+    <task id="LOCAL-00302" summary="Simplifies (removes interpolation) in todayAsIsoString().">
+      <created>1578443828653</created>
+      <option name="number" value="00302" />
+      <option name="presentableId" value="LOCAL-00302" />
+      <option name="project" value="LOCAL" />
+      <updated>1578443828653</updated>
+    </task>
+    <option name="localTasksCounter" value="303" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_WIDTH">
+                <map>
+                  <entry key="2" value="139" />
+                  <entry key="3" value="146" />
+                </map>
+              </option>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_TABS">
+      <set>
+        <option value="1" />
+      </set>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/drc_jenkins@develop/drc_jenkins@develop" />
+      <path value="$PROJECT_DIR$/drc_jenkins@v1.6.0" />
+    </ignored-roots>
+    <MESSAGE value="Moves permission verification to initialization step. Code fix." />
+    <MESSAGE value="Moves permission verification to initialization step. Code fix 2." />
+    <MESSAGE value="Moves permission verification to initialization step. Code fix 3." />
+    <MESSAGE value="Moves permission verification to initialization step. Code fix 4." />
+    <MESSAGE value="Moves permission verification to initialization step. Adds debug." />
+    <MESSAGE value="Moves permission verification to initialization step. Adds debug 2." />
+    <MESSAGE value="Moves permission verification to initialization step. Code fix 5." />
+    <MESSAGE value="Moves permission verification to initialization step. Code fix 6" />
+    <MESSAGE value="Moves permission verification to initialization step. Code fix 7" />
+    <MESSAGE value="Moves permission verification to initialization step. Wrote an intersect()." />
+    <MESSAGE value="Moves permission verification to initialization step. Code fix 9." />
+    <MESSAGE value="Moves permission verification to initialization step. Code fix 10." />
+    <MESSAGE value="Moves permission verification to initialization step. Code fix 11." />
+    <MESSAGE value="Improves premission messages." />
+    <MESSAGE value="Uses groovy iteration." />
+    <MESSAGE value="Adds trap and dirname to scripts." />
+    <MESSAGE value="Replaced 'undefined' (not a Groovy keyword) with null." />
+    <MESSAGE value="Removes ~/" />
+    <MESSAGE value="Uses /bin/sh instead of /usr/bin/env." />
+    <MESSAGE value="Moves all jenkins testing files under test-jenkins. Fix." />
+    <MESSAGE value="Moves all jenkins testing files under test-jenkins." />
+    <MESSAGE value="Adds missing config. values to dev.yml." />
+    <MESSAGE value="Dumps serverless config. object." />
+    <MESSAGE value="Adds a (less than useful) method to dump serverless config. object." />
+    <MESSAGE value="Simplifies (removes interpolation) in todayAsIsoString()." />
+    <option name="LAST_COMMIT_MESSAGE" value="Simplifies (removes interpolation) in todayAsIsoString()." />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="590" y="144" width="971" height="757" key="CommitChangelistDialog2" timestamp="1578501662276">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="590" y="144" key="CommitChangelistDialog2/0.23.1920.1057/1066.1103.1440.877/1920.23.1920.1057@0.23.1920.1057" timestamp="1578501662276" />
+    <state x="590" y="144" width="971" height="757" key="CommitChangelistDialog2/1066.1103.1440.877/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1578443828499" />
+    <state x="298" y="120" width="1293" height="833" key="DiffContextDialog" timestamp="1579576229197">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="298" y="120" width="1293" height="833" key="DiffContextDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1579576229197" />
+    <state x="341" y="123" width="1477" height="857" key="DiffContextDialog/0.23.1920.1057/1066.1103.1440.877/1920.23.1920.1057@0.23.1920.1057" timestamp="1578501654520" />
+    <state x="341" y="123" width="1477" height="857" key="DiffContextDialog/1066.1103.1440.877/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1578442420332" />
+    <state x="880" y="269" key="RollbackChangesDialog" timestamp="1578442334292">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="880" y="269" key="RollbackChangesDialog/1066.1103.1440.877/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1578442334292" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1578447426421">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="500" height="445" key="SwitcherDM/1066.1103.1440.877/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1578447426421" />
+    <state x="679" y="279" key="Vcs.Push.Dialog.v2" timestamp="1578443833862">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="679" y="279" key="Vcs.Push.Dialog.v2/1066.1103.1440.877/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1578443833862" />
+    <state x="594" y="258" key="git4idea.branch.GitSmartOperationDialog" timestamp="1579576257667">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="594" y="258" key="git4idea.branch.GitSmartOperationDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1579576257667" />
+    <state x="488" y="309" width="944" height="466" key="vcs.ApplyPatchDifferentiatedDialog" timestamp="1578442296928">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="488" y="309" width="944" height="466" key="vcs.ApplyPatchDifferentiatedDialog/1066.1103.1440.877/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1578442296928" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand>
+      <path>
+        <item name="personal-testing" type="b2602c69:ProjectViewProjectNode" />
+        <item name="personal-testing" type="462c0819:PsiDirectoryNode" />
+      </path>
+    </expand>
+    <select />
+  </component>
+</project>

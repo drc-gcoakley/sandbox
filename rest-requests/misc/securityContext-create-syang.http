@@ -1,0 +1,28 @@
+POST {{securityContextService}}/contexts
+Content-Type: application/json; charset=UTF-8
+
+{
+    "firstName": "Shawn",
+    "lastName": "Yang",
+    "context": {
+        "administrationId": 510942,
+        "studentId": 500095428,
+        "districtCode": null,
+        "subjects": null,
+        "testSessionId": 501270560,
+        "schoolCode": null
+    },
+    "contextId": "",
+    "expireDate": "10/10/2019 13:19:00 PM",
+    "id": 0,
+    "userName": "Shyang@datarecognitioncorp.com",
+    "userId": "a8bea81d-da0a-466c-bb78-4ed12c104ab4",
+    "version": null,
+    "errors": {"errors": []},
+    "createDate": "10/07/2019 13:19:00 PM"
+}
+
+<> 2018-07-19T023755.200.json
+<> 2018-07-19T023734.200.json
+
+###

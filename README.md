@@ -1,2 +1,2 @@
-# Repository to hold various proof-of-concept projects.
+# Repository to hold miscellaneous tools and stuff.
 

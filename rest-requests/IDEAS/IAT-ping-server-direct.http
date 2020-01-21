@@ -1,0 +1,25 @@
+GET https://la-iat.drcedirect.com/la/iatUtility/ping
+###
+
+GET http://10.200.15.229/la/iatUtility/ping
+###
+GET http://10.200.63.118/la/iatUtility/ping
+###
+
+### The following key is for development.
+GET http://10.200.63.118/la/userToken/serviceUserToken
+
+{
+  "serviceId": "IATUTILITY",
+  "serviceTokenSecretKey": "d7039481-0d7f-4db5-a5dd-3fd1ff72f88d",
+  "stateCode": "la",
+}
+> {% client.global.set("iatServiceToken", response.body.serviceTokenSecretKey); %}
+
+###
+
+GET http://10.200.63.118/la/iatUtility/serverInfo
+
+{ "serviceToken": "{{iatServiceToken}}" }
+
+###

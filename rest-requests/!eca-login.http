@@ -1,0 +1,16 @@
+POST {{apiGatewayUrl}}/eca-security-service/all-{{envName}}-v0/v0/authenticate
+Content-Type: application/json
+
+{{ecaCredentialsJson}}
+> {%
+// If you want to make this a 'test' then uncomment this block.
+// client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status must be 200 but was " + response.status);
+  client.assert(response.body.token.length > 512, "Response size must be > 512 but was " + response.body.token.length);
+// });
+
+// Set our variable to hold the ECA authorization bearer token / JWT token.
+client.global.set("ecaBearer", response.body.token);
+%}
+
+###
