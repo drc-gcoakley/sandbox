@@ -1,0 +1,2 @@
+GET http://iatudb-prod.datarecognitioncorp.com/iatudbservice/510942/StudentDetailedResultsReport?TestSessionID~eq=501359748&StudentID~eq=14508343
+###

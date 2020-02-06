@@ -1,0 +1,33 @@
+POST {{ideasEndpoint}}/webservices/REST/1.0/iat.svc/passages/LA
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Authorization: Bearer {{ecaBearer}}
+
+<> 2019-05-21T041222.200.json
+<> 2019-05-21T041154.403.json
+<> 2019-05-21T041049.403.json
+<> 2019-05-21T041000.403.json
+<> 2018-10-01T115641.403.json
+<> 2018-10-01T104938.403.json
+<> 2018-10-01T104622.403.json
+<> 2018-09-28T074843.200.json
+<> 2018-09-26T114231.200.json
+<> 2018-09-26T114204.200.json
+<> 2018-09-26T114109.403.json
+<> 2018-09-06T090946.200.json
+<> 2018-09-05T023226.200.json
+<> 2018-08-07T095852.200.json
+<> 2018-08-07T095844.404.json
+<> 2018-08-06T122845.200.json
+<> 2018-07-11T084242.200.json
+
+###
+# Different environment URIs
+# GET https://ideasweb-sqa.drcedirect.com/sqa.ideas/webservices/REST/1.0/iat.svc
+# GET https://ideasweb-dev.drcedirect.com/dev.ideas/webservices/REST/1.0/iat.svc
+# GET https://ideasweb.drcedirect.com/ideas/webservices/REST/1.0/iat.svc/passages/LA/870972
+#
+# Using Edirect
+# SQA: http://ideasdevapp01/test.ideas/webservices/REST/1.0/iat.svc
+# Prod: http://dcwidap014/ideas/webservices/REST/1.0/iat.svc
