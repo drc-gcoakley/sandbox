@@ -1,0 +1,19 @@
+ 
+  Serverless Error ---------------------------------------
+ 
+  No serverless-state.json file found in the package path you provided.
+ 
+  Get Support --------------------------------------------
+     Docs:          docs.serverless.com
+     Bugs:          github.com/serverless/serverless/issues
+     Issues:        forum.serverless.com
+ 
+  Your Environment Information ---------------------------
+     Operating System:          darwin
+     Node Version:              10.17.0
+     Framework Version:         1.58.0
+     Plugin Version:            3.2.5
+     SDK Version:               2.2.1
+     Components Core Version:   1.1.2
+     Components CLI Version:    1.4.0
+ 

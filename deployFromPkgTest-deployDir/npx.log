@@ -1,0 +1,42 @@
+
+ERROR: You must supply a command.
+
+Execute binaries from npm packages.
+
+  npx [options] <command>[@version] [command-arg]...
+
+  npx [options] [-p|--package <package>]... <command> [command-arg]...
+
+  npx [options] -c '<command-string>'
+
+  npx --shell-auto-fallback [shell]
+
+
+Options:
+  --package, -p          Package to be installed.                       [string]
+  --cache                Location of the npm cache.                     [string]
+  --always-spawn         Always spawn a child process to execute the command.
+                                                                       [boolean]
+  --no-install           Skip installation if a package is missing.    [boolean]
+  --userconfig           Path to user npmrc.                            [string]
+  --call, -c             Execute string as if inside `npm run-script`.  [string]
+  --shell, -s            Shell to execute the command with, if any.
+                                                       [string] [default: false]
+  --shell-auto-fallback  Generate shell code to use npx as the "command not
+                         found" fallback.
+                                   [string] [choices: "", "bash", "fish", "zsh"]
+  --ignore-existing      Ignores existing binaries in $PATH, or in the local
+                         project. This forces npx to do a temporary install and
+                         use the latest version.                       [boolean]
+  --quiet, -q            Suppress output from npx itself. Subcommands will not
+                         be affected.                                  [boolean]
+  --npm                  npm binary to use for internal operations.
+                                                              [string] [default:
+  "/Users/glencoakley/dev/bin/nvm/versions/node/v10.17.0/lib/node_modules/npm/bi
+                                                                  n/npm-cli.js"]
+  --node-arg, -n         Extra node argument when calling a node binary.[string]
+  --version, -v          Show version number                           [boolean]
+  --help, -h             Show help                                     [boolean]
+
+For the full documentation, see the manual page for npx(1).
+
