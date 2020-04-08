@@ -4,3 +4,9 @@ Accept: */*
 Content-Type: application/json
 
 ###
+GET https://eca-form-recognition-service-dev.awcl.drcedirect-le.com/pending
+Authorization: Bearer {{ecaBearer}}
+Accept: */*
+Content-Type: application/json
+
+###
