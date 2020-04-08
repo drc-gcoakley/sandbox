@@ -6,7 +6,7 @@ module.exports.goServerless = async event => {
     statusCode: 200,
     body: JSON.stringify(
       {
-        message: 'hello-world: Successfully invoked OpenCV and Tesseract.',
+        message: 'hello-world: Successfully invoked OpenCV.',
         input: event,
       },
       null,

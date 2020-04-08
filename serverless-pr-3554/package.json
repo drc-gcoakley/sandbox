@@ -1,0 +1,14 @@
+{
+  "name": "serverless-pr-3554",
+  "version": "1.0.0",
+  "description": "",
+  "main": "vars.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Glen Coakley <gcoakley@datarecognitioncorp.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "serverless": "^1.65.0"
+  }
+}
