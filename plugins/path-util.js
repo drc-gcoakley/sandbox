@@ -10,21 +10,19 @@ class PathUtil {
                 // Lifecycle events hooked by this plugin.
                 lifecycleEvents: [ 'print' ],
                 commands: {
-                    mydump: {
+                    dump: {
                         usage: 'Displays options and values.',
-                        lifecycleEvents: [ 'mydump' ],
-                    },
-                    myprint: {
-                        usage: 'Wraps the standard "print" command.',
-                        // Lifecycle events hooked by this plugin.
-                        lifecycleEvents: [ 'myprint' ],
+                        lifecycleEvents: [ 'dump' ],
                     }
                 },
                 options: {
-                    root: {
-                        usage: 'Specify the value for "root" (e.g. "--root value")',
-                        shortcut: '/',
-                        required: false,
+                    slsCfg: {
+                        usage: 'Specify the relative or absolute value for the serverless configuration directory.',
+                        shortcut: '~',
+                    },
+                    serverlesssConfiguration: {
+                        usage: 'Specify the relative or absolute value for the serverless configuration directory.',
+                        shortcut: '~',
                     }
                 }
             }
@@ -32,8 +30,8 @@ class PathUtil {
         this.serverless = serverlessObject;
         this.service = serverlessObject.service;
         this.slsOptions = options || {};
-        this.config = (this.service.custom.plugins && this.service.custom.plugins.pathUtil) ||
-            (this.service.custom.pathUtil) || {};
+        this.config = Object.assign({}, this.serverless.config, this.service.custom.pathUtil,
+            (this.service.custom.plugins && this.service.custom.plugins.pathUtil));
 
         this.values = {};
         this.initializeValues();
@@ -42,10 +40,10 @@ class PathUtil {
     }
 
     initializeValues() {
-        this.values['root'] = this.values['_root_'] = this.values['_'] = this.values[''] =
-            this.slsOptions.root || this.slsOptions['/'];
+        this.values['serverlessRoot'] = this.values['slsRoot'] = this.values['~'] =
+            this.slsOptions.root || this.slsOptions['/'] || this.config.servicePath;
 
-        for (const name of ['_root_', 'root', '_', '', null]) {
+        for (const name of ['slsRoot', '~']) {
             if (! this.values[name]) {
                 this.values[name] = `This is the value of "${name}" at ${Date.now()}`;
             }
@@ -55,12 +53,11 @@ class PathUtil {
     hookEvents() {
         this.hooks = {
             // Hook into the standard serverless 'print' command.
-            'before:print:print': async () => { this.myBeforePrint.bind(this) },
-            'after:print:print': async () => { this.myAfterPrint.bind(this) },
+            'before:print:print': this.myBeforePrint.bind(this),
+            'after:print:print': this.myAfterPrint.bind(this),
 
             // Define our dump function.
-            'path:mydump': this.dump.bind(this),
-            // 'path:mydump:mydump': this.dump.bind(this),
+            'path:dump:dump': this.dump.bind(this),
         };
     }
 
@@ -86,8 +83,12 @@ class PathUtil {
         }
     }
 
-    myBeforePrint() { this.serverless.cli.log('PathUtil: before print at ' + Date.now()); }
-    myAfterPrint() { this.serverless.cli.log('PathUtil: after print at ' + Date.now()); }
+    myBeforePrint() { // this.serverless.cli.log() does not work here.
+        console.log('PathUtil: before print at ' + new Date().toLocaleString());
+    }
+    myAfterPrint() { // this.serverless.cli.log() does not work here.
+        console.log('PathUtil: after print at ' + new Date().toLocaleString());
+    }
 
     dump() {
         this.serverless.cli.log('PathUtil options: ' + JSON.stringify(this.slsOptions, null, 2));
