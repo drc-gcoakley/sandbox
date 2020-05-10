@@ -2,7 +2,8 @@
 const assert = require('assert');
 
 /**
- * This acts as a variable resolver for ${path:} and ${slscfg}.
+ * This acts as a variable resolver for ${path:} and ${slscfg}. Currently, it only sets a variable (with some
+ * aliases) to the path of the serverless directory containing the serverless.* configuration file.
  *
  * TODO make ${file(...)} and {functions -> handler} paths relative.
  */
@@ -76,9 +77,11 @@ class PathUtil {
 
     async myResolver(variableSpec) {
         const name = variableSpec.split(':')[1];
-        return (this.slsOptions && this.slsOptions[name]) ||
+        return Promise.resolve(
+            (this.slsOptions && this.slsOptions[name]) ||
             (this.config && this.config[name]) ||
-            (this.values && this.values[name]);
+            (this.values && this.values[name])
+        );
     }
 
     defineVariableResolver() {
