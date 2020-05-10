@@ -2,6 +2,8 @@
 const assert = require('assert');
 
 /**
+ * This acts as a variable resolver for ${path:} and ${slscfg}.
+ *
  * TODO make ${file(...)} and {functions -> handler} paths relative.
  */
 class PathUtil {
@@ -19,7 +21,7 @@ class PathUtil {
                     }
                 },
                 options: {
-                    slsCfg: {
+                    slscfg: {
                         usage: 'Specify the relative or absolute value for the serverless configuration directory.',
                         shortcut: '~',
                     },
@@ -43,10 +45,21 @@ class PathUtil {
     }
 
     initializeValues() {
-        const serverlessConfigDir = this.slsOptions.root || this.slsOptions['/'] || this.config.servicePath;
-        for (const optionName of Object.keys(this.commands.path.options)) {
+        const cmdOpts = this.commands.path.options;
+
+        // Find any command line option for the serverless config. directory.
+        let serverlessConfigDir = this.config.servicePath;
+        for (const optionName of Object.keys(cmdOpts)) {
+            const shortcut = cmdOpts[optionName].shortcut;
+            if (this.slsOptions[optionName] || this.slsOptions[shortcut]) {
+                serverlessConfigDir = this.slsOptions[optionName] || this.slsOptions[shortcut];
+            }
+        }
+
+        // Set variables for the serverless configuration directory path.
+        for (const optionName of Object.keys(cmdOpts)) {
             this.values[optionName] = serverlessConfigDir;
-            this.values[this.commands.path.options[optionName].shortcut] = serverlessConfigDir;
+            this.values[cmdOpts[optionName].shortcut] = serverlessConfigDir;
         }
     }
 
@@ -72,7 +85,6 @@ class PathUtil {
         this.variableResolvers = {
             path: this.myResolver.bind(this),
             slscfg: this.myResolver.bind(this),
-            "~sls": this.myResolver.bind(this),
             // // if a variable type depends on profile/stage/region/credentials, to avoid infinite loops in
             // // trying to resolve variables that depend on themselves, specify as such by setting a
             // // dependendServiceName property on the variable getter
