@@ -7,6 +7,10 @@ const uuid = require('node-uuid');
  * Include this as the FIRST plugin in the serverless configuration file.
  * This is to ensure that all other plugins pick up the definition of 'servicePath' set by this.
  *
+ * NOTE: This is creates symlinks for directories because hard links appear to be deprecated (at least, on MacOS).
+ *       This is creates hard links for files because Serverless, its AWS provider plugin, etc. don't allow/check for
+ *       symbolic links. (Utils.js:fileExistsSync() among others).
+ *
  * FUTURE:
  *  * Should this have an option to just link all directory entries that are a peer of serverless.*?
  */
@@ -18,7 +22,7 @@ class ServerlessParallelSupport {
         // a uuid works fine without the need to restructure code.
         // const slsInstanceId = serverless.variables.getValueFromSls('sls:instanceId');
         const uniqueIdentifier = uuid.v4();
-        const uniqueBuildRelativeDir = 'slsWorkDir_' + (stage && region) ? stage + '_' + region : uniqueIdentifier;
+        const uniqueBuildRelativeDir = 'slsWorkDir_' + ((stage && region) ? stage + '_' + region : uniqueIdentifier);
         const absoluteUniqueWorkDir = path.resolve(serverless.config.servicePath, 'tmp', uniqueBuildRelativeDir);
         const myConfig = this.findMyServiceConfigBlock(serverless.service.custom);
         let allEntriesToLink = this.getEntriesToLink(myConfig);
@@ -85,7 +89,7 @@ class ServerlessParallelSupport {
             // console.log(`ParallelSupport          ${path.join(uniqueWorkDir, dirEntry)} `);
             const sourceStats = fs.lstatSync(sourceEntry);
             if (sourceStats.isFile()) {
-                fs.linkSync(sourceEntry, targetEntry);
+                fs.symlinkSync(sourceEntry, targetEntry);
             } else if (sourceStats.isDirectory()) {
                 fs.symlinkSync(sourceEntry, targetEntry);
             }
