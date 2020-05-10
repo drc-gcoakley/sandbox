@@ -36,8 +36,9 @@ class PathUtil {
         this.serverless = serverlessObject;
         this.service = serverlessObject.service;
         this.slsOptions = options || {};
-        this.config = Object.assign({}, this.serverless.config, this.service.custom.pathUtil,
-            (this.service.custom.plugins && this.service.custom.plugins.pathUtil));
+        this.config = Object.assign({}, this.serverless.config,
+            this.service.custom && this.service.custom.pathUtil,
+            this.service.custom.plugins && this.service.custom.plugins.pathUtil);
 
         this.values = {};
         this.initializeValues();
