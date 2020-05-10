@@ -1,6 +1,9 @@
 'use strict';
 const assert = require('assert');
 
+/**
+ * TODO make ${file(...)} and {functions -> handler} paths relative.
+ */
 class PathUtil {
 
     constructor(serverlessObject, options) {
@@ -20,7 +23,7 @@ class PathUtil {
                         usage: 'Specify the relative or absolute value for the serverless configuration directory.',
                         shortcut: '~',
                     },
-                    serverlesssConfiguration: {
+                    serverlessConfiguration: {
                         usage: 'Specify the relative or absolute value for the serverless configuration directory.',
                         shortcut: '~',
                     }
@@ -40,13 +43,10 @@ class PathUtil {
     }
 
     initializeValues() {
-        this.values['serverlessRoot'] = this.values['slsRoot'] = this.values['~'] =
-            this.slsOptions.root || this.slsOptions['/'] || this.config.servicePath;
-
-        for (const name of ['slsRoot', '~']) {
-            if (! this.values[name]) {
-                this.values[name] = `This is the value of "${name}" at ${Date.now()}`;
-            }
+        const serverlessConfigDir = this.slsOptions.root || this.slsOptions['/'] || this.config.servicePath;
+        for (const optionName of Object.keys(this.commands.path.options)) {
+            this.values[optionName] = serverlessConfigDir;
+            this.values[this.commands.path.options[optionName].shortcut] = serverlessConfigDir;
         }
     }
 
@@ -62,8 +62,7 @@ class PathUtil {
     }
 
     async myResolver(variableSpec) {
-        assert.ok(variableSpec.startsWith('path:'));
-        const name = variableSpec.substr(5);
+        const name = variableSpec.split(':')[1];
         return (this.slsOptions && this.slsOptions[name]) ||
             (this.config && this.config[name]) ||
             (this.values && this.values[name]);
@@ -72,6 +71,8 @@ class PathUtil {
     defineVariableResolver() {
         this.variableResolvers = {
             path: this.myResolver.bind(this),
+            slscfg: this.myResolver.bind(this),
+            "~sls": this.myResolver.bind(this),
             // // if a variable type depends on profile/stage/region/credentials, to avoid infinite loops in
             // // trying to resolve variables that depend on themselves, specify as such by setting a
             // // dependendServiceName property on the variable getter
