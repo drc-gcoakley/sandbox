@@ -1,0 +1,13 @@
+service:
+  name: show-hooks-test
+
+plugins:
+  - path-util
+  - serverless-webpack
+  - serverless-show-hooks # Load after all plugins for which you want it to show the hooks.
+
+custom:
+  thisIsAProperty: true
+
+provider:
+  name: glen

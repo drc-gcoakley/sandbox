@@ -1,0 +1,12 @@
+service:
+  name: show-hooks-test
+
+plugins:
+  - parallel-support	  # Load first so support can apply to all plugins.
+  - serverless-webpack
+
+custom:
+  thisIsAProperty: true
+
+provider:
+  name: glen

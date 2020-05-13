@@ -1,0 +1,20 @@
+{
+  "name": "show-hooks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/show-hooks.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Glen Coakley <gcoakley@datarecognitioncorp.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "copy-webpack-plugin": "^5.1.1",
+    "node-uuid": "^1.4.8",
+    "path": "^0.12.7",
+    "serverless": "^1.70.0",
+    "serverless-webpack": "^5.3.1",
+    "webpack": "^4.42.1"
+  }
+}
