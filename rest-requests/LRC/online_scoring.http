@@ -1,24 +1,34 @@
+GET https://eca-online-scoring-api-dev2.awcl.drcedirect-le.com/clients/LL/configuration
+Authorization: Bearer {{ecaBearer}}
+Accept: */*
+Content-Type: application/json
+
+###
 GET {{onlineScoringService}}/status
 Authorization: Bearer {{ecaBearer}}
 Accept: */*
 Content-Type: application/json
 
 ###
+GET {{onlineScoringService}}/clients/LL/configuration
+Authorization: Bearer {{ecaBearer}}
+Accept: */*
+Content-Type: application/json
 
+###
 GET {{onlineScoringService}}/swagger
 Authorization: Bearer {{ecaBearer}}
 Accept: */*
 Content-Type: application/json
 
 ###
-
-GET {{onlineScoringService}}/forms/595211
+GET {{onlineScoringService}}/forms
 Authorization: Bearer {{ecaBearer}}
 Accept: */*
 Content-Type: application/json
 
 ###
-
+# GET {{onlineScoringService}}/forms/595211
 GET {{onlineScoringService}}/forms/595219
 Authorization: Bearer {{ecaBearer}}
 Accept: */*
