@@ -15,15 +15,15 @@ class DeployHookDemo {
         };
     }
 
-    beforeDeployResources() {
+    async beforeDeployResources() {
         console.log('Before DeployHookDemo plugin\'s "resources" lifecycle event.');
     }
 
-    deployResources() {
+    async deployResources() {
         console.log('In DeployHookDemo plugin\'s "resources" lifecycle event.');
     }
 
-    afterDeployFunctions() {
+    async afterDeployFunctions() {
         console.log('After DeployHookDemo plugin\'s "functions" lifecycle event.');
     }
 }
