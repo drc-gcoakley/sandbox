@@ -1,0 +1,22 @@
+### WA Multiple response bubble input:
+GET https://eca-alt-form-builder-api-sqa.awcl.drcedirect-le.com/forms/WA/9f6f38ee-d286-4c4e-bfe8-deaf4a9b4ef9/items
+Authorization: Bearer {{ecaBearer}}
+Content-Type: application/json
+
+### WA Bundled bubble input, single response:
+GET https://eca-alt-form-builder-api-sqa.awcl.drcedirect-le.com/forms/WA/65186882-8145-4fc3-ba73-40c88a8ca04c/items
+Authorization: Bearer {{ecaBearer}}
+Content-Type: application/json
+
+### WA Bundled bubble input, single response:
+GET https://eca-alt-form-builder-api-sqa.awcl.drcedirect-le.com/forms/WA/7eb142eb-f2ff-46d3-8cf2-a43597b7cd1c/items
+Authorization: Bearer {{ecaBearer}}
+Content-Type: application/json
+
+### WA Bundled bubble input, single response:
+GET https://eca-alt-form-builder-api-sqa.awcl.drcedirect-le.com/forms/WA/6c9a2ffd-4b4d-41c4-b56c-8c40b443adf7/items
+Authorization: Bearer {{ecaBearer}}
+Content-Type: application/json
+
+###
+#GET https://eca-alt-form-builder-api-sqa.awcl.drcedirect-le.com/forms/WA/4a2c3a00-d6ef-487e-b8cb-06453670b2ee/items

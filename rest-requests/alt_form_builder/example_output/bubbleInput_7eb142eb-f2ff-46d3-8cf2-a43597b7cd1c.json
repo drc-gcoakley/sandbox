@@ -1,0 +1,712 @@
+[
+  {
+    "gsi2sk": "ELA_3_EE.RF.3.3_",
+    "purpose": "Live",
+    "entityType": "item_WA",
+    "gsi3sk": "ELA_L",
+    "publishedVersion": 0,
+    "standardSet": "AIM21",
+    "clientCode": "WA",
+    "aws:rep:deleting": false,
+    "itemImageXmlKey": "WA/IDEAS_1018165_0-item-image.xml",
+    "sourceItemBank": "IDEAS",
+    "sk": "item_WA",
+    "prompt": "\r\n    <div style=\"\">\r\n      <a class=\"drc_voice_startpt\"/>  <table cellpadding=\"3\" cellspacing=\"0\" id=\"accessPoint\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Access Point</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\"><b>RF.3.3.L</b></div><br/><div class=\"next_line\">Student will match letter sounds with their letter correspondences or words with corresponding visuals.</div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table><br/>  <table cellpadding=\"3\" cellspacing=\"0\" id=\"reqRestrict\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b>  <div class=\"next_line\">Requirements</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b>  <div class=\"next_line\">Restrictions</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <ul elemid=\"179\" type=\"bullet\"><li>Every performance task must have at least five unique items/questions.</li><li>Students may match five:  <ul elemid=\"114\" type=\"bullet-open\"><li>letter sounds with their letter correspondences</li><li>words to corresponding visuals</li><li>or a combination of both</li></ul></li><li>In a multiple-choice item, a minimum of three answer choices must be provided.</li></ul><a class=\"drc_voice_pause\" value=\"medium\"/></td><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\">None</div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table><br/>  <table cellpadding=\"3\" cellspacing=\"0\" id=\"teacherDir\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Teacher Directions</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\"><i>Teacher Directions: (Read the text in bold to the student.)</i></div>  <div class=\"next_line\"><b>This is a hat, /h/ hat.</b><i> (Point to the hat.)</i><b> This is a van, /v/ van. </b><i> (Point to the van.)</i><b><span id=\"promptText\">Which letter makes the sound of /v/ in the word van?</span></b><i> (Read the answer choices to the student.)</i></div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table><br/><div id=\"correctResponse\"> B; v</div></div>\r\n  ",
+    "publishStatus": "published",
+    "projectCode": "EWA601",
+    "updateDate": 1591378978297,
+    "grade": "3",
+    "itemImageOnlineXmlKey": "WA/IDEAS_1018165_0-item-online-image.xml",
+    "customData": {
+      "standard": "EE.RF.3.3",
+      "accessPointRubric": "<table cellpadding=\"3\" cellspacing=\"0\" id=\"accessPoint\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Access Point</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\"><b>RF.3.3.L</b></div><br/><div class=\"next_line\">Student will match letter sounds with their letter correspondences or words with corresponding visuals.</div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table>",
+      "comboType": "single",
+      "requirementsRestrictions": "<table cellpadding=\"3\" cellspacing=\"0\" id=\"reqRestrict\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b>  <div class=\"next_line\">Requirements</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b>  <div class=\"next_line\">Restrictions</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <ul elemid=\"179\" type=\"bullet\"><li>Every performance task must have at least five unique items/questions.</li><li>Students may match five:  <ul elemid=\"114\" type=\"bullet-open\"><li>letter sounds with their letter correspondences</li><li>words to corresponding visuals</li><li>or a combination of both</li></ul></li><li>In a multiple-choice item, a minimum of three answer choices must be provided.</li></ul><a class=\"drc_voice_pause\" value=\"medium\"/></td><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\">None</div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table>",
+      "correctResponseRubric": [
+        " B; v"
+      ],
+      "accessPoint": "L",
+      "teacherDirections": [
+        "<tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Teacher Directions</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\"><i>Teacher Directions: (Read the text in bold to the student.)</i></div>  <div class=\"next_line\"><b>This is a hat, /h/ hat.</b><i> (Point to the hat.)</i><b> This is a van, /v/ van. </b><i> (Point to the van.)</i><b><span id=\"promptText\">Which letter makes the sound of /v/ in the word van?</span></b><i> (Read the answer choices to the student.)</i></div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr>"
+      ],
+      "prompts": [
+        "Which letter makes the sound of /v/ in the word van?"
+      ]
+    },
+    "sourceItemVersion": "2020-06-05T12:42:06.343",
+    "contentArea": "ELA",
+    "createDate": 1591378978297,
+    "latestVersion": 3,
+    "printPDFS3Key": "WA/IDEAS_1018165_0-print-preview.pdf",
+    "points": "1",
+    "accessPoint": "L",
+    "aws:rep:updateregion": "us-east-2",
+    "sourceItemID": 1018165,
+    "aws:rep:updatetime": 1591378982.567001,
+    "onlineInteractions": [
+      {
+        "choiceInteraction": {
+          "maxChoices": 1,
+          "orientation": "horizontal",
+          "responseIdentifier": "bubbleinput1",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble1",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\"> Student response correct</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble2",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Student response incorrect</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble3",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Student did not respond</div></div>",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 1
+        }
+      },
+      {
+        "choiceInteraction": {
+          "maxChoices": 12,
+          "orientation": "horizontal",
+          "responseIdentifier": "adaptations",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble10",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Read aloud</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble11",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Scribe</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble12",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Object replacement</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble13",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Picture replacement</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble14",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Simplified materials</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble15",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">  <div class=\"next_line\">Other</div></div>",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 0
+        }
+      },
+      {
+        "extendedTextInteraction": {
+          "format": "plain",
+          "responseIdentifier": "otherAdaptation",
+          "base": 10,
+          "minStrings": 0
+        }
+      },
+      {
+        "extendedTextInteraction": {
+          "format": "plain",
+          "responseIdentifier": "suppMat",
+          "base": 10,
+          "minStrings": 0
+        }
+      }
+    ],
+    "pk": "IDEAS_1018165_0",
+    "standard": "EE.RF.3.3",
+    "sequence": 1
+  },
+  {
+    "gsi2sk": "ELA_3_EE.RF.3.3_",
+    "purpose": "Live",
+    "entityType": "item_WA",
+    "gsi3sk": "ELA_L",
+    "publishedVersion": 0,
+    "standardSet": "AIM21",
+    "clientCode": "WA",
+    "aws:rep:deleting": false,
+    "itemImageXmlKey": "WA/IDEAS_1018166_0-item-image.xml",
+    "sourceItemBank": "IDEAS",
+    "sk": "item_WA",
+    "prompt": "\r\n    <div style=\"\">\r\n      <a class=\"drc_voice_startpt\"/>  <table cellpadding=\"3\" cellspacing=\"0\" id=\"accessPoint\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Access Point</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\"><b>RF.3.3.L.</b></div><br/><div class=\"next_line\">Student will match letter sounds with their letter correspondences or words with corresponding visuals.</div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table><br/>  <table cellpadding=\"3\" cellspacing=\"0\" id=\"reqRestrict\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b>  <div class=\"next_line\">Requirements</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b>  <div class=\"next_line\">Restrictions</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <ul elemid=\"179\" type=\"bullet\"><li>Every performance task must have at least five unique items/questions.</li><li>Students may match five:  <ul elemid=\"112\" type=\"bullet-open\"><li>letter sounds with their letter correspondences</li><li>words to corresponding visuals</li><li>or a combination of both</li></ul></li><li>In a multiple-choice item, a minimum of three answer choices must be provided.</li></ul><a class=\"drc_voice_pause\" value=\"medium\"/></td><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\">None</div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table><br/>  <table cellpadding=\"3\" cellspacing=\"0\" id=\"teacherDir\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Teacher Directions</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\"><i>Teacher Directions: (Read the text in bold to the student.)</i></div>  <div class=\"next_line\"><b>Here are three pictures.</b><i> (Point to the pictures.)</i><b> This is a cat.</b><i> (Point to the cat picture, repeat the initial /c/ sound, and then say the word, &#x201C;cat&#x201D;.)</i><b> This is a dog.</b><i> (Point to the dog picture, repeat the initial /d/ sound, and then say the word, &#x201C;dog&#x201D;.)</i><b> This is a man.</b><i> (Point to the man picture, repeat the initial /m/ sound, and then say the word, &#x201C;man&#x201D;.)</i><b><span id=\"promptText\"> Which letter makes the sound of /m/ in the word <u>man</u>?</span></b><i> (Point to the answer choices.)</i></div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table><br/><div id=\"correctResponse\">C; M</div></div>\r\n  ",
+    "publishStatus": "published",
+    "projectCode": "EWA601",
+    "updateDate": 1591379002007,
+    "grade": "3",
+    "itemImageOnlineXmlKey": "WA/IDEAS_1018166_0-item-online-image.xml",
+    "customData": {
+      "standard": "EE.RF.3.3",
+      "accessPointRubric": "<table cellpadding=\"3\" cellspacing=\"0\" id=\"accessPoint\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Access Point</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\"><b>RF.3.3.L.</b></div><br/><div class=\"next_line\">Student will match letter sounds with their letter correspondences or words with corresponding visuals.</div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table>",
+      "comboType": "single",
+      "requirementsRestrictions": "<table cellpadding=\"3\" cellspacing=\"0\" id=\"reqRestrict\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b>  <div class=\"next_line\">Requirements</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b>  <div class=\"next_line\">Restrictions</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <ul elemid=\"179\" type=\"bullet\"><li>Every performance task must have at least five unique items/questions.</li><li>Students may match five:  <ul elemid=\"112\" type=\"bullet-open\"><li>letter sounds with their letter correspondences</li><li>words to corresponding visuals</li><li>or a combination of both</li></ul></li><li>In a multiple-choice item, a minimum of three answer choices must be provided.</li></ul><a class=\"drc_voice_pause\" value=\"medium\"/></td><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\">None</div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table>",
+      "correctResponseRubric": [
+        "C; M"
+      ],
+      "accessPoint": "L",
+      "teacherDirections": [
+        "<tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Teacher Directions</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\"><i>Teacher Directions: (Read the text in bold to the student.)</i></div>  <div class=\"next_line\"><b>Here are three pictures.</b><i> (Point to the pictures.)</i><b> This is a cat.</b><i> (Point to the cat picture, repeat the initial /c/ sound, and then say the word, &#x201C;cat&#x201D;.)</i><b> This is a dog.</b><i> (Point to the dog picture, repeat the initial /d/ sound, and then say the word, &#x201C;dog&#x201D;.)</i><b> This is a man.</b><i> (Point to the man picture, repeat the initial /m/ sound, and then say the word, &#x201C;man&#x201D;.)</i><b><span id=\"promptText\"> Which letter makes the sound of /m/ in the word <u>man</u>?</span></b><i> (Point to the answer choices.)</i></div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr>"
+      ],
+      "prompts": [
+        " Which letter makes the sound of /m/ in the word <u>man</u>?"
+      ]
+    },
+    "sourceItemVersion": "2020-06-05T12:42:08.233",
+    "contentArea": "ELA",
+    "createDate": 1591379002007,
+    "latestVersion": 3,
+    "printPDFS3Key": "WA/IDEAS_1018166_0-print-preview.pdf",
+    "points": "1",
+    "accessPoint": "L",
+    "aws:rep:updateregion": "us-east-2",
+    "sourceItemID": 1018166,
+    "aws:rep:updatetime": 1591379005.532002,
+    "onlineInteractions": [
+      {
+        "choiceInteraction": {
+          "maxChoices": 1,
+          "orientation": "horizontal",
+          "responseIdentifier": "bubbleinput1",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble1",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\"> Student response correct </div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble2",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Student response incorrect</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble3",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Student did not respond</div></div>",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 1
+        }
+      },
+      {
+        "choiceInteraction": {
+          "maxChoices": 12,
+          "orientation": "horizontal",
+          "responseIdentifier": "adaptations",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble10",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Read aloud</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble11",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Scribe</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble12",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Object replacement</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble13",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Picture replacement</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble14",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Simplified materials</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble15",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">  <div class=\"next_line\">Other</div></div>",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 0
+        }
+      },
+      {
+        "extendedTextInteraction": {
+          "format": "plain",
+          "responseIdentifier": "otherAdaptation",
+          "base": 10,
+          "minStrings": 0
+        }
+      },
+      {
+        "extendedTextInteraction": {
+          "format": "plain",
+          "responseIdentifier": "suppMat",
+          "base": 10,
+          "minStrings": 0
+        }
+      }
+    ],
+    "pk": "IDEAS_1018166_0",
+    "standard": "EE.RF.3.3",
+    "sequence": 2
+  },
+  {
+    "gsi2sk": "ELA_3_EE.RF.3.3_",
+    "purpose": "Live",
+    "entityType": "item_WA",
+    "gsi3sk": "ELA_L",
+    "publishedVersion": 0,
+    "standardSet": "AIM21",
+    "clientCode": "WA",
+    "aws:rep:deleting": false,
+    "itemImageXmlKey": "WA/IDEAS_1018167_0-item-image.xml",
+    "sourceItemBank": "IDEAS",
+    "sk": "item_WA",
+    "prompt": "\r\n    <div style=\"\">\r\n      <a class=\"drc_voice_startpt\"/>  <table cellpadding=\"3\" cellspacing=\"0\" id=\"accessPoint\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Access Point</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\"><b>RF.3.3.L.</b></div><br/><div class=\"next_line\">Student will match letter sounds with their letter correspondences or words with corresponding visuals.</div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table><br/>  <table cellpadding=\"3\" cellspacing=\"0\" id=\"reqRestrict\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b>  <div class=\"next_line\">Requirements</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b>  <div class=\"next_line\">Restrictions</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <ul elemid=\"179\" type=\"bullet\"><li>Every performance task must have at least five unique items/questions.</li><li>Students may match five:  <ul elemid=\"112\" type=\"bullet-open\"><li>letter sounds with their letter correspondences</li><li>words to corresponding visuals</li><li>or a combination of both</li></ul></li><li>In a multiple-choice item, a minimum of three answer choices must be provided.</li></ul><a class=\"drc_voice_pause\" value=\"medium\"/></td><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\">None</div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table><br/>  <table cellpadding=\"3\" cellspacing=\"0\" id=\"teacherDir\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Teacher Directions</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\"><i>Teacher Directions: (Read the text in bold to the student.)</i></div>  <div class=\"next_line\"><b>Here are three pictures.</b><i> (Point to the pictures.)</i><b> This is a nest.</b><i> (Point to the nest picture, repeat the initial /n/ sound, and then say the word &#x201C;nest&#x201D;.) </i><b>This is a kite.</b><i> (Point to the kite picture, repeat the initial /k/ sound, and then say the word, &#x201C;kite&#x201D;.)</i><b> This is a bat.</b><i> (Point to the bat picture, repeat the initial /b/ sound, and then say the word, &#x201C;bat&#x201D;.)</i><b><span id=\"promptText\">Which letter makes the sound of /k/ in the word kite?</span></b></div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table><br/><div id=\"correctResponse\">B; K</div></div>\r\n  ",
+    "publishStatus": "published",
+    "projectCode": "EWA601",
+    "updateDate": 1591379006222,
+    "grade": "3",
+    "itemImageOnlineXmlKey": "WA/IDEAS_1018167_0-item-online-image.xml",
+    "customData": {
+      "standard": "EE.RF.3.3",
+      "accessPointRubric": "<table cellpadding=\"3\" cellspacing=\"0\" id=\"accessPoint\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Access Point</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\"><b>RF.3.3.L.</b></div><br/><div class=\"next_line\">Student will match letter sounds with their letter correspondences or words with corresponding visuals.</div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table>",
+      "comboType": "single",
+      "requirementsRestrictions": "<table cellpadding=\"3\" cellspacing=\"0\" id=\"reqRestrict\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b>  <div class=\"next_line\">Requirements</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b>  <div class=\"next_line\">Restrictions</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <ul elemid=\"179\" type=\"bullet\"><li>Every performance task must have at least five unique items/questions.</li><li>Students may match five:  <ul elemid=\"112\" type=\"bullet-open\"><li>letter sounds with their letter correspondences</li><li>words to corresponding visuals</li><li>or a combination of both</li></ul></li><li>In a multiple-choice item, a minimum of three answer choices must be provided.</li></ul><a class=\"drc_voice_pause\" value=\"medium\"/></td><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\">None</div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table>",
+      "correctResponseRubric": [
+        "B; K"
+      ],
+      "accessPoint": "L",
+      "teacherDirections": [
+        "<tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Teacher Directions</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\"><i>Teacher Directions: (Read the text in bold to the student.)</i></div>  <div class=\"next_line\"><b>Here are three pictures.</b><i> (Point to the pictures.)</i><b> This is a nest.</b><i> (Point to the nest picture, repeat the initial /n/ sound, and then say the word &#x201C;nest&#x201D;.) </i><b>This is a kite.</b><i> (Point to the kite picture, repeat the initial /k/ sound, and then say the word, &#x201C;kite&#x201D;.)</i><b> This is a bat.</b><i> (Point to the bat picture, repeat the initial /b/ sound, and then say the word, &#x201C;bat&#x201D;.)</i><b><span id=\"promptText\">Which letter makes the sound of /k/ in the word kite?</span></b></div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr>"
+      ],
+      "prompts": [
+        "Which letter makes the sound of /k/ in the word kite?"
+      ]
+    },
+    "sourceItemVersion": "2020-06-05T12:42:10.143",
+    "contentArea": "ELA",
+    "createDate": 1591379006222,
+    "latestVersion": 3,
+    "printPDFS3Key": "WA/IDEAS_1018167_0-print-preview.pdf",
+    "points": "1",
+    "accessPoint": "L",
+    "aws:rep:updateregion": "us-east-2",
+    "sourceItemID": 1018167,
+    "aws:rep:updatetime": 1591379011.534001,
+    "onlineInteractions": [
+      {
+        "choiceInteraction": {
+          "maxChoices": 1,
+          "orientation": "horizontal",
+          "responseIdentifier": "bubbleinput1",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble1",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\"> Student response correct</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble2",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Student response incorrect</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble3",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Student did not respond</div></div>",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 1
+        }
+      },
+      {
+        "choiceInteraction": {
+          "maxChoices": 12,
+          "orientation": "horizontal",
+          "responseIdentifier": "adaptations",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble10",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Read aloud</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble11",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Scribe</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble12",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Object replacement</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble13",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Picture replacement</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble14",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Simplified materials</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble15",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">  <div class=\"next_line\">Other</div></div>",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 0
+        }
+      },
+      {
+        "extendedTextInteraction": {
+          "format": "plain",
+          "responseIdentifier": "otherAdaptation",
+          "base": 10,
+          "minStrings": 0
+        }
+      },
+      {
+        "extendedTextInteraction": {
+          "format": "plain",
+          "responseIdentifier": "suppMat",
+          "base": 10,
+          "minStrings": 0
+        }
+      }
+    ],
+    "pk": "IDEAS_1018167_0",
+    "standard": "EE.RF.3.3",
+    "sequence": 3
+  },
+  {
+    "gsi2sk": "ELA_3_EE.RF.3.3_",
+    "purpose": "Live",
+    "entityType": "item_WA",
+    "gsi3sk": "ELA_L",
+    "publishedVersion": 0,
+    "standardSet": "AIM21",
+    "clientCode": "WA",
+    "aws:rep:deleting": false,
+    "itemImageXmlKey": "WA/IDEAS_1018168_0-item-image.xml",
+    "sourceItemBank": "IDEAS",
+    "sk": "item_WA",
+    "prompt": "\r\n    <div style=\"\">\r\n      <a class=\"drc_voice_startpt\"/>  <table cellpadding=\"3\" cellspacing=\"0\" id=\"accessPoint\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Access Point</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\"><b>RF.3.3.L.</b></div><br/><div class=\"next_line\">Student will match letter sounds with their letter correspondences or words with corresponding visuals.</div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table><br/>  <table cellpadding=\"3\" cellspacing=\"0\" id=\"reqRestrict\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b>  <div class=\"next_line\">Requirements</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b>  <div class=\"next_line\">Restrictions</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <ul elemid=\"179\" type=\"bullet\"><li>Every performance task must have at least five unique items/questions.</li><li>Students may match five:  <ul elemid=\"112\" type=\"bullet-open\"><li>letter sounds with their letter correspondences</li><li>words to corresponding visuals</li><li>or a combination of both</li></ul></li><li>In a multiple-choice item, a minimum of three answer choices must be provided.</li></ul><a class=\"drc_voice_pause\" value=\"medium\"/></td><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\">None</div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table><br/>  <table cellpadding=\"3\" cellspacing=\"0\" id=\"teacherDir\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Teacher Directions</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\"><i>Teacher Directions: (Read the text in bold to the student.)</i></div>  <div class=\"next_line\"><b>Here are three pictures.</b><i> (Point to the pictures.)</i><b> This is an apple.</b><i> (Point to the apple picture, repeat the initial /a/ sound, and then say the word, &#x201C;apple&#x201D;.) </i><b>This is a duck.</b><i> (Point to the duck picture, repeat the initial /d/ sound, and then say the word, &#x201C;duck&#x201D;.)</i><b> This is a tree.</b><i> (Point to the tree picture, repeat the initial /t/ sound, and then say the word, &#x201C;tree&#x201D;.)</i><b><span id=\"promptText\"> Which letter makes the sound of /a/ in the word, &#x201C;apple&#x201D;?</span></b><i> (Point to the answer choices.)</i></div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table><br/><div id=\"correctResponse\">A; A</div></div>\r\n  ",
+    "publishStatus": "published",
+    "projectCode": "EWA601",
+    "updateDate": 1591378991473,
+    "grade": "3",
+    "itemImageOnlineXmlKey": "WA/IDEAS_1018168_0-item-online-image.xml",
+    "customData": {
+      "standard": "EE.RF.3.3",
+      "accessPointRubric": "<table cellpadding=\"3\" cellspacing=\"0\" id=\"accessPoint\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Access Point</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\"><b>RF.3.3.L.</b></div><br/><div class=\"next_line\">Student will match letter sounds with their letter correspondences or words with corresponding visuals.</div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table>",
+      "comboType": "single",
+      "requirementsRestrictions": "<table cellpadding=\"3\" cellspacing=\"0\" id=\"reqRestrict\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b>  <div class=\"next_line\">Requirements</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b>  <div class=\"next_line\">Restrictions</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <ul elemid=\"179\" type=\"bullet\"><li>Every performance task must have at least five unique items/questions.</li><li>Students may match five:  <ul elemid=\"112\" type=\"bullet-open\"><li>letter sounds with their letter correspondences</li><li>words to corresponding visuals</li><li>or a combination of both</li></ul></li><li>In a multiple-choice item, a minimum of three answer choices must be provided.</li></ul><a class=\"drc_voice_pause\" value=\"medium\"/></td><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\">None</div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table>",
+      "correctResponseRubric": [
+        "A; A"
+      ],
+      "accessPoint": "L",
+      "teacherDirections": [
+        "<tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Teacher Directions</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\"><i>Teacher Directions: (Read the text in bold to the student.)</i></div>  <div class=\"next_line\"><b>Here are three pictures.</b><i> (Point to the pictures.)</i><b> This is an apple.</b><i> (Point to the apple picture, repeat the initial /a/ sound, and then say the word, &#x201C;apple&#x201D;.) </i><b>This is a duck.</b><i> (Point to the duck picture, repeat the initial /d/ sound, and then say the word, &#x201C;duck&#x201D;.)</i><b> This is a tree.</b><i> (Point to the tree picture, repeat the initial /t/ sound, and then say the word, &#x201C;tree&#x201D;.)</i><b><span id=\"promptText\"> Which letter makes the sound of /a/ in the word, &#x201C;apple&#x201D;?</span></b><i> (Point to the answer choices.)</i></div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr>"
+      ],
+      "prompts": [
+        " Which letter makes the sound of /a/ in the word, &#x201C;apple&#x201D;?"
+      ]
+    },
+    "sourceItemVersion": "2020-06-05T12:42:12.013",
+    "contentArea": "ELA",
+    "createDate": 1591378991473,
+    "latestVersion": 3,
+    "printPDFS3Key": "WA/IDEAS_1018168_0-print-preview.pdf",
+    "points": "1",
+    "accessPoint": "L",
+    "aws:rep:updateregion": "us-east-2",
+    "sourceItemID": 1018168,
+    "aws:rep:updatetime": 1591378997.066001,
+    "onlineInteractions": [
+      {
+        "choiceInteraction": {
+          "maxChoices": 1,
+          "orientation": "horizontal",
+          "responseIdentifier": "bubbleinput1",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble1",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\"> Student response correct</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble2",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Student response incorrect</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble3",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Student did not respond</div></div>",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 1
+        }
+      },
+      {
+        "choiceInteraction": {
+          "maxChoices": 12,
+          "orientation": "horizontal",
+          "responseIdentifier": "adaptations",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble10",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Read aloud</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble11",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Scribe</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble12",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Object replacement</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble13",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Picture replacement</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble14",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Simplified materials</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble15",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">  <div class=\"next_line\">Other</div></div>",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 0
+        }
+      },
+      {
+        "extendedTextInteraction": {
+          "format": "plain",
+          "responseIdentifier": "otherAdaptation",
+          "base": 10,
+          "minStrings": 0
+        }
+      },
+      {
+        "extendedTextInteraction": {
+          "format": "plain",
+          "responseIdentifier": "suppMat",
+          "base": 10,
+          "minStrings": 0
+        }
+      }
+    ],
+    "pk": "IDEAS_1018168_0",
+    "standard": "EE.RF.3.3",
+    "sequence": 4
+  },
+  {
+    "gsi2sk": "ELA_3_EE.RF.3.3_",
+    "purpose": "Live",
+    "entityType": "item_WA",
+    "gsi3sk": "ELA_L",
+    "publishedVersion": 0,
+    "standardSet": "AIM21",
+    "clientCode": "WA",
+    "aws:rep:deleting": false,
+    "itemImageXmlKey": "WA/IDEAS_1018169_0-item-image.xml",
+    "sourceItemBank": "IDEAS",
+    "sk": "item_WA",
+    "prompt": "\r\n    <div style=\"\">\r\n      <a class=\"drc_voice_startpt\"/>  <table cellpadding=\"3\" cellspacing=\"0\" id=\"accessPoint\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Access Point</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\"><b>RF.3.3.L.</b></div><br/><div class=\"next_line\">Student will match letter sounds with their letter correspondences or words with corresponding visuals.</div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table><br/>  <table cellpadding=\"3\" cellspacing=\"0\" id=\"reqRestrict\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Requirements</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Restrictions</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\"> <ul elemid=\"179\" type=\"bullet\"><li>Every performance task must have at least five unique items/questions.</li><li>Students may match five:  <ul elemid=\"112\" type=\"bullet-open\"><li>letter sounds with their letter correspondences</li><li>words to corresponding visuals</li><li>or a combination of both</li></ul></li><li>In a multiple-choice item, a minimum of three answer choices must be provided.</li></ul><a class=\"drc_voice_pause\" value=\"medium\"/></td><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\">None</div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table><br/>  <table cellpadding=\"3\" cellspacing=\"0\" id=\"teacherDir\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Teacher Directions</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\"> <div class=\"next_line\"><i>Teacher Directions: (Read the text in bold to the student.)</i></div> <div class=\"next_line\"><b>Here are three pictures.</b><i> (Point to the pictures.)</i><b> This is a fish.</b><i> (Point to the fish picture, repeat the initial /f/ sound, and then say the word, &quot;fish&#x201D;.)</i><b> This is a lamp.</b><i> (Point to the lamp picture, repeat the initial /l/ sound, and then say the word,&#x201C;lamp&#x201D;.) </i><b> This is a rope.</b><i> (Point to the rope picture, repeat the initial /r/ sound, and then say the word, &#x201C;rope&#x201D;.)</i><b><span id=\"promptText\"> Which letter makes the sound of /r/ in the word &#x201C;rope&#x201D;?</span></b><i> (Point to the answer choices.)</i></div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table><br/><div id=\"correctResponse\">C; R</div></div>\r\n  ",
+    "publishStatus": "published",
+    "projectCode": "EWA601",
+    "updateDate": 1591378987172,
+    "grade": "3",
+    "itemImageOnlineXmlKey": "WA/IDEAS_1018169_0-item-online-image.xml",
+    "customData": {
+      "standard": "EE.RF.3.3",
+      "accessPointRubric": "<table cellpadding=\"3\" cellspacing=\"0\" id=\"accessPoint\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Access Point</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\"><b>RF.3.3.L.</b></div><br/><div class=\"next_line\">Student will match letter sounds with their letter correspondences or words with corresponding visuals.</div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table>",
+      "comboType": "single",
+      "requirementsRestrictions": "<table cellpadding=\"3\" cellspacing=\"0\" id=\"reqRestrict\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Requirements</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Restrictions</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\"> <ul elemid=\"179\" type=\"bullet\"><li>Every performance task must have at least five unique items/questions.</li><li>Students may match five:  <ul elemid=\"112\" type=\"bullet-open\"><li>letter sounds with their letter correspondences</li><li>words to corresponding visuals</li><li>or a combination of both</li></ul></li><li>In a multiple-choice item, a minimum of three answer choices must be provided.</li></ul><a class=\"drc_voice_pause\" value=\"medium\"/></td><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\">None</div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table>",
+      "correctResponseRubric": [
+        "C; R"
+      ],
+      "accessPoint": "L",
+      "teacherDirections": [
+        "<tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Teacher Directions</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\"> <div class=\"next_line\"><i>Teacher Directions: (Read the text in bold to the student.)</i></div> <div class=\"next_line\"><b>Here are three pictures.</b><i> (Point to the pictures.)</i><b> This is a fish.</b><i> (Point to the fish picture, repeat the initial /f/ sound, and then say the word, &quot;fish&#x201D;.)</i><b> This is a lamp.</b><i> (Point to the lamp picture, repeat the initial /l/ sound, and then say the word,&#x201C;lamp&#x201D;.) </i><b> This is a rope.</b><i> (Point to the rope picture, repeat the initial /r/ sound, and then say the word, &#x201C;rope&#x201D;.)</i><b><span id=\"promptText\"> Which letter makes the sound of /r/ in the word &#x201C;rope&#x201D;?</span></b><i> (Point to the answer choices.)</i></div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr>"
+      ],
+      "prompts": [
+        " Which letter makes the sound of /r/ in the word &#x201C;rope&#x201D;?"
+      ]
+    },
+    "sourceItemVersion": "2020-06-05T12:42:13.717",
+    "contentArea": "ELA",
+    "createDate": 1591378987172,
+    "latestVersion": 3,
+    "printPDFS3Key": "WA/IDEAS_1018169_0-print-preview.pdf",
+    "points": "1",
+    "accessPoint": "L",
+    "aws:rep:updateregion": "us-east-2",
+    "sourceItemID": 1018169,
+    "aws:rep:updatetime": 1591378990.535001,
+    "onlineInteractions": [
+      {
+        "choiceInteraction": {
+          "maxChoices": 1,
+          "orientation": "horizontal",
+          "responseIdentifier": "bubbleinput1",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble1",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\"> Student response correct</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble2",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Student response incorrect</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble3",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Student did not respond</div></div>",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 1
+        }
+      },
+      {
+        "choiceInteraction": {
+          "maxChoices": 12,
+          "orientation": "horizontal",
+          "responseIdentifier": "adaptations",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble10",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Read aloud</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble11",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Scribe</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble12",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Object replacement</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble13",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Picture replacement</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble14",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Simplified materials</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble15",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">  <div class=\"next_line\">Other</div></div>",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 0
+        }
+      },
+      {
+        "extendedTextInteraction": {
+          "format": "plain",
+          "responseIdentifier": "otherAdaptation",
+          "base": 10,
+          "minStrings": 0
+        }
+      },
+      {
+        "extendedTextInteraction": {
+          "format": "plain",
+          "responseIdentifier": "suppMat",
+          "base": 10,
+          "minStrings": 0
+        }
+      }
+    ],
+    "pk": "IDEAS_1018169_0",
+    "standard": "EE.RF.3.3",
+    "sequence": 5
+  }
+]

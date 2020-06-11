@@ -1,0 +1,480 @@
+[
+  {
+    "gsi2sk": "MATH_8_1.2.3.4_",
+    "purpose": "Live",
+    "entityType": "item_WA",
+    "gsi3sk": "MATH_5",
+    "publishedVersion": 0,
+    "standardSet": "AIM21",
+    "clientCode": "WA",
+    "aws:rep:deleting": false,
+    "itemImageXmlKey": "WA/IDEAS_1018241_0-item-image.xml",
+    "sourceItemBank": "IDEAS",
+    "sk": "item_WA",
+    "prompt": "\r\n    <div style=\"\">\r\n      <a class=\"drc_voice_startpt\"/>  <table cellpadding=\"3\" cellspacing=\"0\" id=\"accessPoint\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Access Point</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\"><b>8.NS.2.M.</b></div><br/><div class=\"next_line\">Student will use models to compare decimals to the hundredths place.</div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table><br/>  <table cellpadding=\"3\" cellspacing=\"0\" id=\"reqRestrict\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b>  <div class=\"next_line\">Requirements</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b>  <div class=\"next_line\">Restrictions</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <ul elemid=\"179\"><li><div class=\"next_line\">Every performance task must have at least five unique items/questions.</div></li><li><div class=\"next_line\">In a multiple-choice item, a minimum of three answer choices must be provided.</div></li></ul><a class=\"drc_voice_pause\" value=\"medium\"/></td><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\">None</div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table><br/>  <table cellpadding=\"3\" cellspacing=\"0\" id=\"teacherDir\" align=\"center\" style=\"\" border=\"1\" width=\"0\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Teacher Directions</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\"><i>Teacher Directions: (Read the text in bold to the student.)</i></div>  <div class=\"next_line\"><b>Here are models of 0.24 and 0.45. </b><i>(Point to each model.)</i><b><span id=\"promptText\"> Which answer choice is a true statement about the models?</span></b><i> (Read the answer choices to the student.)</i></div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table><br/><div class=\"paragraph\"><span id=\"correctResponse\">Correct Response</span></div></div>\r\n  ",
+    "publishStatus": "published",
+    "projectCode": "EWA601",
+    "updateDate": 1591213299798,
+    "grade": "8",
+    "itemImageOnlineXmlKey": "WA/IDEAS_1018241_0-item-online-image.xml",
+    "customData": {
+      "standard": "1.2.3.4",
+      "accessPointRubric": "<table cellpadding=\"3\" cellspacing=\"0\" id=\"accessPoint\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Access Point</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\"><b>8.NS.2.M.</b></div><br/><div class=\"next_line\">Student will use models to compare decimals to the hundredths place.</div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table>",
+      "comboType": "multi",
+      "requirementsRestrictions": "<table cellpadding=\"3\" cellspacing=\"0\" id=\"reqRestrict\" align=\"center\" style=\"\" border=\"1\" width=\"100%\"><tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b>  <div class=\"next_line\">Requirements</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b>  <div class=\"next_line\">Restrictions</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <ul elemid=\"179\"><li><div class=\"next_line\">Every performance task must have at least five unique items/questions.</div></li><li><div class=\"next_line\">In a multiple-choice item, a minimum of three answer choices must be provided.</div></li></ul><a class=\"drc_voice_pause\" value=\"medium\"/></td><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\">None</div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr></table>",
+      "correctResponseRubric": [
+        "Correct Response"
+      ],
+      "accessPoint": "5",
+      "teacherDirections": [
+        "<tr><td align=\"\" valign=\"top\" style=\"vertical-align:text-top\"><div style=\"text-align:center;\"><b> <div class=\"next_line\">Teacher Directions</div></b><a class=\"drc_voice_pause\" value=\"medium\"/></div></td></tr><tr><td width=\"\" align=\"\" valign=\"top\" style=\"vertical-align:text-top\">  <div class=\"next_line\"><i>Teacher Directions: (Read the text in bold to the student.)</i></div>  <div class=\"next_line\"><b>Here are models of 0.24 and 0.45. </b><i>(Point to each model.)</i><b><span id=\"promptText\"> Which answer choice is a true statement about the models?</span></b><i> (Read the answer choices to the student.)</i></div><a class=\"drc_voice_pause\" value=\"medium\"/></td></tr>"
+      ],
+      "prompts": [
+        " Which answer choice is a true statement about the models?"
+      ]
+    },
+    "sourceItemVersion": "2020-06-03T14:39:59.773",
+    "contentArea": "MATH",
+    "createDate": 1591213299798,
+    "latestVersion": 2,
+    "printPDFS3Key": "WA/IDEAS_1018241_0-print-preview.pdf",
+    "points": "5",
+    "accessPoint": "5",
+    "aws:rep:updateregion": "us-east-2",
+    "sourceItemID": 1018241,
+    "aws:rep:updatetime": 1591213304.341001,
+    "onlineInteractions": [
+      {
+        "choiceInteraction": {
+          "maxChoices": 1,
+          "orientation": "horizontal",
+          "responseIdentifier": "bubbleinput1",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble1",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\"> Student response correct</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble2",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Student response incorrect</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble3",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Student did not respond</div></div>",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 1
+        }
+      },
+      {
+        "choiceInteraction": {
+          "maxChoices": 1,
+          "orientation": "horizontal",
+          "responseIdentifier": "bubbleinput6",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble20",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\"> Student response correct</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble19",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Student response incorrect</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble18",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Student did not respond</div></div>",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 1
+        }
+      },
+      {
+        "choiceInteraction": {
+          "maxChoices": 1,
+          "orientation": "horizontal",
+          "responseIdentifier": "bubbleinput5",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble17",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\"> Student response correct</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble16",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Student response incorrect</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble9",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Student did not respond</div></div>",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 1
+        }
+      },
+      {
+        "choiceInteraction": {
+          "maxChoices": 1,
+          "orientation": "horizontal",
+          "responseIdentifier": "bubbleinput4",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble8",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\"> Student response correct</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble7",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Student response incorrect</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble6",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Student did not respond</div></div>",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 1
+        }
+      },
+      {
+        "choiceInteraction": {
+          "maxChoices": 1,
+          "orientation": "horizontal",
+          "responseIdentifier": "bubbleinput2",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble26",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\"> Student response correct</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble25",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Student response incorrect</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble24",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Student did not respond</div></div>",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 1
+        }
+      },
+      {
+        "choiceInteraction": {
+          "maxChoices": 12,
+          "orientation": "horizontal",
+          "responseIdentifier": "adaptations1",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble10",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Read aloud</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble11",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Scribe</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble12",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Object replacement</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble13",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Picture replacement</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble14",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Simplified materials</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble15",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"> <div class=\"next_line\">Other</div></div>",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 0
+        }
+      },
+      {
+        "choiceInteraction": {
+          "maxChoices": 12,
+          "orientation": "horizontal",
+          "responseIdentifier": "adaptations2",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble47",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Read aloud</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble46",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Scribe</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble45",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Object replacement</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble44",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Picture replacement</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble43",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Simplified materials</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble42",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"> <div class=\"next_line\">Other</div></div>",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 0
+        }
+      },
+      {
+        "choiceInteraction": {
+          "maxChoices": 12,
+          "orientation": "horizontal",
+          "responseIdentifier": "adaptations3",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble41",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Read aloud</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble40",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Scribe</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble39",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Object replacement</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble38",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Picture replacement</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble37",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Simplified materials</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble36",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"> <div class=\"next_line\">Other</div></div>",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 0
+        }
+      },
+      {
+        "choiceInteraction": {
+          "maxChoices": 12,
+          "orientation": "horizontal",
+          "responseIdentifier": "adaptations4",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble35",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Read aloud</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble34",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Scribe</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble33",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Object replacement</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble32",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Picture replacement</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble31",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Simplified materials</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble30",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"> <div class=\"next_line\">Other</div></div>",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 0
+        }
+      },
+      {
+        "choiceInteraction": {
+          "maxChoices": 12,
+          "orientation": "horizontal",
+          "responseIdentifier": "adaptations5",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble29",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Read aloud</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble28",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Scribe</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble27",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Object replacement</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble23",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Picture replacement</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble22",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\"><div class=\"next_line\">Simplified materials</div></div>",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble21",
+              "fixed": false,
+              "_text": "<div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">  <div class=\"next_line\">Other</div></div>",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 0
+        }
+      },
+      {
+        "extendedTextInteraction": {
+          "format": "plain",
+          "responseIdentifier": "otherAdaptations1",
+          "base": 10,
+          "minStrings": 0
+        }
+      },
+      {
+        "extendedTextInteraction": {
+          "format": "plain",
+          "responseIdentifier": "otherAdaptations2",
+          "base": 10,
+          "minStrings": 0
+        }
+      },
+      {
+        "extendedTextInteraction": {
+          "format": "plain",
+          "responseIdentifier": "otherAdaptations3",
+          "base": 10,
+          "minStrings": 0
+        }
+      },
+      {
+        "extendedTextInteraction": {
+          "format": "plain",
+          "responseIdentifier": "otherAdaptations4",
+          "base": 10,
+          "minStrings": 0
+        }
+      },
+      {
+        "extendedTextInteraction": {
+          "format": "plain",
+          "responseIdentifier": "otherAdaptations5",
+          "base": 10,
+          "minStrings": 0
+        }
+      },
+      {
+        "extendedTextInteraction": {
+          "format": "plain",
+          "responseIdentifier": "longinput2",
+          "base": 10,
+          "minStrings": 0
+        }
+      }
+    ],
+    "pk": "IDEAS_1018241_0",
+    "standard": "1.2.3.4",
+    "sequence": 1
+  }
+]
