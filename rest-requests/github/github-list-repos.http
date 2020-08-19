@@ -1,7 +1,8 @@
-GET https://api.github.com/orgs/DataRecognitionCorporation/repos/
+GET https://api.github.com/repos/DataRecognitionCorporation/eca-online-scoring-api/pulls
 Accept: */*
+Authorization: Basic NzU0MmY1MDRmNDM1ZTE4NjI3ZTI0OTk0YjEwZjY4MjZiMTU2NTkyZA==
+Proxy-Authorization: Basic NzU0MmY1MDRmNDM1ZTE4NjI3ZTI0OTk0YjEwZjY4MjZiMTU2NTkyZA==
 Cache-Control: no-cache
 Content-Type: application/json
-Authorization:
-
+User-Agent: drc-gcoakley - testing
 {}

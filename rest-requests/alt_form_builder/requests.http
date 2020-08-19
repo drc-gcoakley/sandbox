@@ -1,22 +1,32 @@
 ### WA Multiple response bubble input:
-GET https://eca-alt-form-builder-api-sqa.awcl.drcedirect-le.com/forms/WA/9f6f38ee-d286-4c4e-bfe8-deaf4a9b4ef9/items
+GET https://eca-alt-form-builder-api-sqa.awcl.drcedirect-le.com/live/forms/WA/9f6f38ee-d286-4c4e-bfe8-deaf4a9b4ef9/items
 Authorization: Bearer {{ecaBearer}}
 Content-Type: application/json
 
 ### WA Bundled bubble input, single response:
-GET https://eca-alt-form-builder-api-sqa.awcl.drcedirect-le.com/forms/WA/65186882-8145-4fc3-ba73-40c88a8ca04c/items
+GET https://eca-alt-form-builder-api-sqa.awcl.drcedirect-le.com/live/forms/WA/65186882-8145-4fc3-ba73-40c88a8ca04c/items
 Authorization: Bearer {{ecaBearer}}
 Content-Type: application/json
 
 ### WA Bundled bubble input, single response:
-GET https://eca-alt-form-builder-api-sqa.awcl.drcedirect-le.com/forms/WA/7eb142eb-f2ff-46d3-8cf2-a43597b7cd1c/items
+GET https://eca-alt-form-builder-api-sqa.awcl.drcedirect-le.com/live/forms/WA/7eb142eb-f2ff-46d3-8cf2-a43597b7cd1c/items
+Authorization: Bearer {{ecaBearer}}
+Content-Type: application/json
+
+### WA Bundled bubble input, single response: ER Form
+GET https://eca-alt-form-builder-api-sqa.awcl.drcedirect-le.com/live/forms/WA/6c9a2ffd-4b4d-41c4-b56c-8c40b443adf7/items
+Authorization: Bearer {{ecaBearer}}
+Content-Type: application/json
+
+### WA Bundled bubble input, single response: ER Form Alt
+GET https://eca-alt-form-builder-api-sqa.awcl.drcedirect-le.com/live/forms/WA/8fb7b086-eb6d-4bfe-83d7-7312333d543e/items
 Authorization: Bearer {{ecaBearer}}
 Content-Type: application/json
 
 ### WA Bundled bubble input, single response:
-GET https://eca-alt-form-builder-api-sqa.awcl.drcedirect-le.com/forms/WA/6c9a2ffd-4b4d-41c4-b56c-8c40b443adf7/items
+GET https://eca-alt-form-builder-api-sqa.awcl.drcedirect-le.com/live/forms/WA/ef394d88-0c7b-43f3-b470-cd292fb504c5/items
 Authorization: Bearer {{ecaBearer}}
 Content-Type: application/json
 
 ###
-#GET https://eca-alt-form-builder-api-sqa.awcl.drcedirect-le.com/forms/WA/4a2c3a00-d6ef-487e-b8cb-06453670b2ee/items
+#GET https://eca-alt-form-builder-api-sqa.awcl.drcedirect-le.com/live/forms/WA/4a2c3a00-d6ef-487e-b8cb-06453670b2ee/items
