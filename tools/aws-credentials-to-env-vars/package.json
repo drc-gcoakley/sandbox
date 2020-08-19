@@ -1,0 +1,14 @@
+{
+  "name": "aws-credentials-to-env-vars",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Glen Coakley <gcoakley@datarecognitioncorp.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@yaas/iniparser": "^3.0.1"
+  }
+}
