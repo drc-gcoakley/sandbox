@@ -6,5 +6,5 @@ let iniJson = parser.parse(iniBody, '\n');
 let drcCred = iniJson['177429746880_AWS-SSO-Developers'];
 
 for (let k of Object.keys(drcCred)) {
-  console.log(`${k.toLocaleUpperCase()}=${drcCred[k]}`);
+  console.log(`export ${k.toLocaleUpperCase()}=${drcCred[k]}`);
 }
