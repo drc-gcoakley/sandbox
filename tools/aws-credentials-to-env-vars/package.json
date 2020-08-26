@@ -4,11 +4,15 @@
   "description": "",
   "main": "main.js",
   "scripts": {
+    "build": "npm run generate-barrels && rm -rf dist && mkdir -p dist && cp package.json dist/package.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Glen Coakley <gcoakley@datarecognitioncorp.com>",
   "license": "ISC",
   "dependencies": {
     "@yaas/iniparser": "^3.0.1"
+  },
+  "devDependencies": {
+    "barrelsby": "^2.2.0"
   }
 }
