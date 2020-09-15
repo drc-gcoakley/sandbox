@@ -3,13 +3,60 @@
   <component name="AnalysisUIOptions">
     <option name="SCOPE_TYPE" value="3" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="aec71807-1b4c-4a43-89a6-175562ffcb09" name="Dumps serverless config. object." comment="Simplifies (removes interpolation) in todayAsIsoString()." />
-    <list id="65730a75-c489-4c46-b9ee-d2e23b644b8e" name="Default Changelist" comment="Moves all jenkins testing files under test-jenkins.">
-      <change afterPath="$PROJECT_DIR$/.idea/sandbox.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="aec71807-1b4c-4a43-89a6-175562ffcb09" name="Dumps serverless config. object." comment="Simplifies (removes interpolation) in todayAsIsoString().">
+      <change afterPath="$PROJECT_DIR$/rest-requests/alt-form-builder_Ideas/alt-form-builder_ideas.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-requests/ECA/eca-authenticate-IATEagleUser.http" beforeDir="false" afterPath="$PROJECT_DIR$/rest-requests/ECA-Security/eca-authenticate-IATEagleUser.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-requests/ECA/eca-authenticate-by-token.http" beforeDir="false" afterPath="$PROJECT_DIR$/rest-requests/ECA-Security/eca-authenticate-by-token.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-requests/ECA/eca-authenticate-token.http" beforeDir="false" afterPath="$PROJECT_DIR$/rest-requests/ECA-Security/eca-authenticate-token.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-requests/ECA/eca-authorize-acls-by-token.http" beforeDir="false" afterPath="$PROJECT_DIR$/rest-requests/ECA-Security/eca-authorize-acls-by-token.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-requests/ECA/eca-get-group-ItemBank-SeniorEditor.http" beforeDir="false" afterPath="$PROJECT_DIR$/rest-requests/ECA-Security/eca-get-group-ItemBank-SeniorEditor.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-requests/ECA/eca-get-groups.http" beforeDir="false" afterPath="$PROJECT_DIR$/rest-requests/ECA-Security/eca-get-groups.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-requests/ECA/eca-get-jwt-singning-cert.http" beforeDir="false" afterPath="$PROJECT_DIR$/rest-requests/ECA-Security/eca-get-jwt-singning-cert.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-requests/ECA/eca-get-user-acls-gcoakley.http" beforeDir="false" afterPath="$PROJECT_DIR$/rest-requests/ECA-Security/eca-get-user-acls-gcoakley.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-requests/ECA/eca-get-user-gcoakley.http" beforeDir="false" afterPath="$PROJECT_DIR$/rest-requests/ECA-Security/eca-get-user-gcoakley.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-requests/ECA/eca-get-user-monitoring-user.http" beforeDir="false" afterPath="$PROJECT_DIR$/rest-requests/ECA-Security/eca-get-user-monitoring-user.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-requests/ECA/eca-refresh-get-new-token.http" beforeDir="false" afterPath="$PROJECT_DIR$/rest-requests/ECA-Security/eca-refresh-get-new-token.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-requests/ECA/example_output/eca-authenticate-IATEagleUser-by-user&amp;pass.txt" beforeDir="false" afterPath="$PROJECT_DIR$/rest-requests/ECA-Security/example_output/eca-authenticate-IATEagleUser-by-user&amp;pass.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-requests/ECA/example_output/eca-authenticate-by-token.txt" beforeDir="false" afterPath="$PROJECT_DIR$/rest-requests/ECA-Security/example_output/eca-authenticate-by-token.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-requests/ECA/example_output/eca-authenticate-by-user&amp;pass.txt" beforeDir="false" afterPath="$PROJECT_DIR$/rest-requests/ECA-Security/example_output/eca-authenticate-by-user&amp;pass.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-requests/ECA/example_output/eca-authenticate-gcoakley-by-user&amp;pass.txt" beforeDir="false" afterPath="$PROJECT_DIR$/rest-requests/ECA-Security/example_output/eca-authenticate-gcoakley-by-user&amp;pass.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-requests/ECA/example_output/eca-authenticate-gcoakley@drc...by-user&amp;pass.txt" beforeDir="false" afterPath="$PROJECT_DIR$/rest-requests/ECA-Security/example_output/eca-authenticate-gcoakley@drc...by-user&amp;pass.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-requests/ECA/example_output/eca-authorize-acls-NEEDS-token.txt" beforeDir="false" afterPath="$PROJECT_DIR$/rest-requests/ECA-Security/example_output/eca-authorize-acls-NEEDS-token.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-requests/ECA/example_output/eca-get-group-ItemBank-SeniorEditor.txt" beforeDir="false" afterPath="$PROJECT_DIR$/rest-requests/ECA-Security/example_output/eca-get-group-ItemBank-SeniorEditor.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-requests/ECA/example_output/eca-get-groups.txt" beforeDir="false" afterPath="$PROJECT_DIR$/rest-requests/ECA-Security/example_output/eca-get-groups.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-requests/ECA/example_output/eca-get-jwt-singning-cert.txt" beforeDir="false" afterPath="$PROJECT_DIR$/rest-requests/ECA-Security/example_output/eca-get-jwt-singning-cert.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-requests/ECA/example_output/eca-get-user-acls-gcoakley.txt" beforeDir="false" afterPath="$PROJECT_DIR$/rest-requests/ECA-Security/example_output/eca-get-user-acls-gcoakley.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-requests/ECA/example_output/eca-get-user-gcoakley.txt" beforeDir="false" afterPath="$PROJECT_DIR$/rest-requests/ECA-Security/example_output/eca-get-user-gcoakley.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-requests/ECA/example_output/eca-refresh-get-new-token.txt" beforeDir="false" afterPath="$PROJECT_DIR$/rest-requests/ECA-Security/example_output/eca-refresh-get-new-token.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-requests/environment/rest-client.env.json" beforeDir="false" afterPath="$PROJECT_DIR$/rest-requests/environment/rest-client.env.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-requests/environment/rest-client.private.env.json" beforeDir="false" afterPath="$PROJECT_DIR$/rest-requests/environment/rest-client.private.env.json" afterDir="false" />
     </list>
+    <list id="65730a75-c489-4c46-b9ee-d2e23b644b8e" name="Default Changelist" comment="Moves all jenkins testing files under test-jenkins." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,13 +136,6 @@
     <option name="RESET_MODE" value="HARD" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
-  <component name="IgnoredFileRootStore">
-    <option name="generatedRoots">
-      <set>
-        <option value="$PROJECT_DIR$/.idea" />
-      </set>
-    </option>
-  </component>
   <component name="JsBowerSettings">
     <node-interpreter value="project" />
     <bower-package value="C:/dev/runtime/npm_global_cache/node_modules/bower" />
@@ -121,7 +161,6 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -138,11 +177,10 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Groovy JUnit" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/scripts/jenkins" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/rest-requests/alt-form-builder_Ideas" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -158,6 +196,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="rest.client.default.execution.environment" value="$env$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
     <property name="settings.editor.splitter.proportion" value="0.24862888" />
@@ -167,6 +206,20 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="util" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="util" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/rest-requests/alt-form-builder_Ideas" />
+      <recent name="$PROJECT_DIR$/scripts/jenkins" />
+      <recent name="$PROJECT_DIR$/scripts" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/config" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="groovy.util.GroovyTestCase" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/test-jenkins" />
       <recent name="$PROJECT_DIR$/test-jenkins/build" />
@@ -174,20 +227,304 @@
       <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="groovy.util.GroovyTestCase" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="" />
-      <recent name="util" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/scripts/jenkins" />
-      <recent name="$PROJECT_DIR$/scripts" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/config" />
-      <recent name="$PROJECT_DIR$/configs" />
-    </key>
+  </component>
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="ereporting-education-on-demand-prod-001.datarecognitioncorp.com" />
+                <option name="name" value="ASP.NET_SessionId" />
+                <option name="path" value="/" />
+                <option name="value" value="sizdcuemxxk5rrgdhfqlp4k5" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://eca-alt-form-builder-api-sqa.awcl.drcedirect-le.com/forms/WA/eae58be1-9755-435f-8537-01b556432bba" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNjAwMjA2MTY2LCJleHAiOjE2MDAyMDc5NjYsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.3aAWjHzZ6x9DCWwscT9v61w62toQyxigmBZY_64tTbXyle9HGXxgi_vU6AOkEh77IOoSoQF2GEDmlt1zGN87abDphQmMec6VgODAx_hIhinxYdgvxCC3figqPy-BQbD6qkuf7SD-zI9Ak53BLdVoTKXQMMxz1spzZgt2dNAUsfVZ8r5ifbOTGewoxaN6OG5d9fMwN-P4pisEYV_G-qrGV3OX8jvIOyf279B6xjZqGvffZLhrXo4Txdflcm_EFn8sEdN8ftZRYB2LgQAEpNlxWAB6f04KNI_Nev-u_HtA9A_i8PJKYdJBknqvYq_7rR8MlOP3whcdD-F0IrgjgNff6g" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="ereporting-education-on-demand-prod-001.datarecognitioncorp.com" />
+                <option name="name" value="ASP.NET_SessionId" />
+                <option name="path" value="/" />
+                <option name="value" value="sizdcuemxxk5rrgdhfqlp4k5" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="https://api-gateway-sqa.drcedirect.com/eca-security-service/all-sqa-v0/v0/authenticate" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{ &quot;username&quot;: &quot;gcoakley@datarecognitioncorp.com&quot;, &quot;password&quot;: &quot;2.20-Password&quot; }" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="ereporting-education-on-demand-prod-001.datarecognitioncorp.com" />
+                <option name="name" value="ASP.NET_SessionId" />
+                <option name="path" value="/" />
+                <option name="value" value="sizdcuemxxk5rrgdhfqlp4k5" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://eca-alt-form-builder-api-sqa.awcl.drcedirect-le.com/forms/WA/eae58be1-9755-435f-8537-01b556432bba" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNjAwMjAzNzU3LCJleHAiOjE2MDAyMDU1NTcsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.KRudCgSxgFo6o_4-hal91JHdKw51JebqNuzaRBXOW8jPuhGv8WMLGK0PVodn8CWlYDTfpTee8weWiW8ZsmMZbIwk3_BtI59yVHQ2YBRDBD465h4YetjKLmi5qsrBA8ZOSWzPzErnruEhML0EZOJu-BrMJREgIz6hgh7XQ2Dj1Nu5ZPt7wpMmCm5H8pMJllz-XWc3O_35ayvCXBH5Z3nJgG5XjKdfrDc6ONIEJ5SV4jr2rVS1Gbea6GyXQqUeutDaW9lBOnrQUPxu77IAAePIXROZXnhOAUzg9LccteMsBq_JwV2yYXDk_PCEgmvJzXyDpG8E4sJHUjsQtpZ0UeyNDQ" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="ereporting-education-on-demand-prod-001.datarecognitioncorp.com" />
+                <option name="name" value="ASP.NET_SessionId" />
+                <option name="path" value="/" />
+                <option name="value" value="sizdcuemxxk5rrgdhfqlp4k5" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://eca-alt-form-builder-api-sqa.awcl.drcedirect-le.com/forms/WA/2a0d8da9-8af6-4b66-933d-0520d389251c" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNjAwMjAzNzU3LCJleHAiOjE2MDAyMDU1NTcsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.KRudCgSxgFo6o_4-hal91JHdKw51JebqNuzaRBXOW8jPuhGv8WMLGK0PVodn8CWlYDTfpTee8weWiW8ZsmMZbIwk3_BtI59yVHQ2YBRDBD465h4YetjKLmi5qsrBA8ZOSWzPzErnruEhML0EZOJu-BrMJREgIz6hgh7XQ2Dj1Nu5ZPt7wpMmCm5H8pMJllz-XWc3O_35ayvCXBH5Z3nJgG5XjKdfrDc6ONIEJ5SV4jr2rVS1Gbea6GyXQqUeutDaW9lBOnrQUPxu77IAAePIXROZXnhOAUzg9LccteMsBq_JwV2yYXDk_PCEgmvJzXyDpG8E4sJHUjsQtpZ0UeyNDQ" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="ereporting-education-on-demand-prod-001.datarecognitioncorp.com" />
+                <option name="name" value="ASP.NET_SessionId" />
+                <option name="path" value="/" />
+                <option name="value" value="sizdcuemxxk5rrgdhfqlp4k5" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://eca-alt-form-builder-api-sqa.awcl.drcedirect-le.com/forms/WA/ae93b27c-a1c9-42c1-b4fb-2274203e7a1c" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNjAwMjAzNzU3LCJleHAiOjE2MDAyMDU1NTcsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.KRudCgSxgFo6o_4-hal91JHdKw51JebqNuzaRBXOW8jPuhGv8WMLGK0PVodn8CWlYDTfpTee8weWiW8ZsmMZbIwk3_BtI59yVHQ2YBRDBD465h4YetjKLmi5qsrBA8ZOSWzPzErnruEhML0EZOJu-BrMJREgIz6hgh7XQ2Dj1Nu5ZPt7wpMmCm5H8pMJllz-XWc3O_35ayvCXBH5Z3nJgG5XjKdfrDc6ONIEJ5SV4jr2rVS1Gbea6GyXQqUeutDaW9lBOnrQUPxu77IAAePIXROZXnhOAUzg9LccteMsBq_JwV2yYXDk_PCEgmvJzXyDpG8E4sJHUjsQtpZ0UeyNDQ" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="ereporting-education-on-demand-prod-001.datarecognitioncorp.com" />
+                <option name="name" value="ASP.NET_SessionId" />
+                <option name="path" value="/" />
+                <option name="value" value="sizdcuemxxk5rrgdhfqlp4k5" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://eca-alt-form-builder-api-sqa.awcl.drcedirect-le.com/forms/WA/daf1f73a-f4f3-4a66-8d05-b2795eb9bb2f" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNjAwMjAzNzU3LCJleHAiOjE2MDAyMDU1NTcsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.KRudCgSxgFo6o_4-hal91JHdKw51JebqNuzaRBXOW8jPuhGv8WMLGK0PVodn8CWlYDTfpTee8weWiW8ZsmMZbIwk3_BtI59yVHQ2YBRDBD465h4YetjKLmi5qsrBA8ZOSWzPzErnruEhML0EZOJu-BrMJREgIz6hgh7XQ2Dj1Nu5ZPt7wpMmCm5H8pMJllz-XWc3O_35ayvCXBH5Z3nJgG5XjKdfrDc6ONIEJ5SV4jr2rVS1Gbea6GyXQqUeutDaW9lBOnrQUPxu77IAAePIXROZXnhOAUzg9LccteMsBq_JwV2yYXDk_PCEgmvJzXyDpG8E4sJHUjsQtpZ0UeyNDQ" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="ereporting-education-on-demand-prod-001.datarecognitioncorp.com" />
+                <option name="name" value="ASP.NET_SessionId" />
+                <option name="path" value="/" />
+                <option name="value" value="sizdcuemxxk5rrgdhfqlp4k5" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://eca-alt-form-builder-api-sqa.awcl.drcedirect-le.com/forms/WA/assessment-7c765854-4311-474b-afce-a8c5938e0bc5" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNjAwMjAzNzU3LCJleHAiOjE2MDAyMDU1NTcsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.KRudCgSxgFo6o_4-hal91JHdKw51JebqNuzaRBXOW8jPuhGv8WMLGK0PVodn8CWlYDTfpTee8weWiW8ZsmMZbIwk3_BtI59yVHQ2YBRDBD465h4YetjKLmi5qsrBA8ZOSWzPzErnruEhML0EZOJu-BrMJREgIz6hgh7XQ2Dj1Nu5ZPt7wpMmCm5H8pMJllz-XWc3O_35ayvCXBH5Z3nJgG5XjKdfrDc6ONIEJ5SV4jr2rVS1Gbea6GyXQqUeutDaW9lBOnrQUPxu77IAAePIXROZXnhOAUzg9LccteMsBq_JwV2yYXDk_PCEgmvJzXyDpG8E4sJHUjsQtpZ0UeyNDQ" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="ereporting-education-on-demand-prod-001.datarecognitioncorp.com" />
+                <option name="name" value="ASP.NET_SessionId" />
+                <option name="path" value="/" />
+                <option name="value" value="sizdcuemxxk5rrgdhfqlp4k5" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://eca-alt-form-builder-api-sqa.awcl.drcedirect-le.com/forms/WA/ae93b27c-a1c9-42c1-b4fb-2274203e7a1c" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNjAwMjAzMzY2LCJleHAiOjE2MDAyMDUxNjYsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.QD9AAJ5KmmenpG2gZDsLypPtTOwM09ZaLXvGgze0blYIjIpgovRTO2tDNJBLNxD0RoVQkwuoFTCMJGZfUw8-LNkfqnwLyHqS7deIqySl3A_S12GKbUt4hLBl_3UhWRBKv4CnRBUKbJoFzQoNvMihBTym-h_RMaKxORBkOgq5-1I-ISF-uHgfoPL-S1EXXjLpV0yaxmqoOqJNCaMy2aBcuKbGqqTa7KwIayJU0jQH6cJf1oF9rDVO5yCSw8VWvDIv78mLADm7CjYr05PDOIrYpP-OIVVUzQkrElpg77dtm-AJTHtwdwdLhwhFW0DMmFlvG9Kqeo3W8V2xppZIAAaIZQ" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="ereporting-education-on-demand-prod-001.datarecognitioncorp.com" />
+                <option name="name" value="ASP.NET_SessionId" />
+                <option name="path" value="/" />
+                <option name="value" value="sizdcuemxxk5rrgdhfqlp4k5" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="https://api-gateway-sqa.drcedirect.com/eca-security-service/all-sqa-v0/v0/authenticate" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{ &quot;username&quot;: &quot;gcoakley@datarecognitioncorp.com&quot;, &quot;password&quot;: &quot;Password.19.3&quot; }" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Gradle.personal-testing [test]">
     <configuration default="true" type="Applet">
@@ -449,6 +786,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="!eca-login#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/rest-requests/!eca-login.http" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="alt-form-builder_ideas#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/rest-requests/alt-form-builder_Ideas/alt-form-builder_ideas.http" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -468,28 +811,20 @@
       <item itemvalue="Gradle.DRCLibrary_getAccountNumTest" />
       <item itemvalue="Gradle.DrcLibrary_getAccountNumSpec" />
       <item itemvalue="Gradle.CurrentJenkinsfileSpec" />
+      <item itemvalue="HTTP Request.!eca-login#1" />
+      <item itemvalue="HTTP Request.alt-form-builder_ideas#1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.alt-form-builder_ideas#1" />
+        <item itemvalue="HTTP Request.!eca-login#1" />
         <item itemvalue="Gradle.CurrentJenkinsfileSpec" />
         <item itemvalue="Gradle.DrcLibrary_getAccountNumSpec" />
         <item itemvalue="Gradle.CurrentJenkinsfileSpec" />
-        <item itemvalue="Gradle.DrcLibrary_getAccountNumSpec" />
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="StructureViewFactory">
     <option name="ACTIVE_ACTIONS" value=",SHOW_PROPERTIES,ALPHA_COMPARATOR,VISIBILITY_SORTER" />
   </component>
@@ -928,17 +1263,17 @@
                   <entry key="3" value="146" />
                 </map>
               </option>
-              <option name="COLUMN_ORDER" />
             </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="OPEN_TABS">
-      <set>
-        <option value="1" />
-      </set>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1" value="TOOL_WINDOW" />
+      </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -973,37 +1308,26 @@
     <option name="LAST_COMMIT_MESSAGE" value="Simplifies (removes interpolation) in todayAsIsoString()." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="590" y="144" width="971" height="757" key="CommitChangelistDialog2" timestamp="1578501662276">
-      <screen x="0" y="23" width="1920" height="1057" />
-    </state>
-    <state x="590" y="144" key="CommitChangelistDialog2/0.23.1920.1057/1066.1103.1440.877/1920.23.1920.1057@0.23.1920.1057" timestamp="1578501662276" />
-    <state x="590" y="144" width="971" height="757" key="CommitChangelistDialog2/1066.1103.1440.877/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1578443828499" />
-    <state x="298" y="120" width="1293" height="833" key="DiffContextDialog" timestamp="1579576229197">
+    <state width="1632" height="202" key="GridCell.Tab.0.bottom" timestamp="1600206718464">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="298" y="120" width="1293" height="833" key="DiffContextDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1579576229197" />
-    <state x="341" y="123" width="1477" height="857" key="DiffContextDialog/0.23.1920.1057/1066.1103.1440.877/1920.23.1920.1057@0.23.1920.1057" timestamp="1578501654520" />
-    <state x="341" y="123" width="1477" height="857" key="DiffContextDialog/1066.1103.1440.877/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1578442420332" />
-    <state x="880" y="269" key="RollbackChangesDialog" timestamp="1578442334292">
-      <screen x="0" y="23" width="1920" height="1057" />
-    </state>
-    <state x="880" y="269" key="RollbackChangesDialog/1066.1103.1440.877/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1578442334292" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1578447426421">
-      <screen x="0" y="23" width="1920" height="1057" />
-    </state>
-    <state width="500" height="445" key="SwitcherDM/1066.1103.1440.877/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1578447426421" />
-    <state x="679" y="279" key="Vcs.Push.Dialog.v2" timestamp="1578443833862">
-      <screen x="0" y="23" width="1920" height="1057" />
-    </state>
-    <state x="679" y="279" key="Vcs.Push.Dialog.v2/1066.1103.1440.877/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1578443833862" />
-    <state x="594" y="258" key="git4idea.branch.GitSmartOperationDialog" timestamp="1579576257667">
+    <state width="1632" height="202" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1600206718464" />
+    <state width="1632" height="202" key="GridCell.Tab.0.center" timestamp="1600206718463">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="594" y="258" key="git4idea.branch.GitSmartOperationDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1579576257667" />
-    <state x="488" y="309" width="944" height="466" key="vcs.ApplyPatchDifferentiatedDialog" timestamp="1578442296928">
-      <screen x="0" y="23" width="1920" height="1057" />
+    <state width="1632" height="202" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1600206718463" />
+    <state width="1632" height="202" key="GridCell.Tab.0.left" timestamp="1600206718462">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="488" y="309" width="944" height="466" key="vcs.ApplyPatchDifferentiatedDialog/1066.1103.1440.877/0.23.1920.1057/1920.23.1920.1057@0.23.1920.1057" timestamp="1578442296928" />
+    <state width="1632" height="202" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1600206718462" />
+    <state width="1632" height="202" key="GridCell.Tab.0.right" timestamp="1600206718463">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1632" height="202" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1600206718463" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1600203725829">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="500" height="445" key="SwitcherDM/0.23.1680.1027@0.23.1680.1027" timestamp="1600203725829" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
