@@ -1,0 +1,30 @@
+GET https://1qyehsr0k5.execute-api.us-east-1.amazonaws.com/dev/live/status
+Authorization: Bearer {{ecaBearer}}
+Accept: */*
+Content-Type: application/json
+###
+GET https://eca-form-recognition-service-dev.awcl.drcedirect-le.com/clients
+Authorization: Bearer {{ecaBearer}}
+Accept: */*
+Content-Type: application/json
+###
+GET https://eca-form-recognition-service-dev.awcl.drcedirect-le.com/live/status
+Authorization: Bearer {{ecaBearer}}
+Accept: */*
+Content-Type: application/json
+###
+GET https://eca-form-recognition-service-dev.awcl.drcedirect-le.com/blue/status
+Authorization: Bearer {{ecaBearer}}
+Accept: */*
+Content-Type: application/json
+###
+GET https://eca-form-recognition-service-dev.awcl.drcedirect-le.com/green/status
+Authorization: Bearer {{ecaBearer}}
+Accept: */*
+Content-Type: application/json
+###
+GET https://eca-form-recognition-service-dev.awcl.drcedirect-le.com/blue/pending
+Authorization: Bearer {{ecaBearer}}
+Accept: */*
+Content-Type: application/json
+###

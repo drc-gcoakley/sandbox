@@ -1,0 +1,145 @@
+# WARNING: The first request is put into the Events table but the DynamoDB stream is not fired until the second request.
+
+### local, serverless, offline item import
+POST {{itemBank}}/v1/import/import-resource
+Authorization: Bearer {{ecaBearer}}
+Accept: */*
+Content-Type: application/json
+
+{
+  "client": "WA",
+  "importRequestId":"dd3b4353-ce01-4dc3-acf8-14fd213f5295",
+  "packageManifestId": "manifest1",
+  "resouceId":"choice1",
+  "fileRef": "s3://us-east-1-import-temp-dev/import/dd3b4353-ce01-4dc3-acf8-14fd213f5295/choiceMultiple1.xml",
+  "dependencyFileRefs": [
+    "s3://us-east-1-import-temp-dev/import/dd3b4353-ce01-4dc3-acf8-14fd213f5295/blue_door.png",
+    "s3://us-east-1-import-temp-dev/import/dd3b4353-ce01-4dc3-acf8-14fd213f5295/blueStar.png",
+    "s3://us-east-1-import-temp-dev/import/dd3b4353-ce01-4dc3-acf8-14fd213f5295/bus.png",
+    "s3://us-east-1-import-temp-dev/import/dd3b4353-ce01-4dc3-acf8-14fd213f5295/item1.css"
+  ]
+}
+
+###
+POST {{itemBank}}/v1/import/import-resource
+Authorization: Bearer {{ecaBearer}}
+Accept: */*
+Content-Type: application/json
+
+{
+  "client": "WA",
+  "importRequestId":"5d0928c2-afb4-47cb-8eb3-5332659c8231",
+  "packageManifestId": "manifest1-item-outcomes-responses",
+  "resouceId":"item_with_Outcomes_and_Responses",
+  "fileRef": "s3://us-east-1-import-temp-dev/import/5d0928c2-afb4-47cb-8eb3-5332659c8231/A_79197713.xml"
+}
+
+###
+POST {{itemBank}}/v1/import/import-resource
+Authorization: Bearer {{ecaBearer}}
+Accept: */*
+Content-Type: application/json
+
+{
+  "client": "WA",
+  "importRequestId":"5d0928c2-afb4-47cb-8eb3-5332659c8231",
+  "packageManifestId": "manifest1-item-outcomes-responses",
+  "resouceId":"oc_for_item_with_Outcomes_and_Responses",
+  "fileRef": "s3://us-east-1-import-temp-dev/import/5d0928c2-afb4-47cb-8eb3-5332659c8231/oc.xml"
+}
+
+###
+POST {{itemBank}}/v1/import/import-resource
+Authorization: Bearer {{ecaBearer}}
+Accept: */*
+Content-Type: application/json
+
+{
+  "client": "WA",
+  "importRequestId":"5d0928c2-afb4-47cb-8eb3-5332659c8231",
+  "packageManifestId": "manifest1-item-outcomes-responses",
+  "resouceId":"rp_for_item_with_Outcomes_and_Responses",
+  "fileRef": "s3://us-east-1-import-temp-dev/import/5d0928c2-afb4-47cb-8eb3-5332659c8231/rp.xml"
+}
+
+###
+POST {{itemBank}}/v1/import/import-resource
+Authorization: Bearer {{ecaBearer}}
+Accept: */*
+Content-Type: application/json
+
+{
+  "default": "defaultValue",
+  "client": "WA",
+  "importResourceRequestId":"11111111",
+  "importPackageRequestId": "08de0f97-f92c-45b8-9b9b-def3dd7b582b",
+  "resouceId":"adaptiveTemplate",
+  "resourceType":"imsqti_item_xmlv2p2",
+  "fileRefPath": "s3://us-east-1-import-temp-dev/88de0f97-f92c-45b8-9b9b-def3dd7b582b/",
+  "fileRef": "choice_fixed.xml",
+  "dependencyFileRefs": [
+    "images/red_door.png",
+    "images/open_goat.png",
+    "images/open_car.png",
+    "images/green_door.png",
+    "images/blue_door.png"
+  ]
+}
+
+###
+GET {{itemBank}}/v1/status
+Accept: */*
+Content-Type: application/json
+
+###
+GET {{itemBank}}/v1/swagger
+Authorization: Bearer {{ecaBearer}}
+Accept: */*
+Content-Type: application/json
+
+###
+POST {{itemBank}}/v1/publish/status
+Authorization: Bearer {{ecaBearer}}
+Accept: */*
+Content-Type: application/json
+
+{
+  "client": "WA",
+  "importRequestId":"11111111",
+  "resourceId":"choice1",
+  "itemId": "57B5C739-01DB-40B8-834D-CA586AEB0BFF",
+  "publishStatus": "SUCCESS",
+  "publishVersion": "v1.0",
+  "publishDateTime": "2021-05-24T05:01:11.984Z",
+  "publishMessages": ["succeeded"],
+  "publishErrors": []
+}
+
+###
+#POST {{itemBank}}/v1/validateXmlUsingXsd
+# => not a valid key=value pair (missing equal-sign) in Authorization header: 'Bearer
+#POST https://eca-iib-item-bank-api-dev.iib-le.drcedirect.com/live/v1/validateXmlUsingXsd
+# => not a valid key=value pair (missing equal-sign) in Authorization header: 'Bearer
+POST https://kt2gol446b.execute-api.us-east-1.amazonaws.com/dev/v1/validateXmlUsingXsd
+Authorization: Bearer {{ecaBearer}}
+Accept: */*
+Content-Type: application/json
+
+{
+  "rootXsdUri": "http://www.imsglobal.org/xsd/qti/qtiv2p2/imsqti_v2p2p2.xsd",
+  "xmlUri": "s3://us-east-2-xml-xsd-validation-dev/temp/glen/map-response-identifier.xml"
+}
+
+###
+#POST {{itemBank}}/v1/validateXmlUsingXsd
+POST https://kt2gol446b.execute-api.us-east-1.amazonaws.com/dev/v1/validateXmlUsingXsd
+Authorization: Bearer {{ecaBearer}}
+Accept: */*
+Content-Type: application/json
+
+{
+  "rootXsdUri": "http://www.imsglobal.org/xsd/qti/qtiv2p2/imsqti_v2p2p2.xsd",
+  "xmlUri": "https://us-east-2-xml-xsd-validation-dev.s3.us-east-2.amazonaws.com/temp/glen/map-response-identifier.xml"
+}
+
+###

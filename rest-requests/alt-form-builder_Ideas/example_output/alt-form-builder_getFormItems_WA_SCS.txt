@@ -1,0 +1,1021 @@
+### WA SCS (seed) items
+GET https://eca-alt-form-builder-api-stg.awcl.drcedirect-le.com/live/forms/WA/01a10287-1083-4f4f-9279-d61a856146fc/items
+Authorization: Bearer {{ecaBearer}}
+Accept: */*
+Content-Type: application/json
+
+### Response
+HTTP/1.1 200 OK
+Date: Thu, 24 Sep 2020 18:52:05 GMT
+Content-Type: application/json
+Content-Length: 36250
+Connection: keep-alive
+x-amzn-RequestId: e0efdad4-cea4-4729-8e54-e13afcad284a
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: eca-session,eca-client,Authorization,Origin,X-Requested-With,Content-Type,Accept
+x-amz-apigw-id: TYmhNGjFiYcFWzQ=
+X-Amzn-Trace-Id: Root=1-5f6cead4-22d975164449937258ab7103;Sampled=0
+Access-Control-Allow-Credentials: false
+
+[
+  {
+    "purpose": "Survey",
+    "entityType": "item_WA",
+    "publishedVersion": 0,
+    "standardSet": "AIM21",
+    "clientCode": "WA",
+    "aws:rep:deleting": false,
+    "itemImageXmlKey": "WA/IDEAS_1070798_0-item-image.xml",
+    "sourceItemBank": "IDEAS",
+    "sk": "item_WA",
+    "prompt": "\r\n    <div style=\"\">\r\n      <a class=\"drc_voice_startpt\"/>\r\n      <div class=\"paragraph\">\r\n        <b>COMMUNICATION</b>\r\n      </div>\r\n      <div class=\"paragraph\">\r\n        <b>Choose the option that best describes the student:</b>\r\n      </div>\r\n    </div>\r\n  ",
+    "publishStatus": "published",
+    "projectCode": "EWA601_PT",
+    "updateDate": 1598371625756,
+    "grade": "3",
+    "itemImageOnlineXmlKey": "WA/IDEAS_1070798_0-item-online-image.xml",
+    "sourceItemVersion": "2020-08-25T11:06:40.613",
+    "contentArea": "ELA",
+    "createDate": 1598371625756,
+    "latestVersion": 1,
+    "printPDFS3Key": "WA/IDEAS_1070798_0-print-preview.pdf",
+    "points": "1",
+    "aws:rep:updateregion": "us-east-2",
+    "sourceItemID": 1070798,
+    "aws:rep:updatetime": 1598371628.683001,
+    "onlineInteractions": [
+      {
+        "choiceInteraction": {
+          "maxChoices": 1,
+          "orientation": "vertical",
+          "responseIdentifier": "bubbleinput1",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble1",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">Does not alert to others</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble2",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">Alerts to others</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble3",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\"> Initiates and sustains social interactions</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble4",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">Responds with social interaction, but does not initiate or sustain social interactions</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 1
+        }
+      }
+    ],
+    "pk": "IDEAS_1070798_0",
+    "standard": "1.1.1.1",
+    "sequence": 1
+  },
+  {
+    "purpose": "Survey",
+    "entityType": "item_WA",
+    "publishedVersion": 0,
+    "standardSet": "AIM21",
+    "clientCode": "WA",
+    "aws:rep:deleting": false,
+    "itemImageXmlKey": "WA/IDEAS_1070799_0-item-image.xml",
+    "sourceItemBank": "IDEAS",
+    "sk": "item_WA",
+    "prompt": "\r\n    <div style=\"\">\r\n      <a class=\"drc_voice_startpt\"/>\r\n      <div class=\"paragraph\">\r\n        <b>Expressive Communication</b>\r\n      </div>\r\n      <div class=\"paragraph\">\r\n        <b>Which statement most closely matches the student&apos;s primary mode of expressive communication?</b>\r\n      </div>\r\n    </div>\r\n  ",
+    "publishStatus": "published",
+    "projectCode": "EWA601_PT",
+    "updateDate": 1598302754971,
+    "grade": "3",
+    "itemImageOnlineXmlKey": "WA/IDEAS_1070799_0-item-online-image.xml",
+    "sourceItemVersion": "2020-08-24T15:58:20.497",
+    "contentArea": "ELA",
+    "createDate": 1598302754971,
+    "latestVersion": 1,
+    "printPDFS3Key": "WA/IDEAS_1070799_0-print-preview.pdf",
+    "points": "1",
+    "aws:rep:updateregion": "us-east-2",
+    "sourceItemID": 1070799,
+    "aws:rep:updatetime": 1598302760.289002,
+    "onlineInteractions": [
+      {
+        "choiceInteraction": {
+          "maxChoices": 1,
+          "orientation": "vertical",
+          "responseIdentifier": "bubbleinput1",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble1",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\"> Student communicates primarily through cries, facial expressions, change in muscle tone, etc., but no clear use of objects/textures, regularized gestures, pictures, signs, etc., to communicate</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble2",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\"> Student uses intentional communication, but not at a symbolic level; uses understandable communication through such modes as gestures, pictures, objects/textures, points, etc., to clearly express a variety of intentions</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble3",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">Student uses symbolic language to communicate; uses verbal or written words, signs, Braille, or language-based augmentative systems to request, initiate, and respond to questions, describe things or events, and express refusal</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 1
+        }
+      }
+    ],
+    "pk": "IDEAS_1070799_0",
+    "standard": "1.1.1.1",
+    "sequence": 2
+  },
+  {
+    "purpose": "Survey",
+    "entityType": "item_WA",
+    "publishedVersion": 0,
+    "standardSet": "AIM21",
+    "clientCode": "WA",
+    "aws:rep:deleting": false,
+    "itemImageXmlKey": "WA/IDEAS_1070800_0-item-image.xml",
+    "sourceItemBank": "IDEAS",
+    "sk": "item_WA",
+    "prompt": "\r\n    <div style=\"\">\r\n      <a class=\"drc_voice_startpt\"/>\r\n      <div class=\"paragraph\">\r\n        <b>Alternative Communication System</b>\r\n      </div>\r\n      <div class=\"paragraph\">\r\n        <b>Does the student use augmentative or alternative communication in addition to or in place of speech or sign language to meet expressive communication needs?</b>\r\n      </div>\r\n    </div>\r\n  ",
+    "publishStatus": "published",
+    "projectCode": "EWA601_PT",
+    "updateDate": 1598302755565,
+    "grade": "3",
+    "itemImageOnlineXmlKey": "WA/IDEAS_1070800_0-item-online-image.xml",
+    "sourceItemVersion": "2020-08-24T15:58:21.817",
+    "contentArea": "ELA",
+    "createDate": 1598302755565,
+    "latestVersion": 1,
+    "printPDFS3Key": "WA/IDEAS_1070800_0-print-preview.pdf",
+    "points": "1",
+    "aws:rep:updateregion": "us-east-2",
+    "sourceItemID": 1070800,
+    "aws:rep:updatetime": 1598302765.490001,
+    "onlineInteractions": [
+      {
+        "choiceInteraction": {
+          "maxChoices": 1,
+          "orientation": "vertical",
+          "responseIdentifier": "bubbleinput1",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble1",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">Yes</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble2",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">No</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble3",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">Does Not Apply</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 1
+        }
+      }
+    ],
+    "pk": "IDEAS_1070800_0",
+    "standard": "1.1.1.1",
+    "sequence": 3
+  },
+  {
+    "purpose": "Survey",
+    "entityType": "item_WA",
+    "publishedVersion": 0,
+    "standardSet": "AIM21",
+    "clientCode": "WA",
+    "aws:rep:deleting": false,
+    "itemImageXmlKey": "WA/IDEAS_1070801_0-item-image.xml",
+    "sourceItemBank": "IDEAS",
+    "sk": "item_WA",
+    "prompt": "\r\n    <div style=\"\">\r\n      <a class=\"drc_voice_startpt\"/>\r\n      <div class=\"paragraph\">\r\n        <b>Receptive Communication</b>\r\n      </div>\r\n      <div class=\"paragraph\">\r\n        <b>Which statement most closely matches the student&apos;s receptive communication?</b>\r\n      </div>\r\n    </div>\r\n  ",
+    "publishStatus": "published",
+    "projectCode": "EWA601_PT",
+    "updateDate": 1598302755446,
+    "grade": "3",
+    "itemImageOnlineXmlKey": "WA/IDEAS_1070801_0-item-online-image.xml",
+    "sourceItemVersion": "2020-08-24T15:58:22.940",
+    "contentArea": "ELA",
+    "createDate": 1598302755446,
+    "latestVersion": 1,
+    "printPDFS3Key": "WA/IDEAS_1070801_0-print-preview.pdf",
+    "points": "1",
+    "aws:rep:updateregion": "us-east-2",
+    "sourceItemID": 1070801,
+    "aws:rep:updatetime": 1598302763.488001,
+    "onlineInteractions": [
+      {
+        "choiceInteraction": {
+          "maxChoices": 1,
+          "orientation": "vertical",
+          "responseIdentifier": "bubbleinput1",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble1",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">Has uncertain response to sensory stimuli (e.g., sound/voice; sight/gesture; touch; movement; smell)</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble2",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\"> Alerts to sensory input from another person (auditory, visual, touch, movement) BUT requires actual physical assistance to follow simple directions</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble3",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">Requires additional cues (e.g., gestures, pictures, objects, or demonstrations/models) to follow 1-2 step directions</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble4",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">Independently follows 1-2 step directions presented through words (e.g. words may be spoken, signed, printed, or any combination) and does NOT need additional cues </div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 1
+        }
+      }
+    ],
+    "pk": "IDEAS_1070801_0",
+    "standard": "1.1.1.1",
+    "sequence": 4
+  },
+  {
+    "purpose": "Survey",
+    "entityType": "item_WA",
+    "publishedVersion": 0,
+    "standardSet": "AIM21",
+    "clientCode": "WA",
+    "aws:rep:deleting": false,
+    "itemImageXmlKey": "WA/IDEAS_1070802_0-item-image.xml",
+    "sourceItemBank": "IDEAS",
+    "sk": "item_WA",
+    "prompt": "\r\n    <div style=\"\">\r\n      <a class=\"drc_voice_startpt\"/>\r\n      <div class=\"paragraph\">\r\n        <b>ACADEMICS</b>\r\n      </div>\r\n      <div class=\"paragraph\">\r\n        <b>Choose the option that best describes the Student&apos;s Attendance/Health Status:</b>\r\n      </div>\r\n    </div>\r\n  ",
+    "publishStatus": "published",
+    "projectCode": "EWA601_PT",
+    "updateDate": 1598302755468,
+    "grade": "3",
+    "itemImageOnlineXmlKey": "WA/IDEAS_1070802_0-item-online-image.xml",
+    "sourceItemVersion": "2020-08-24T15:58:24.117",
+    "contentArea": "ELA",
+    "createDate": 1598302755468,
+    "latestVersion": 1,
+    "printPDFS3Key": "WA/IDEAS_1070802_0-print-preview.pdf",
+    "points": "1",
+    "aws:rep:updateregion": "us-east-2",
+    "sourceItemID": 1070802,
+    "aws:rep:updatetime": 1598302761.490001,
+    "onlineInteractions": [
+      {
+        "choiceInteraction": {
+          "maxChoices": 1,
+          "orientation": "vertical",
+          "responseIdentifier": "bubbleinput1",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble1",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">Attends approximately 50% or less of school days; absences primarily due to health issues</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble2",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">Attends approximately 75% of school days; absences primarily due to health issues</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble3",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">Attends at least 90% of school days</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble4",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">Attends highly irregularly or receives homebound instruction due to issues other than health</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble5",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">Receives homebound instruction due to health issues</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 1
+        }
+      }
+    ],
+    "pk": "IDEAS_1070802_0",
+    "standard": "1.1.1.1",
+    "sequence": 5
+  },
+  {
+    "purpose": "Survey",
+    "entityType": "item_WA",
+    "publishedVersion": 0,
+    "standardSet": "AIM21",
+    "clientCode": "WA",
+    "aws:rep:deleting": false,
+    "itemImageXmlKey": "WA/IDEAS_1070803_0-item-image.xml",
+    "sourceItemBank": "IDEAS",
+    "sk": "item_WA",
+    "prompt": "\r\n    <div style=\"\">\r\n      <a class=\"drc_voice_startpt\"/>\r\n      <div class=\"paragraph\">\r\n        <b>What is the approximate total amount of instructional time spent per week in the following areas?</b>\r\n      </div>\r\n    </div>\r\n  ",
+    "publishStatus": "published",
+    "projectCode": "EWA601_PT",
+    "updateDate": 1598302757422,
+    "grade": "3",
+    "itemImageOnlineXmlKey": "WA/IDEAS_1070803_0-item-online-image.xml",
+    "sourceItemVersion": "2020-08-24T15:58:25.513",
+    "contentArea": "ELA",
+    "createDate": 1598302757422,
+    "latestVersion": 1,
+    "printPDFS3Key": "WA/IDEAS_1070803_0-print-preview.pdf",
+    "points": "1",
+    "aws:rep:updateregion": "us-east-2",
+    "sourceItemID": 1070803,
+    "aws:rep:updatetime": 1598302760.698002,
+    "onlineInteractions": [
+      {
+        "matchInteraction": {
+          "simpleMatchSet": [
+            {
+              "simpleAssociableChoice": [
+                {
+                  "identifier": "simpleassociablechoicerow1",
+                  "_text": "Reading",
+                  "matchMax": 1,
+                  "matchMin": 1
+                },
+                {
+                  "identifier": "simpleassociablechoicerow4",
+                  "_text": "Writing",
+                  "matchMax": 1,
+                  "matchMin": 1
+                },
+                {
+                  "identifier": "simpleassociablechoicerow3",
+                  "_text": "Math",
+                  "matchMax": 1,
+                  "matchMin": 1
+                },
+                {
+                  "identifier": "simpleassociablechoicerow2",
+                  "_text": "Science",
+                  "matchMax": 1,
+                  "matchMin": 1
+                }
+              ]
+            },
+            {
+              "simpleAssociableChoice": [
+                {
+                  "_text": "Less than 1 hour",
+                  "identifier": "simpleassociablechoicecol2",
+                  "matchMax": 0
+                },
+                {
+                  "_text": "1 - 3 hours",
+                  "identifier": "simpleassociablechoicecol1",
+                  "matchMax": 0
+                },
+                {
+                  "_text": "4 - 6 hours",
+                  "identifier": "simpleassociablechoicecol3",
+                  "matchMax": 0
+                },
+                {
+                  "_text": "7 - 9 hours",
+                  "identifier": "simpleassociablechoicecol4",
+                  "matchMax": 0
+                },
+                {
+                  "_text": "10 hours or more",
+                  "identifier": "simpleassociablechoicecol5",
+                  "matchMax": 0
+                }
+              ]
+            }
+          ],
+          "responseIdentifier": "matchinteraction1"
+        }
+      }
+    ],
+    "pk": "IDEAS_1070803_0",
+    "standard": "1.1.1.1",
+    "sequence": 6
+  },
+  {
+    "purpose": "Survey",
+    "entityType": "item_WA",
+    "publishedVersion": 0,
+    "standardSet": "AIM21",
+    "clientCode": "WA",
+    "aws:rep:deleting": false,
+    "itemImageXmlKey": "WA/IDEAS_1070804_0-item-image.xml",
+    "sourceItemBank": "IDEAS",
+    "sk": "item_WA",
+    "prompt": "\r\n    <div style=\"\">\r\n      <a class=\"drc_voice_startpt\"/>\r\n      <div class=\"paragraph\">\r\n        <b>Use the linked grade-level Alternate Achievement Level Descriptors to rate the student for each assessed content area.</b>\r\n      </div>\r\n      <br/>\r\n      <div class=\"paragraph\">Ratings should be based on classroom instruction and daily observation.</div>\r\n      <br/>\r\n      <div class=\"paragraph\">\r\n        <a href=\"https://cdn-app-prod.drcedirect.com/all/eca-alt-form-builder-ui/assets/ideas/wa/items/AALD_3.pdf\" target=\"_blank\">Grade 3</a>\r\n        <br/>\r\n      </div>\r\n      <div class=\"paragraph\">\r\n        <a href=\"https://cdn-app-prod.drcedirect.com/all/eca-alt-form-builder-ui/assets/ideas/wa/items/AALD_4.pdf\" target=\"_blank\">Grade 4</a>\r\n        <br/>\r\n      </div>\r\n      <div class=\"paragraph\">\r\n        <a href=\"https://cdn-app-prod.drcedirect.com/all/eca-alt-form-builder-ui/assets/ideas/wa/items/AALD_5.pdf\" target=\"_blank\">Grade 5</a>\r\n        <br/>\r\n      </div>\r\n      <div class=\"paragraph\">\r\n        <a href=\"https://cdn-app-prod.drcedirect.com/all/eca-alt-form-builder-ui/assets/ideas/wa/items/AALD_6.pdf\" target=\"_blank\">Grade 6</a>\r\n        <br/>\r\n      </div>\r\n      <div class=\"paragraph\">\r\n        <a href=\"https://cdn-app-prod.drcedirect.com/all/eca-alt-form-builder-ui/assets/ideas/wa/items/AALD_7.pdf\" target=\"_blank\">Grade 7</a>\r\n        <br/>\r\n      </div>\r\n      <div class=\"paragraph\">\r\n        <a href=\"https://cdn-app-prod.drcedirect.com/all/eca-alt-form-builder-ui/assets/ideas/wa/items/AALD_8.pdf\" target=\"_blank\">Grade 8</a>\r\n        <br/>\r\n      </div>\r\n      <div class=\"paragraph\">\r\n        <a href=\"https://cdn-app-prod.drcedirect.com/all/eca-alt-form-builder-ui/assets/ideas/wa/items/AALD_HS.pdf\" target=\"_blank\">Grade HS</a>\r\n        <br/>\r\n      </div>\r\n    </div>\r\n  ",
+    "publishStatus": "published",
+    "projectCode": "EWA601_PT",
+    "updateDate": 1598302756232,
+    "grade": "3",
+    "itemImageOnlineXmlKey": "WA/IDEAS_1070804_0-item-online-image.xml",
+    "sourceItemVersion": "2020-08-24T15:58:26.797",
+    "contentArea": "ELA",
+    "createDate": 1598302756232,
+    "latestVersion": 1,
+    "printPDFS3Key": "WA/IDEAS_1070804_0-print-preview.pdf",
+    "points": "1",
+    "aws:rep:updateregion": "us-east-2",
+    "sourceItemID": 1070804,
+    "aws:rep:updatetime": 1598302767.706001,
+    "onlineInteractions": [
+      {
+        "matchInteraction": {
+          "simpleMatchSet": [
+            {
+              "simpleAssociableChoice": [
+                {
+                  "identifier": "simpleassociablechoicerow1",
+                  "_text": "ELA",
+                  "matchMax": 1,
+                  "matchMin": 1
+                },
+                {
+                  "identifier": "simpleassociablechoicerow4",
+                  "_text": "Math",
+                  "matchMax": 1,
+                  "matchMin": 1
+                },
+                {
+                  "identifier": "simpleassociablechoicerow3",
+                  "_text": "Science",
+                  "matchMax": 1,
+                  "matchMin": 1
+                }
+              ]
+            },
+            {
+              "simpleAssociableChoice": [
+                {
+                  "_text": "Level 1",
+                  "identifier": "simpleassociablechoicecol2",
+                  "matchMax": 0
+                },
+                {
+                  "_text": "Level 2",
+                  "identifier": "simpleassociablechoicecol1",
+                  "matchMax": 0
+                },
+                {
+                  "_text": "Level 3",
+                  "identifier": "simpleassociablechoicecol3",
+                  "matchMax": 0
+                },
+                {
+                  "_text": "Level 4",
+                  "identifier": "simpleassociablechoicecol4",
+                  "matchMax": 0
+                },
+                {
+                  "_text": "Not Applicable/Not Assessed",
+                  "identifier": "simpleassociablechoicecol5",
+                  "matchMax": 0
+                }
+              ]
+            }
+          ],
+          "responseIdentifier": "matchinteraction1"
+        }
+      }
+    ],
+    "pk": "IDEAS_1070804_0",
+    "standard": "1.1.1.1",
+    "sequence": 7
+  },
+  {
+    "purpose": "Survey",
+    "entityType": "item_WA",
+    "publishedVersion": 0,
+    "standardSet": "AIM21",
+    "clientCode": "WA",
+    "aws:rep:deleting": false,
+    "itemImageXmlKey": "WA/IDEAS_1070805_0-item-image.xml",
+    "sourceItemBank": "IDEAS",
+    "sk": "item_WA",
+    "prompt": "\r\n    <div style=\"\">\r\n      <a class=\"drc_voice_startpt\"/>\r\n      <div class=\"paragraph\">\r\n        <b>To what extent are the grade level academic standards measured on the WA-AIM represented in the student&apos;s IEP goals and/or objectives? Representation may include pre-requisite skills or learning progressions building toward a grade level standard. (Example: Identification of letters and/or sounds is considered a pre-requisite skill to the elementary Reading Foundation standards.)</b>\r\n      </div>\r\n    </div>\r\n  ",
+    "publishStatus": "published",
+    "projectCode": "EWA601_PT",
+    "updateDate": 1600197058595,
+    "grade": "3",
+    "itemImageOnlineXmlKey": "WA/IDEAS_1070805_0-item-online-image.xml",
+    "sourceItemVersion": "2020-09-15T14:10:26.543",
+    "contentArea": "ELA",
+    "createDate": 1600197058595,
+    "latestVersion": 2,
+    "printPDFS3Key": "WA/IDEAS_1070805_0-print-preview.pdf",
+    "points": "1",
+    "aws:rep:updateregion": "us-east-2",
+    "sourceItemID": 1070805,
+    "aws:rep:updatetime": 1600197062.882001,
+    "onlineInteractions": [
+      {
+        "matchInteraction": {
+          "simpleMatchSet": [
+            {
+              "simpleAssociableChoice": [
+                {
+                  "identifier": "simpleassociablechoicerow1",
+                  "_text": "ELA",
+                  "matchMax": 1,
+                  "matchMin": 1
+                },
+                {
+                  "identifier": "simpleassociablechoicerow4",
+                  "_text": "Math",
+                  "matchMax": 1,
+                  "matchMin": 1
+                },
+                {
+                  "identifier": "simpleassociablechoicerow3",
+                  "_text": "Science",
+                  "matchMax": 1,
+                  "matchMin": 1
+                }
+              ]
+            },
+            {
+              "simpleAssociableChoice": [
+                {
+                  "_text": "\r\n              <b>\r\n                <u>Limited representation:</u>\r\n              </b> None or few of the grade level standards are represented in the student&apos;s IEP goals or objectives.",
+                  "identifier": "simpleassociablechoicecol2",
+                  "matchMax": 0
+                },
+                {
+                  "_text": "\r\n              <b>\r\n                <u>Somewhat represented:</u>\r\n              </b>Some of the grade level standards are represented in the student&apos;s IEP goals or objectives.",
+                  "identifier": "simpleassociablechoicecol1",
+                  "matchMax": 0
+                },
+                {
+                  "_text": "\r\n              <b>\r\n                <u>Well represented:</u>\r\n              </b> Most of the grade level standards are represented in the student&apos;s IEP goals or objectives.",
+                  "identifier": "simpleassociablechoicecol3",
+                  "matchMax": 0
+                }
+              ]
+            }
+          ],
+          "responseIdentifier": "matchinteraction1"
+        }
+      }
+    ],
+    "pk": "IDEAS_1070805_0",
+    "standard": "1.1.1.1",
+    "sequence": 8
+  },
+  {
+    "purpose": "Survey",
+    "entityType": "item_WA",
+    "publishedVersion": 0,
+    "standardSet": "AIM21",
+    "clientCode": "WA",
+    "aws:rep:deleting": false,
+    "itemImageXmlKey": "WA/IDEAS_1070806_0-item-image.xml",
+    "sourceItemBank": "IDEAS",
+    "sk": "item_WA",
+    "prompt": "\r\n    <div style=\"\">\r\n      <a class=\"drc_voice_startpt\"/>\r\n      <div class=\"paragraph\">\r\n        <b>ENGLISH LANGUAGE STATUS</b>\r\n        <br/>\r\n        <br/>\r\n        <b>Is the student identified as an English Learner?</b>\r\n      </div>\r\n    </div>\r\n  ",
+    "publishStatus": "published",
+    "projectCode": "EWA601_PT",
+    "updateDate": 1600197058680,
+    "grade": "3",
+    "itemImageOnlineXmlKey": "WA/IDEAS_1070806_0-item-online-image.xml",
+    "sourceItemVersion": "2020-09-15T14:10:27.997",
+    "contentArea": "ELA",
+    "createDate": 1600197058680,
+    "latestVersion": 2,
+    "printPDFS3Key": "WA/IDEAS_1070806_0-print-preview.pdf",
+    "points": "1",
+    "aws:rep:updateregion": "us-east-2",
+    "sourceItemID": 1070806,
+    "aws:rep:updatetime": 1600197062.191001,
+    "onlineInteractions": [
+      {
+        "choiceInteraction": {
+          "maxChoices": 1,
+          "orientation": "vertical",
+          "responseIdentifier": "bubbleinput1",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble1",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">Yes</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble2",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">No</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble3",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">I don&apos;t know</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 1
+        }
+      }
+    ],
+    "pk": "IDEAS_1070806_0",
+    "standard": "1.1.1.1",
+    "sequence": 9
+  },
+  {
+    "purpose": "Survey",
+    "entityType": "item_WA",
+    "publishedVersion": 0,
+    "standardSet": "AIM21",
+    "clientCode": "WA",
+    "aws:rep:deleting": false,
+    "itemImageXmlKey": "WA/IDEAS_1070807_0-item-image.xml",
+    "sourceItemBank": "IDEAS",
+    "sk": "item_WA",
+    "prompt": "\r\n    <div style=\"\">\r\n      <a class=\"drc_voice_startpt\"/>\r\n      <div class=\"paragraph\">\r\n        <b>Identify the settings where the student uses English.</b>\r\n      </div>\r\n    </div>\r\n  ",
+    "publishStatus": "published",
+    "projectCode": "EWA601_PT",
+    "updateDate": 1600197056984,
+    "grade": "3",
+    "itemImageOnlineXmlKey": "WA/IDEAS_1070807_0-item-online-image.xml",
+    "sourceItemVersion": "2020-09-15T14:10:29.077",
+    "contentArea": "ELA",
+    "createDate": 1600197056984,
+    "latestVersion": 2,
+    "printPDFS3Key": "WA/IDEAS_1070807_0-print-preview.pdf",
+    "points": "1",
+    "aws:rep:updateregion": "us-east-2",
+    "sourceItemID": 1070807,
+    "aws:rep:updatetime": 1600197066.200002,
+    "onlineInteractions": [
+      {
+        "choiceInteraction": {
+          "maxChoices": 0,
+          "orientation": "vertical",
+          "responseIdentifier": "bubbleinput1",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble1",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">Home</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble2",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">School</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble3",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">Community</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble4",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">Other</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble5",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">I don&apos;t know</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 1
+        }
+      }
+    ],
+    "pk": "IDEAS_1070807_0",
+    "standard": "1.1.1.1",
+    "sequence": 10
+  },
+  {
+    "purpose": "Survey",
+    "entityType": "item_WA",
+    "publishedVersion": 0,
+    "standardSet": "AIM21",
+    "clientCode": "WA",
+    "aws:rep:deleting": false,
+    "itemImageXmlKey": "WA/IDEAS_1070808_0-item-image.xml",
+    "sourceItemBank": "IDEAS",
+    "sk": "item_WA",
+    "prompt": "\r\n    <div style=\"\">\r\n      <a class=\"drc_voice_startpt\"/>\r\n      <div class=\"paragraph\">\r\n        <b>Identify the settings where the student uses a language other than English.</b>\r\n      </div>\r\n    </div>\r\n  ",
+    "publishStatus": "published",
+    "projectCode": "EWA601_PT",
+    "updateDate": 1600197058553,
+    "grade": "3",
+    "itemImageOnlineXmlKey": "WA/IDEAS_1070808_0-item-online-image.xml",
+    "sourceItemVersion": "2020-09-15T14:10:30.657",
+    "contentArea": "ELA",
+    "createDate": 1600197058553,
+    "latestVersion": 2,
+    "printPDFS3Key": "WA/IDEAS_1070808_0-print-preview.pdf",
+    "points": "1",
+    "aws:rep:updateregion": "us-east-2",
+    "sourceItemID": 1070808,
+    "aws:rep:updatetime": 1600197062.273001,
+    "onlineInteractions": [
+      {
+        "choiceInteraction": {
+          "maxChoices": 0,
+          "orientation": "vertical",
+          "responseIdentifier": "bubbleinput1",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble2",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">Home</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble1",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">School</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble3",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">Community</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble4",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">Other</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble5",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">I don&apos;t know</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 1
+        }
+      }
+    ],
+    "pk": "IDEAS_1070808_0",
+    "standard": "1.1.1.1",
+    "sequence": 11
+  },
+  {
+    "purpose": "Survey",
+    "entityType": "item_WA",
+    "publishedVersion": 0,
+    "standardSet": "AIM21",
+    "clientCode": "WA",
+    "aws:rep:deleting": false,
+    "itemImageXmlKey": "WA/IDEAS_1070809_0-item-image.xml",
+    "sourceItemBank": "IDEAS",
+    "sk": "item_WA",
+    "prompt": "\r\n    <div style=\"\">\r\n      <a class=\"drc_voice_startpt\"/>\r\n      <div class=\"paragraph\">\r\n        <b>Is there an English language acquisition specialist on the IEP team? (e.g.: ESL teacher, ESL coordinator)</b>\r\n      </div>\r\n    </div>\r\n  ",
+    "publishStatus": "published",
+    "projectCode": "EWA601_PT",
+    "updateDate": 1600197058446,
+    "grade": "3",
+    "itemImageOnlineXmlKey": "WA/IDEAS_1070809_0-item-online-image.xml",
+    "sourceItemVersion": "2020-09-15T14:10:31.860",
+    "contentArea": "ELA",
+    "createDate": 1600197058446,
+    "latestVersion": 3,
+    "printPDFS3Key": "WA/IDEAS_1070809_0-print-preview.pdf",
+    "points": "1",
+    "aws:rep:updateregion": "us-east-2",
+    "sourceItemID": 1070809,
+    "aws:rep:updatetime": 1600197064.911001,
+    "onlineInteractions": [
+      {
+        "choiceInteraction": {
+          "maxChoices": 1,
+          "orientation": "vertical",
+          "responseIdentifier": "bubbleinput1",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble1",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">Yes</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble2",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">No</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble3",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">I don&apos;t know</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 1
+        }
+      }
+    ],
+    "pk": "IDEAS_1070809_0",
+    "standard": "1.1.1.1",
+    "sequence": 12
+  },
+  {
+    "purpose": "Survey",
+    "entityType": "item_WA",
+    "publishedVersion": 0,
+    "standardSet": "AIM21",
+    "clientCode": "WA",
+    "aws:rep:deleting": false,
+    "itemImageXmlKey": "WA/IDEAS_1070810_0-item-image.xml",
+    "sourceItemBank": "IDEAS",
+    "sk": "item_WA",
+    "prompt": "\r\n    <div style=\"\">\r\n      <a class=\"drc_voice_startpt\"/>\r\n      <div class=\"paragraph\">\r\n        <b>How many hours per week does the student spend in English Language Development Instruction?</b>\r\n      </div>\r\n    </div>\r\n  ",
+    "publishStatus": "published",
+    "projectCode": "EWA601_PT",
+    "updateDate": 1600197058769,
+    "grade": "3",
+    "itemImageOnlineXmlKey": "WA/IDEAS_1070810_0-item-online-image.xml",
+    "sourceItemVersion": "2020-09-15T14:10:33.147",
+    "contentArea": "ELA",
+    "createDate": 1600197058768,
+    "latestVersion": 3,
+    "printPDFS3Key": "WA/IDEAS_1070810_0-print-preview.pdf",
+    "points": "1",
+    "aws:rep:updateregion": "us-east-2",
+    "sourceItemID": 1070810,
+    "aws:rep:updatetime": 1600197063.885001,
+    "onlineInteractions": [
+      {
+        "choiceInteraction": {
+          "maxChoices": 1,
+          "orientation": "vertical",
+          "responseIdentifier": "bubbleinput1",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble1",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">0 hours</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble2",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">1 - 2 hours</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble3",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">2 - 3 hours</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble4",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">3 - 4 hours</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble5",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">More than 4 hours</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble6",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">I don&apos;t know</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 1
+        }
+      }
+    ],
+    "pk": "IDEAS_1070810_0",
+    "standard": "1.1.1.1",
+    "sequence": 13
+  },
+  {
+    "purpose": "Survey",
+    "entityType": "item_WA",
+    "publishedVersion": 0,
+    "standardSet": "AIM21",
+    "clientCode": "WA",
+    "aws:rep:deleting": false,
+    "itemImageXmlKey": "WA/IDEAS_1070811_0-item-image.xml",
+    "sourceItemBank": "IDEAS",
+    "sk": "item_WA",
+    "prompt": "\r\n    <div style=\"\">\r\n      <a class=\"drc_voice_startpt\"/>\r\n      <div class=\"paragraph\">\r\n        <b>What statement best describes the English language development services the student receives.</b>\r\n      </div>\r\n    </div>\r\n  ",
+    "publishStatus": "published",
+    "projectCode": "EWA601_PT",
+    "updateDate": 1600197056737,
+    "grade": "3",
+    "itemImageOnlineXmlKey": "WA/IDEAS_1070811_0-item-online-image.xml",
+    "sourceItemVersion": "2020-09-15T14:10:34.850",
+    "contentArea": "ELA",
+    "createDate": 1600197056737,
+    "latestVersion": 2,
+    "printPDFS3Key": "WA/IDEAS_1070811_0-print-preview.pdf",
+    "points": "1",
+    "aws:rep:updateregion": "us-east-2",
+    "sourceItemID": 1070811,
+    "aws:rep:updatetime": 1600197061.884001,
+    "onlineInteractions": [
+      {
+        "choiceInteraction": {
+          "maxChoices": 0,
+          "orientation": "vertical",
+          "responseIdentifier": "bubbleinput1",
+          "shuffle": false,
+          "simpleChoice": [
+            {
+              "identifier": "bubble1",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">Services planned and delivered by special education teacher</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble2",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">Services planned and delivered by an English language acquisition specialist</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble3",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">Services planned and/or delivered collaboratively between special education teacher and English language development acquisition specialist</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            },
+            {
+              "identifier": "bubble4",
+              "fixed": false,
+              "_text": "\r\n            <div style=\"font-size:16pt; font-sizeWBTE:px; font-family: ArialforDRC, Arial for DRC, Arial, Helvetica, sans-serif;\">\r\n              <div class=\"next_line\">Services planned and delivered by an educator with dual certification or training (special education and English language acquisition).</div>\r\n            </div>\r\n          ",
+              "showHide": "show"
+            }
+          ],
+          "minChoices": 1
+        }
+      }
+    ],
+    "pk": "IDEAS_1070811_0",
+    "standard": "1.1.1.1",
+    "sequence": 14
+  }
+]
+
+Response code: 200 (OK); Time: 2043ms; Content length: 36250 bytes
+
+Cookies are preserved between requests:
+> /Users/glencoakley/dev/drc/wksp/mine/http-requests/.idea/httpRequests/http-client.cookies

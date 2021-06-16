@@ -1,0 +1,68 @@
+### WA SCS (seed) form
+GET https://eca-alt-form-builder-api-stg.awcl.drcedirect-le.com/live/forms/WA/01a10287-1083-4f4f-9279-d61a856146fc
+Authorization: Bearer {{ecaBearer}}
+Accept: */*
+Content-Type: application/json
+
+### Response
+HTTP/1.1 200 OK
+Date: Thu, 24 Sep 2020 18:50:07 GMT
+Content-Type: application/json
+Content-Length: 1035
+Connection: keep-alive
+x-amzn-RequestId: a4fcc74d-5129-4ff3-a090-d96df5319ec5
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: eca-session,eca-client,Authorization,Origin,X-Requested-With,Content-Type,Accept
+x-amz-apigw-id: TYmOmEv0iYcFsgw=
+X-Amzn-Trace-Id: Root=1-5f6cea5d-6d9784644b75b5943b6c3d73;Sampled=0
+Access-Control-Allow-Credentials: false
+
+{
+  "createUserId": "318E9DA5-30FC-4AB2-89C4-F62005B5E29B",
+  "gsi2sk": "SCS_SCS",
+  "entityType": "form_WA",
+  "gsi3sk": "318E9DA5-30FC-4AB2-89C4-F62005B5E29B_SCS_SCS",
+  "formModel": [
+    "IDEAS_1070798_0",
+    "IDEAS_1070799_0",
+    "IDEAS_1070800_0",
+    "IDEAS_1070801_0",
+    "IDEAS_1070802_0",
+    "IDEAS_1070803_0",
+    "IDEAS_1070804_0",
+    "IDEAS_1070805_0",
+    "IDEAS_1070806_0",
+    "IDEAS_1070807_0",
+    "IDEAS_1070808_0",
+    "IDEAS_1070809_0",
+    "IDEAS_1070810_0",
+    "IDEAS_1070811_0"
+  ],
+  "visibility": "public",
+  "clientCode": "WA",
+  "aws:rep:deleting": false,
+  "displayName": "SCS Staging ",
+  "publishAsPublic": false,
+  "test": "SCS",
+  "sk": "form_WA",
+  "id": "01a10287-1083-4f4f-9279-d61a856146fc",
+  "publishStatus": "published",
+  "createUserName": "dresch@datarecognitioncorp.com",
+  "updateDate": 1600369035863,
+  "isOutdated": true,
+  "ownerUserId": "318E9DA5-30FC-4AB2-89C4-F62005B5E29B",
+  "formModelType": "item_list",
+  "contentArea": "SCS",
+  "createDate": 1598303694577,
+  "level": "SCS",
+  "aws:rep:updateregion": "us-east-2",
+  "aws:rep:updatetime": 1600369036.880001,
+  "pk": "01a10287-1083-4f4f-9279-d61a856146fc",
+  "title": "SCS Staging",
+  "type": "unspecified"
+}
+
+Response code: 200 (OK); Time: 2842ms; Content length: 1035 bytes
+
+Cookies are preserved between requests:
+> /Users/glencoakley/dev/drc/wksp/mine/http-requests/.idea/httpRequests/http-client.cookies
