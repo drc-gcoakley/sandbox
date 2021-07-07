@@ -2,7 +2,7 @@ POST {{apiGatewayUrl}}/eca-security-service/all-{{envName}}-v0/v0/authenticate?t
 Accept: */*
 Content-Type: application/json
 
-{"token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNTMyOTg0ODkyLCJleHAiOjE1MzI5ODY2OTIsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.LN__Is4B4JSGUn-RJSMaOVb7bdRl4OH4YligColckQWqgxgHc3rDAo5dhSmNBxC8906WKhk8SM9lNNPlygzyWZ-SmZ-oOPTW7-Che3buNClU5UuNAMPv6JZWr26mk812HcS4a7-0tGEeLUztrvb0ndhOoFthw-uOaXfjtEN_D6ONb6PHJbZrmMsVlBS1bc1SUpoZ3_nQCRGNsRWQPyROwdBdDvBJLSounffMOBPVBpabsxsnOOW5DcwGrrpDX7uHoCszv9G5FaKlq0-WAQZqxK8RZeqtJoEY8njW-4Zb-PF8BgRUwwPfrilTEYdI7ORK5gfjAKF_Om4rcaRN8jikfA"}
+{"token":"{{ecaBearer}}"}
 
 ###
 Replace everything in the URI after 'token=' AND the value for 'token' in the POST data with the ECA token value.

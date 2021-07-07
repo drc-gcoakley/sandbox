@@ -1,0 +1,7 @@
+GET {{apiGatewayUrl}}/eca-security-service/all-{{envName}}-v0/v0/authorize/eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNjI1NTgyMTQzLCJleHAiOjE2MjU1ODM5NDMsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.Ba-vKz3nsfKq5phZuYVnFSubk3JBsoi3A0F-xYlSGyrRfs-XWeHiu-kpgeGGw3Evg3Z_jA7TCtFe-H9oiJ-XjTSn0kyJA2NI7VesUH5q--dn7I47ImoZfBeppwGkAhe_d7gZY32a7s27xOQkLdgeeDIGsikJWGSqg4Ltq_B0cF1VI85Q9_w7aDaQfKb3fzB9ps8eKEOjB0STdE_l3FhNygVhfFMgIdZQFW-6bfN4zjE1IfZgVGxpWWhnzvx24sg6ah7jCM1z60ev43IBjVkMcpQuW8kxeocIYXJ__YzLiV-UrxSkdfpb9aomsvC6e_ZwvzcbrU7bZ35m4KMw5My-hA/acls?acl=NON-EXISTENT
+Accept: */*
+Authorization: Bearer {{ecaBearer}}
+Cache-Control: no-cache
+Content-Type: application/json
+
+###
