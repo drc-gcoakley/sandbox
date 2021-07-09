@@ -41,6 +41,7 @@ class ServerlessParallelSupport {
     }
 
     setNewWorkDirectory(uniqueWorkDir) {
+        // TODO use Serverless > utils > fs > getTmpDirPath()
         fs.mkdirSync(uniqueWorkDir, {recursive: true});
         // Keep this console.log() so scripts can be created to part the serverless output for the directory name.
         console.log('ParallelSupport created working directory: ' + uniqueWorkDir);
@@ -48,6 +49,7 @@ class ServerlessParallelSupport {
     }
 
     getEntriesToLink(myConfig) {
+        // TODO just link all directory entries in the 'servicePath'.
         let allEntriesToLink = [
             'node_modules',         // The project's dependent modules
             '.serverless.yml',      // Possible serverless configuration file

@@ -1,5 +1,5 @@
 service:
-  name: show-hooks-test
+  name: parallel-support
 
 plugins:
   - parallel-support	  # Load first so support can apply to all plugins.
