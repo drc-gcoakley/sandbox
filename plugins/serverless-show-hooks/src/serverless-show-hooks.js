@@ -1,8 +1,10 @@
-class ShowHooks {
+class ServerlessShowHooks {
   constructor(serverless, options) {
     this.commands = {
       hooks: {
-        usage: 'Provides hooks that plugins provide and attach to.',
+        usage: 'Provides hooks that plugins provide and attach to.' + 
+               '   Note that the default hooks provided by Serverless are not all shown.',
+               '   See: https://gist.github.com/HyperBrain/50d38027a8f57778d5b0f135d80ea406',
         lifecycleEvents: ['hooks'],
       }
     }
