@@ -1,7 +1,7 @@
 # WARNING: The first request is put into the Events table but the DynamoDB stream is not fired until the second request.
 
 ### local, serverless, offline item import
-POST {{itemBank}}/v1/import/import-resource
+POST {{qtiItemBankUrl}}/live/v1/import/import-resource
 Authorization: Bearer {{ecaBearer}}
 Accept: */*
 Content-Type: application/json
@@ -21,7 +21,7 @@ Content-Type: application/json
 }
 
 ###
-POST {{itemBank}}/v1/import/import-resource
+POST {{qtiItemBankUrl}}/live/v1/import/import-resource
 Authorization: Bearer {{ecaBearer}}
 Accept: */*
 Content-Type: application/json
@@ -35,7 +35,7 @@ Content-Type: application/json
 }
 
 ###
-POST {{itemBank}}/v1/import/import-resource
+POST {{qtiItemBankUrl}}/live/v1/import/import-resource
 Authorization: Bearer {{ecaBearer}}
 Accept: */*
 Content-Type: application/json
@@ -49,7 +49,7 @@ Content-Type: application/json
 }
 
 ###
-POST {{itemBank}}/v1/import/import-resource
+POST {{qtiItemBankUrl}}/live/v1/import/import-resource
 Authorization: Bearer {{ecaBearer}}
 Accept: */*
 Content-Type: application/json
@@ -63,7 +63,7 @@ Content-Type: application/json
 }
 
 ###
-POST {{itemBank}}/v1/import/import-resource
+POST {{qtiItemBankUrl}}/live/v1/import/import-resource
 Authorization: Bearer {{ecaBearer}}
 Accept: */*
 Content-Type: application/json
@@ -87,18 +87,18 @@ Content-Type: application/json
 }
 
 ###
-GET {{itemBank}}/v1/status
+GET {{qtiItemBankUrl}}/live/v1/status
 Accept: */*
 Content-Type: application/json
 
 ###
-GET {{itemBank}}/v1/swagger
+GET {{qtiItemBankUrl}}/live/v1/swagger
 Authorization: Bearer {{ecaBearer}}
 Accept: */*
 Content-Type: application/json
 
 ###
-POST {{itemBank}}/v1/publish/status
+POST {{qtiItemBankUrl}}/live/v1/publish/status
 Authorization: Bearer {{ecaBearer}}
 Accept: */*
 Content-Type: application/json
@@ -116,7 +116,7 @@ Content-Type: application/json
 }
 
 ###
-#POST {{itemBank}}/v1/validateXmlUsingXsd
+#POST {{qtiItemBankUrl}}/live/v1/validateXmlUsingXsd
 # => not a valid key=value pair (missing equal-sign) in Authorization header: 'Bearer
 #POST https://eca-iib-item-bank-api-dev.iib-le.drcedirect.com/live/v1/validateXmlUsingXsd
 # => not a valid key=value pair (missing equal-sign) in Authorization header: 'Bearer
@@ -131,7 +131,7 @@ Content-Type: application/json
 }
 
 ###
-#POST {{itemBank}}/v1/validateXmlUsingXsd
+#POST {{qtiItemBankUrl}}/live/v1/validateXmlUsingXsd
 POST https://kt2gol446b.execute-api.us-east-1.amazonaws.com/dev/v1/validateXmlUsingXsd
 Authorization: Bearer {{ecaBearer}}
 Accept: */*

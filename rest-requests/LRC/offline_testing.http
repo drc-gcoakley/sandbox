@@ -1,0 +1,6 @@
+GET {{onlineScoringService}}/status
+Authorization: Bearer {{ecaBearer}}
+Accept: */*
+Content-Type: application/json
+
+###
