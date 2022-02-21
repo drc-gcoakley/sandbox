@@ -7,7 +7,7 @@ const assert = require('assert');
  *
  * TODO make ${file(...)} and {functions -> handler} paths relative.
  */
-class PathUtil {
+class VariableResolver {
 
     constructor(serverlessObject, options) {
         this.commands = {
@@ -100,18 +100,18 @@ class PathUtil {
         }
     }
 
-    myBeforePrint() { // this.serverless.cli.log() does not work here.
+    async myBeforePrint() { // this.serverless.cli.log() does not work here.
         console.log('PathUtil: before print at ' + new Date().toLocaleString());
     }
-    myAfterPrint() { // this.serverless.cli.log() does not work here.
+    async myAfterPrint() { // this.serverless.cli.log() does not work here.
         console.log('PathUtil: after print at ' + new Date().toLocaleString());
     }
 
-    dump() {
+    async dump() {
         this.serverless.cli.log('PathUtil options: ' + JSON.stringify(this.slsOptions, null, 2));
         this.serverless.cli.log('PathUtil values: ' + JSON.stringify(this.values, null, 2));
     }
 
 }
 
-module.exports = PathUtil;
+module.exports = VariableResolver;

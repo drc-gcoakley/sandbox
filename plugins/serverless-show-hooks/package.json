@@ -8,12 +8,13 @@
   },
   "author": "Glen Coakley <gcoakley@datarecognitioncorp.com>",
   "license": "MIT",
-  "dependencies": {},
+  "peerDependencies": {
+    "serverless": "<= ^4"
+  },
   "devDependencies": {
     "copy-webpack-plugin": "^5.1.1",
     "node-uuid": "^1.4.8",
     "path": "^0.12.7",
-    "serverless": "^3.2.1",
     "serverless-webpack": "^5.3.1",
     "webpack": "^4.42.1"
   }

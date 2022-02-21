@@ -3,8 +3,8 @@ class ShowHooks {
     this.commands = {
       hooks: {
         usage: 'Lists hooks that plugins provide and attach to.' +
-          '   Note that the default hooks provided by Serverless are only shown if referenced.' +
-          '   See: https://gist.github.com/HyperBrain/50d38027a8f57778d5b0f135d80ea406',
+          ' Note some default hooks provided by Serverless may not be shown.' +
+          ' See: https://gist.github.com/HyperBrain/50d38027a8f57778d5b0f135d80ea406',
         lifecycleEvents: ['hooks'],
       }
     }

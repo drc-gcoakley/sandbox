@@ -1,6 +1,5 @@
 const path = require('path');
 const slsw = require('serverless-webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 function concat(iterable, item) {
   var array = [];
@@ -34,9 +33,5 @@ module.exports = {
     ],
   },
   plugins: [
-    new CopyWebpackPlugin([
-      { from: path.resolve(__dirname, 'foo') },
-      { from: path.resolve(__dirname, 'barLink') },
-    ]),
   ],
 };
