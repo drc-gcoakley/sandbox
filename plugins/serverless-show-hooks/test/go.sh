@@ -1,10 +1,12 @@
+set -x
+SLS_DEBUG=t
 
-npx sls -c serverless.yml path --help
-npx sls -c serverless.yml hooks --help
+npx sls path -c serverless.yml --help
+npx sls hooks -c serverless.yml --help
 
-npx sls -c serverless.yml hooks
-npx sls -c serverless.yml path dump
+npx sls hooks -c serverless.yml
+npx sls path dump -c serverless.yml
 
-npx sls -c serverless.yml print
-npx sls -c serverless.yml package
+npx sls print -c serverless.yml
+npx sls package -c serverless.yml
 

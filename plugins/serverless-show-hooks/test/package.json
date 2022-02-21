@@ -1,20 +1,22 @@
 {
-  "name": "show-hooks",
+  "name": "show-hooks-test",
   "version": "1.0.0",
-  "description": "",
+  "description": "Lists hooks that plugins provide and attach to.",
+  "repostitory": "https://registry.npmjs.org",
   "main": "src/show-hooks.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Glen Coakley <gcoakley@datarecognitioncorp.com>",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
     "copy-webpack-plugin": "^5.1.1",
     "node-uuid": "^1.4.8",
     "path": "^0.12.7",
-    "serverless": "^1.70.0",
+    "serverless": "^3.2.1",
     "serverless-webpack": "^5.3.1",
-    "webpack": "^4.42.1"
+    "webpack": "^4.41.0"
+  },
+  "scripts": {
+    "test": "[ ! -r package-lock.json ] && npm install; serverless hooks"
   }
 }

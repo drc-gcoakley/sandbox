@@ -1,13 +1,12 @@
-service:
-  name: show-hooks-test
+# frameworkVersion: '1' - '3'
+
+service: show-hooks-test
 
 plugins:
-  - path-util
-  - serverless-webpack
-  - serverless-show-hooks # Load after all plugins for which you want it to show the hooks.
-
-custom:
-  thisIsAProperty: true
+  localPath: serverless/plugins
+  modules:
+    - serverless-webpack
+    - ../src/show-hooks # Load after all plugins for which you want it to show the hooks.
 
 provider:
-  name: glen
+  name: fn
