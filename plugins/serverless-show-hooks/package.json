@@ -9,7 +9,7 @@
   "author": "Glen Coakley <gcoakley@datarecognitioncorp.com>",
   "license": "MIT",
   "peerDependencies": {
-    "serverless": "<= ^4"
+    "serverless": ">=1.0.0"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^5.1.1",

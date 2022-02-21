@@ -2,11 +2,13 @@
   "name": "show-hooks-test",
   "version": "1.0.0",
   "description": "Lists lifecycle events (hooks) that plugins provide and subscribe to.",
-  "repostitory": "https://registry.npmjs.org",
+  "repository": "https://registry.npmjs.org",
   "main": "../../src/show-hooks.js",
   "author": "Glen Coakley <gcoakley@datarecognitioncorp.com>",
   "license": "MIT",
-  "dependencies": {},
+  "peerDependencies": {
+    "serverless": ">=1.0.0"
+  },
   "devDependencies": {
     "node-uuid": "^1.4.8",
     "path": "^0.12.7",
@@ -15,6 +17,7 @@
     "webpack": "^4.41.0"
   },
   "scripts": {
-    "test": "./show-hooks.sh"
+    "test:hooks": "npx sls hooks --config sls-hooks.yml",
+    "test:webpack": "npx sls hooks --config sls-webpack-hooks.yml"
   }
 }

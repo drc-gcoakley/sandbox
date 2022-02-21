@@ -1,9 +1,0 @@
-# frameworkVersion: '1' - '3'
-
-service: show-hooks-test
-
-plugins:
-  - ../../src/show-hooks
-
-provider:
-  name: fn
