@@ -1,27 +1,25 @@
-GET {{onlineScoringService}}/status
+GET {{onlineScoringUrl}}/live/status
 Authorization: Bearer {{ecaBearer}}
-Accept: */*
 Content-Type: application/json
 
 ###
-
-GET {{onlineScoringService}}/swagger
+GET {{onlineScoringUrl}}/live/swagger
 Authorization: Bearer {{ecaBearer}}
-Accept: */*
 Content-Type: application/json
 
 ###
-
-GET {{onlineScoringService}}/forms/595211
+GET {{onlineScoringUrl}}/live/swagger/ui
 Authorization: Bearer {{ecaBearer}}
-Accept: */*
 Content-Type: application/json
 
 ###
-
-GET {{onlineScoringService}}/forms/595219
+GET {{onlineScoringUrl}}/live/forms/595211
 Authorization: Bearer {{ecaBearer}}
-Accept: */*
+Content-Type: application/json
+
+###
+GET {{onlineScoringUrl}}/live/forms/595219
+Authorization: Bearer {{ecaBearer}}
 Content-Type: application/json
 
 ###

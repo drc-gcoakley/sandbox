@@ -1,0 +1,310 @@
+<ArrayOfCleansingRuleAutoScore xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <CleansingRuleAutoScore>
+    <Description>Remove all leading forward slashes</Description>
+    <ID>a42f53f3-f319-497d-a7b5-0cd86b1e9f79</ID>
+    <RegExPattern>^\/*</RegExPattern>
+    <RegExReplace></RegExReplace>
+    <Rule>Remove all leading slashes</Rule>
+    <RuleNumber>6</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove all leading spaces, tabs and carriage returns/line feeds</Description>
+    <ID>65023a2f-e95d-465b-b366-c6cc45ddc9ae</ID>
+    <RegExPattern>^\s+</RegExPattern>
+    <RegExReplace></RegExReplace>
+    <Rule>Remove all leading whitespace</Rule>
+    <RuleNumber>1</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove all trailing forward slashes</Description>
+    <ID>b9b169b3-f367-4b4d-a5cd-6acd81439ac4</ID>
+    <RegExPattern>\/*$</RegExPattern>
+    <RegExReplace></RegExReplace>
+    <Rule>Remove all trailing slashes</Rule>
+    <RuleNumber>7</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove all trailing spaces, tabs and carriage returns/line feeds</Description>
+    <ID>2f38854d-a7ad-499f-8b36-13adcfb192de</ID>
+    <RegExPattern>\s+$</RegExPattern>
+    <RegExReplace></RegExReplace>
+    <Rule>Remove all trailing whitespace</Rule>
+    <RuleNumber>2</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove all whitespace from the entire string</Description>
+    <ID>56cc0ab9-feab-436f-98eb-4d7a72ae5960</ID>
+    <RegExPattern>\s+</RegExPattern>
+    <RegExReplace></RegExReplace>
+    <Rule>Remove all whitespace</Rule>
+    <RuleNumber>40</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove div and br open/close tags from the entire string</Description>
+    <ID>9dffe653-5060-4657-9bcb-db86f2fd6390</ID>
+    <RegExPattern>&lt;/?(div|br).*?&gt;</RegExPattern>
+    <RegExReplace></RegExReplace>
+    <Rule>Remove div and br tags</Rule>
+    <RuleNumber>38</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove all Html non-breaking space declarations from the entire string</Description>
+    <ID>fcdc299a-5132-4fc9-a881-df480bb2bbe3</ID>
+    <RegExPattern>$nbsp;</RegExPattern>
+    <RegExReplace></RegExReplace>
+    <Rule>Remove Html non-breaking spaces</Rule>
+    <RuleNumber>39</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove all zeros before the first digit, and all but one before any non-alphanumeric character excluding
+      underscore
+    </Description>
+    <ID>05f57c93-fc11-4925-9b0d-c476c3e07e4f</ID>
+    <RegExPattern>^0*(?=0*)(\w+)</RegExPattern>
+    <RegExReplace>$1</RegExReplace>
+    <Rule>Remove leading zeros</Rule>
+    <RuleNumber>4</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove all leading zeros before the first digit, and all but one leading zero before ".", "/", or "%"
+    </Description>
+    <ID>1ef280d4-c1e5-466b-a308-719c5763a6b8</ID>
+    <RegExPattern>(?(^0+0[\.\/\%])^0+(0[\.\/\%])|^0+([1-9]))</RegExPattern>
+    <RegExReplace>$1$2</RegExReplace>
+    <Rule>Remove leading zeros before ".", "/", or "%"</Rule>
+    <RuleNumber>34</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove all carriage returns/line feeds</Description>
+    <ID>75b75b99-1ca1-46ec-8d62-d75ac29cc009</ID>
+    <RegExPattern>[\r\n]</RegExPattern>
+    <RegExReplace></RegExReplace>
+    <Rule>Remove new lines</Rule>
+    <RuleNumber>13</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Where there is more than one consecutive embedded decimal point, delete all but one</Description>
+    <ID>28d35312-c25a-4562-a7cb-b308d09b3fdf</ID>
+    <RegExPattern>\.{2,}</RegExPattern>
+    <RegExReplace>.</RegExReplace>
+    <Rule>Remove repeating decimal points</Rule>
+    <RuleNumber>11</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Where there is more than one consecutive decimal point before the 1st digit, delete all but one</Description>
+    <ID>f7fab60b-ca96-4faa-9349-eafdaa5972b7</ID>
+    <RegExPattern>^\.{2,}(\d)</RegExPattern>
+    <RegExReplace>.$1</RegExReplace>
+    <Rule>Remove repeating leading decimal points</Rule>
+    <RuleNumber>9</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Where there is more than one consecutive embedded forward slash, delete all but one</Description>
+    <ID>f803980c-1873-427e-a08f-11debe4cadba</ID>
+    <RegExPattern>\/{2,}</RegExPattern>
+    <RegExReplace>/</RegExReplace>
+    <Rule>Remove repeating slashes</Rule>
+    <RuleNumber>8</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove all but one consecutive space</Description>
+    <ID>f10acf26-cb55-4668-b710-03e8bc5a615d</ID>
+    <RegExPattern>[ ]+</RegExPattern>
+    <RegExReplace></RegExReplace>
+    <Rule>Remove repeating spaces</Rule>
+    <RuleNumber>3</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove single space, tab or carriage return/line feed after $</Description>
+    <ID>2224e252-abc2-479c-bd3b-c8f53ea4189e</ID>
+    <RegExPattern>\$\s</RegExPattern>
+    <RegExReplace>$</RegExReplace>
+    <Rule>Remove single whitespace after $</Rule>
+    <RuleNumber>27</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove single space, tab or carriage return/line feed after comma</Description>
+    <ID>0f0bd5f8-3c0e-4d4c-94c6-f021313cc1d1</ID>
+    <RegExPattern>,\s</RegExPattern>
+    <RegExReplace>,</RegExReplace>
+    <Rule>Remove single whitespace after comma</Rule>
+    <RuleNumber>26</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove single space, tab or carriage return/line feed before %</Description>
+    <ID>27df08f4-6a2c-466c-847b-bf36332fd81b</ID>
+    <RegExPattern>\s\%</RegExPattern>
+    <RegExReplace>%</RegExReplace>
+    <Rule>Remove single whitespace before %</Rule>
+    <RuleNumber>28</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove single space, tab or carriage return/line feed before comma</Description>
+    <ID>50506a0d-83f9-4ce4-801c-2bdeb9dcc3a0</ID>
+    <RegExPattern>\s,</RegExPattern>
+    <RegExReplace>,</RegExReplace>
+    <Rule>Remove single whitespace before comma</Rule>
+    <RuleNumber>25</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Delete all trailing decimal points</Description>
+    <ID>44c78019-bea8-4c99-95c3-81be49ba1619</ID>
+    <RegExPattern>\.*$</RegExPattern>
+    <RegExReplace></RegExReplace>
+    <Rule>Remove trailing decimal points</Rule>
+    <RuleNumber>10</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove trailing zeros beyond the hundredth place after decimal points, but not after forward slashes.
+    </Description>
+    <ID>974feffb-c5e8-4929-8dde-d248b01d1ac8</ID>
+    <RegExPattern>(\.[0-9]{2}(0*[1-9])*)0*$</RegExPattern>
+    <RegExReplace>$1</RegExReplace>
+    <Rule>Remove trailing zeros</Rule>
+    <RuleNumber>5</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove all spaces, tabs or carriage returns/line feeds after -</Description>
+    <ID>bd147a11-ab85-44d3-aa90-5054ab4be234</ID>
+    <RegExPattern>\-\s+</RegExPattern>
+    <RegExReplace>-</RegExReplace>
+    <Rule>Remove whitespace after -</Rule>
+    <RuleNumber>35</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove all spaces, tabs or carriage returns/line feeds after $</Description>
+    <ID>6882d07a-b769-4a24-b945-05ab81e5d88e</ID>
+    <RegExPattern>\$\s+</RegExPattern>
+    <RegExReplace>$</RegExReplace>
+    <Rule>Remove whitespace after $</Rule>
+    <RuleNumber>37</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove spaces, tabs or carriage returns/line feeds around -</Description>
+    <ID>39959698-cddc-401e-8190-52bf9d51b05e</ID>
+    <RegExPattern>(?&lt;=\-)[\s]+|[\s]+(?=\-)</RegExPattern>
+    <RegExReplace></RegExReplace>
+    <Rule>Remove whitespace around -</Rule>
+    <RuleNumber>16</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove spaces, tabs or carriage returns/line feeds around $</Description>
+    <ID>51c0038a-b476-4113-8b2c-dd8a6f84f9b6</ID>
+    <RegExPattern>(?&lt;=\$)[\s]+|[\s]+(?=\$)</RegExPattern>
+    <RegExReplace></RegExReplace>
+    <Rule>Remove whitespace around $</Rule>
+    <RuleNumber>33</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove spaces, tabs or carriage returns/line feeds around %</Description>
+    <ID>e54ea825-dbe3-4f42-840e-ed4e7068fa59</ID>
+    <RegExPattern>(?&lt;=\%)[\s]+|[\s]+(?=\%)</RegExPattern>
+    <RegExReplace></RegExReplace>
+    <Rule>Remove whitespace around %</Rule>
+    <RuleNumber>32</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove spaces, tabs or carriage returns/line feeds around ( and )</Description>
+    <ID>4145746e-d547-4d98-8641-793bef0a3299</ID>
+    <RegExPattern>(?&lt;=[\(,\)])[\s]+|[\s]+(?=[\(,\)])</RegExPattern>
+    <RegExReplace></RegExReplace>
+    <Rule>Remove whitespace around ( and )</Rule>
+    <RuleNumber>21</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove spaces, tabs or carriage returns/line feeds around *</Description>
+    <ID>731a40e0-3838-4267-bc22-bd594ebacbe1</ID>
+    <RegExPattern>(?&lt;=\*)[\s]+|[\s]+(?=\*)</RegExPattern>
+    <RegExReplace></RegExReplace>
+    <Rule>Remove whitespace around *</Rule>
+    <RuleNumber>17</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove spaces, tabs or carriage returns/line feeds around /</Description>
+    <ID>a63b47d5-25e9-4adb-bb58-a289f20fa0e2</ID>
+    <RegExPattern>(?&lt;=\/)[\s]+|[\s]+(?=\/)</RegExPattern>
+    <RegExReplace></RegExReplace>
+    <Rule>Remove whitespace around /</Rule>
+    <RuleNumber>18</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove spaces, tabs or carriage returns/line feeds around [ and ]</Description>
+    <ID>174dd8ad-2b00-4f5c-b00c-6ab78212ab79</ID>
+    <RegExPattern>(?&lt;=[\[,\]])[\s]+|[\s]+(?=[\[,\]])</RegExPattern>
+    <RegExReplace></RegExReplace>
+    <Rule>Remove whitespace around [ and ]</Rule>
+    <RuleNumber>22</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove spaces, tabs or carriage returns/line feeds around ^</Description>
+    <ID>6e352916-3e01-4092-a214-3e231b2e9989</ID>
+    <RegExPattern>(?&lt;=\^)[\s]+|[\s]+(?=\^)</RegExPattern>
+    <RegExReplace></RegExReplace>
+    <Rule>Remove whitespace around ^</Rule>
+    <RuleNumber>19</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove spaces, tabs or carriage returns/line feeds around { and }</Description>
+    <ID>a614ccf9-669b-4830-85e8-ad10aef4c441</ID>
+    <RegExPattern>(?&lt;=[\{,\}])[\s]+|[\s]+(?=[\{,\}])</RegExPattern>
+    <RegExReplace></RegExReplace>
+    <Rule>Remove whitespace around { and }</Rule>
+    <RuleNumber>23</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove spaces, tabs or carriage returns/line feeds around |</Description>
+    <ID>7950ab09-152a-4be8-a01c-db2591bb4ba6</ID>
+    <RegExPattern>(?&lt;=\|)[\s]+|[\s]+(?=\|)</RegExPattern>
+    <RegExReplace></RegExReplace>
+    <Rule>Remove whitespace around |</Rule>
+    <RuleNumber>20</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove spaces, tabs or carriage returns/line feeds around +</Description>
+    <ID>322c81e7-9e26-4f5b-8e11-c9d948295219</ID>
+    <RegExPattern>(?&lt;=\+)[\s]+|[\s]+(?=\+)</RegExPattern>
+    <RegExReplace></RegExReplace>
+    <Rule>Remove whitespace around +</Rule>
+    <RuleNumber>15</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove spaces, tabs or carriage returns/line feeds around &lt; and &gt;</Description>
+    <ID>ba49aae4-2bcb-4090-8e21-0f8a12a45765</ID>
+    <RegExPattern>(?&lt;=[\&lt;,\&gt;])[\s]+|[\s]+(?=[\&lt;,\&gt;])</RegExPattern>
+    <RegExReplace></RegExReplace>
+    <Rule>Remove whitespace around &lt; and &gt;</Rule>
+    <RuleNumber>24</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove spaces, tabs or carriage returns/line feeds around =</Description>
+    <ID>6da25ba0-3a0c-4015-b8e9-d8bbfbe3fc67</ID>
+    <RegExPattern>(?&lt;=\=)[\s]+|[\s]+(?=\=)</RegExPattern>
+    <RegExReplace></RegExReplace>
+    <Rule>Remove whitespace around =</Rule>
+    <RuleNumber>14</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Remove all spaces, tabs or carriage returns/line feeds before %</Description>
+    <ID>e39fc9c9-87f8-4545-85d0-615ddf9c73d7</ID>
+    <RegExPattern>\s+\%</RegExPattern>
+    <RegExReplace>%</RegExReplace>
+    <Rule>Remove whitespace before %</Rule>
+    <RuleNumber>36</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Change all # signs to a space</Description>
+    <ID>775ecd53-6f98-4aef-8e1d-546c1e73732d</ID>
+    <RegExPattern>#</RegExPattern>
+    <RegExReplace></RegExReplace>
+    <Rule>Replace all # with space</Rule>
+    <RuleNumber>30</RuleNumber>
+  </CleansingRuleAutoScore>
+  <CleansingRuleAutoScore>
+    <Description>Change all _ to a space</Description>
+    <ID>152f0ce6-5361-4c51-98b6-22957419a0c0</ID>
+    <RegExPattern>_</RegExPattern>
+    <RegExReplace></RegExReplace>
+    <Rule>Replace all _ with space</Rule>
+    <RuleNumber>31</RuleNumber>
+  </CleansingRuleAutoScore>
+</ArrayOfCleansingRuleAutoScore>

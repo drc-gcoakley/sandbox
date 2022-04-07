@@ -1,0 +1,25 @@
+### Webhook for "Team D1 Support" Google chat room.
+POST https://chat.googleapis.com/v1/spaces/AAAAlRwJJjQ/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=4o2iDxXTy7VNo1EhgYVIfDhyoyffiy0MU2_WP42PzwM%3D
+Content-Type: application/json; charset=UTF-8
+
+{
+  "text": "Glen send a message from outside of Google Chat at {{$timestamp}}."
+}
+
+### Webhook for "Glens Temp" Google chat room.
+POST https://chat.googleapis.com/v1/spaces/AAAAypL5Tno/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=jOgONURsnbTIA1I_GdFedC3LZFEXVQDvBMB9baj62F8%3D
+Content-Type: application/json; charset=UTF-8
+
+{
+  "text": "Glen send a message from outside of Google Chat at {{$timestamp}}."
+}
+
+### Endpoint created by repo: serverless-templates, branch: glen-newrelic-lambda-test
+POST https://lobt1va74d.execute-api.us-east-1.amazonaws.com/dev/peps
+Authorization: Bearer {{ecaBearer}}
+Content-Type: application/json
+
+{
+  "pepsName": "test-pep-2",
+  "Item": "Glen is testing NewRelic alerts. DocumentResults expireData() just failed"
+}

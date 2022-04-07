@@ -1,7 +1,6 @@
 ### WA SCS (seed) items
 GET https://eca-alt-form-builder-api-stg.awcl.drcedirect-le.com/live/forms/WA/01a10287-1083-4f4f-9279-d61a856146fc/items
 Authorization: Bearer {{ecaBearer}}
-Accept: */*
 Content-Type: application/json
 
 ### Response

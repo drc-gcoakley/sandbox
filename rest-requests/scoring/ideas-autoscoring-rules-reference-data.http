@@ -1,0 +1,3 @@
+### Public - no login needed.
+GET https://all-scoringreferencedata-prod.drcedirect.com/scoringreferencedata/getcleansingrules
+Accept: application/xml

@@ -1,6 +1,41 @@
-GET {{onlineScoringService}}/status
+POST https://us-east-1.console.aws.amazon.com/dynamodbv2/api/dynamodb
+
+###
+GET {{offlineTestingUrl}}/live/status
 Authorization: Bearer {{ecaBearer}}
-Accept: */*
 Content-Type: application/json
 
 ###
+GET {{offlineTestingUrl}}/live/swagger
+Authorization: Bearer {{ecaBearer}}
+Content-Type: application/json
+
+###
+GET {{offlineTestingUrl}}/live/swagger/ui
+Authorization: Bearer {{ecaBearer}}
+Content-Type: application/json
+
+### THIS REQUEST IS NOT CORRECT.
+POST {{offlineTestingUrl}}/live/authorize
+Authorization: Bearer {{ecaBearer}}
+Content-Type: application/json
+
+###
+GET {{offlineTestingUrl}}/live/scoring/scoringTerminated
+Authorization: Bearer {{ecaBearer}}
+Content-Type: application/json
+
+###
+POST {{offlineTestingUrl}}/live/scoring/updateStatus
+Authorization: Bearer {{ecaBearer}}
+`Content-Type: application/json
+
+{
+  "testUuid": "618ff24b-9f4e-473f-97ca-2b1144902343",
+  "client": "WA,WA,WA",
+  "status": "in progress",
+  "message": "I'm trying",
+  "errorMessage": "I don't know what I'm doing",
+  "lithocode": "1234567890"
+}
+
