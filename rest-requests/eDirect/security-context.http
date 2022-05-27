@@ -1,0 +1,11 @@
+###
+GET http://securitycontextservice-sqa.datarecognitioncorp.com/securitycontextservice/contexts/
+Content-Type: application/json; charset=UTF-8
+
+###
+GET http://securitycontextservice-staging.datarecognitioncorp.com/securitycontextservice/contexts/
+Content-Type: application/json; charset=UTF-8
+
+###
+GET http://securitycontextservice-prod.datarecognitioncorp.com/securitycontextservice/contexts/
+Content-Type: application/json; charset=UTF-8

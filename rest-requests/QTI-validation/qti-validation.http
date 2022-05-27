@@ -1,0 +1,32 @@
+### Example from serverless-step-functions-local
+GET {{qtiValidationUrl}}/local-dev/hello
+
+###
+POST {{qtiValidationUrl}}/v1/validatePackage
+Content-Type: application/json; charset=UTF-8
+Authorization: Bearer {{ecaBearer}}
+
+{
+  "packageRootUrl": "s3://us-east-2-qss-assets-dev/temp/qvs/qti-3.0-level-1/duplicate-resource-contents",
+  "packageId": "package-85D76736-6D19-9DC0-7C0B-57C31A9FD390",
+  "userToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNjUzNjY0NzYxLCJleHAiOjE2NTM2NjY1NjEsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.R0X1Peeohr6z-NQVdyS-VdPhJyLlwDfGuUTzJOyLsSZjRugKXV_Ebzk0OskHwirku_RAIkdf9ehppRtiyu4VNkOTUBOfRGqR4xo_YlbTfZpe01IVmeNX4n-9nBhG4uU8zWO45wT9OGZIDXwdGhKW0dqW4pRvx3KznWihlmSxG0J9zRmrIG4TI_vvnE1tCPRGic-zmr8tcOK8DkHxoAW3N0M-_TxGIMXOpJMmI6jfCDhrB9qVSu1KS-So_qnmuvAn7XD4-qlMPe24V6hVDYQZvYnYpxBUgCAaxWozWsx5qCT685sW0W1JD8Sqer2LIDIsZxpmjFvAXfaqhG1KmgRmOg"
+}
+
+###
+POST {{qtiValidationUrl}}/v1/getValidationStatus
+Content-Type: application/json; charset=UTF-8
+Authorization: Bearer {{ecaBearer}}
+
+{
+  "executionArn": "arn:aws:states:us-east-2:048827206432:execution:EcaQtiValidation:0fc7afc8-eadf-4491-adc5-aaf804d2df7f"
+}
+
+###
+POST {{qtiValidationUrl}}/v1/validatePackage
+Content-Type: application/json; charset=UTF-8
+Authorization: Bearer {{ecaBearer}}
+
+{
+  "packageRootUrl":"s3://us-east-2-qss-assets-sqa/temp/qvs/examples/package/imsmanifest.xml",
+  "packageId":"package-85D76736-6D19-9DC0-7C0B-57C31A9FD390"
+}

@@ -1,0 +1,6 @@
+POST https://eca-qti-validation-service-dev.lrc-le.drcedirect.com/live/v1/validatePackage
+Accept: application/json; charset=UTF-8
+
+{
+  "packageRootUrl":"s3://us-east-2-qss-assets-dev/test/qvs","packageId":"manual-test"
+}
