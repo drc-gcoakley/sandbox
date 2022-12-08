@@ -1,32 +1,80 @@
-### Example from serverless-step-functions-local
-GET {{qtiValidationUrl}}/local-dev/hello
 
-###
-POST {{qtiValidationUrl}}/v1/validatePackage
-Content-Type: application/json; charset=UTF-8
-Authorization: Bearer {{ecaBearer}}
-
-{
-  "packageRootUrl": "s3://us-east-2-qss-assets-dev/temp/qvs/qti-3.0-level-1/duplicate-resource-contents",
-  "packageId": "package-85D76736-6D19-9DC0-7C0B-57C31A9FD390",
-  "userToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdjb2FrbGV5QGRhdGFyZWNvZ25pdGlvbmNvcnAuY29tIiwiaWF0IjoxNjUzNjY0NzYxLCJleHAiOjE2NTM2NjY1NjEsImlzcyI6ImVjYS1kcmMiLCJzdWIiOiI4MTUxNzg4Ny0yNDBDLTQ4NDEtODM2MS0wMzgxQTVGNEQ1MkMifQ.R0X1Peeohr6z-NQVdyS-VdPhJyLlwDfGuUTzJOyLsSZjRugKXV_Ebzk0OskHwirku_RAIkdf9ehppRtiyu4VNkOTUBOfRGqR4xo_YlbTfZpe01IVmeNX4n-9nBhG4uU8zWO45wT9OGZIDXwdGhKW0dqW4pRvx3KznWihlmSxG0J9zRmrIG4TI_vvnE1tCPRGic-zmr8tcOK8DkHxoAW3N0M-_TxGIMXOpJMmI6jfCDhrB9qVSu1KS-So_qnmuvAn7XD4-qlMPe24V6hVDYQZvYnYpxBUgCAaxWozWsx5qCT685sW0W1JD8Sqer2LIDIsZxpmjFvAXfaqhG1KmgRmOg"
-}
-
-###
-POST {{qtiValidationUrl}}/v1/getValidationStatus
-Content-Type: application/json; charset=UTF-8
-Authorization: Bearer {{ecaBearer}}
-
-{
-  "executionArn": "arn:aws:states:us-east-2:048827206432:execution:EcaQtiValidation:0fc7afc8-eadf-4491-adc5-aaf804d2df7f"
-}
-
-###
+### QTI v2 Success: given manifest.xml URL.
 POST {{qtiValidationUrl}}/v1/validatePackage
 Content-Type: application/json; charset=UTF-8
 Authorization: Bearer {{ecaBearer}}
 
 {
   "packageRootUrl":"s3://us-east-2-qss-assets-sqa/temp/qvs/examples/package/imsmanifest.xml",
-  "packageId":"package-85D76736-6D19-9DC0-7C0B-57C31A9FD390"
+  "packageId":"package/imsmanifest.xml-{{$timestamp}}"
 }
+
+### QTI v3 Success: I9b-RP-Fixed-Templates
+POST {{qtiValidationUrl}}/v1/validatePackage
+Content-Type: application/json; charset=UTF-8
+Authorization: Bearer {{ecaBearer}}
+
+{
+  "packageRootUrl": "s3://us-east-2-qss-assets-{{envAbbr}}/temp/qvs/qti-3.0-level-1/I9b-RP-Fixed-Templates",
+  "packageId": "I9b-RP-Fixed-Templates-{{$timestamp}}"
+}
+> {% execArn = response.body['executionArn']; client.log('Execution ARN: ' + execArn); client.global.set('lastQVSExecutionArn', execArn); %}
+
+### QTI v3 Error: manifest-incorrect-resource-identifiers
+POST {{qtiValidationUrl}}/v1/validatePackage
+Content-Type: application/json; charset=UTF-8
+Authorization: Bearer {{ecaBearer}}
+
+{
+  "packageRootUrl": "s3://us-east-2-qss-assets-{{envAbbr}}/temp/qvs/validation-errors/qti-3.0-level-1/manifest-incorrect-resource-identifiers",
+  "packageId": "manifest-incorrect-resource-identifiers-{{$timestamp}}"
+}
+> {% execArn = response.body['executionArn']; client.log('Execution ARN: ' + execArn); client.global.set('lastQVSExecutionArn', execArn); %}
+
+### QTI v3 Error: manifest-missing-file-from-package
+POST {{qtiValidationUrl}}/v1/validatePackage
+Content-Type: application/json; charset=UTF-8
+Authorization: Bearer {{ecaBearer}}
+
+{
+  "packageRootUrl": "s3://us-east-2-qss-assets-{{envAbbr}}/temp/qvs/validation-errors/qti-3.0-level-1/manifest-missing-file-from-package",
+  "packageId": "manifest-missing-file-from-package-{{$timestamp}}"
+}
+> {% execArn = response.body['executionArn']; client.log('Execution ARN: ' + execArn); client.global.set('lastQVSExecutionArn', execArn); %}
+
+### QTI v3 Error: manifest-extra-files-in-package
+POST {{qtiValidationUrl}}/v1/validatePackage
+Content-Type: application/json; charset=UTF-8
+Authorization: Bearer {{ecaBearer}}
+
+{
+  "packageRootUrl": "s3://us-east-2-qss-assets-{{envAbbr}}/temp/qvs/validation-errors/qti-3.0-level-1/manifest-extra-files-in-package",
+  "packageId": "manifest-extra-files-in-package-{{$timestamp}}",
+  "checkForExtraFilesInPackage": true
+}
+> {% execArn = response.body['executionArn']; client.log('Execution ARN: ' + execArn); client.global.set('lastQVSExecutionArn', execArn); %}
+
+### QTI v3 Error: qti-mismatched-versions
+POST {{qtiValidationUrl}}/v1/validatePackage
+Content-Type: application/json; charset=UTF-8
+Authorization: Bearer {{ecaBearer}}
+
+{
+  "packageRootUrl": "s3://us-east-2-qss-assets-{{envAbbr}}/temp/qvs/validation-errors/qti-3.0-level-1/qti-mismatched-versions",
+  "packageId": "qti-mismatched-versions-{{$timestamp}}",
+  "checkForExtraFilesInPackage": true
+}
+> {% execArn = response.body['executionArn']; client.log('Execution ARN: ' + execArn); client.global.set('lastQVSExecutionArn', execArn); %}
+
+### Get status of last QVS execution.
+POST {{qtiValidationUrl}}/v1/getValidationStatus
+Content-Type: application/json; charset=UTF-8
+Authorization: Bearer {{ecaBearer}}
+
+{
+  "executionArn": "{{lastQVSExecutionArn}}"
+}
+> {% client.log('Execution ARN: ' + client.global.get('lastQVSExecutionArn')); %}
+
+
+###### @see https://www.jetbrains.com/help/idea/2021.2/exploring-http-syntax.html#using_request_vars

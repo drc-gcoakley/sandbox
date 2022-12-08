@@ -1,0 +1,8 @@
+POST http://dcccatp084.datarecognitioncorp.com/nv/services/CATServiceProxy?PingRequest
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="field-name"; filename="file.txt"
+
+< ./soap-request/ping.soap.xml
+--WebAppBoundary--

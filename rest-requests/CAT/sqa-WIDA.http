@@ -1,0 +1,12 @@
+###
+GET http://wida-cat-sqa.drcedirect.com/wida/services/CATServiceProxy?wsdl
+
+###
+POST http://wida-cat-sqa.drcedirect.com/wida/services/CATServiceProxy
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="field-name"; filename="file.txt"
+
+< ./soap-request/ping.soap.xml
+--WebAppBoundary--

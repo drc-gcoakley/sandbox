@@ -1,0 +1,6 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tes="http://testsnapshot.cat.insight.datarecognitioncorp.com">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <tes:PingInput inputString="PING"/>
+  </soapenv:Body>
+</soapenv:Envelope>

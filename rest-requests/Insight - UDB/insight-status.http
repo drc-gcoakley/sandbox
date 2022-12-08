@@ -1,0 +1,11 @@
+###
+GET https://insight-status-{{envAbbr}}.awcl.drcedirect-le.com/v2/services
+Content-Type: application/json; charset=UTF-8
+Authorization: Bearer {{ecaBearer}}
+
+###
+GET https://insight-status-{{envAbbr}}.awcl.drcedirect-le.com/blue/v1/swagger
+Content-Type: application/json; charset=UTF-8
+Authorization: Bearer {{ecaBearer}}
+
+###

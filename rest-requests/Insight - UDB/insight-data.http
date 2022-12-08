@@ -1,0 +1,11 @@
+### Georgia administration server and database names.
+GET https://ga-insightdata-{{envAbbr}}.drcedirect.com/InsightDataService/admins
+Content-Type: application/json; charset=UTF-8
+Authorization: Bearer {{ecaBearer}}
+
+### Georgia primary server and database names.
+GET https://ga-insightdata-{{envAbbr}}.drcedirect.com/InsightDataService/clients
+Content-Type: application/json; charset=UTF-8
+Authorization: Bearer {{ecaBearer}}
+
+###
